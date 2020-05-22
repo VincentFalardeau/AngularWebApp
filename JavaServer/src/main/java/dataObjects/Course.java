@@ -1,4 +1,4 @@
-package JavaServer;
+package dataObjects;
 
 public class Course {
 	private int id;

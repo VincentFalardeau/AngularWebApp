@@ -1,4 +1,4 @@
-package JavaServer;
+package dataObjects;
 
 public class Mark {
 	private int id;

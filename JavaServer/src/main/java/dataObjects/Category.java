@@ -1,4 +1,4 @@
-package JavaServer;
+package dataObjects;
 
 public class Category {
 	private int id;

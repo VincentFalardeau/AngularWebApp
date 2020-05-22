@@ -1,4 +1,4 @@
-package JavaServer;
+package persistance;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -18,7 +18,7 @@ public class MySqlConnection {
 	    
 	//Returns the instance, initializes if not initialized
 	//Takes the informations required by the database connection: user, password and url
-	public static MySqlConnection getInstance(String user, String pwd, String url) {
+	public static MySqlConnection getInstance(String user, String pwd, String url) throws ClassNotFoundException, SQLException {
 		if(instance == null && user != null && pwd != null && url != null) {
 	    	instance = new MySqlConnection(user, pwd, url);
 	    }
@@ -26,23 +26,26 @@ public class MySqlConnection {
 	}
 	    
 	//Private constructor, initiates the connection to the database on object instance initialization
-	private MySqlConnection(String user, String pwd, String url) { 
+	private MySqlConnection(String user, String pwd, String url) throws ClassNotFoundException, SQLException { 
 	    connect(user, pwd, url);
 	}
 	     
 	//Method responsible for initializing the Connection object with a connection to the database
 	//Takes the informations required by the database connection: user, password and url
-	private void connect(String user, String pwd, String url) {
-		try {
-	        Class.forName("com.mysql.jdbc.Driver");
-	    } catch (ClassNotFoundException e) {
-	        e.printStackTrace();
-	    }		    
-		try {
-			mConnection = DriverManager.getConnection(url,user,pwd);
-		} catch (SQLException e) {
-		    e.printStackTrace();
-		}
+	private void connect(String user, String pwd, String url) throws ClassNotFoundException, SQLException {
+		//try {
+	        //Class.forName("com.mysql.jdbc.Driver");
+	   // } catch (ClassNotFoundException e) {
+	    //    e.printStackTrace();
+	   // }		    
+		//try {
+			//mConnection = DriverManager.getConnection(url,user,pwd);
+		//} catch (SQLException e) {
+		//    e.printStackTrace();
+		//}
+			
+		Class.forName("com.mysql.jdbc.Driver");
+		mConnection = DriverManager.getConnection(url,user,pwd);
 	}	
 		
 	//Returns the database connection
