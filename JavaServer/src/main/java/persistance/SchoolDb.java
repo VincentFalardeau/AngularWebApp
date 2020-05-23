@@ -48,12 +48,13 @@ public class SchoolDb {
 		return query;
 	}
 	
-	public ArrayList<Mark> getMarks(String semesterParam) throws NumberFormatException, SQLException, Exception{
+	//TODO: Faire la conversion en int de semester dans services, et renvoyer une erreur de là
+	//La couche persistance prend des params purs et valides
+	public ArrayList<Mark> getMarks(int semester) throws NumberFormatException, SQLException, Exception{
 		ArrayList<Mark> marks = new ArrayList<Mark>();
 		
 		Connection connection = getConnection();		
 		Statement st = connection.createStatement();
-		int semester = Integer.parseInt(semesterParam);
 		ResultSet rs = st.executeQuery(this.getMarksQuery(semester));
 		
 		while(rs.next()) {

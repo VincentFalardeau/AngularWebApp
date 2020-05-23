@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 //Singleton class that provides a connection to the database
-public class MySqlConnection {
+public class MySqlConnection{
 	//The instance
 	private static MySqlConnection instance = null; 
 	//The database connection
@@ -15,6 +15,8 @@ public class MySqlConnection {
 	public static MySqlConnection getInstance() {
 		return instance;
 	}
+	
+	//
 	    
 	//Returns the instance, initializes if not initialized
 	//Takes the informations required by the database connection: user, password and url
@@ -51,5 +53,16 @@ public class MySqlConnection {
 	//Returns the database connection
 	public Connection getConnection() { 
 		return mConnection;
+	}
+	
+	@Override
+	public void finalize(){
+		if(mConnection != null) {
+			try {
+				mConnection.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
 	}
 }
