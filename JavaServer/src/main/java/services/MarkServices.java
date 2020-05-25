@@ -14,11 +14,21 @@ public class MarkServices {
 		mSchoolDb = SchoolDb.getInstance();
 	}
 	
-	public ArrayList<Mark> getMarks(String semester){
+	public ArrayList<Mark> getMarks(String semester) throws Exception{
+		
+		int semesterInt = Integer.parseInt(semester);
 		
 		//TODO: Convert the semester to a valid integer, throw custom errors (cause its user's fault) if not a valid integer
 		
 		//return mSchoolDb.getMarks(semester);
-		return null;
+		return getMarks(semesterInt);
+	}
+	
+public ArrayList<Mark> getMarks(int semester) throws NumberFormatException, SQLException, Exception{
+		
+		//TODO: Convert the semester to a valid integer, throw custom errors (cause its user's fault) if not a valid integer
+		
+		//return mSchoolDb.getMarks(semester);
+		return  mSchoolDb.getMarks(semester);
 	}
 }

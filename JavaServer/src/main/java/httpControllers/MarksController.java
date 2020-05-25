@@ -1,6 +1,7 @@
 package httpControllers;
 
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
@@ -9,9 +10,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import persistance.*;
+import services.MarkServices;
 import dataObjects.*;
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
@@ -28,9 +31,21 @@ public class MarksController {
 	//Dans un tel cas, cest un internal error, pas a cause de l'usager
 	
 	@GetMapping("/marks")//enlever le defaultValue, le faire dans le client
-	public ResponseEntity<Object> marks(@RequestParam(value = "semester") String paramSemester) {
+	public ResponseEntity<Object> marks(@RequestParam(value = "semester") String semester) {
 		
 		ResponseEntity responseEntity;
+		
+		try {
+			MarkServices ms = new MarkServices();
+			ArrayList<Mark> marks = ms.getMarks(1);
+			responseEntity = new ResponseEntity<ArrayList<Mark>>(marks, HttpStatus.OK);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			responseEntity = new ResponseEntity<Object>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+		
+		
 		
 		//TODO constantes pour credentials, eventuellement fichier de config avec spring
 		//MySqlConnection mySqlConnection = MySqlConnection.getInstance("root", "!h4zastkR", "jdbc:mysql://localhost:3306/schooldb");
@@ -89,6 +104,6 @@ public class MarksController {
 //			responseEntity = new ResponseEntity<Object>(null, HttpStatus.INTERNAL_SERVER_ERROR);
 //		}
 		
-		return null;
+		return responseEntity;
 	}
 }

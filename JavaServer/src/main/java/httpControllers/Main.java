@@ -1,4 +1,4 @@
-package JavaServer;
+package httpControllers;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
