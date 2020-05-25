@@ -32,7 +32,6 @@ public class SchoolDb {
 		return mConnection;
 	}
 		
-	//TODO: takes the semester as parameter
 	//TODO: utiliser spring jdbc ou Mybatis (requetes dans des fichiers)
 	private String getMarksQuery(int semester) { 
 		String query = "select \n" + 

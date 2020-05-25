@@ -18,12 +18,14 @@ import dataObjects.*;
 @RestController
 public class MarksController {
 	
-	//TODO faire un package httpcontroller, avec une classe
 	//TODO faire un package services avec une ou plusieurs classes
 	//Le code ci dessous se trouverait dans une fonction dans services
 	//TODO package persistance
 	//Contiendrait le query dans une classe db, mysqlconnection
-	//Creer mes exceptions
+	//TODO Creer mes exceptions, exemple: semester invalide, string, 0, negatif, ca retournera un bad request.
+	//Je dois créer des exceptions customs pour des fautes du client, une erreur qui survient par un truc comme
+	//la connexion SQL qui donne une SQLException est une erreur du système et non de l'usager
+	//Dans un tel cas, cest un internal error, pas a cause de l'usager
 	
 	@GetMapping("/marks")//enlever le defaultValue, le faire dans le client
 	public ResponseEntity<Object> marks(@RequestParam(value = "semester") String paramSemester) {

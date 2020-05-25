@@ -15,8 +15,6 @@ public class MySqlConnection{
 	public static MySqlConnection getInstance() {
 		return instance;
 	}
-	
-	//
 	    
 	//Returns the instance, initializes if not initialized
 	//Takes the informations required by the database connection: user, password and url
@@ -35,17 +33,6 @@ public class MySqlConnection{
 	//Method responsible for initializing the Connection object with a connection to the database
 	//Takes the informations required by the database connection: user, password and url
 	private void connect(String user, String pwd, String url) throws ClassNotFoundException, SQLException {
-		//try {
-	        //Class.forName("com.mysql.jdbc.Driver");
-	   // } catch (ClassNotFoundException e) {
-	    //    e.printStackTrace();
-	   // }		    
-		//try {
-			//mConnection = DriverManager.getConnection(url,user,pwd);
-		//} catch (SQLException e) {
-		//    e.printStackTrace();
-		//}
-			
 		Class.forName("com.mysql.jdbc.Driver");
 		mConnection = DriverManager.getConnection(url,user,pwd);
 	}	
@@ -55,6 +42,7 @@ public class MySqlConnection{
 		return mConnection;
 	}
 	
+	//Closes the connection on object destroy
 	@Override
 	public void finalize(){
 		if(mConnection != null) {
