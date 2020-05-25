@@ -4,6 +4,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import dataObjects.Mark;
+import exceptions.InvalidParameterFormatException;
 import persistance.SchoolDb;
 
 public class MarkServices {
@@ -14,21 +15,22 @@ public class MarkServices {
 		mSchoolDb = SchoolDb.getInstance();
 	}
 	
-	public ArrayList<Mark> getMarks(String semester) throws Exception{
+	public ArrayList<Mark> getMarks(String semester) throws InvalidParameterFormatException, SQLException{
+		ArrayList<Mark> marks;
 		
-		int semesterInt = Integer.parseInt(semester);
-		
-		//TODO: Convert the semester to a valid integer, throw custom errors (cause its user's fault) if not a valid integer
-		
-		//return mSchoolDb.getMarks(semester);
-		return getMarks(semesterInt);
+		try {
+			int semesterInt = Integer.parseInt(semester);
+			
+			marks = getMarks(semesterInt);
+		}catch(NumberFormatException nfe) {
+			nfe.printStackTrace();
+			
+			throw new InvalidParameterFormatException("Invalid parameter format, semester expected to be an integer", nfe);
+		}
+		return marks;
 	}
 	
-public ArrayList<Mark> getMarks(int semester) throws NumberFormatException, SQLException, Exception{
-		
-		//TODO: Convert the semester to a valid integer, throw custom errors (cause its user's fault) if not a valid integer
-		
-		//return mSchoolDb.getMarks(semester);
+public ArrayList<Mark> getMarks(int semester) throws NumberFormatException, SQLException{
 		return  mSchoolDb.getMarks(semester);
 	}
 }

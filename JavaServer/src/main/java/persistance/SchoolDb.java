@@ -23,7 +23,9 @@ public class SchoolDb {
 	}
 	    
 	private SchoolDb() throws SQLException, ClassNotFoundException { 
-		//TODO constantes pour credentials, eventuellement fichier de config avec spring
+		
+		//TODO les crédentiels doivent être pris de fichiers (Utiliser Spring JDBC ou MyBatis)
+		
 		mConnection = MySqlConnection.getInstance("root", "!h4zastkR", "jdbc:mysql://localhost:3306/schooldb").getConnection();
 		
 	}
@@ -31,9 +33,11 @@ public class SchoolDb {
 	private Connection getConnection() {
 		return mConnection;
 	}
-		
-	//TODO: utiliser spring jdbc ou Mybatis (requetes dans des fichiers)
+	
 	private String getMarksQuery(int semester) { 
+		
+		//TODO les requêtes doivent être prises de fichiers (Utiliser Spring JDBC ou MyBatis)
+		
 		String query = "select \n" + 
 			"m.idMark as idMark, m.idClass as idClass, m.idCategory as idCategory, \n" + 
 			"m.description as markDescription, m.mark as mark, m.ponderation as ponderation, \n" + 
@@ -47,9 +51,7 @@ public class SchoolDb {
 		return query;
 	}
 	
-	//TODO: Faire la conversion en int de semester dans services, et renvoyer une erreur de là
-	//La couche persistance prend des params purs et valides
-	public ArrayList<Mark> getMarks(int semester) throws NumberFormatException, SQLException, Exception{
+	public ArrayList<Mark> getMarks(int semester) throws SQLException{
 		ArrayList<Mark> marks = new ArrayList<Mark>();
 		
 		Connection connection = getConnection();		

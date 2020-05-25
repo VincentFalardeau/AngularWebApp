@@ -1,8 +1,5 @@
 package httpControllers;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 
 import org.springframework.http.HttpStatus;
@@ -10,12 +7,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import persistance.*;
 import services.MarkServices;
 import dataObjects.*;
+import exceptions.InvalidParameterFormatException;
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
@@ -36,16 +32,22 @@ public class MarksController {
 		ResponseEntity responseEntity;
 		
 		try {
-			MarkServices ms = new MarkServices();
-			ArrayList<Mark> marks = ms.getMarks(1);
+			//Retrieving the marks
+			MarkServices markServices = new MarkServices();
+			ArrayList<Mark> marks = markServices.getMarks(semester);
+			
+			//Building the response entity
 			responseEntity = new ResponseEntity<ArrayList<Mark>>(marks, HttpStatus.OK);
+		
+		} catch (InvalidParameterFormatException ipfe) {
+			ipfe.printStackTrace();
+			responseEntity = new ResponseEntity<String>("Invalid parameter format ", HttpStatus.BAD_REQUEST);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			responseEntity = new ResponseEntity<Object>(null, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 		
-		
+		return responseEntity;
 		
 		//TODO constantes pour credentials, eventuellement fichier de config avec spring
 		//MySqlConnection mySqlConnection = MySqlConnection.getInstance("root", "!h4zastkR", "jdbc:mysql://localhost:3306/schooldb");
@@ -103,7 +105,5 @@ public class MarksController {
 //			e.printStackTrace();
 //			responseEntity = new ResponseEntity<Object>(null, HttpStatus.INTERNAL_SERVER_ERROR);
 //		}
-		
-		return responseEntity;
 	}
 }
