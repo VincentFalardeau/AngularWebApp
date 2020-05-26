@@ -125,15 +125,20 @@ public class MarkServices {
 			int idCategory, 
 			int idCourse) throws SQLException, ParameterException {
 		
-		try {
-			//Try to update the mark
-			mSchoolDb.updateMark(idMark, mark, description, weight, idCategory, idCourse);
-			
-		}catch(SQLException se) {				
-			//se.printStackTrace();
-			throw se;
-		}
+		//Try to update the mark
+		mSchoolDb.updateMark(idMark, mark, description, weight, idCategory, idCourse);
 		
+	}
+	
+	public void deleteMark(String idMarkParam) throws ParameterFormatException, SQLException {
+		int idMark = this.parseIdMark(idMarkParam);
+		this.deleteMark(idMark);
+		
+	}
+	
+	public void deleteMark(int idMark) throws SQLException {
+		//Try to delete the mark
+		mSchoolDb.deleteMark(idMark);
 	}
 	
 	

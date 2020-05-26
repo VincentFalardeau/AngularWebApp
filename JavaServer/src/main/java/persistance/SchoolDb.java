@@ -140,6 +140,19 @@ public class SchoolDb {
 		ps.close();
 	}
 	
+	public void deleteMark(int idMark) throws SQLException {
+		Connection connection = getConnection();
+		
+		String sql = "delete from Mark where idMark = ?";
+		PreparedStatement ps = connection.prepareStatement(sql);
+		
+		ps.setInt(1, idMark);
+		
+		ps.execute();
+		ps.close();
+		
+	}
+	
 	//Gives a boolean indicating whether a mark exists or not.
 	//Takes id, an integer representing the mark's id.
 	public boolean markExists(int id) throws SQLException {
