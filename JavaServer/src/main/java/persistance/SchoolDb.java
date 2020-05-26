@@ -1,19 +1,29 @@
 package persistance;
 
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+import org.apache.tomcat.util.json.JSONParser;
+
+import com.fasterxml.jackson.core.JsonParser;
 
 import dataObjects.*;
+import tools.ResourcesManager;
 
 public class SchoolDb {
 	
 	private static SchoolDb instance = null; 
 	
 	private Connection mConnection = null;
+	private ResourcesManager mResourcesManager = null;
 	    
 	public static SchoolDb getInstance() throws ClassNotFoundException, SQLException {
 		if(instance == null) {
@@ -22,36 +32,42 @@ public class SchoolDb {
 	    return instance;
 	}
 	    
-	private SchoolDb() throws SQLException, ClassNotFoundException { 
-		
-		//TODO les crédentiels doivent être pris de fichiers (Utiliser Spring JDBC ou MyBatis)
+	private SchoolDb() throws SQLException, ClassNotFoundException, IOException { 
 		
 		mConnection = MySqlConnection.getInstance("root", "!h4zastkR", "jdbc:mysql://localhost:3306/schooldb").getConnection();
 		
+		//String filename = "dbCredentials/credentials.json";
+		//String json = mResourcesManager.getFileContent(filename);
+		
+		//Object obj = new JSONParser().parse(json); 
+		
+		
+		mResourcesManager = new ResourcesManager();
 	}
 	
 	private Connection getConnection() {
 		return mConnection;
 	}
 	
-	private String getMarksQuery(int semester) { 
+	private String getMarksQuery(int semester) throws IOException { 
 		
-		//TODO les requêtes doivent être prises de fichiers (Utiliser Spring JDBC ou MyBatis)
-		
-		String query = "select \n" + 
-			"m.idMark as idMark, m.idClass as idClass, m.idCategory as idCategory, \n" + 
-			"m.description as markDescription, m.mark as mark, m.ponderation as ponderation, \n" + 
-			"ca.description as categoryDescription,\n" + 
-			"cl.code as classCode, cl.semester as semester, cl.description as classDescription, cl.credits as classCredits\n" + 
-			"from Mark m \n" + 
-			"inner join Category ca on ca.idCategory = m.idCategory\n" + 
-			"inner join Class cl on cl.idClass = m.idClass\n" +
-			"where semester = " + semester;
+//		String query = "select \n" + 
+//			"m.idMark as idMark, m.idClass as idClass, m.idCategory as idCategory, \n" + 
+//			"m.description as markDescription, m.mark as mark, m.ponderation as ponderation, \n" + 
+//			"ca.description as categoryDescription,\n" + 
+//			"cl.code as classCode, cl.semester as semester, cl.description as classDescription, cl.credits as classCredits\n" + 
+//			"from Mark m \n" + 
+//			"inner join Category ca on ca.idCategory = m.idCategory\n" + 
+//			"inner join Class cl on cl.idClass = m.idClass\n" +
+//			"where semester = " + semester;
+
+		String filename = "sql/query2.sql";
+		String query = mResourcesManager.getFileContent(filename, semester);
 		
 		return query;
 	}
 	
-	public ArrayList<Mark> getMarks(int semester) throws SQLException{
+	public ArrayList<Mark> getMarks(int semester) throws SQLException, IOException{
 		ArrayList<Mark> marks = new ArrayList<Mark>();
 		
 		Connection connection = getConnection();		
