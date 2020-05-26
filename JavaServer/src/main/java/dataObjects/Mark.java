@@ -4,22 +4,22 @@ public class Mark {
 	private int id;
 	private String description;
 	private float mark;
-	private float ponderation;
+	private float weight;
 	private Course course;
 	private Category category;
 	
-	public Mark(int id, String description, float mark, float ponderation, Course course, Category category) {
+	public Mark(int id, String description, float mark, float weight, Course course, Category category) {
 		this.setDescription(description);
 		this.setId(id);
 		this.setMark(mark);
-		this.setPonderation(ponderation);
+		this.setWeight(weight);
 		this.setCategory(category);
 		this.setCourse(course);
 	}
 	
-	public Mark(float mark, float ponderation) {
+	public Mark(float mark, float weight) {
 		this.setMark(mark);
-		this.setPonderation(ponderation);
+		this.setWeight(weight);
 	}
 	
 	public int getId() {
@@ -46,12 +46,12 @@ public class Mark {
 		this.mark = mark;
 	}
 
-	public float getPonderation() {
-		return ponderation;
+	public float getWeight() {
+		return weight;
 	}
 
-	public void setPonderation(float ponderation) {
-		this.ponderation = ponderation;
+	public void setWeight(float weight) {
+		this.weight = weight;
 	}
 
 	public Category getCategory() {

@@ -1,18 +1,16 @@
 package dataObjects;
 
-public class ParameterFormatExceptionDataObject {
+public class ParameterExceptionDataObject {
 	private String mErrorMessage;
 	private String mParameterKey;
-	private String mExpectedType;
 	
-	public ParameterFormatExceptionDataObject(String errorMessage, String parameterKey, String expectedType) {
+	public ParameterExceptionDataObject(String errorMessage, String parameterKey) {
 	    mErrorMessage = errorMessage;
 	    mParameterKey = parameterKey;
-	    mExpectedType = expectedType;
 	}
 	
 	public String getErrorType() {
-		return "ParameterFormatException";
+		return "ParameterException";
 	}
 	
 	public String getErrorMessage() {
@@ -21,9 +19,5 @@ public class ParameterFormatExceptionDataObject {
 	
 	public String getParameterKey() {
 		return mParameterKey;
-	}
-	
-	public String getExpectedType() {
-		return mExpectedType;
 	}
 }

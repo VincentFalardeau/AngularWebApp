@@ -3,39 +3,27 @@ package exceptions;
 import dataObjects.ParameterFormatExceptionDataObject;
 
 //A http parameter has an invalid format
-public class ParameterFormatException extends Exception{
+public class ParameterFormatException extends ParameterException{
 	
-	private String mErrorMessage;
-	private String mParameterKey;
-	private String mExpectedType;
+	private String mExpectedFormat;
 	
-	public ParameterFormatException(String errorMessage, Throwable err) {
-	    super(errorMessage, err);
-	    mErrorMessage = errorMessage;
-	    mParameterKey = "";
-	    mExpectedType = "";
-	}
+//	public ParameterFormatException(String errorMessage, Throwable err) {
+//	    super(errorMessage, err);
+//	    mErrorMessage = errorMessage;
+//	    mParameterKey = "";
+//	    mExpectedType = "";
+//	}
 	
 	public ParameterFormatException(String errorMessage, Throwable err, String parameterKey, String expectedType) {
-	    super(errorMessage, err);
-	    mErrorMessage = errorMessage;
-	    mParameterKey = parameterKey;
-	    mExpectedType = expectedType;
-	}
-	
-	public String getErrorMessage() {
-		return mErrorMessage;
-	}
-	
-	public String getParameterKey() {
-		return mParameterKey;
+	    super(errorMessage, err, parameterKey);
+	    mExpectedFormat = expectedType;
 	}
 	
 	public String getExpectedType() {
-		return mExpectedType;
+		return mExpectedFormat;
 	}
 	
-	public ParameterFormatExceptionDataObject toDataObject() {
-		return new ParameterFormatExceptionDataObject(getErrorMessage(), getParameterKey(), getExpectedType());
+	public ParameterFormatExceptionDataObject toParameterFormatExceptionDataObject() {
+		return new ParameterFormatExceptionDataObject(super.getErrorMessage(), super.getParameterKey(), getExpectedType());
 	}
 }
