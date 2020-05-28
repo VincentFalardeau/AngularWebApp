@@ -21,6 +21,26 @@ import exceptions.ParameterException;
 @RestController
 public class MarksController {
 	
+	@GetMapping("/marks/all")
+	public ResponseEntity<Object> marks() {
+		ResponseEntity responseEntity;
+		
+		try {
+			MarkServices markServices = new MarkServices();
+			ArrayList<Mark> marks = markServices.getMarks();
+			
+			responseEntity = new ResponseEntity<ArrayList<Mark>>(marks, HttpStatus.OK);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			
+			String errorMessage = "Internal server error";
+			responseEntity = new ResponseEntity<String>(errorMessage, HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+		
+		return responseEntity;
+	}
+	
 	@GetMapping("/marks")
 	public ResponseEntity<Object> marks(@RequestParam(value = "semester") String semester) {
 		ResponseEntity responseEntity;
@@ -46,8 +66,32 @@ public class MarksController {
 		return responseEntity;
 	}
 	
-	@PostMapping("/mark")
-	public ResponseEntity<Object> mark(
+	@GetMapping("/mark")
+	public ResponseEntity<Object> mark(@RequestParam(value = "idMark") String idMark) {
+		ResponseEntity responseEntity;
+		
+		try {
+			MarkServices markServices = new MarkServices();
+			ArrayList<Mark> marks = markServices.getMark(idMark);
+			
+			responseEntity = new ResponseEntity<ArrayList<Mark>>(marks, HttpStatus.OK);
+		} catch (ParameterFormatException pfe) {
+			pfe.printStackTrace();
+			
+			responseEntity = new ResponseEntity<ParameterFormatExceptionDataObject>(pfe.toParameterFormatExceptionDataObject(), HttpStatus.BAD_REQUEST);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			
+			String errorMessage = "Internal server error";
+			responseEntity = new ResponseEntity<String>(errorMessage, HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+		
+		return responseEntity;
+	}
+	
+	@PostMapping("/mark/add")
+	public ResponseEntity<Object> addMark(
 			@RequestParam(value = "mark") String mark,
 			@RequestParam(value = "description") String description,
 			@RequestParam(value = "weight") String weight,
@@ -81,8 +125,8 @@ public class MarksController {
 		return responseEntity;
 	}
 	
-	@PatchMapping("/mark")
-	public ResponseEntity<Object> mark(
+	@PatchMapping("/mark/update")
+	public ResponseEntity<Object> updateMark(
 			@RequestParam(value = "idMark") String idMark,
 			@RequestParam(value = "mark") String mark,
 			@RequestParam(value = "description") String description,
@@ -112,8 +156,8 @@ public class MarksController {
 		return responseEntity;
 	}
 	
-	@DeleteMapping("/mark")
-	public ResponseEntity<Object> mark(@RequestParam(value = "idMark") String idMark) {
+	@DeleteMapping("/mark/delete")
+	public ResponseEntity<Object> deleteMark(@RequestParam(value = "idMark") String idMark) {
 		ResponseEntity responseEntity;
 		
 		try {

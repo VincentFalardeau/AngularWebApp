@@ -53,6 +53,38 @@ public class SchoolDb {
 		return query;
 	}
 	
+	private String getMarkQueryExtendedView(int idMark) { 
+		
+		String query = "select \n" + 
+			"m.idMark as idMark, m.idClass as idClass, m.idCategory as idCategory, \n" + 
+			"m.description as markDescription, m.mark as mark, m.weight as weight, \n" + 
+			"ca.description as categoryDescription,\n" + 
+			"cl.code as classCode, cl.semester as semester, cl.description as classDescription, cl.credits as classCredits\n" + 
+			"from Mark m \n" + 
+			"inner join Category ca on ca.idCategory = m.idCategory\n" + 
+			"inner join Class cl on cl.idClass = m.idClass\n" +
+			"where idMark = " + idMark;
+
+		//String filename = "sql/query2.sql";
+		//String query = mResourcesManager.getFileContent(filename, semester);
+		
+		return query;
+	}
+	
+	private String getMarksQuery() { 
+		
+		String query = "select \n" + 
+			"m.idMark as idMark, m.idClass as idClass, m.idCategory as idCategory, \n" + 
+			"m.description as markDescription, m.mark as mark, m.weight as weight, \n" + 
+			"ca.description as categoryDescription,\n" + 
+			"cl.code as classCode, cl.semester as semester, cl.description as classDescription, cl.credits as classCredits\n" + 
+			"from Mark m \n" + 
+			"inner join Category ca on ca.idCategory = m.idCategory\n" + 
+			"inner join Class cl on cl.idClass = m.idClass";
+		
+		return query;
+	}
+	
 	private String getMarkQuery(int id) {
 		String query = "select * from Mark where idMark = " + id;
 		return query;
@@ -70,13 +102,40 @@ public class SchoolDb {
 	
 	//Gives a list of mark for a semester.
 	public ArrayList<Mark> getMarks(int semester) throws SQLException, IOException{
-		ArrayList<Mark> marks = new ArrayList<Mark>();
 		
 		Connection connection = getConnection();		
 		Statement st = connection.createStatement();
 		ResultSet rs = st.executeQuery(this.getMarksQuery(semester));
 		
-		//For every fetched row
+		return marksFrom(rs);
+		
+	}
+	
+	//Gives a list of all the marks.
+	public ArrayList<Mark> getMarks() throws SQLException, IOException{
+			
+		Connection connection = getConnection();		
+		Statement st = connection.createStatement();
+		ResultSet rs = st.executeQuery(this.getMarksQuery());
+			
+		return marksFrom(rs);
+			
+	}
+		
+	//Gives a mark.
+	public ArrayList<Mark> getMark(int idMark) throws SQLException, IOException{
+					
+		Connection connection = getConnection();		
+		Statement st = connection.createStatement();
+		ResultSet rs = st.executeQuery(this.getMarkQueryExtendedView(idMark));
+					
+		return marksFrom(rs);
+					
+	}
+	
+	private ArrayList<Mark> marksFrom(ResultSet rs) throws SQLException{
+		ArrayList<Mark> marks = new ArrayList<Mark>();
+		
 		while(rs.next()) {
 			
 			int idMark = rs.getInt(1);
@@ -90,19 +149,17 @@ public class SchoolDb {
 			String categoryDescription = rs.getString(7);
 			
 			String classCode = rs.getString(8);
-			semester = rs.getInt(9);
+			int semester = rs.getInt(9);
 			String classDescription = rs.getString(10);
 			float classCredits = rs.getFloat(11);
 			
-			//Create data objects
 			Category categoryObj = new Category(categoryId, categoryDescription);
 			Course courseObj = new Course(idClass, classCode, semester, classDescription, classCredits);
 			Mark markObj = new Mark(idMark, markDescription, mark, weight, courseObj, categoryObj);
 			
-			//Add the mark data object to the array
 			marks.add(markObj);
 		}
-		
+
 		return marks;
 	}
 	
@@ -180,3 +237,5 @@ public class SchoolDb {
 		return rs.next() != false;
 	}
 }
+
+
