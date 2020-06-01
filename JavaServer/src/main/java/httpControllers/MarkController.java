@@ -18,7 +18,7 @@ import exceptions.ParameterException;
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
-public class MarksController {
+public class MarkController {
 	
 	//Constants
 	//TODO: Look for a way to put them in a config file, with something like Spring JDBC.
@@ -135,7 +135,7 @@ public class MarksController {
 		} catch (ParameterException pe) {
 			pe.printStackTrace();
 			//ParameterExceptions will occur when idCategory and/or idCourse refer to nothing in the database.
-			responseEntity = generateBadRequest(pe.getErrorMessage());
+			responseEntity = generateBadRequest(pe.getGenericErrorMessage());
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -168,7 +168,7 @@ public class MarksController {
 		} catch (ParameterException pe) {
 			pe.printStackTrace();
 			//ParameterExceptions will occur when idCategory and/or idCourse refer to nothing in the database.
-			responseEntity = generateBadRequest(pe.getErrorMessage());
+			responseEntity = generateBadRequest(pe.getGenericErrorMessage());
 			
 		} catch (Exception e) {
 			e.printStackTrace();

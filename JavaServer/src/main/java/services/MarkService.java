@@ -44,7 +44,7 @@ public class MarkService {
 			if(!mSchoolDb.categoryExists(idCategory) || !mSchoolDb.courseExists(idCourse)) {
 				
 				//If it is the case, throw a parameter exception.
-				throw new ParameterException("Invalid parameter", se);
+				throw new ParameterException("ParameterException: idCategory or idCourse not refering to anything in the database.", se);
 			}
 			//Otherwise, throw the SQLException.
 			throw se;
@@ -63,7 +63,7 @@ public class MarkService {
 			if(!mSchoolDb.categoryExists(idCategory) || !mSchoolDb.courseExists(idCourse)) {
 				
 				//If it is the case, throw a parameter exception.
-				throw new ParameterException("Invalid parameter", se);
+				throw new ParameterException("ParameterException: idCategory or idCourse not refering to anything in the database.", se);
 			}
 			//Otherwise, throw the SQLException.
 			throw se;
