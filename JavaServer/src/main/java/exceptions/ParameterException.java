@@ -1,36 +1,23 @@
 package exceptions;
 
-import dataObjects.ParameterExceptionDataObject;
-import dataObjects.ParameterFormatExceptionDataObject;
-import dataObjects.ParameterExceptionDataObject;
-
 public class ParameterException extends Exception{
 	
+	//Exception's error message.
 	private String mErrorMessage;
-	private String mParameterKey;
 	
+	//Constructor.
 	public ParameterException(String errorMessage, Throwable err) {
-	    super(errorMessage, err);
-	    mErrorMessage = errorMessage;
-	    mParameterKey = "";
+		super(errorMessage, err);
+	    this.setErrorMessage(errorMessage);
 	}
-	
-	public ParameterException(String errorMessage, Throwable err, String parameterKey) {
-	    super(errorMessage, err);
-	    mErrorMessage = errorMessage;
-	    mParameterKey = parameterKey;
-	}
-	
+
+	//Gives the exception's error message
 	public String getErrorMessage() {
 		return mErrorMessage;
 	}
-	
-	public String getParameterKey() {
-		return mParameterKey;
-	}
-	
-	public ParameterExceptionDataObject toParameterExceptionDataObject() {
-		return new ParameterExceptionDataObject(getErrorMessage(), getParameterKey());
-	}
 
+	//Sets the exception's error message.
+	public void setErrorMessage(String mMessage) {
+		this.mErrorMessage = mMessage;
+	}
 }

@@ -12,170 +12,190 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import services.MarkServices;
+import services.MarkService;
 import dataObjects.*;
-import exceptions.ParameterFormatException;
 import exceptions.ParameterException;
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 public class MarksController {
 	
+	//Constants
+	//TODO: Look for a way to put them in a config file, with something like Spring JDBC.
+	private final String INTERNAL_SERVER_ERROR_MESSSAGE = "Internal server error";
+	private final String OK_MESSAGE = "Success";
+	
+	//Generates an Internal Server Error ResponseEntity.
+	private ResponseEntity<String> generateInternalServerError() {
+		return new ResponseEntity<String>(INTERNAL_SERVER_ERROR_MESSSAGE, HttpStatus.INTERNAL_SERVER_ERROR);
+	}
+	
+	//Generates a Bad Request ResponseEntity containing the specified string.
+	private ResponseEntity<String> generateBadRequest(String message){
+		return new ResponseEntity<String>(message, HttpStatus.BAD_REQUEST);
+	}
+	
+	//Generates an OK ResponseEntity.
+	private ResponseEntity<String> generateOK(){
+		return new ResponseEntity<String>(OK_MESSAGE, HttpStatus.OK);
+	}
+	
+	//Generates an OK ResponseEntity containing the specified array of mark.
+	private ResponseEntity<ArrayList<Mark>> generateOK(ArrayList<Mark> marks){
+		return new ResponseEntity<ArrayList<Mark>>(marks, HttpStatus.OK);
+	}
+	
+	//Generates an OK ResponseEntity containing the specified mark.
+	private ResponseEntity<Mark> generateOK(Mark mark){
+		return new ResponseEntity<Mark>(mark, HttpStatus.OK);
+	}
+	
+	//Gives all the marks.
 	@GetMapping("/marks/all")
-	public ResponseEntity<Object> marks() {
-		ResponseEntity responseEntity;
-		
+	public ResponseEntity<?> marks() {
+		ResponseEntity<?> responseEntity;
 		try {
-			MarkServices markServices = new MarkServices();
-			ArrayList<Mark> marks = markServices.getMarks();
+			//Retrieve the marks.
+			MarkService markService = new MarkService();
+			ArrayList<Mark> marks = markService.getMarks();
 			
-			responseEntity = new ResponseEntity<ArrayList<Mark>>(marks, HttpStatus.OK);
+			//Generate OK response with the marks.
+			responseEntity = generateOK(marks);
 			
 		} catch (Exception e) {
 			e.printStackTrace();
-			
-			String errorMessage = "Internal server error";
-			responseEntity = new ResponseEntity<String>(errorMessage, HttpStatus.INTERNAL_SERVER_ERROR);
+			//Internal server error if exception thrown.
+			responseEntity = generateInternalServerError();
 		}
-		
 		return responseEntity;
 	}
 	
+	//Gives all the marks for a specified semester.
 	@GetMapping("/marks")
-	public ResponseEntity<Object> marks(@RequestParam(value = "semester") String semester) {
-		ResponseEntity responseEntity;
+	public ResponseEntity<?> marks(@RequestParam(value = "semester") int semester) {
+		ResponseEntity<?> responseEntity;
 		
 		try {
-			MarkServices markServices = new MarkServices();
-			ArrayList<Mark> marks = markServices.getMarks(semester);
+			//Retrieve the marks.
+			MarkService markService = new MarkService();
+			ArrayList<Mark> marks = markService.getMarks(semester);
 			
-			responseEntity = new ResponseEntity<ArrayList<Mark>>(marks, HttpStatus.OK);
-			
-		} catch (ParameterFormatException pfe) {
-			pfe.printStackTrace();
-			
-			responseEntity = new ResponseEntity<ParameterFormatExceptionDataObject>(pfe.toParameterFormatExceptionDataObject(), HttpStatus.BAD_REQUEST);
+			//Generate OK response with the marks.
+			responseEntity = generateOK(marks);
 			
 		} catch (Exception e) {
 			e.printStackTrace();
-			
-			String errorMessage = "Internal server error";
-			responseEntity = new ResponseEntity<String>(errorMessage, HttpStatus.INTERNAL_SERVER_ERROR);
+			//Internal server error if exception thrown.
+			responseEntity = generateInternalServerError();
 		}
 		
 		return responseEntity;
 	}
 	
+	//Gives the mark having the specified id.
 	@GetMapping("/mark")
-	public ResponseEntity<Object> mark(@RequestParam(value = "idMark") String idMark) {
-		ResponseEntity responseEntity;
+	public ResponseEntity<?> mark(@RequestParam(value = "idMark") int idMark) {
+		ResponseEntity<?> responseEntity;
 		
 		try {
-			MarkServices markServices = new MarkServices();
-			ArrayList<Mark> marks = markServices.getMark(idMark);
+			//Retrieve the mark.
+			MarkService markService = new MarkService();
+			Mark mark = markService.getMark(idMark);
 			
-			responseEntity = new ResponseEntity<ArrayList<Mark>>(marks, HttpStatus.OK);
-		} catch (ParameterFormatException pfe) {
-			pfe.printStackTrace();
-			
-			responseEntity = new ResponseEntity<ParameterFormatExceptionDataObject>(pfe.toParameterFormatExceptionDataObject(), HttpStatus.BAD_REQUEST);
-			
+			//Generate OK response with the mark.
+			responseEntity = generateOK(mark);
+
 		} catch (Exception e) {
 			e.printStackTrace();
-			
-			String errorMessage = "Internal server error";
-			responseEntity = new ResponseEntity<String>(errorMessage, HttpStatus.INTERNAL_SERVER_ERROR);
+			//Internal server error if exception thrown.
+			responseEntity = generateInternalServerError();
 		}
 		
 		return responseEntity;
 	}
 	
-	@PostMapping("/mark/add")
-	public ResponseEntity<Object> addMark(
-			@RequestParam(value = "mark") String mark,
+	//Adds a mark in the database.
+	@PostMapping("/mark")
+	public ResponseEntity<?> addMark(
+			@RequestParam(value = "mark") float mark,
 			@RequestParam(value = "description") String description,
-			@RequestParam(value = "weight") String weight,
-			@RequestParam(value = "idCategory") String idCategory,
-			@RequestParam(value = "idCourse") String idCourse) {
-		ResponseEntity responseEntity;
+			@RequestParam(value = "weight") float weight,
+			@RequestParam(value = "idCategory") int idCategory,
+			@RequestParam(value = "idCourse") int idCourse) {
+		ResponseEntity<?> responseEntity;
 		
 		try {
-			MarkServices markServices = new MarkServices();
-			markServices.addMark(mark, description, weight, idCategory, idCourse);
+			//Add the mark.
+			MarkService markService = new MarkService();
+			markService.addMark(mark, description, weight, idCategory, idCourse);
 			
-			responseEntity = new ResponseEntity<String>("Success", HttpStatus.OK);
-			
-		} catch (ParameterFormatException pfe) {
-			pfe.printStackTrace();
-			
-			responseEntity = new ResponseEntity<ParameterFormatExceptionDataObject>(pfe.toParameterFormatExceptionDataObject(), HttpStatus.BAD_REQUEST);
+			//Generate OK response.
+			responseEntity = generateOK();
 			
 		} catch (ParameterException pe) {
 			pe.printStackTrace();
-			
-			responseEntity = new ResponseEntity<ParameterExceptionDataObject>(pe.toParameterExceptionDataObject(), HttpStatus.BAD_REQUEST);
+			//ParameterExceptions will occur when idCategory and/or idCourse refer to nothing in the database.
+			responseEntity = generateBadRequest(pe.getErrorMessage());
 			
 		} catch (Exception e) {
 			e.printStackTrace();
-			
-			String errorMessage = "Internal server error";
-			responseEntity = new ResponseEntity<String>(errorMessage, HttpStatus.INTERNAL_SERVER_ERROR);
+			//Internal server error if any other exception thrown.
+			responseEntity = generateInternalServerError();
 		}
 		
 		return responseEntity;
 	}
 	
-	@PatchMapping("/mark/update")
-	public ResponseEntity<Object> updateMark(
-			@RequestParam(value = "idMark") String idMark,
-			@RequestParam(value = "mark") String mark,
+	//Updates a mark.
+	@PatchMapping("/mark")
+	public ResponseEntity<?> updateMark(
+			@RequestParam(value = "idMark") int idMark,
+			@RequestParam(value = "mark") float mark,
 			@RequestParam(value = "description") String description,
-			@RequestParam(value = "weight") String weight,
-			@RequestParam(value = "idCategory") String idCategory,
-			@RequestParam(value = "idCourse") String idCourse) {
-		ResponseEntity responseEntity;
+			@RequestParam(value = "weight") float weight,
+			@RequestParam(value = "idCategory") int idCategory,
+			@RequestParam(value = "idCourse") int idCourse) {
+		ResponseEntity<?> responseEntity;
 		
 		try {
-			MarkServices markServices = new MarkServices();
-			markServices.updateMark(idMark, mark, description, weight, idCategory, idCourse);
+			//Update the mark.
+			MarkService markService = new MarkService();
+			markService.updateMark(idMark, mark, description, weight, idCategory, idCourse);
 			
-			responseEntity = new ResponseEntity<String>("Success", HttpStatus.OK);
+			//Generate OK response.
+			responseEntity = generateOK();
 			
-		} catch (ParameterFormatException pfe) {
-			pfe.printStackTrace();
-			
-			responseEntity = new ResponseEntity<ParameterFormatExceptionDataObject>(pfe.toParameterFormatExceptionDataObject(), HttpStatus.BAD_REQUEST);
+		} catch (ParameterException pe) {
+			pe.printStackTrace();
+			//ParameterExceptions will occur when idCategory and/or idCourse refer to nothing in the database.
+			responseEntity = generateBadRequest(pe.getErrorMessage());
 			
 		} catch (Exception e) {
 			e.printStackTrace();
-			
-			String errorMessage = "Internal server error";
-			responseEntity = new ResponseEntity<String>(errorMessage, HttpStatus.INTERNAL_SERVER_ERROR);
+			//Internal server error if any other exception thrown.
+			responseEntity = generateInternalServerError();
 		}
 		
 		return responseEntity;
 	}
 	
-	@DeleteMapping("/mark/delete")
-	public ResponseEntity<Object> deleteMark(@RequestParam(value = "idMark") String idMark) {
-		ResponseEntity responseEntity;
+	//Deletes a mark.
+	@DeleteMapping("/mark")
+	public ResponseEntity<?> deleteMark(@RequestParam(value = "idMark") int idMark) {
+		ResponseEntity<?> responseEntity;
 		
 		try {
-			MarkServices markServices = new MarkServices();
-			markServices.deleteMark(idMark);
+			//Delete the mark.
+			MarkService markService = new MarkService();
+			markService.deleteMark(idMark);
 			
-			responseEntity = new ResponseEntity<String>("Success", HttpStatus.OK);
-			
-		} catch (ParameterFormatException pfe) {
-			pfe.printStackTrace();
-			
-			responseEntity = new ResponseEntity<ParameterFormatExceptionDataObject>(pfe.toParameterFormatExceptionDataObject(), HttpStatus.BAD_REQUEST);
+			//Generate OK response.
+			responseEntity = generateOK();
 			
 		} catch (Exception e) {
 			e.printStackTrace();
-			
-			String errorMessage = "Internal server error";
-			responseEntity = new ResponseEntity<String>(errorMessage, HttpStatus.INTERNAL_SERVER_ERROR);
+			//Internal server error if exception thrown.
+			responseEntity = generateInternalServerError();
 		}
 		
 		return responseEntity;

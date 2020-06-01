@@ -1,6 +1,7 @@
 package dataObjects;
 
 public class Mark {
+	
 	private int id;
 	private String description;
 	private float mark;

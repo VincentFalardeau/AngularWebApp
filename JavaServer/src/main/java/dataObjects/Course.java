@@ -1,6 +1,7 @@
 package dataObjects;
 
 public class Course {
+	
 	private int id;
 	private String code;
 	private int semester;
