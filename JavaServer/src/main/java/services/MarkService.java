@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 import dataObjects.Mark;
 import exceptions.ParameterException;
-import persistance.SchoolDb;
+import persistence.SchoolDb;
 
 //Provides the service for marks
 public class MarkService {
@@ -19,22 +19,22 @@ public class MarkService {
 	}
 	
 	//Gives all the marks.
-	public ArrayList<Mark> getMarks() throws SQLException, IOException{
+	public ArrayList<Mark> getMarks() throws SQLException, IOException, ClassNotFoundException{
 		return mSchoolDb.getMarks();
 	}
 
 	//Gives the marks for a semester.
-	public ArrayList<Mark> getMarks(int semester) throws NumberFormatException, SQLException, IOException{
+	public ArrayList<Mark> getMarks(int semester) throws NumberFormatException, SQLException, IOException, ClassNotFoundException{
 		return mSchoolDb.getMarks(semester);
 	}
 
 	//Gives the mark having the specified id.
-	public Mark getMark(int idMark) throws NumberFormatException, SQLException, IOException{
+	public Mark getMark(int idMark) throws NumberFormatException, SQLException, IOException, ClassNotFoundException{
 		return mSchoolDb.getMark(idMark);
 	}
 	
 	//Adds a mark.
-	public void addMark(float mark, String description, float weight, int idCategory, int idCourse) throws SQLException, ParameterException {
+	public void addMark(float mark, String description, float weight, int idCategory, int idCourse) throws SQLException, ParameterException, ClassNotFoundException {
 		try {
 			mSchoolDb.addMark(mark, description, weight, idCategory, idCourse);
 			
@@ -52,7 +52,7 @@ public class MarkService {
 	}
 	
 	//Updates a mark.
-	public void updateMark(int idMark,float mark, String description, float weight, int idCategory, int idCourse) throws SQLException, ParameterException {
+	public void updateMark(int idMark,float mark, String description, float weight, int idCategory, int idCourse) throws SQLException, ParameterException, ClassNotFoundException {
 		
 		try {
 			mSchoolDb.updateMark(idMark, mark, description, weight, idCategory, idCourse);
@@ -73,7 +73,7 @@ public class MarkService {
 	}
 
 	//Deletes a mark.
-	public void deleteMark(int idMark) throws SQLException {
+	public void deleteMark(int idMark) throws SQLException, ClassNotFoundException {
 		mSchoolDb.deleteMark(idMark);
 	}
 

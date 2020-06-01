@@ -1,32 +1,32 @@
-package persistance;
+package persistence;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
 //Singleton class that provides a connection to the database.
-public class MySqlConnection{
+public class MySqlConnectionSingleton{
 	//The instance.
-	private static MySqlConnection instance = null; 
+	private static MySqlConnectionSingleton instance = null; 
 	//The database connection.
 	private Connection mConnection;
 	    
 	//Gives the instance.
-	public static MySqlConnection getInstance() {
+	public static MySqlConnectionSingleton getInstance() {
 		return instance;
 	}
 	    
 	//Gives the instance, initializes if not initialized.
 	//Takes the informations required by the database connection: user, password and url.
-	public static MySqlConnection getInstance(String user, String pwd, String url) throws ClassNotFoundException, SQLException {
+	public static MySqlConnectionSingleton getInstance(String user, String pwd, String url) throws ClassNotFoundException, SQLException {
 		if(instance == null && user != null && pwd != null && url != null) {
-	    	instance = new MySqlConnection(user, pwd, url);
+	    	instance = new MySqlConnectionSingleton(user, pwd, url);
 	    }
 	    return instance;
 	}
 	    
 	//Private constructor, initiates the connection to the database.
-	private MySqlConnection(String user, String pwd, String url) throws ClassNotFoundException, SQLException { 
+	private MySqlConnectionSingleton(String user, String pwd, String url) throws ClassNotFoundException, SQLException { 
 	    connect(user, pwd, url);
 	}
 	     
@@ -37,7 +37,7 @@ public class MySqlConnection{
 		mConnection = DriverManager.getConnection(url,user,pwd);
 	}	
 		
-	//Dives the database connection.
+	//Gives the database connection.
 	public Connection getConnection() { 
 		return mConnection;
 	}

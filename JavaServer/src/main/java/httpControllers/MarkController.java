@@ -20,6 +20,9 @@ import exceptions.ParameterException;
 @RestController
 public class MarkController {
 	
+	//Exception: log severe
+	//Quand je connecte, logger
+	
 	//Constants
 	//TODO: Look for a way to put them in a config file, with something like Spring JDBC.
 	private final String INTERNAL_SERVER_ERROR_MESSSAGE = "Internal server error";
