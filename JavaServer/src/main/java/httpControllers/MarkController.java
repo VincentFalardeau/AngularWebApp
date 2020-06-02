@@ -1,7 +1,9 @@
 package httpControllers;
 
 import java.util.ArrayList;
+import java.util.logging.Logger;
 
+import org.apache.tomcat.util.ExceptionUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -22,9 +24,10 @@ public class MarkController {
 	
 	//Exception: log severe
 	//Quand je connecte, logger
+	private final static Logger LOGGER = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 	
 	//Constants
-	//TODO: Look for a way to put them in a config file, with something like Spring JDBC.
+	//TODO: Look for a way to put them in a config file, with something like MyBatis.
 	private final String INTERNAL_SERVER_ERROR_MESSSAGE = "Internal server error";
 	private final String OK_MESSAGE = "Success";
 	
@@ -172,11 +175,13 @@ public class MarkController {
 			pe.printStackTrace();
 			//ParameterExceptions will occur when idCategory and/or idCourse refer to nothing in the database.
 			responseEntity = generateBadRequest(pe.getGenericErrorMessage());
+			LOGGER.severe("Erreur de paramètre");
 			
 		} catch (Exception e) {
 			e.printStackTrace();
 			//Internal server error if any other exception thrown.
 			responseEntity = generateInternalServerError();
+			LOGGER.severe("Erreur interne");
 		}
 		
 		return responseEntity;
