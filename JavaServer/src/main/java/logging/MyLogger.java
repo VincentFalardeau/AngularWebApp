@@ -28,15 +28,4 @@ public class MyLogger {
         fileTxt.setFormatter(formatterTxt);
         logger.addHandler(fileTxt);
     }
-    
-    static public String getStackString(StackTraceElement[] elements) {
-    	String stackString = "";
-    	for (int i = 1; i < elements.length; i++) {
-    	     StackTraceElement s = elements[i];
-    	     stackString += "\tat " + s.getClassName() + "." + s.getMethodName() + "(" + s.getFileName() + ":" + s.getLineNumber() + ")";
-    	     //System.out.println("\tat " + s.getClassName() + "." + s.getMethodName() + "(" + s.getFileName() + ":" + s.getLineNumber() + ")");
-    	}
-    	return stackString;
-    	
-    }
 }

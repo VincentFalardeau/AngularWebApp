@@ -1,9 +1,11 @@
-Jun 02, 2020 8:11:09 PM httpControllers.MarkController marks
-INFO: GET - /marks?semester=2
-Jun 02, 2020 8:11:14 PM httpControllers.MarkController updateMark
+Jun 03, 2020 1:02:59 PM httpControllers.MarkController updateMark
+INFO: PATCH - /mark?idMark=63&mark=79.0&description=Note finaledsff&weight=35.5&idCategory=255&idCourse=6
+Jun 03, 2020 1:03:00 PM services.MarkService updateMark
+FINE: updateMark(63, 79.0, Note finaledsff, 35.5, 255, 6)
+Jun 03, 2020 1:03:00 PM httpControllers.MarkController updateMark
 SEVERE: exceptions.ParameterException: ParameterException: idCategory or idCourse not refering to anything in the database.
-	at services.MarkService.updateMark(MarkService.java:66)
-	at httpControllers.MarkController.updateMark(MarkController.java:202)
+	at services.MarkService.updateMark(MarkService.java:83)
+	at httpControllers.MarkController.updateMark(MarkController.java:222)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -68,6 +70,6 @@ Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationExce
 	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:2113)
 	at com.mysql.jdbc.PreparedStatement.execute(PreparedStatement.java:1364)
 	at persistence.SchoolDb.updateMark(SchoolDb.java:295)
-	at services.MarkService.updateMark(MarkService.java:58)
+	at services.MarkService.updateMark(MarkService.java:75)
 	... 49 more
 

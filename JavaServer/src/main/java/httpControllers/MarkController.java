@@ -62,10 +62,25 @@ public class MarkController {
 		return new ResponseEntity<ArrayList<Mark>>(marks, HttpStatus.OK);
 	}
 	
+//	//Gives the given array of stack trace element as a string which can be logged.
+//	private String getStackString(StackTraceElement[] elements) {
+//    	String stackString = "";
+//    	for (int i = 1; i < elements.length; i++) {
+//    	     StackTraceElement s = elements[i];
+//    	     stackString += "\tat " + s.getClassName() + "." + s.getMethodName() + "(" + s.getFileName() + ":" + s.getLineNumber() + ")";
+//    	}
+//    	return stackString;
+//    	
+//    }
+	
 	//Gives all the marks.
 	@GetMapping("/marks/all")
 	public ResponseEntity<?> marks() {
 		ResponseEntity<?> responseEntity;
+		
+		//Log current http call
+		LOGGER.info("GET - /marks/all");
+		
 		try {
 			//Retrieve the marks.
 			MarkService markService = new MarkService();
@@ -73,9 +88,6 @@ public class MarkController {
 			
 			//Generate OK response with the marks.
 			responseEntity = generateOK(marks);
-			
-			//Log current http call
-			LOGGER.info("GET - /marks/all");
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -94,6 +106,9 @@ public class MarkController {
 	public ResponseEntity<?> marks(@RequestParam(value = "semester") int semester) {
 		ResponseEntity<?> responseEntity;
 		
+		//Log current http call
+		LOGGER.info("GET - /marks?semester=" + semester);
+		
 		try {
 			//Retrieve the marks.
 			MarkService markService = new MarkService();
@@ -101,9 +116,6 @@ public class MarkController {
 			
 			//Generate OK response with the marks.
 			responseEntity = generateOK(marks);
-			
-			//Log current http call
-			LOGGER.info("GET - /marks?semester=" + semester);
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -123,6 +135,9 @@ public class MarkController {
 	public ResponseEntity<?> mark(@RequestParam(value = "idMark") int idMark) {
 		ResponseEntity<?> responseEntity;
 		
+		//Log current http call
+		LOGGER.info("GET - /mark?idMark=" + idMark);
+		
 		try {
 			//Retrieve the mark.
 			MarkService markService = new MarkService();
@@ -130,9 +145,6 @@ public class MarkController {
 			
 			//Generate OK response with the mark.
 			responseEntity = generateOK(mark);
-			
-			//Log current http call
-			LOGGER.info("GET - /mark?idMark=" + idMark);
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -157,6 +169,9 @@ public class MarkController {
 			@RequestParam(value = "idCourse") int idCourse) {
 		ResponseEntity<?> responseEntity;
 		
+		//Log current http call
+		LOGGER.info("POST - /mark?mark="+mark+"&description="+description+"&weight="+weight+"&idCategory="+idCategory+"&idCourse="+idCourse);
+		
 		try {
 			//Add the mark.
 			MarkService markService = new MarkService();
@@ -164,9 +179,6 @@ public class MarkController {
 			
 			//Generate OK response.
 			responseEntity = generateOK();
-			
-			//Log current http call
-			//LOGGER.info("POST - /mark?mark="+mark+"&description"+description+"");
 			
 		} catch (ParameterException pe) {
 			pe.printStackTrace();
@@ -201,6 +213,9 @@ public class MarkController {
 			@RequestParam(value = "idCourse") int idCourse) {
 		ResponseEntity<?> responseEntity;
 		
+		//Log current http call
+		LOGGER.info("PATCH - /mark?idMark="+idMark+"&mark="+mark+"&description="+description+"&weight="+weight+"&idCategory="+idCategory+"&idCourse="+idCourse);
+		
 		try {
 			//Update the mark.
 			MarkService markService = new MarkService();
@@ -208,9 +223,6 @@ public class MarkController {
 			
 			//Generate OK response.
 			responseEntity = generateOK();
-			
-			//Log current http call
-			//LOGGER.info("POST - /mark?mark="+mark+"&description"+description+"");
 			
 		} catch (ParameterException pe) {
 			pe.printStackTrace();
@@ -238,6 +250,9 @@ public class MarkController {
 	@DeleteMapping("/mark")
 	public ResponseEntity<?> deleteMark(@RequestParam(value = "idMark") int idMark) {
 		ResponseEntity<?> responseEntity;
+		
+		//Log current http call
+		LOGGER.info("DELETE - /mark?idMark="+idMark);
 		
 		try {
 			//Delete the mark.
