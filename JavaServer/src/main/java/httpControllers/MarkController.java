@@ -14,22 +14,28 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.google.common.base.Throwables;
+
 import services.MarkService;
 import dataObjects.*;
 import exceptions.ParameterException;
+import logging.MyLogger;
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 public class MarkController {
 	
-	//Exception: log severe
-	//Quand je connecte, logger
-	private final static Logger LOGGER = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+	//TODO:
+	//SEVERE: pour les exceptions
+	//INFO: pour les calls http
+	//FINE: getMarks(1) // on indique les méthodes appelées au début de chacune d'entres elles avec les paramètres qui leur sont passés.
 	
 	//Constants
-	//TODO: Look for a way to put them in a config file, with something like MyBatis.
 	private final String INTERNAL_SERVER_ERROR_MESSSAGE = "Internal server error";
 	private final String OK_MESSAGE = "Success";
+	
+	//The logger
+	private final static Logger LOGGER = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 	
 	//Generates an Internal Server Error ResponseEntity.
 	private ResponseEntity<String> generateInternalServerError() {
@@ -46,14 +52,14 @@ public class MarkController {
 		return new ResponseEntity<String>(OK_MESSAGE, HttpStatus.OK);
 	}
 	
-	//Generates an OK ResponseEntity containing the specified array of mark.
-	private ResponseEntity<ArrayList<Mark>> generateOK(ArrayList<Mark> marks){
-		return new ResponseEntity<ArrayList<Mark>>(marks, HttpStatus.OK);
-	}
-	
 	//Generates an OK ResponseEntity containing the specified mark.
 	private ResponseEntity<Mark> generateOK(Mark mark){
 		return new ResponseEntity<Mark>(mark, HttpStatus.OK);
+	}
+	
+	//Generates an OK ResponseEntity containing the specified array of mark.
+	private ResponseEntity<ArrayList<Mark>> generateOK(ArrayList<Mark> marks){
+		return new ResponseEntity<ArrayList<Mark>>(marks, HttpStatus.OK);
 	}
 	
 	//Gives all the marks.
@@ -68,10 +74,17 @@ public class MarkController {
 			//Generate OK response with the marks.
 			responseEntity = generateOK(marks);
 			
+			//Log current http call
+			LOGGER.info("GET - /marks/all");
+			
 		} catch (Exception e) {
 			e.printStackTrace();
+			
 			//Internal server error if exception thrown.
 			responseEntity = generateInternalServerError();
+			
+			//Log the error
+			LOGGER.severe(Throwables.getStackTraceAsString(e));
 		}
 		return responseEntity;
 	}
@@ -89,10 +102,17 @@ public class MarkController {
 			//Generate OK response with the marks.
 			responseEntity = generateOK(marks);
 			
+			//Log current http call
+			LOGGER.info("GET - /marks?semester=" + semester);
+			
 		} catch (Exception e) {
 			e.printStackTrace();
+			
 			//Internal server error if exception thrown.
 			responseEntity = generateInternalServerError();
+			
+			//Log the error
+			LOGGER.severe(Throwables.getStackTraceAsString(e));
 		}
 		
 		return responseEntity;
@@ -110,11 +130,18 @@ public class MarkController {
 			
 			//Generate OK response with the mark.
 			responseEntity = generateOK(mark);
+			
+			//Log current http call
+			LOGGER.info("GET - /mark?idMark=" + idMark);
 
 		} catch (Exception e) {
 			e.printStackTrace();
+			
 			//Internal server error if exception thrown.
 			responseEntity = generateInternalServerError();
+			
+			//Log the error
+			LOGGER.severe(Throwables.getStackTraceAsString(e));
 		}
 		
 		return responseEntity;
@@ -138,15 +165,26 @@ public class MarkController {
 			//Generate OK response.
 			responseEntity = generateOK();
 			
+			//Log current http call
+			//LOGGER.info("POST - /mark?mark="+mark+"&description"+description+"");
+			
 		} catch (ParameterException pe) {
 			pe.printStackTrace();
+			
 			//ParameterExceptions will occur when idCategory and/or idCourse refer to nothing in the database.
 			responseEntity = generateBadRequest(pe.getGenericErrorMessage());
 			
+			//Log the error
+			LOGGER.severe(Throwables.getStackTraceAsString(pe));
+			
 		} catch (Exception e) {
 			e.printStackTrace();
+			
 			//Internal server error if any other exception thrown.
 			responseEntity = generateInternalServerError();
+			
+			//Log the error
+			LOGGER.severe(Throwables.getStackTraceAsString(e));
 		}
 		
 		return responseEntity;
@@ -171,17 +209,26 @@ public class MarkController {
 			//Generate OK response.
 			responseEntity = generateOK();
 			
+			//Log current http call
+			//LOGGER.info("POST - /mark?mark="+mark+"&description"+description+"");
+			
 		} catch (ParameterException pe) {
 			pe.printStackTrace();
+			
 			//ParameterExceptions will occur when idCategory and/or idCourse refer to nothing in the database.
 			responseEntity = generateBadRequest(pe.getGenericErrorMessage());
-			LOGGER.severe("Erreur de paramètre");
+			
+			//Log the error
+			LOGGER.severe(Throwables.getStackTraceAsString(pe));
 			
 		} catch (Exception e) {
 			e.printStackTrace();
+			
 			//Internal server error if any other exception thrown.
 			responseEntity = generateInternalServerError();
-			LOGGER.severe("Erreur interne");
+			
+			//Log the error
+			LOGGER.severe(Throwables.getStackTraceAsString(e));
 		}
 		
 		return responseEntity;
@@ -202,8 +249,12 @@ public class MarkController {
 			
 		} catch (Exception e) {
 			e.printStackTrace();
+			
 			//Internal server error if exception thrown.
 			responseEntity = generateInternalServerError();
+			
+			//Log the error
+			LOGGER.severe(Throwables.getStackTraceAsString(e));
 		}
 		
 		return responseEntity;
