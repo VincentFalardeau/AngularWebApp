@@ -1,8 +1,34 @@
-Jun 03, 2020 1:02:59 PM httpControllers.MarkController updateMark
+Jun 03, 2020 4:17:22 PM httpControllers.MarkController marks
+INFO: GET - /marks?semester=2
+Jun 03, 2020 4:17:22 PM persistence.MySqlConnection connect
+FINE: connect()
+Jun 03, 2020 4:17:22 PM services.MarkService getMarks
+FINE: getMarks(2)
+Jun 03, 2020 4:17:22 PM persistence.SchoolDb getMarks
+FINE: getMarks(2)
+Jun 03, 2020 4:17:22 PM persistence.MySqlConnection getConnection
+FINE: getConnection()
+Jun 03, 2020 4:17:22 PM persistence.SchoolDb getMarksQuery
+FINE: getMarksQuery(2)
+Jun 03, 2020 4:17:22 PM persistence.SchoolDb marksFrom
+FINE: marksFrom(com.mysql.jdbc.JDBC4ResultSet@2a2c3200)
+Jun 03, 2020 4:17:25 PM httpControllers.MarkController updateMark
 INFO: PATCH - /mark?idMark=63&mark=79.0&description=Note finaledsff&weight=35.5&idCategory=255&idCourse=6
-Jun 03, 2020 1:03:00 PM services.MarkService updateMark
+Jun 03, 2020 4:17:25 PM persistence.MySqlConnection connect
+FINE: connect()
+Jun 03, 2020 4:17:25 PM services.MarkService updateMark
 FINE: updateMark(63, 79.0, Note finaledsff, 35.5, 255, 6)
-Jun 03, 2020 1:03:00 PM httpControllers.MarkController updateMark
+Jun 03, 2020 4:17:25 PM persistence.SchoolDb updateMark
+FINE: updateMark(63, 79.0, Note finaledsff, 35.5, 255, 6)
+Jun 03, 2020 4:17:25 PM persistence.MySqlConnection getConnection
+FINE: getConnection()
+Jun 03, 2020 4:17:25 PM persistence.SchoolDb categoryExists
+FINE: categoryExists(255)
+Jun 03, 2020 4:17:25 PM persistence.MySqlConnection getConnection
+FINE: getConnection()
+Jun 03, 2020 4:17:25 PM persistence.SchoolDb getCategoryQuery
+FINE: getCategoryQuery(255)
+Jun 03, 2020 4:17:25 PM httpControllers.MarkController updateMark
 SEVERE: exceptions.ParameterException: ParameterException: idCategory or idCourse not refering to anything in the database.
 	at services.MarkService.updateMark(MarkService.java:83)
 	at httpControllers.MarkController.updateMark(MarkController.java:222)
@@ -69,7 +95,117 @@ Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationExce
 	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2568)
 	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:2113)
 	at com.mysql.jdbc.PreparedStatement.execute(PreparedStatement.java:1364)
-	at persistence.SchoolDb.updateMark(SchoolDb.java:295)
+	at persistence.SchoolDb.updateMark(SchoolDb.java:333)
 	at services.MarkService.updateMark(MarkService.java:75)
 	... 49 more
 
+Jun 03, 2020 4:17:30 PM httpControllers.MarkController updateMark
+INFO: PATCH - /mark?idMark=63&mark=79.0&description=Note finaledsff&weight=35.5&idCategory=3&idCourse=6
+Jun 03, 2020 4:17:30 PM persistence.MySqlConnection connect
+FINE: connect()
+Jun 03, 2020 4:17:30 PM services.MarkService updateMark
+FINE: updateMark(63, 79.0, Note finaledsff, 35.5, 3, 6)
+Jun 03, 2020 4:17:30 PM persistence.SchoolDb updateMark
+FINE: updateMark(63, 79.0, Note finaledsff, 35.5, 3, 6)
+Jun 03, 2020 4:17:30 PM persistence.MySqlConnection getConnection
+FINE: getConnection()
+Jun 03, 2020 4:17:34 PM httpControllers.MarkController marks
+INFO: GET - /marks/all
+Jun 03, 2020 4:17:34 PM persistence.MySqlConnection connect
+FINE: connect()
+Jun 03, 2020 4:17:34 PM services.MarkService getMarks
+FINE: getMarks()
+Jun 03, 2020 4:17:34 PM persistence.SchoolDb getMarks
+FINE: getMarks()
+Jun 03, 2020 4:17:34 PM persistence.MySqlConnection getConnection
+FINE: getConnection()
+Jun 03, 2020 4:17:34 PM persistence.SchoolDb getMarksQuery
+FINE: getMarksQuery()
+Jun 03, 2020 4:17:34 PM persistence.SchoolDb marksFrom
+FINE: marksFrom(com.mysql.jdbc.JDBC4ResultSet@1a5d9bbe)
+Jun 03, 2020 4:17:37 PM httpControllers.MarkController mark
+INFO: GET - /mark?idMark=64
+Jun 03, 2020 4:17:37 PM persistence.MySqlConnection connect
+FINE: connect()
+Jun 03, 2020 4:17:37 PM services.MarkService getMark
+FINE: getMark(64)
+Jun 03, 2020 4:17:37 PM persistence.SchoolDb getMark
+FINE: getMark(64)
+Jun 03, 2020 4:17:37 PM persistence.MySqlConnection getConnection
+FINE: getConnection()
+Jun 03, 2020 4:17:37 PM persistence.SchoolDb getMarkQuery
+FINE: getMarkQuery(64)
+Jun 03, 2020 4:17:37 PM persistence.SchoolDb marksFrom
+FINE: marksFrom(com.mysql.jdbc.JDBC4ResultSet@184e614c)
+Jun 03, 2020 4:17:42 PM httpControllers.MarkController mark
+INFO: GET - /mark?idMark=657657
+Jun 03, 2020 4:17:42 PM persistence.MySqlConnection connect
+FINE: connect()
+Jun 03, 2020 4:17:42 PM services.MarkService getMark
+FINE: getMark(657657)
+Jun 03, 2020 4:17:42 PM persistence.SchoolDb getMark
+FINE: getMark(657657)
+Jun 03, 2020 4:17:42 PM persistence.MySqlConnection getConnection
+FINE: getConnection()
+Jun 03, 2020 4:17:42 PM persistence.SchoolDb getMarkQuery
+FINE: getMarkQuery(657657)
+Jun 03, 2020 4:17:42 PM persistence.SchoolDb marksFrom
+FINE: marksFrom(com.mysql.jdbc.JDBC4ResultSet@3f2699e0)
+Jun 03, 2020 4:17:47 PM httpControllers.MarkController mark
+INFO: GET - /mark?idMark=64
+Jun 03, 2020 4:17:47 PM persistence.MySqlConnection connect
+FINE: connect()
+Jun 03, 2020 4:17:47 PM services.MarkService getMark
+FINE: getMark(64)
+Jun 03, 2020 4:17:47 PM persistence.SchoolDb getMark
+FINE: getMark(64)
+Jun 03, 2020 4:17:47 PM persistence.MySqlConnection getConnection
+FINE: getConnection()
+Jun 03, 2020 4:17:47 PM persistence.SchoolDb getMarkQuery
+FINE: getMarkQuery(64)
+Jun 03, 2020 4:17:47 PM persistence.SchoolDb marksFrom
+FINE: marksFrom(com.mysql.jdbc.JDBC4ResultSet@441c7e01)
+Jun 03, 2020 4:17:57 PM httpControllers.MarkController addMark
+INFO: POST - /mark?mark=99.0&description=Note finale&weight=35.5&idCategory=3&idCourse=6
+Jun 03, 2020 4:17:57 PM persistence.MySqlConnection connect
+FINE: connect()
+Jun 03, 2020 4:17:57 PM services.MarkService addMark
+FINE: addMark(99.0, Note finale, 35.5, 3, 6)
+Jun 03, 2020 4:17:57 PM persistence.SchoolDb addMark
+FINE: addMark(99.0, Note finale, 35.5, 3, 6)
+Jun 03, 2020 4:17:57 PM persistence.MySqlConnection getConnection
+FINE: getConnection()
+Jun 03, 2020 4:18:01 PM httpControllers.MarkController marks
+INFO: GET - /marks?semester=2
+Jun 03, 2020 4:18:01 PM persistence.MySqlConnection connect
+FINE: connect()
+Jun 03, 2020 4:18:01 PM services.MarkService getMarks
+FINE: getMarks(2)
+Jun 03, 2020 4:18:01 PM persistence.SchoolDb getMarks
+FINE: getMarks(2)
+Jun 03, 2020 4:18:01 PM persistence.MySqlConnection getConnection
+FINE: getConnection()
+Jun 03, 2020 4:18:01 PM persistence.SchoolDb getMarksQuery
+FINE: getMarksQuery(2)
+Jun 03, 2020 4:18:01 PM persistence.SchoolDb marksFrom
+FINE: marksFrom(com.mysql.jdbc.JDBC4ResultSet@4b132d82)
+Jun 03, 2020 4:18:09 PM httpControllers.MarkController deleteMark
+INFO: DELETE - /mark?idMark=67
+Jun 03, 2020 4:18:09 PM persistence.MySqlConnection connect
+FINE: connect()
+Jun 03, 2020 4:18:09 PM services.MarkService deleteMark
+FINE: deleteMark(67)
+Jun 03, 2020 4:18:09 PM persistence.SchoolDb deleteMark
+FINE: deleteMark(67)
+Jun 03, 2020 4:18:09 PM persistence.MySqlConnection getConnection
+FINE: getConnection()
+Jun 03, 2020 4:18:13 PM httpControllers.MarkController deleteMark
+INFO: DELETE - /mark?idMark=66
+Jun 03, 2020 4:18:13 PM persistence.MySqlConnection connect
+FINE: connect()
+Jun 03, 2020 4:18:13 PM services.MarkService deleteMark
+FINE: deleteMark(66)
+Jun 03, 2020 4:18:13 PM persistence.SchoolDb deleteMark
+FINE: deleteMark(66)
+Jun 03, 2020 4:18:13 PM persistence.MySqlConnection getConnection
+FINE: getConnection()

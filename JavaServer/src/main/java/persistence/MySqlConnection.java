@@ -11,7 +11,7 @@ import httpControllers.MarkController;
 public class MySqlConnection {
 	
 	//The logger
-	private final static Logger LOGGER = Logger.getLogger(MySqlConnection.class.getName());
+	private final static Logger LOGGER = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
 	//The database connection.
 	private Connection mConnection;
@@ -25,8 +25,6 @@ public class MySqlConnection {
 	//Constructor
 	public MySqlConnection(String user, String pwd, String url) throws ClassNotFoundException, SQLException{
 		
-		LOGGER.setLevel(Level.INFO);
-		
 		this.setUser(user);
 		this.setPwd(pwd);
 		this.setUrl(url);
@@ -35,6 +33,9 @@ public class MySqlConnection {
 	
 	//Gives the database connection, connects if not connected.
 	public Connection getConnection() throws ClassNotFoundException, SQLException {
+		
+		LOGGER.fine("getConnection()");
+		
 		if(mConnection == null || mConnection.isClosed()) {
 			connect();
 		}
@@ -42,9 +43,11 @@ public class MySqlConnection {
 	}
 	
 	private void connect() throws ClassNotFoundException, SQLException {
+		
+		LOGGER.fine("connect()");
+		
 		Class.forName("com.mysql.jdbc.Driver");
 		mConnection = DriverManager.getConnection(mUrl,mUser,mPwd);
-		 LOGGER.info("Connected to database");
 	}
 
 	public String getUser() {
