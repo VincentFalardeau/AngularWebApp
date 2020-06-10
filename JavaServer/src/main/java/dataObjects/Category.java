@@ -2,20 +2,20 @@ package dataObjects;
 
 public class Category {
 	
-	private int id;
+	private int idCategory;
 	private String description;
 	
-	public Category(int id, String description) {
-		this.setId(id);
+	public Category(int idCategory, String description) {
+		this.setIdCategory(idCategory);
 		this.setDescription(description);
 	}
 
-	public int getId() {
-		return id;
+	public int getIdCategory() {
+		return idCategory;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setIdCategory(int idCategory) {
+		this.idCategory = idCategory;
 	}
 
 	public String getDescription() {

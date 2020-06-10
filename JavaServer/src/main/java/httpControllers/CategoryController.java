@@ -40,7 +40,7 @@ public class CategoryController {
 			
 		} catch (Exception e) {
 			
-			e.printStackTrace();
+			//e.printStackTrace();
 			log.error(Throwables.getStackTraceAsString(e));
 			
 			responseEntity = responseEntityGenerator.generateInternalServerError();
