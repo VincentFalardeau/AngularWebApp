@@ -12,12 +12,12 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
-		try {
-            MyLogger.setup();
-        } catch (IOException e) {
-            e.printStackTrace();
-//            throw new RuntimeException("Problems with creating the log files");
-        }
+//		try {
+//            MyLogger.setup();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+////            throw new RuntimeException("Problems with creating the log files");
+//        }
 		
 		SpringApplication.run(Main.class, args);
 	}

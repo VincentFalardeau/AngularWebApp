@@ -12,7 +12,7 @@ import persistence.SchoolDb;
 //Provides the service for marks
 public class MarkService {
 	
-	private final static Logger LOGGER = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+	//private final static Logger LOGGER = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 	
 	private SchoolDb mSchoolDb;
 	
@@ -24,7 +24,7 @@ public class MarkService {
 	//Gives all the marks.
 	public ArrayList<Mark> getMarks() throws SQLException, IOException, ClassNotFoundException{
 		
-		LOGGER.fine("getMarks()");
+		//LOGGER.fine("getMarks()");
 		
 		return mSchoolDb.getMarks();
 	}
@@ -32,7 +32,7 @@ public class MarkService {
 	//Gives the marks for a semester.
 	public ArrayList<Mark> getMarks(int semester) throws NumberFormatException, SQLException, IOException, ClassNotFoundException{
 		
-		LOGGER.fine("getMarks("+semester+")");
+		//LOGGER.fine("getMarks("+semester+")");
 		
 		return mSchoolDb.getMarks(semester);
 	}
@@ -40,7 +40,7 @@ public class MarkService {
 	//Gives the mark having the specified id.
 	public Mark getMark(int idMark) throws NumberFormatException, SQLException, IOException, ClassNotFoundException{
 		
-		LOGGER.fine("getMark("+idMark+")");
+		//LOGGER.fine("getMark("+idMark+")");
 		
 		return mSchoolDb.getMark(idMark);
 	}
@@ -48,7 +48,7 @@ public class MarkService {
 	//Adds a mark.
 	public void addMark(float mark, String description, float weight, int idCategory, int idCourse) throws SQLException, ParameterException, ClassNotFoundException {
 		
-		LOGGER.fine("addMark("+mark+", "+description+", "+weight+", "+idCategory+", "+idCourse+")");
+		//LOGGER.fine("addMark("+mark+", "+description+", "+weight+", "+idCategory+", "+idCourse+")");
 		
 		try {
 			mSchoolDb.addMark(mark, description, weight, idCategory, idCourse);
@@ -69,7 +69,7 @@ public class MarkService {
 	//Updates a mark.
 	public void updateMark(int idMark,float mark, String description, float weight, int idCategory, int idCourse) throws SQLException, ParameterException, ClassNotFoundException {
 		
-		LOGGER.fine("updateMark("+idMark+", "+mark+", "+description+", "+weight+", "+idCategory+", "+idCourse+")");
+		//LOGGER.fine("updateMark("+idMark+", "+mark+", "+description+", "+weight+", "+idCategory+", "+idCourse+")");
 		
 		try {
 			mSchoolDb.updateMark(idMark, mark, description, weight, idCategory, idCourse);
@@ -92,7 +92,7 @@ public class MarkService {
 	//Deletes a mark.
 	public void deleteMark(int idMark) throws SQLException, ClassNotFoundException {
 		
-		LOGGER.fine("deleteMark("+idMark+")");
+		//LOGGER.fine("deleteMark("+idMark+")");
 		
 		mSchoolDb.deleteMark(idMark);
 	}

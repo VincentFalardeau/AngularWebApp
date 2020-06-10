@@ -9,7 +9,7 @@ import persistence.SchoolDb;
 
 public class CourseService {
 
-	private final static Logger LOGGER = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+	//private final static Logger LOGGER = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 	
 	private SchoolDb mSchoolDb;
 	
@@ -21,7 +21,7 @@ public class CourseService {
 	//Gives all the categories
 	public ArrayList<Course> getCourses() throws SQLException, ClassNotFoundException {
 		
-		LOGGER.fine("getCourses()");
+		//LOGGER.fine("getCourses()");
 		
 		return mSchoolDb.getCourses();
 	}

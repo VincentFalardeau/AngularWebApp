@@ -2,20 +2,19 @@ package services;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.logging.Logger;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import dataObjects.Category;
 import persistence.SchoolDb;
 
 public class CategoryService {
 	
-	private final static Logger LOGGER = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+	private Logger logger = LogManager.getLogger(CategoryService.class);
 	
 	private SchoolDb mSchoolDb;
 	
-	//Constructor.
 	public CategoryService() throws ClassNotFoundException, SQLException {
 		mSchoolDb = new SchoolDb();
 	}
@@ -23,7 +22,7 @@ public class CategoryService {
 	//Gives all the categories
 	public ArrayList<Category> getCategories() throws SQLException, ClassNotFoundException {
 		
-		LOGGER.fine("getCategories()");
+		logger.debug("getCategories()");
 		
 		return mSchoolDb.getCategories();
 	}

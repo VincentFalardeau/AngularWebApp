@@ -44,6 +44,20 @@ dependencies {
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
+	
+	compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.13.3'
+  	compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.13.3'
+  	
+  	//compile group: 'org.springframework.boot', name: 'spring-boot-starter'
+  	
+  	
+  	compile group: 'org.springframework.boot', name: 'spring-boot-starter-log4j2'
+  	
+  	compile group: 'org.mybatis', name: 'mybatis', version: '3.3.0'
+}
+
+configurations {
+    compile.exclude module: 'spring-boot-starter-logging'
 }
 
 /*

@@ -20,8 +20,11 @@ public class MyLogger {
     	//All priorities are logged
         logger.setLevel(Level.ALL);
         
+        //TODO concatenate time stamp to the log file
+        //TODO use log4j
+        
         //Logs are inputed into Logging.txt
-        fileTxt = new FileHandler("Logging.txt");
+        fileTxt = new FileHandler("log/JavaServer"+""+".log");
 
         //Create a text formatter
         formatterTxt = new SimpleFormatter();

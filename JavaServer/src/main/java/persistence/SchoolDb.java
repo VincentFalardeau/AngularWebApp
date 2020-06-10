@@ -14,8 +14,10 @@ import dataObjects.*;
 //Class allowing interactions with schooldb MySQL database.
 public class SchoolDb {
 	
+	//TODO: Mettre la fermeture de connection dans un finalize.
+	
 	//The logger
-	private final static Logger LOGGER = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+	//private final static Logger LOGGER = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
 	//Connection to the database.
 	private MySqlConnection mConnection = null;
@@ -23,13 +25,17 @@ public class SchoolDb {
 	//Constructor that initializes the connection to the database.
 	public SchoolDb() throws SQLException, ClassNotFoundException { 
 		
+		//DatabaseCredentials dc = new DatabaseCredentials();
+		
+		//mConnection = new MySqlConnection(dc.getUsername(), dc.getPassword(), dc.getUrl());
+		
 		mConnection = new MySqlConnection("root", "!h4zastkR", "jdbc:mysql://localhost:3306/schooldb");
 	}
 	
 	//Gives the query that selects all the marks.
 	private String getMarksQuery() { 
 		
-		LOGGER.fine("getMarksQuery()");
+		//LOGGER.fine("getMarksQuery()");
 		
 		String query = "select \n" + 
 			"m.idMark as idMark, m.idClass as idClass, m.idCategory as idCategory, \n" + 
@@ -46,7 +52,7 @@ public class SchoolDb {
 	//Gives the query that selects all the marks for a specified semester.
 	private String getMarksQuery(int semester) { 
 		
-		LOGGER.fine("getMarksQuery("+semester+")");
+		//LOGGER.fine("getMarksQuery("+semester+")");
 		
 		String query = "select \n" + 
 			"m.idMark as idMark, m.idClass as idClass, m.idCategory as idCategory, \n" + 
@@ -64,7 +70,7 @@ public class SchoolDb {
 	//Gives the query that selects the mark having the specified id.
 	private String getMarkQuery(int idMark) { 
 		
-		LOGGER.fine("getMarkQuery("+idMark+")");
+		//LOGGER.fine("getMarkQuery("+idMark+")");
 		
 		String query = "select \n" + 
 			"m.idMark as idMark, m.idClass as idClass, m.idCategory as idCategory, \n" + 
@@ -82,7 +88,7 @@ public class SchoolDb {
 	//Gives the query that selects the category having the specified id.
 	private String getCategoryQuery(int id) {
 		
-		LOGGER.fine("getCategoryQuery("+id+")");
+		//LOGGER.fine("getCategoryQuery("+id+")");
 		
 		String query = "select * from Category where idCategory = " + id;
 		
@@ -92,7 +98,7 @@ public class SchoolDb {
 	//Gives the query that selects all the categories.
 	private String getCategoriesQuery() {
 		
-		LOGGER.fine("getCategoriesQuery()");
+		//LOGGER.fine("getCategoriesQuery()");
 		
 		String query = "select * from Category";
 			
@@ -102,7 +108,7 @@ public class SchoolDb {
 	//Gives the query that selects the class having the specified id.
 	private String getCourseQuery(int id) {
 		
-		LOGGER.fine("getCourseQuery("+id+")");
+		//LOGGER.fine("getCourseQuery("+id+")");
 		
 		String query = "select * from Class where idClass = " + id;
 		
@@ -112,7 +118,7 @@ public class SchoolDb {
 	//Gives the query that selects all the courses.
 	private String getCoursesQuery() {
 		
-		LOGGER.fine("getCoursesQuery()");
+		//LOGGER.fine("getCoursesQuery()");
 		
 		String query = "select * from Class";
 				
@@ -122,7 +128,7 @@ public class SchoolDb {
 	//Gives an array of Mark dataObjects from the given result set.
 	private ArrayList<Mark> marksFrom(ResultSet rs) throws SQLException{
 		
-		LOGGER.fine("marksFrom("+rs.toString()+")");
+		//LOGGER.fine("marksFrom("+rs.toString()+")");
 		
 		//The array.
 		ArrayList<Mark> marks = new ArrayList<Mark>();
@@ -164,7 +170,7 @@ public class SchoolDb {
 	//Gives an array of Course dataObjects from the given result set.
 	private ArrayList<Course> coursesFrom(ResultSet rs) throws SQLException{
 		
-		LOGGER.fine("coursesFrom("+rs.toString()+")");
+		//LOGGER.fine("coursesFrom("+rs.toString()+")");
 			
 		//The array.
 		ArrayList<Course> courses = new ArrayList<Course>();
@@ -190,7 +196,7 @@ public class SchoolDb {
 	//Gives an array of Category dataObjects from the given result set.
 	private ArrayList<Category> categoriesFrom(ResultSet rs) throws SQLException{
 		
-		LOGGER.fine("categoriesFrom("+rs.toString()+")");
+		//LOGGER.fine("categoriesFrom("+rs.toString()+")");
 		
 		//The array.
 		ArrayList<Category> categories = new ArrayList<Category>();
@@ -213,7 +219,7 @@ public class SchoolDb {
 	//Gives all the marks.
 	public ArrayList<Mark> getMarks() throws SQLException, IOException, ClassNotFoundException{
 		
-		LOGGER.fine("getMarks()");
+		//LOGGER.fine("getMarks()");
 		
 		//The connection
 		Connection connection = mConnection.getConnection();
@@ -235,7 +241,7 @@ public class SchoolDb {
 	//Gives the marks for a semester.
 	public ArrayList<Mark> getMarks(int semester) throws SQLException, IOException, ClassNotFoundException{
 		
-		LOGGER.fine("getMarks("+semester+")");
+		//LOGGER.fine("getMarks("+semester+")");
 		
 		//The connection
 		Connection connection = mConnection.getConnection();
@@ -257,7 +263,7 @@ public class SchoolDb {
 	//Gives the mark having idMark as id.
 	public Mark getMark(int idMark) throws SQLException, IOException, ClassNotFoundException{
 		
-		LOGGER.fine("getMark("+idMark+")");
+		//LOGGER.fine("getMark("+idMark+")");
 			
 		//The connection
 		Connection connection = mConnection.getConnection();
@@ -286,7 +292,7 @@ public class SchoolDb {
 	//Creates a new mark in the database.
 	public void addMark(float mark, String description, float weight, int idCategory, int idCourse) throws SQLException, ClassNotFoundException{
 		
-		LOGGER.fine("addMark("+mark+", "+description+", "+weight+", "+idCategory+", "+idCourse+")");
+		//LOGGER.fine("addMark("+mark+", "+description+", "+weight+", "+idCategory+", "+idCourse+")");
 		
 		//The connection
 		Connection connection = mConnection.getConnection();
@@ -312,7 +318,7 @@ public class SchoolDb {
 	//Updates a mark.
 	public void updateMark(int idMark, float mark, String description, float weight, int idCategory, int idCourse) throws SQLException, ClassNotFoundException {
 		
-		LOGGER.fine("updateMark("+idMark+", "+mark+", "+description+", "+weight+", "+idCategory+", "+idCourse+")");
+		//LOGGER.fine("updateMark("+idMark+", "+mark+", "+description+", "+weight+", "+idCategory+", "+idCourse+")");
 		
 		//The connection
 		Connection connection = mConnection.getConnection();
@@ -339,7 +345,7 @@ public class SchoolDb {
 	//Deletes a mark.
 	public void deleteMark(int idMark) throws SQLException, ClassNotFoundException {
 		
-		LOGGER.fine("deleteMark("+idMark+")");
+		//LOGGER.fine("deleteMark("+idMark+")");
 		
 		//The connection
 		Connection connection = mConnection.getConnection();
@@ -363,7 +369,7 @@ public class SchoolDb {
 	//Takes id, an integer representing the category's id.
 	public boolean categoryExists(int id) throws SQLException, ClassNotFoundException {
 		
-		LOGGER.fine("categoryExists("+id+")");
+		//LOGGER.fine("categoryExists("+id+")");
 		
 		//The connection
 		Connection connection = mConnection.getConnection();
@@ -384,7 +390,7 @@ public class SchoolDb {
 	//Gives all the categories.
 	public ArrayList<Category> getCategories() throws SQLException, ClassNotFoundException{
 		
-		LOGGER.fine("getCategories()");
+		//LOGGER.fine("getCategories()");
 		
 		//The connection
 		Connection connection = mConnection.getConnection();
@@ -406,7 +412,7 @@ public class SchoolDb {
 	//Takes id, an integer representing the course's id.
 	public boolean courseExists(int id) throws SQLException, ClassNotFoundException {	
 		
-		LOGGER.fine("courseExists("+id+")");
+		//LOGGER.fine("courseExists("+id+")");
 		
 		//The connection
 		Connection connection = mConnection.getConnection();
@@ -427,7 +433,7 @@ public class SchoolDb {
 	//Gives all the courses.
 	public ArrayList<Course> getCourses() throws SQLException, ClassNotFoundException{
 		
-		LOGGER.fine("getCourses()");
+		//LOGGER.fine("getCourses()");
 		
 		//The connection
 		Connection connection = mConnection.getConnection();
