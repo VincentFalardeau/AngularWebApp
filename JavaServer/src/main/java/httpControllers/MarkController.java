@@ -23,7 +23,7 @@ import exceptions.ParameterException;
 @RestController
 public class MarkController {
 	
-	private Logger log = LogManager.getLogger(MarkController.class);
+	//private Logger log = LogManager.getLogger(MarkController.class);
 
 	private ResponseEntityGenerator responseEntityGenerator = new ResponseEntityGenerator();
 	
@@ -34,7 +34,7 @@ public class MarkController {
 		
 		//Log current http call
 		//LOGGER.info("GET - /marks/all");
-		log.info("GET \"/marks/all\", parameters={}");
+		//log.info("GET \"/marks/all\", parameters={}");
 		
 		try {
 			//Retrieve the marks.
@@ -52,7 +52,7 @@ public class MarkController {
 			
 			//Log the error
 			//LOGGER.severe(Throwables.getStackTraceAsString(e));
-			log.error(Throwables.getStackTraceAsString(e));
+			//log.error(Throwables.getStackTraceAsString(e));
 		}
 		return responseEntity;
 	}

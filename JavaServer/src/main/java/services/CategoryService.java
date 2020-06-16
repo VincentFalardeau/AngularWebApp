@@ -1,5 +1,6 @@
 package services;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -12,22 +13,19 @@ import persistence.SchoolDb2;
 
 public class CategoryService {
 	
-	private Logger logger = LogManager.getLogger(CategoryService.class);
-	
-	private SchoolDb mSchoolDb;
+	private Logger logger;
 	private SchoolDb2 mSchoolDb2;
 	
-	public CategoryService() throws ClassNotFoundException, SQLException {
-		mSchoolDb = new SchoolDb();
+	public CategoryService() throws ClassNotFoundException, SQLException, IOException {
+		
+		logger = LogManager.getLogger(CategoryService.class);
+		mSchoolDb2 = new SchoolDb2();
 	}
 	
 	//Gives all the categories
 	public ArrayList<Category> getCategories() throws SQLException, ClassNotFoundException {
 		
 		logger.debug("getCategories()");
-		
-		//return mSchoolDb.getCategories();
-		
 		return mSchoolDb2.getCategories();
 	}
 }

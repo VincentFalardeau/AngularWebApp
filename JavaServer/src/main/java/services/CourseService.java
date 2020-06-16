@@ -1,28 +1,31 @@
 package services;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.logging.Logger;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import dataObjects.Course;
 import persistence.SchoolDb;
+import persistence.SchoolDb2;
 
 public class CourseService {
 
-	//private final static Logger LOGGER = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+	private Logger logger;
+	private SchoolDb2 mSchoolDb2;
 	
-	private SchoolDb mSchoolDb;
-	
-	//Constructor.
-	public CourseService() throws ClassNotFoundException, SQLException {
-		mSchoolDb = new SchoolDb();
+	public CourseService() throws ClassNotFoundException, SQLException, IOException {
+		
+		logger = LogManager.getLogger(CourseService.class);
+		mSchoolDb2 = new SchoolDb2();
 	}
 	
-	//Gives all the categories
+	//Gives all the courses
 	public ArrayList<Course> getCourses() throws SQLException, ClassNotFoundException {
 		
-		//LOGGER.fine("getCourses()");
-		
-		return mSchoolDb.getCourses();
+		logger.debug("getCourses()");
+		return mSchoolDb2.getCourses();
 	}
 }

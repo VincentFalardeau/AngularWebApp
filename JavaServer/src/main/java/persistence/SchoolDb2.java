@@ -2,21 +2,21 @@ package persistence;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.URL;
 import java.util.ArrayList;
-import java.util.Map;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import dataObjects.Category;
-import mappers.CategoriesMapper;
+import dataObjects.Course;
 
 public class SchoolDb2 {
 	
-	private final String CONFIG_FILE = "src/main/resources/mybatis-config.xml";
+	private final String CONFIG_FILE = "mybatis-config.xml";
 	
 	private InputStream mInputStream;
 	private SqlSessionFactory mSqlSessionFactory;
@@ -27,18 +27,36 @@ public class SchoolDb2 {
 		mSqlSessionFactory =  new SqlSessionFactoryBuilder().build(mInputStream);
 	}
 	
+	//Gives all the categories.
 	public ArrayList<Category> getCategories() {
-		SqlSession session = mSqlSessionFactory.openSession();
-		CategoriesMapper cm = session.getMapper(CategoriesMapper.class);
-		Map<Integer, Category> map = cm.selectCategories();
 		
-		//TODO: Convertit la map en array de categories
+		Logger log = LogManager.getLogger(SchoolDb2.class);
+		log.info("getCategories()");
 		
-		//for(int i = 0; i < map.size(); i++) {
-			//map.
-		//}
+		SqlSession session = mSqlSessionFactory.openSession();	
+
+		ArrayList<Category> categories = (ArrayList)session.selectList("dataObjects.Category.getCategories");
+
+		session.commit();
+		session.close();
 		
-		return null;
+		return categories;
+	}
+	
+	//Gives all the courses.
+	public ArrayList<Course> getCourses() {
+	
+		Logger log = LogManager.getLogger(SchoolDb2.class);
+		log.info("getCourses()");
+		
+		SqlSession session = mSqlSessionFactory.openSession();		
+		
+		ArrayList<Course> courses = (ArrayList)session.selectList("dataObjects.Course.getCourses");
+
+		session.commit();
+		session.close();
+		
+		return courses;
 	}
 	
 	

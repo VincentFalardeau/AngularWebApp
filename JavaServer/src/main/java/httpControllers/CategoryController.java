@@ -23,28 +23,34 @@ public class CategoryController {
 	
 	//Gives all the categories.
 	@GetMapping(ALL_CATEGORIES_URL)
-	public ResponseEntity<?> marks() {
+	public ResponseEntity<?> categories() {
 		
-		Logger log = LogManager.getLogger(MarkController.class);
+		Logger log = LogManager.getLogger(CategoryController.class);
+		
 		ResponseEntityGenerator responseEntityGenerator = new ResponseEntityGenerator();
 		ResponseEntity<?> responseEntity;
 		
-		log.info("GET \""+ALL_CATEGORIES_URL+"\", parameters={}");
-		
 		try {
 
+			//Get the categories.
 			CategoryService categoryService = new CategoryService();
 			ArrayList<Category> categories = categoryService.getCategories();
 			
+			//Generate ok response with the categories.
 			responseEntity = responseEntityGenerator.generateOK(categories);
 			
 		} catch (Exception e) {
 			
-			//e.printStackTrace();
+			//Log the error.
+			e.printStackTrace();
 			log.error(Throwables.getStackTraceAsString(e));
 			
+			//Generate internal server error.
 			responseEntity = responseEntityGenerator.generateInternalServerError();
 		}
+		
 		return responseEntity;
 	}
+	
+	
 }

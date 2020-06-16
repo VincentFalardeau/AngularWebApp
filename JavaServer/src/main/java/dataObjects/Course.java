@@ -2,13 +2,13 @@ package dataObjects;
 
 public class Course {
 	
-	private int id;
+	private Integer id;
 	private String code;
-	private int semester;
+	private Integer semester;
 	private String description;
 	private float credits;
 	
-	public Course(int id, String code, int semester, String description, float credits) {
+	public Course(Integer id, String code, Integer semester, String description, float credits) {
 		this.setId(id);
 		this.setCode(code);
 		this.setSemester(semester);
@@ -16,7 +16,7 @@ public class Course {
 		this.setCredits(credits);
 	}
 	
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 	
@@ -32,7 +32,7 @@ public class Course {
 		this.code = code;
 	}
 
-	public int getSemester() {
+	public Integer getSemester() {
 		return semester;
 	}
 
