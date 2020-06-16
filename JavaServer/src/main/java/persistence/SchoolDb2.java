@@ -13,6 +13,7 @@ import org.apache.logging.log4j.Logger;
 
 import dataObjects.Category;
 import dataObjects.Course;
+import dataObjects.Mark;
 
 public class SchoolDb2 {
 	
@@ -45,19 +46,33 @@ public class SchoolDb2 {
 	
 	//Gives all the courses.
 	public ArrayList<Course> getCourses() {
-	
+			
 		Logger log = LogManager.getLogger(SchoolDb2.class);
 		log.info("getCourses()");
-		
-		SqlSession session = mSqlSessionFactory.openSession();		
-		
+			
+		SqlSession session = mSqlSessionFactory.openSession();	
+
 		ArrayList<Course> courses = (ArrayList)session.selectList("dataObjects.Course.getCourses");
 
 		session.commit();
 		session.close();
-		
+			
 		return courses;
 	}
 	
+	//Gives all the marks.
+	public ArrayList<Mark> getMarks() {
 	
+		Logger log = LogManager.getLogger(SchoolDb2.class);
+		log.info("getMarks()");
+		
+		SqlSession session = mSqlSessionFactory.openSession();		
+		
+		ArrayList<Mark> marks = (ArrayList)session.selectList("dataObjects.Mark.getMarks");
+
+		session.commit();
+		session.close();
+		
+		return marks;
+	}
 }

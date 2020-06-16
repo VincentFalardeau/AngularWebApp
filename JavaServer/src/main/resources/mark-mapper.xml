@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dataObjects.Mark">
+
+	<resultMap id="markResultMap" type="dataObjects.Mark">
+ 		<id property="id" column="idMark" />
+ 		<result property="description" column="markDescription"/>
+ 		<result property="mark" column="mark"/>
+ 		<result property="weight" column="weight"/>
+ 		<association property="course" resultMap="courseResultMap"/>
+ 		<association property="category" resultMap="categoryResultMap"/>
+	</resultMap>
+	
+	<resultMap id="courseResultMap" type="dataObjects.Course">
+		<id property="id" column="idClass" />
+ 		<result property="code" column="classCode"/>
+ 		<result property="semester" column="semester"/>
+  		<result property="description" column="classDescription"/>
+  		<result property="credits" column="classCredits"/>
+	</resultMap>
+	
+	<resultMap id="categoryResultMap" type="dataObjects.Category">
+		<id property="id" column="idCategory" />
+  		<result property="description" column="categoryDescription"/>
+	</resultMap>
+    
+    <select id="getMarks" resultMap="markResultMap">
+		select 
+		m.idMark as idMark, m.idClass as idClass, m.idCategory as idCategory, 
+		m.description as markDescription, m.mark as mark, m.weight as weight, 
+		ca.description as categoryDescription,
+		cl.code as classCode, cl.semester as semester, cl.description as classDescription, cl.credits as classCredits
+		from Mark m 
+		inner join Category ca on ca.idCategory = m.idCategory
+		inner join Class cl on cl.idClass = m.idClass;
+	</select>
+	
+	
+
+</mapper>

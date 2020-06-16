@@ -1,5 +1,7 @@
 package dataObjects;
 
+import java.math.BigDecimal;
+
 public class Course {
 	
 	private Integer id;
@@ -14,6 +16,34 @@ public class Course {
 		this.setSemester(semester);
 		this.setDescription(description);
 		this.setCredits(credits);
+	}
+	
+	public Course(Integer id, String code, Integer semester, String description, BigDecimal credits) {
+		this.setId(id);
+		this.setCode(code);
+		this.setSemester(semester);
+		this.setDescription(description);
+		this.setCredits(credits.floatValue());
+	}
+	
+	public Course(
+			Integer idMark, 
+			Integer idCourse, 
+			Integer idCategory, 
+			String markDescription, 
+			BigDecimal mark, 
+			BigDecimal weight,  
+			String categoryDescription, 
+			String courseCode, 
+			Integer semester, 
+			String courseDescription, 
+			BigDecimal courseCredits) {
+		
+		this.setDescription(courseDescription);
+		this.setId(idCourse);
+		this.setCode(courseCode);
+		this.setSemester(semester);
+		this.setCredits(courseCredits.floatValue());
 	}
 	
 	public Integer getId() {

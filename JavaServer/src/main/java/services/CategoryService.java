@@ -26,6 +26,7 @@ public class CategoryService {
 	public ArrayList<Category> getCategories() throws SQLException, ClassNotFoundException {
 		
 		logger.debug("getCategories()");
+		
 		return mSchoolDb2.getCategories();
 	}
 }

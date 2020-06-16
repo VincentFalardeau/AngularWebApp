@@ -1,15 +1,17 @@
 package dataObjects;
 
+import java.math.BigDecimal;
+
 public class Mark {
 	
-	private int id;
+	private Integer id;
 	private String description;
 	private float mark;
 	private float weight;
 	private Course course;
 	private Category category;
 	
-	public Mark(int id, String description, float mark, float weight, Course course, Category category) {
+	public Mark(Integer id, String description, float mark, float weight, Course course, Category category) {
 		this.setDescription(description);
 		this.setId(id);
 		this.setMark(mark);
@@ -18,16 +20,37 @@ public class Mark {
 		this.setCourse(course);
 	}
 	
-	public Mark(float mark, float weight) {
-		this.setMark(mark);
-		this.setWeight(weight);
+	public Mark(
+			Integer idMark, 
+			Integer idCourse, 
+			Integer idCategory, 
+			String markDescription, 
+			BigDecimal mark, 
+			BigDecimal weight,  
+			String categoryDescription, 
+			String courseCode, 
+			Integer semester, 
+			String courseDescription, 
+			BigDecimal courseCredits) {
+		
+		this.setDescription(markDescription);
+		this.setId(idMark);
+		this.setMark(mark.floatValue());
+		this.setWeight(weight.floatValue());
+		this.setCategory(new Category(idCategory, categoryDescription));
+		this.setCourse(new Course(idCourse, courseCode, semester, courseDescription, courseCredits));
 	}
 	
-	public int getId() {
+//	public Mark(float mark, float weight) {
+//		this.setMark(mark);
+//		this.setWeight(weight);
+//	}
+	
+	public Integer getId() {
 		return id;
 	}
 	
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

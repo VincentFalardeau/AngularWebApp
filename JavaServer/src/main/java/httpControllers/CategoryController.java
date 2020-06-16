@@ -36,7 +36,7 @@ public class CategoryController {
 			CategoryService categoryService = new CategoryService();
 			ArrayList<Category> categories = categoryService.getCategories();
 			
-			//Generate ok response with the categories.
+			//Generate OK response with the categories.
 			responseEntity = responseEntityGenerator.generateOK(categories);
 			
 		} catch (Exception e) {

@@ -26,6 +26,7 @@ public class CourseService {
 	public ArrayList<Course> getCourses() throws SQLException, ClassNotFoundException {
 		
 		logger.debug("getCourses()");
+		
 		return mSchoolDb2.getCourses();
 	}
 }
