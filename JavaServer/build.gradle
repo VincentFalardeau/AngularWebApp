@@ -53,7 +53,7 @@ dependencies {
   	
   	compile group: 'org.springframework.boot', name: 'spring-boot-starter-log4j2'
   	
-  	compile group: 'org.mybatis', name: 'mybatis', version: '3.3.0'
+  	compile group: 'org.mybatis', name: 'mybatis', version: '3.4.6'
 }
 
 configurations {

@@ -5,13 +5,19 @@
 
 <mapper namespace="dataObjects.Category">
 
+	<sql id="query">select * from Category</sql>
+
 	<resultMap id="categoryResultMap" type="dataObjects.Category">
  		<id property="id" column="idCategory" />
   		<result property="description" column="description"/>
 	</resultMap>
-    
-    <select id="getCategories" resultMap="categoryResultMap">
-		select * from Category
+	
+	 <select id="getCategories" resultMap="categoryResultMap">
+		<include refid="query"/>
+	</select>
+	
+	<select id="getCategory" parameterType = "int" resultMap="categoryResultMap">
+		<include refid="query"/> where idCategory = #{id}
 	</select>
 
 </mapper>

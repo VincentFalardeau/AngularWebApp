@@ -5,6 +5,8 @@
 
 <mapper namespace="dataObjects.Course">
 
+	<sql id="query">select * from Class</sql>
+
 	<resultMap id="courseResultMap" type="dataObjects.Course">
  		<id property="id" column="idClass" />
  		<result property="code" column="code"/>
@@ -14,7 +16,11 @@
 	</resultMap>
     
     <select id="getCourses" resultMap="courseResultMap">
-		select * from Class
+		<include refid="query"/>
+	</select>
+	
+	<select id="getCourse" parameterType = "int" resultMap="courseResultMap">
+		<include refid="query"/> where idClass = #{id}
 	</select>
 
 </mapper>

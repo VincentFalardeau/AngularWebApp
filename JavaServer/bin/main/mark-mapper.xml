@@ -5,6 +5,25 @@
 
 <mapper namespace="dataObjects.Mark">
 
+	<sql id="query">
+		select 
+		m.idMark as idMark, m.idClass as idClass, m.idCategory as idCategory, 
+		m.description as markDescription, m.mark as mark, m.weight as weight, 
+		ca.description as categoryDescription,
+		cl.code as classCode, cl.semester as semester, cl.description as classDescription, cl.credits as classCredits
+		from Mark m 
+		inner join Category ca on ca.idCategory = m.idCategory
+		inner join Class cl on cl.idClass = m.idClass
+	</sql>
+	
+	<sql id="queryForSemester">
+		<include refid="query"/> where semester =
+	</sql>
+	
+	<sql id="querySingleMark">
+		<include refid="query"/> where idMark =
+	</sql>
+
 	<resultMap id="markResultMap" type="dataObjects.Mark">
  		<id property="id" column="idMark" />
  		<result property="description" column="markDescription"/>
@@ -28,16 +47,19 @@
 	</resultMap>
     
     <select id="getMarks" resultMap="markResultMap">
-		select 
-		m.idMark as idMark, m.idClass as idClass, m.idCategory as idCategory, 
-		m.description as markDescription, m.mark as mark, m.weight as weight, 
-		ca.description as categoryDescription,
-		cl.code as classCode, cl.semester as semester, cl.description as classDescription, cl.credits as classCredits
-		from Mark m 
-		inner join Category ca on ca.idCategory = m.idCategory
-		inner join Class cl on cl.idClass = m.idClass;
+		<include refid="query"/>
 	</select>
 	
+	<select id="getMarksForSemester" parameterType = "int" resultMap="markResultMap">
+		<include refid="queryForSemester"/> #{semester}
+	</select>
 	
-
+	<select id="getMark" parameterType = "int" resultMap="markResultMap">
+		<include refid="querySingleMark"/> #{id}
+	</select>
+	
+	<insert id = "insert" parameterType = "dataObjects.MarkData">
+      INSERT INTO Mark VALUES (null, #{idCourse}, #{idCategory}, #{description}, #{mark}, #{weight})
+   	</insert>
+	
 </mapper>
