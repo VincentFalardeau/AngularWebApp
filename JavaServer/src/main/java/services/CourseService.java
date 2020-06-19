@@ -8,7 +8,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import dataObjects.Course;
-import persistence.SchoolDb;
 import persistence.SchoolDb2;
 
 public class CourseService {
