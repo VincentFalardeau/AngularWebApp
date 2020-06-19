@@ -4,13 +4,15 @@ import java.math.BigDecimal;
 
 public class MarkData {
 	
+	private Integer id;
 	private String description;
 	private BigDecimal mark;
 	private BigDecimal weight;
 	private Integer idCourse;
 	private Integer idCategory;
 	
-	public MarkData(String description, float mark, float weight, Integer idCourse, Integer idCategory) {
+	public MarkData(Integer id, String description, float mark, float weight, Integer idCourse, Integer idCategory) {
+		this.setId(id);
 		this.setDescription(description);
 		this.setMark(BigDecimal.valueOf(mark));
 		this.setWeight(BigDecimal.valueOf(weight));
@@ -47,6 +49,14 @@ public class MarkData {
 	}
 	public void setIdCategory(Integer idCategory) {
 		this.idCategory = idCategory;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	

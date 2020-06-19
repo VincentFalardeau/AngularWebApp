@@ -1,236 +1,236 @@
-2020-06-18 13:13:52,926 DEBUG o.s.b.c.l.ClasspathLoggingApplicationListener [main] Application started with classpath: unknown
-2020-06-18 13:13:53,119 INFO o.s.b.StartupInfoLogger [main] Starting Main on VinceLaptop with PID 7312 (/home/vince/workspace/summer/JavaServer/bin/main started by vince in /home/vince/workspace/summer/JavaServer)
-2020-06-18 13:13:53,126 DEBUG o.s.b.StartupInfoLogger [main] Running with Spring Boot v2.2.2.RELEASE, Spring v5.2.2.RELEASE
-2020-06-18 13:13:53,129 INFO o.s.b.SpringApplication [main] No active profile set, falling back to default profiles: default
-2020-06-18 13:13:53,130 DEBUG o.s.b.SpringApplication [main] Loading source class httpControllers.Main
-2020-06-18 13:13:53,319 DEBUG o.s.c.s.AbstractApplicationContext [main] Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1a6c1270
-2020-06-18 13:13:53,369 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
-2020-06-18 13:13:53,400 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.internalCachingMetadataReaderFactory'
-2020-06-18 13:13:53,524 DEBUG o.s.c.a.ClassPathScanningCandidateComponentProvider [main] Identified candidate component class: file [/home/vince/workspace/summer/JavaServer/bin/main/httpControllers/CategoryController.class]
-2020-06-18 13:13:53,527 DEBUG o.s.c.a.ClassPathScanningCandidateComponentProvider [main] Identified candidate component class: file [/home/vince/workspace/summer/JavaServer/bin/main/httpControllers/CourseController.class]
-2020-06-18 13:13:53,534 DEBUG o.s.c.a.ClassPathScanningCandidateComponentProvider [main] Identified candidate component class: file [/home/vince/workspace/summer/JavaServer/bin/main/httpControllers/MarkController.class]
-2020-06-18 13:13:54,548 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'propertySourcesPlaceholderConfigurer'
-2020-06-18 13:13:54,559 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.context.properties.ConfigurationPropertiesBeanDefinitionValidator'
-2020-06-18 13:13:54,707 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerProcessor'
-2020-06-18 13:13:54,709 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'preserveErrorControllerTargetClassPostProcessor'
-2020-06-18 13:13:54,711 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerFactory'
-2020-06-18 13:13:54,720 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
-2020-06-18 13:13:54,721 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
-2020-06-18 13:13:54,725 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor'
-2020-06-18 13:13:54,727 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.context.internalConfigurationPropertiesBinder'
-2020-06-18 13:13:54,730 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.context.internalConfigurationPropertiesBinderFactory'
-2020-06-18 13:13:54,734 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'methodValidationPostProcessor'
-2020-06-18 13:13:54,763 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'methodValidationPostProcessor' via factory method to bean named 'environment'
-2020-06-18 13:13:54,776 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'webServerFactoryCustomizerBeanPostProcessor'
-2020-06-18 13:13:54,779 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'errorPageRegistrarBeanPostProcessor'
-2020-06-18 13:13:54,784 DEBUG o.s.u.c.s.UiApplicationContextUtils [main] Unable to locate ThemeSource with name 'themeSource': using default [org.springframework.ui.context.support.ResourceBundleThemeSource@53e3a87a]
-2020-06-18 13:13:54,785 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'tomcatServletWebServerFactory'
-2020-06-18 13:13:54,785 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.ServletWebServerFactoryConfiguration$EmbeddedTomcat'
-2020-06-18 13:13:54,894 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'websocketServletWebServerCustomizer'
-2020-06-18 13:13:54,907 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.websocket.servlet.WebSocketServletAutoConfiguration$TomcatWebSocketConfiguration'
-2020-06-18 13:13:54,913 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'servletWebServerFactoryCustomizer'
-2020-06-18 13:13:54,913 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.ServletWebServerFactoryAutoConfiguration'
-2020-06-18 13:13:54,916 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'server-org.springframework.boot.autoconfigure.web.ServerProperties'
-2020-06-18 13:13:54,960 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'servletWebServerFactoryCustomizer' via factory method to bean named 'server-org.springframework.boot.autoconfigure.web.ServerProperties'
-2020-06-18 13:13:54,961 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'tomcatServletWebServerFactoryCustomizer'
-2020-06-18 13:13:54,965 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'tomcatServletWebServerFactoryCustomizer' via factory method to bean named 'server-org.springframework.boot.autoconfigure.web.ServerProperties'
-2020-06-18 13:13:54,966 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'tomcatWebServerFactoryCustomizer'
-2020-06-18 13:13:54,967 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.embedded.EmbeddedWebServerFactoryCustomizerAutoConfiguration$TomcatWebServerFactoryCustomizerConfiguration'
-2020-06-18 13:13:54,970 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'tomcatWebServerFactoryCustomizer' via factory method to bean named 'environment'
-2020-06-18 13:13:54,970 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'tomcatWebServerFactoryCustomizer' via factory method to bean named 'server-org.springframework.boot.autoconfigure.web.ServerProperties'
-2020-06-18 13:13:54,974 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'localeCharsetMappingsCustomizer'
-2020-06-18 13:13:54,975 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.HttpEncodingAutoConfiguration'
-2020-06-18 13:13:54,980 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'spring.http-org.springframework.boot.autoconfigure.http.HttpProperties'
-2020-06-18 13:13:54,989 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.HttpEncodingAutoConfiguration' via constructor to bean named 'spring.http-org.springframework.boot.autoconfigure.http.HttpProperties'
-2020-06-18 13:13:55,090 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'errorPageCustomizer'
-2020-06-18 13:13:55,091 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration'
-2020-06-18 13:13:55,093 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration' via constructor to bean named 'server-org.springframework.boot.autoconfigure.web.ServerProperties'
-2020-06-18 13:13:55,098 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'dispatcherServletRegistration'
-2020-06-18 13:13:55,099 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.DispatcherServletAutoConfiguration$DispatcherServletRegistrationConfiguration'
-2020-06-18 13:13:55,101 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'dispatcherServlet'
-2020-06-18 13:13:55,103 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.DispatcherServletAutoConfiguration$DispatcherServletConfiguration'
-2020-06-18 13:13:55,108 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'spring.mvc-org.springframework.boot.autoconfigure.web.servlet.WebMvcProperties'
-2020-06-18 13:13:55,121 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'dispatcherServlet' via factory method to bean named 'spring.http-org.springframework.boot.autoconfigure.http.HttpProperties'
-2020-06-18 13:13:55,122 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'dispatcherServlet' via factory method to bean named 'spring.mvc-org.springframework.boot.autoconfigure.web.servlet.WebMvcProperties'
-2020-06-18 13:13:55,152 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'dispatcherServletRegistration' via factory method to bean named 'dispatcherServlet'
-2020-06-18 13:13:55,153 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'dispatcherServletRegistration' via factory method to bean named 'spring.mvc-org.springframework.boot.autoconfigure.web.servlet.WebMvcProperties'
-2020-06-18 13:13:55,157 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'multipartConfigElement'
-2020-06-18 13:13:55,158 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.MultipartAutoConfiguration'
-2020-06-18 13:13:55,160 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'spring.servlet.multipart-org.springframework.boot.autoconfigure.web.servlet.MultipartProperties'
-2020-06-18 13:13:55,168 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.MultipartAutoConfiguration' via constructor to bean named 'spring.servlet.multipart-org.springframework.boot.autoconfigure.web.servlet.MultipartProperties'
-2020-06-18 13:13:55,178 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'errorPageCustomizer' via factory method to bean named 'dispatcherServletRegistration'
-2020-06-18 13:13:55,369 DEBUG o.s.b.w.s.s.DocumentRoot [main] Code archive: /home/vince/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot/2.2.2.RELEASE/cc636f24a5ebbfb21f1c8c30ed9c3b13512c16ec/spring-boot-2.2.2.RELEASE.jar
-2020-06-18 13:13:55,370 DEBUG o.s.b.w.s.s.DocumentRoot [main] Code archive: /home/vince/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot/2.2.2.RELEASE/cc636f24a5ebbfb21f1c8c30ed9c3b13512c16ec/spring-boot-2.2.2.RELEASE.jar
-2020-06-18 13:13:55,371 DEBUG o.s.b.w.s.s.DocumentRoot [main] None of the document roots [src/main/webapp, public, static] point to a directory and will be ignored.
-2020-06-18 13:13:55,433 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
-2020-06-18 13:13:55,472 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
-2020-06-18 13:13:55,475 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
-2020-06-18 13:13:55,476 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.29]
-2020-06-18 13:13:55,629 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
-2020-06-18 13:13:55,630 DEBUG o.s.b.w.s.c.ServletWebServerApplicationContext [main] Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
-2020-06-18 13:13:55,631 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2313 ms
-2020-06-18 13:13:55,638 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'requestContextFilter'
-2020-06-18 13:13:55,643 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'formContentFilter'
-2020-06-18 13:13:55,644 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration'
-2020-06-18 13:13:55,649 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'characterEncodingFilter'
-2020-06-18 13:13:55,662 DEBUG o.s.b.w.s.ServletContextInitializerBeans [main] Mapping filters: characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
-2020-06-18 13:13:55,662 DEBUG o.s.b.w.s.ServletContextInitializerBeans [main] Mapping servlets: dispatcherServlet urls=[/]
-2020-06-18 13:13:55,698 DEBUG o.s.w.f.GenericFilterBean [main] Filter 'requestContextFilter' configured for use
-2020-06-18 13:13:55,699 DEBUG o.s.w.f.GenericFilterBean [main] Filter 'characterEncodingFilter' configured for use
-2020-06-18 13:13:55,700 DEBUG o.s.w.f.GenericFilterBean [main] Filter 'formContentFilter' configured for use
-2020-06-18 13:13:55,731 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'main'
-2020-06-18 13:13:55,736 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'categoryController'
-2020-06-18 13:13:55,742 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'courseController'
-2020-06-18 13:13:55,743 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'markController'
-2020-06-18 13:13:55,748 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.AutoConfigurationPackages'
-2020-06-18 13:13:55,754 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration'
-2020-06-18 13:13:55,755 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.websocket.servlet.WebSocketServletAutoConfiguration'
-2020-06-18 13:13:55,758 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.context.properties.ConfigurationBeanFactoryMetadata'
-2020-06-18 13:13:55,759 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.DispatcherServletAutoConfiguration'
-2020-06-18 13:13:55,760 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.task.TaskExecutionAutoConfiguration'
-2020-06-18 13:13:55,761 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'taskExecutorBuilder'
-2020-06-18 13:13:55,763 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'spring.task.execution-org.springframework.boot.autoconfigure.task.TaskExecutionProperties'
-2020-06-18 13:13:55,768 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'taskExecutorBuilder' via factory method to bean named 'spring.task.execution-org.springframework.boot.autoconfigure.task.TaskExecutionProperties'
-2020-06-18 13:13:55,774 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration'
-2020-06-18 13:13:55,777 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'defaultValidator'
-2020-06-18 13:13:55,781 DEBUG o.h.v.i.e.r.TraversableResolvers [main] Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
-2020-06-18 13:13:55,782 DEBUG o.h.v.m.ResourceBundleMessageInterpolator [main] Loaded expression factory via original TCCL
-2020-06-18 13:13:55,786 DEBUG o.h.v.i.e.r.TraversableResolvers [main] Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
-2020-06-18 13:13:55,787 DEBUG o.h.v.i.e.ConfigurationImpl [main] Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
-2020-06-18 13:13:55,788 DEBUG o.h.v.i.e.ConfigurationImpl [main] Setting custom ConstraintValidatorFactory of type org.springframework.validation.beanvalidation.SpringConstraintValidatorFactory
-2020-06-18 13:13:55,792 DEBUG o.h.v.i.e.ConfigurationImpl [main] Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1
-2020-06-18 13:13:55,794 DEBUG o.h.v.i.x.c.ValidationXmlParser [main] Trying to load META-INF/validation.xml for XML based Validator configuration.
-2020-06-18 13:13:55,795 DEBUG o.h.v.i.x.c.ResourceLoaderHelper [main] Trying to load META-INF/validation.xml via user class loader
-2020-06-18 13:13:55,795 DEBUG o.h.v.i.x.c.ResourceLoaderHelper [main] Trying to load META-INF/validation.xml via TCCL
-2020-06-18 13:13:55,796 DEBUG o.h.v.i.x.c.ResourceLoaderHelper [main] Trying to load META-INF/validation.xml via Hibernate Validator's class loader
-2020-06-18 13:13:55,796 DEBUG o.h.v.i.x.c.ValidationXmlParser [main] No META-INF/validation.xml found. Using annotation based configuration only.
-2020-06-18 13:13:55,817 DEBUG o.h.v.i.e.ValidatorFactoryImpl [main] HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator.
-2020-06-18 13:13:55,818 DEBUG o.h.v.i.e.ValidatorFactoryImpl [main] HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver.
-2020-06-18 13:13:55,819 DEBUG o.h.v.i.e.ValidatorFactoryImpl [main] HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
-2020-06-18 13:13:55,820 DEBUG o.h.v.i.e.ValidatorFactoryImpl [main] HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
-2020-06-18 13:13:55,820 DEBUG o.h.v.i.e.ValidatorFactoryImpl [main] HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
-2020-06-18 13:13:55,824 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration'
-2020-06-18 13:13:55,827 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'error'
-2020-06-18 13:13:55,832 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'beanNameViewResolver'
-2020-06-18 13:13:55,838 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration$DefaultErrorViewResolverConfiguration'
-2020-06-18 13:13:55,840 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'spring.resources-org.springframework.boot.autoconfigure.web.ResourceProperties'
-2020-06-18 13:13:55,848 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration$DefaultErrorViewResolverConfiguration' via constructor to bean named 'org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1a6c1270'
-2020-06-18 13:13:55,849 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration$DefaultErrorViewResolverConfiguration' via constructor to bean named 'spring.resources-org.springframework.boot.autoconfigure.web.ResourceProperties'
-2020-06-18 13:13:55,850 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'conventionErrorViewResolver'
-2020-06-18 13:13:55,856 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'errorAttributes'
-2020-06-18 13:13:55,859 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'basicErrorController'
-2020-06-18 13:13:55,860 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'basicErrorController' via factory method to bean named 'errorAttributes'
-2020-06-18 13:13:55,864 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$EnableWebMvcConfiguration'
-2020-06-18 13:13:55,867 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$EnableWebMvcConfiguration' via constructor to bean named 'spring.resources-org.springframework.boot.autoconfigure.web.ResourceProperties'
-2020-06-18 13:13:55,868 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$EnableWebMvcConfiguration' via constructor to bean named 'org.springframework.beans.factory.support.DefaultListableBeanFactory@a8c1f44'
-2020-06-18 13:13:55,888 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter'
-2020-06-18 13:13:55,893 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter' via constructor to bean named 'spring.resources-org.springframework.boot.autoconfigure.web.ResourceProperties'
-2020-06-18 13:13:55,894 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter' via constructor to bean named 'spring.mvc-org.springframework.boot.autoconfigure.web.servlet.WebMvcProperties'
-2020-06-18 13:13:55,894 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter' via constructor to bean named 'org.springframework.beans.factory.support.DefaultListableBeanFactory@a8c1f44'
-2020-06-18 13:13:55,896 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'requestMappingHandlerAdapter'
-2020-06-18 13:13:55,905 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'mvcContentNegotiationManager'
-2020-06-18 13:13:55,921 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'mvcConversionService'
-2020-06-18 13:13:55,938 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'mvcValidator'
-2020-06-18 13:13:55,944 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'requestMappingHandlerAdapter' via factory method to bean named 'mvcContentNegotiationManager'
-2020-06-18 13:13:55,944 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'requestMappingHandlerAdapter' via factory method to bean named 'mvcConversionService'
-2020-06-18 13:13:55,946 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'requestMappingHandlerAdapter' via factory method to bean named 'mvcValidator'
-2020-06-18 13:13:55,960 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'requestMappingHandlerAdapter' via factory method to bean named 'mvcContentNegotiationManager'
-2020-06-18 13:13:55,961 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'requestMappingHandlerAdapter' via factory method to bean named 'mvcConversionService'
-2020-06-18 13:13:55,961 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'requestMappingHandlerAdapter' via factory method to bean named 'mvcValidator'
-2020-06-18 13:13:55,984 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'messageConverters'
-2020-06-18 13:13:55,985 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.http.HttpMessageConvertersAutoConfiguration'
-2020-06-18 13:13:55,994 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'stringHttpMessageConverter'
-2020-06-18 13:13:55,995 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.http.HttpMessageConvertersAutoConfiguration$StringHttpMessageConverterConfiguration'
-2020-06-18 13:13:55,997 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'stringHttpMessageConverter' via factory method to bean named 'spring.http-org.springframework.boot.autoconfigure.http.HttpProperties'
-2020-06-18 13:13:56,005 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'mappingJackson2HttpMessageConverter'
-2020-06-18 13:13:56,006 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.http.JacksonHttpMessageConvertersConfiguration$MappingJackson2HttpMessageConverterConfiguration'
-2020-06-18 13:13:56,011 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'jacksonObjectMapper'
-2020-06-18 13:13:56,012 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperConfiguration'
-2020-06-18 13:13:56,014 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperBuilderConfiguration'
-2020-06-18 13:13:56,016 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'standardJacksonObjectMapperBuilderCustomizer'
-2020-06-18 13:13:56,017 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$Jackson2ObjectMapperBuilderCustomizerConfiguration'
-2020-06-18 13:13:56,020 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'spring.jackson-org.springframework.boot.autoconfigure.jackson.JacksonProperties'
-2020-06-18 13:13:56,031 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'standardJacksonObjectMapperBuilderCustomizer' via factory method to bean named 'org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1a6c1270'
-2020-06-18 13:13:56,031 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'standardJacksonObjectMapperBuilderCustomizer' via factory method to bean named 'spring.jackson-org.springframework.boot.autoconfigure.jackson.JacksonProperties'
-2020-06-18 13:13:56,033 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'jacksonObjectMapperBuilder' via factory method to bean named 'org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1a6c1270'
-2020-06-18 13:13:56,033 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'jacksonObjectMapperBuilder' via factory method to bean named 'standardJacksonObjectMapperBuilderCustomizer'
-2020-06-18 13:13:56,036 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'parameterNamesModule'
-2020-06-18 13:13:56,037 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$ParameterNamesModuleConfiguration'
-2020-06-18 13:13:56,043 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'jsonComponentModule'
-2020-06-18 13:13:56,044 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration'
-2020-06-18 13:13:56,054 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'jacksonObjectMapper' via factory method to bean named 'jacksonObjectMapperBuilder'
-2020-06-18 13:13:56,080 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'mappingJackson2HttpMessageConverter' via factory method to bean named 'jacksonObjectMapper'
-2020-06-18 13:13:56,111 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'applicationTaskExecutor'
-2020-06-18 13:13:56,113 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'applicationTaskExecutor' via factory method to bean named 'taskExecutorBuilder'
-2020-06-18 13:13:56,126 INFO o.s.s.c.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
-2020-06-18 13:13:56,143 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter [main] ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2020-06-18 13:13:56,215 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'requestMappingHandlerMapping'
-2020-06-18 13:13:56,221 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'mvcResourceUrlProvider'
-2020-06-18 13:13:56,223 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'requestMappingHandlerMapping' via factory method to bean named 'mvcContentNegotiationManager'
-2020-06-18 13:13:56,223 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'requestMappingHandlerMapping' via factory method to bean named 'mvcConversionService'
-2020-06-18 13:13:56,224 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'requestMappingHandlerMapping' via factory method to bean named 'mvcResourceUrlProvider'
-2020-06-18 13:13:56,227 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'requestMappingHandlerMapping' via factory method to bean named 'mvcContentNegotiationManager'
-2020-06-18 13:13:56,227 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'requestMappingHandlerMapping' via factory method to bean named 'mvcConversionService'
-2020-06-18 13:13:56,227 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'requestMappingHandlerMapping' via factory method to bean named 'mvcResourceUrlProvider'
-2020-06-18 13:13:56,284 DEBUG o.s.w.s.h.AbstractHandlerMethodMapping [main] 8 mappings in 'requestMappingHandlerMapping'
-2020-06-18 13:13:56,285 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'welcomePageHandlerMapping'
-2020-06-18 13:13:56,286 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'welcomePageHandlerMapping' via factory method to bean named 'org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1a6c1270'
-2020-06-18 13:13:56,286 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'welcomePageHandlerMapping' via factory method to bean named 'mvcConversionService'
-2020-06-18 13:13:56,286 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'welcomePageHandlerMapping' via factory method to bean named 'mvcResourceUrlProvider'
-2020-06-18 13:13:56,294 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'mvcPathMatcher'
-2020-06-18 13:13:56,296 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'mvcUrlPathHelper'
-2020-06-18 13:13:56,298 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'viewControllerHandlerMapping'
-2020-06-18 13:13:56,301 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'viewControllerHandlerMapping' via factory method to bean named 'mvcPathMatcher'
-2020-06-18 13:13:56,301 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'viewControllerHandlerMapping' via factory method to bean named 'mvcUrlPathHelper'
-2020-06-18 13:13:56,301 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'viewControllerHandlerMapping' via factory method to bean named 'mvcConversionService'
-2020-06-18 13:13:56,302 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'viewControllerHandlerMapping' via factory method to bean named 'mvcResourceUrlProvider'
-2020-06-18 13:13:56,303 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'beanNameHandlerMapping'
-2020-06-18 13:13:56,304 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'beanNameHandlerMapping' via factory method to bean named 'mvcConversionService'
-2020-06-18 13:13:56,304 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'beanNameHandlerMapping' via factory method to bean named 'mvcResourceUrlProvider'
-2020-06-18 13:13:56,309 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'routerFunctionMapping'
-2020-06-18 13:13:56,310 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'routerFunctionMapping' via factory method to bean named 'mvcConversionService'
-2020-06-18 13:13:56,311 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'routerFunctionMapping' via factory method to bean named 'mvcResourceUrlProvider'
-2020-06-18 13:13:56,314 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'resourceHandlerMapping'
-2020-06-18 13:13:56,317 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'resourceHandlerMapping' via factory method to bean named 'mvcUrlPathHelper'
-2020-06-18 13:13:56,317 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'resourceHandlerMapping' via factory method to bean named 'mvcPathMatcher'
-2020-06-18 13:13:56,318 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'resourceHandlerMapping' via factory method to bean named 'mvcContentNegotiationManager'
-2020-06-18 13:13:56,318 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'resourceHandlerMapping' via factory method to bean named 'mvcConversionService'
-2020-06-18 13:13:56,318 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'resourceHandlerMapping' via factory method to bean named 'mvcResourceUrlProvider'
-2020-06-18 13:13:56,335 DEBUG o.s.w.s.h.SimpleUrlHandlerMapping [main] Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2020-06-18 13:13:56,336 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'defaultServletHandlerMapping'
-2020-06-18 13:13:56,337 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'handlerFunctionAdapter'
-2020-06-18 13:13:56,339 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'mvcUriComponentsContributor'
-2020-06-18 13:13:56,342 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'mvcUriComponentsContributor' via factory method to bean named 'mvcConversionService'
-2020-06-18 13:13:56,343 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'mvcUriComponentsContributor' via factory method to bean named 'requestMappingHandlerAdapter'
-2020-06-18 13:13:56,345 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'httpRequestHandlerAdapter'
-2020-06-18 13:13:56,347 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'simpleControllerHandlerAdapter'
-2020-06-18 13:13:56,348 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'handlerExceptionResolver'
-2020-06-18 13:13:56,349 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'handlerExceptionResolver' via factory method to bean named 'mvcContentNegotiationManager'
-2020-06-18 13:13:56,354 DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver [main] ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2020-06-18 13:13:56,359 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'mvcViewResolver'
-2020-06-18 13:13:56,360 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'mvcViewResolver' via factory method to bean named 'mvcContentNegotiationManager'
-2020-06-18 13:13:56,365 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'defaultViewResolver'
-2020-06-18 13:13:56,400 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'viewResolver'
-2020-06-18 13:13:56,402 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'viewResolver' via factory method to bean named 'org.springframework.beans.factory.support.DefaultListableBeanFactory@a8c1f44'
-2020-06-18 13:13:56,410 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.aop.AopAutoConfiguration$ClassProxyingConfiguration'
-2020-06-18 13:13:56,413 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'org.springframework.boot.autoconfigure.aop.AopAutoConfiguration$ClassProxyingConfiguration' via constructor to bean named 'org.springframework.beans.factory.support.DefaultListableBeanFactory@a8c1f44'
-2020-06-18 13:13:56,422 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.aop.AopAutoConfiguration'
-2020-06-18 13:13:56,423 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.context.ConfigurationPropertiesAutoConfiguration'
-2020-06-18 13:13:56,427 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.http.JacksonHttpMessageConvertersConfiguration'
-2020-06-18 13:13:56,428 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.info.ProjectInfoAutoConfiguration'
-2020-06-18 13:13:56,439 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'spring.info-org.springframework.boot.autoconfigure.info.ProjectInfoProperties'
-2020-06-18 13:13:56,445 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'org.springframework.boot.autoconfigure.info.ProjectInfoAutoConfiguration' via constructor to bean named 'spring.info-org.springframework.boot.autoconfigure.info.ProjectInfoProperties'
-2020-06-18 13:13:56,447 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.security.oauth2.resource.servlet.OAuth2ResourceServerAutoConfiguration'
-2020-06-18 13:13:56,447 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'spring.security.oauth2.resourceserver-org.springframework.boot.autoconfigure.security.oauth2.resource.OAuth2ResourceServerProperties'
-2020-06-18 13:13:56,456 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.task.TaskSchedulingAutoConfiguration'
-2020-06-18 13:13:56,460 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'taskSchedulerBuilder'
-2020-06-18 13:13:56,467 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'spring.task.scheduling-org.springframework.boot.autoconfigure.task.TaskSchedulingProperties'
-2020-06-18 13:13:56,470 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'taskSchedulerBuilder' via factory method to bean named 'spring.task.scheduling-org.springframework.boot.autoconfigure.task.TaskSchedulingProperties'
-2020-06-18 13:13:56,476 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.client.RestTemplateAutoConfiguration'
-2020-06-18 13:13:56,477 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'restTemplateBuilder'
-2020-06-18 13:13:56,486 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.embedded.EmbeddedWebServerFactoryCustomizerAutoConfiguration'
-2020-06-18 13:13:56,487 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'multipartResolver'
-2020-06-18 13:13:56,609 DEBUG o.s.b.a.l.ConditionEvaluationReportLoggingListener [main] 
+2020-06-19 13:51:15,044 DEBUG o.s.b.c.l.ClasspathLoggingApplicationListener [main] Application started with classpath: unknown
+2020-06-19 13:51:15,231 INFO o.s.b.StartupInfoLogger [main] Starting Main on VinceLaptop with PID 30115 (/home/vince/workspace/summer/JavaServer/bin/main started by vince in /home/vince/workspace/summer/JavaServer)
+2020-06-19 13:51:15,239 DEBUG o.s.b.StartupInfoLogger [main] Running with Spring Boot v2.2.2.RELEASE, Spring v5.2.2.RELEASE
+2020-06-19 13:51:15,245 INFO o.s.b.SpringApplication [main] No active profile set, falling back to default profiles: default
+2020-06-19 13:51:15,247 DEBUG o.s.b.SpringApplication [main] Loading source class httpControllers.Main
+2020-06-19 13:51:15,358 DEBUG o.s.c.s.AbstractApplicationContext [main] Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@531f4093
+2020-06-19 13:51:15,428 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+2020-06-19 13:51:15,456 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.internalCachingMetadataReaderFactory'
+2020-06-19 13:51:15,552 DEBUG o.s.c.a.ClassPathScanningCandidateComponentProvider [main] Identified candidate component class: file [/home/vince/workspace/summer/JavaServer/bin/main/httpControllers/CategoryController.class]
+2020-06-19 13:51:15,553 DEBUG o.s.c.a.ClassPathScanningCandidateComponentProvider [main] Identified candidate component class: file [/home/vince/workspace/summer/JavaServer/bin/main/httpControllers/CourseController.class]
+2020-06-19 13:51:15,561 DEBUG o.s.c.a.ClassPathScanningCandidateComponentProvider [main] Identified candidate component class: file [/home/vince/workspace/summer/JavaServer/bin/main/httpControllers/MarkController.class]
+2020-06-19 13:51:16,427 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'propertySourcesPlaceholderConfigurer'
+2020-06-19 13:51:16,447 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.context.properties.ConfigurationPropertiesBeanDefinitionValidator'
+2020-06-19 13:51:16,564 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerProcessor'
+2020-06-19 13:51:16,567 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'preserveErrorControllerTargetClassPostProcessor'
+2020-06-19 13:51:16,569 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerFactory'
+2020-06-19 13:51:16,574 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+2020-06-19 13:51:16,575 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+2020-06-19 13:51:16,579 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor'
+2020-06-19 13:51:16,580 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.context.internalConfigurationPropertiesBinder'
+2020-06-19 13:51:16,581 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.context.internalConfigurationPropertiesBinderFactory'
+2020-06-19 13:51:16,586 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'methodValidationPostProcessor'
+2020-06-19 13:51:16,605 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'methodValidationPostProcessor' via factory method to bean named 'environment'
+2020-06-19 13:51:16,619 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'webServerFactoryCustomizerBeanPostProcessor'
+2020-06-19 13:51:16,621 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'errorPageRegistrarBeanPostProcessor'
+2020-06-19 13:51:16,626 DEBUG o.s.u.c.s.UiApplicationContextUtils [main] Unable to locate ThemeSource with name 'themeSource': using default [org.springframework.ui.context.support.ResourceBundleThemeSource@b8a7e43]
+2020-06-19 13:51:16,627 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'tomcatServletWebServerFactory'
+2020-06-19 13:51:16,628 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.ServletWebServerFactoryConfiguration$EmbeddedTomcat'
+2020-06-19 13:51:16,678 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'websocketServletWebServerCustomizer'
+2020-06-19 13:51:16,679 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.websocket.servlet.WebSocketServletAutoConfiguration$TomcatWebSocketConfiguration'
+2020-06-19 13:51:16,683 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'servletWebServerFactoryCustomizer'
+2020-06-19 13:51:16,684 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.ServletWebServerFactoryAutoConfiguration'
+2020-06-19 13:51:16,687 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'server-org.springframework.boot.autoconfigure.web.ServerProperties'
+2020-06-19 13:51:16,723 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'servletWebServerFactoryCustomizer' via factory method to bean named 'server-org.springframework.boot.autoconfigure.web.ServerProperties'
+2020-06-19 13:51:16,724 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'tomcatServletWebServerFactoryCustomizer'
+2020-06-19 13:51:16,727 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'tomcatServletWebServerFactoryCustomizer' via factory method to bean named 'server-org.springframework.boot.autoconfigure.web.ServerProperties'
+2020-06-19 13:51:16,728 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'tomcatWebServerFactoryCustomizer'
+2020-06-19 13:51:16,729 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.embedded.EmbeddedWebServerFactoryCustomizerAutoConfiguration$TomcatWebServerFactoryCustomizerConfiguration'
+2020-06-19 13:51:16,732 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'tomcatWebServerFactoryCustomizer' via factory method to bean named 'environment'
+2020-06-19 13:51:16,733 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'tomcatWebServerFactoryCustomizer' via factory method to bean named 'server-org.springframework.boot.autoconfigure.web.ServerProperties'
+2020-06-19 13:51:16,735 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'localeCharsetMappingsCustomizer'
+2020-06-19 13:51:16,736 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.HttpEncodingAutoConfiguration'
+2020-06-19 13:51:16,740 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'spring.http-org.springframework.boot.autoconfigure.http.HttpProperties'
+2020-06-19 13:51:16,746 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.HttpEncodingAutoConfiguration' via constructor to bean named 'spring.http-org.springframework.boot.autoconfigure.http.HttpProperties'
+2020-06-19 13:51:16,802 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'errorPageCustomizer'
+2020-06-19 13:51:16,802 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration'
+2020-06-19 13:51:16,804 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration' via constructor to bean named 'server-org.springframework.boot.autoconfigure.web.ServerProperties'
+2020-06-19 13:51:16,806 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'dispatcherServletRegistration'
+2020-06-19 13:51:16,806 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.DispatcherServletAutoConfiguration$DispatcherServletRegistrationConfiguration'
+2020-06-19 13:51:16,809 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'dispatcherServlet'
+2020-06-19 13:51:16,809 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.DispatcherServletAutoConfiguration$DispatcherServletConfiguration'
+2020-06-19 13:51:16,812 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'spring.mvc-org.springframework.boot.autoconfigure.web.servlet.WebMvcProperties'
+2020-06-19 13:51:16,821 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'dispatcherServlet' via factory method to bean named 'spring.http-org.springframework.boot.autoconfigure.http.HttpProperties'
+2020-06-19 13:51:16,821 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'dispatcherServlet' via factory method to bean named 'spring.mvc-org.springframework.boot.autoconfigure.web.servlet.WebMvcProperties'
+2020-06-19 13:51:16,837 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'dispatcherServletRegistration' via factory method to bean named 'dispatcherServlet'
+2020-06-19 13:51:16,838 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'dispatcherServletRegistration' via factory method to bean named 'spring.mvc-org.springframework.boot.autoconfigure.web.servlet.WebMvcProperties'
+2020-06-19 13:51:16,841 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'multipartConfigElement'
+2020-06-19 13:51:16,841 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.MultipartAutoConfiguration'
+2020-06-19 13:51:16,843 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'spring.servlet.multipart-org.springframework.boot.autoconfigure.web.servlet.MultipartProperties'
+2020-06-19 13:51:16,850 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.MultipartAutoConfiguration' via constructor to bean named 'spring.servlet.multipart-org.springframework.boot.autoconfigure.web.servlet.MultipartProperties'
+2020-06-19 13:51:16,860 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'errorPageCustomizer' via factory method to bean named 'dispatcherServletRegistration'
+2020-06-19 13:51:17,061 DEBUG o.s.b.w.s.s.DocumentRoot [main] Code archive: /home/vince/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot/2.2.2.RELEASE/cc636f24a5ebbfb21f1c8c30ed9c3b13512c16ec/spring-boot-2.2.2.RELEASE.jar
+2020-06-19 13:51:17,062 DEBUG o.s.b.w.s.s.DocumentRoot [main] Code archive: /home/vince/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot/2.2.2.RELEASE/cc636f24a5ebbfb21f1c8c30ed9c3b13512c16ec/spring-boot-2.2.2.RELEASE.jar
+2020-06-19 13:51:17,062 DEBUG o.s.b.w.s.s.DocumentRoot [main] None of the document roots [src/main/webapp, public, static] point to a directory and will be ignored.
+2020-06-19 13:51:17,109 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2020-06-19 13:51:17,169 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2020-06-19 13:51:17,177 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2020-06-19 13:51:17,179 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-06-19 13:51:17,378 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2020-06-19 13:51:17,379 DEBUG o.s.b.w.s.c.ServletWebServerApplicationContext [main] Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2020-06-19 13:51:17,380 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2021 ms
+2020-06-19 13:51:17,392 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'requestContextFilter'
+2020-06-19 13:51:17,396 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'formContentFilter'
+2020-06-19 13:51:17,397 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration'
+2020-06-19 13:51:17,402 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'characterEncodingFilter'
+2020-06-19 13:51:17,415 DEBUG o.s.b.w.s.ServletContextInitializerBeans [main] Mapping filters: characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
+2020-06-19 13:51:17,416 DEBUG o.s.b.w.s.ServletContextInitializerBeans [main] Mapping servlets: dispatcherServlet urls=[/]
+2020-06-19 13:51:17,452 DEBUG o.s.w.f.GenericFilterBean [main] Filter 'requestContextFilter' configured for use
+2020-06-19 13:51:17,454 DEBUG o.s.w.f.GenericFilterBean [main] Filter 'characterEncodingFilter' configured for use
+2020-06-19 13:51:17,455 DEBUG o.s.w.f.GenericFilterBean [main] Filter 'formContentFilter' configured for use
+2020-06-19 13:51:17,508 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'main'
+2020-06-19 13:51:17,510 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'categoryController'
+2020-06-19 13:51:17,514 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'courseController'
+2020-06-19 13:51:17,528 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'markController'
+2020-06-19 13:51:17,545 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.AutoConfigurationPackages'
+2020-06-19 13:51:17,554 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration'
+2020-06-19 13:51:17,562 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.websocket.servlet.WebSocketServletAutoConfiguration'
+2020-06-19 13:51:17,566 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.context.properties.ConfigurationBeanFactoryMetadata'
+2020-06-19 13:51:17,567 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.DispatcherServletAutoConfiguration'
+2020-06-19 13:51:17,568 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.task.TaskExecutionAutoConfiguration'
+2020-06-19 13:51:17,569 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'taskExecutorBuilder'
+2020-06-19 13:51:17,571 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'spring.task.execution-org.springframework.boot.autoconfigure.task.TaskExecutionProperties'
+2020-06-19 13:51:17,591 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'taskExecutorBuilder' via factory method to bean named 'spring.task.execution-org.springframework.boot.autoconfigure.task.TaskExecutionProperties'
+2020-06-19 13:51:17,595 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration'
+2020-06-19 13:51:17,600 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'defaultValidator'
+2020-06-19 13:51:17,603 DEBUG o.h.v.i.e.r.TraversableResolvers [main] Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+2020-06-19 13:51:17,606 DEBUG o.h.v.m.ResourceBundleMessageInterpolator [main] Loaded expression factory via original TCCL
+2020-06-19 13:51:17,619 DEBUG o.h.v.i.e.r.TraversableResolvers [main] Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+2020-06-19 13:51:17,621 DEBUG o.h.v.i.e.ConfigurationImpl [main] Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
+2020-06-19 13:51:17,624 DEBUG o.h.v.i.e.ConfigurationImpl [main] Setting custom ConstraintValidatorFactory of type org.springframework.validation.beanvalidation.SpringConstraintValidatorFactory
+2020-06-19 13:51:17,629 DEBUG o.h.v.i.e.ConfigurationImpl [main] Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1
+2020-06-19 13:51:17,635 DEBUG o.h.v.i.x.c.ValidationXmlParser [main] Trying to load META-INF/validation.xml for XML based Validator configuration.
+2020-06-19 13:51:17,637 DEBUG o.h.v.i.x.c.ResourceLoaderHelper [main] Trying to load META-INF/validation.xml via user class loader
+2020-06-19 13:51:17,637 DEBUG o.h.v.i.x.c.ResourceLoaderHelper [main] Trying to load META-INF/validation.xml via TCCL
+2020-06-19 13:51:17,638 DEBUG o.h.v.i.x.c.ResourceLoaderHelper [main] Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+2020-06-19 13:51:17,639 DEBUG o.h.v.i.x.c.ValidationXmlParser [main] No META-INF/validation.xml found. Using annotation based configuration only.
+2020-06-19 13:51:17,658 DEBUG o.h.v.i.e.ValidatorFactoryImpl [main] HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator.
+2020-06-19 13:51:17,658 DEBUG o.h.v.i.e.ValidatorFactoryImpl [main] HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver.
+2020-06-19 13:51:17,661 DEBUG o.h.v.i.e.ValidatorFactoryImpl [main] HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
+2020-06-19 13:51:17,663 DEBUG o.h.v.i.e.ValidatorFactoryImpl [main] HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+2020-06-19 13:51:17,664 DEBUG o.h.v.i.e.ValidatorFactoryImpl [main] HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+2020-06-19 13:51:17,669 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration'
+2020-06-19 13:51:17,670 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'error'
+2020-06-19 13:51:17,671 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'beanNameViewResolver'
+2020-06-19 13:51:17,674 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration$DefaultErrorViewResolverConfiguration'
+2020-06-19 13:51:17,677 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'spring.resources-org.springframework.boot.autoconfigure.web.ResourceProperties'
+2020-06-19 13:51:17,682 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration$DefaultErrorViewResolverConfiguration' via constructor to bean named 'org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@531f4093'
+2020-06-19 13:51:17,683 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration$DefaultErrorViewResolverConfiguration' via constructor to bean named 'spring.resources-org.springframework.boot.autoconfigure.web.ResourceProperties'
+2020-06-19 13:51:17,684 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'conventionErrorViewResolver'
+2020-06-19 13:51:17,687 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'errorAttributes'
+2020-06-19 13:51:17,688 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'basicErrorController'
+2020-06-19 13:51:17,689 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'basicErrorController' via factory method to bean named 'errorAttributes'
+2020-06-19 13:51:17,692 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$EnableWebMvcConfiguration'
+2020-06-19 13:51:17,695 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$EnableWebMvcConfiguration' via constructor to bean named 'spring.resources-org.springframework.boot.autoconfigure.web.ResourceProperties'
+2020-06-19 13:51:17,696 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$EnableWebMvcConfiguration' via constructor to bean named 'org.springframework.beans.factory.support.DefaultListableBeanFactory@1e63ec0b'
+2020-06-19 13:51:17,715 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter'
+2020-06-19 13:51:17,716 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter' via constructor to bean named 'spring.resources-org.springframework.boot.autoconfigure.web.ResourceProperties'
+2020-06-19 13:51:17,727 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter' via constructor to bean named 'spring.mvc-org.springframework.boot.autoconfigure.web.servlet.WebMvcProperties'
+2020-06-19 13:51:17,729 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter' via constructor to bean named 'org.springframework.beans.factory.support.DefaultListableBeanFactory@1e63ec0b'
+2020-06-19 13:51:17,734 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'requestMappingHandlerAdapter'
+2020-06-19 13:51:17,737 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'mvcContentNegotiationManager'
+2020-06-19 13:51:17,759 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'mvcConversionService'
+2020-06-19 13:51:17,766 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'mvcValidator'
+2020-06-19 13:51:17,769 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'requestMappingHandlerAdapter' via factory method to bean named 'mvcContentNegotiationManager'
+2020-06-19 13:51:17,770 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'requestMappingHandlerAdapter' via factory method to bean named 'mvcConversionService'
+2020-06-19 13:51:17,770 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'requestMappingHandlerAdapter' via factory method to bean named 'mvcValidator'
+2020-06-19 13:51:17,779 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'requestMappingHandlerAdapter' via factory method to bean named 'mvcContentNegotiationManager'
+2020-06-19 13:51:17,779 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'requestMappingHandlerAdapter' via factory method to bean named 'mvcConversionService'
+2020-06-19 13:51:17,780 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'requestMappingHandlerAdapter' via factory method to bean named 'mvcValidator'
+2020-06-19 13:51:17,792 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'messageConverters'
+2020-06-19 13:51:17,792 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.http.HttpMessageConvertersAutoConfiguration'
+2020-06-19 13:51:17,800 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'stringHttpMessageConverter'
+2020-06-19 13:51:17,800 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.http.HttpMessageConvertersAutoConfiguration$StringHttpMessageConverterConfiguration'
+2020-06-19 13:51:17,802 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'stringHttpMessageConverter' via factory method to bean named 'spring.http-org.springframework.boot.autoconfigure.http.HttpProperties'
+2020-06-19 13:51:17,806 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'mappingJackson2HttpMessageConverter'
+2020-06-19 13:51:17,807 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.http.JacksonHttpMessageConvertersConfiguration$MappingJackson2HttpMessageConverterConfiguration'
+2020-06-19 13:51:17,808 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'jacksonObjectMapper'
+2020-06-19 13:51:17,809 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperConfiguration'
+2020-06-19 13:51:17,811 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperBuilderConfiguration'
+2020-06-19 13:51:17,814 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'standardJacksonObjectMapperBuilderCustomizer'
+2020-06-19 13:51:17,816 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$Jackson2ObjectMapperBuilderCustomizerConfiguration'
+2020-06-19 13:51:17,820 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'spring.jackson-org.springframework.boot.autoconfigure.jackson.JacksonProperties'
+2020-06-19 13:51:17,826 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'standardJacksonObjectMapperBuilderCustomizer' via factory method to bean named 'org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@531f4093'
+2020-06-19 13:51:17,827 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'standardJacksonObjectMapperBuilderCustomizer' via factory method to bean named 'spring.jackson-org.springframework.boot.autoconfigure.jackson.JacksonProperties'
+2020-06-19 13:51:17,829 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'jacksonObjectMapperBuilder' via factory method to bean named 'org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@531f4093'
+2020-06-19 13:51:17,829 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'jacksonObjectMapperBuilder' via factory method to bean named 'standardJacksonObjectMapperBuilderCustomizer'
+2020-06-19 13:51:17,832 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'parameterNamesModule'
+2020-06-19 13:51:17,834 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$ParameterNamesModuleConfiguration'
+2020-06-19 13:51:17,840 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'jsonComponentModule'
+2020-06-19 13:51:17,841 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration'
+2020-06-19 13:51:17,853 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'jacksonObjectMapper' via factory method to bean named 'jacksonObjectMapperBuilder'
+2020-06-19 13:51:17,884 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'mappingJackson2HttpMessageConverter' via factory method to bean named 'jacksonObjectMapper'
+2020-06-19 13:51:17,896 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'applicationTaskExecutor'
+2020-06-19 13:51:17,897 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'applicationTaskExecutor' via factory method to bean named 'taskExecutorBuilder'
+2020-06-19 13:51:17,914 INFO o.s.s.c.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-19 13:51:17,941 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter [main] ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2020-06-19 13:51:17,990 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'requestMappingHandlerMapping'
+2020-06-19 13:51:17,994 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'mvcResourceUrlProvider'
+2020-06-19 13:51:17,997 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'requestMappingHandlerMapping' via factory method to bean named 'mvcContentNegotiationManager'
+2020-06-19 13:51:17,998 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'requestMappingHandlerMapping' via factory method to bean named 'mvcConversionService'
+2020-06-19 13:51:17,998 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'requestMappingHandlerMapping' via factory method to bean named 'mvcResourceUrlProvider'
+2020-06-19 13:51:18,000 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'requestMappingHandlerMapping' via factory method to bean named 'mvcContentNegotiationManager'
+2020-06-19 13:51:18,001 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'requestMappingHandlerMapping' via factory method to bean named 'mvcConversionService'
+2020-06-19 13:51:18,001 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'requestMappingHandlerMapping' via factory method to bean named 'mvcResourceUrlProvider'
+2020-06-19 13:51:18,119 DEBUG o.s.w.s.h.AbstractHandlerMethodMapping [main] 10 mappings in 'requestMappingHandlerMapping'
+2020-06-19 13:51:18,120 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'welcomePageHandlerMapping'
+2020-06-19 13:51:18,121 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'welcomePageHandlerMapping' via factory method to bean named 'org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@531f4093'
+2020-06-19 13:51:18,121 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'welcomePageHandlerMapping' via factory method to bean named 'mvcConversionService'
+2020-06-19 13:51:18,122 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'welcomePageHandlerMapping' via factory method to bean named 'mvcResourceUrlProvider'
+2020-06-19 13:51:18,128 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'mvcPathMatcher'
+2020-06-19 13:51:18,130 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'mvcUrlPathHelper'
+2020-06-19 13:51:18,131 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'viewControllerHandlerMapping'
+2020-06-19 13:51:18,134 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'viewControllerHandlerMapping' via factory method to bean named 'mvcPathMatcher'
+2020-06-19 13:51:18,134 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'viewControllerHandlerMapping' via factory method to bean named 'mvcUrlPathHelper'
+2020-06-19 13:51:18,134 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'viewControllerHandlerMapping' via factory method to bean named 'mvcConversionService'
+2020-06-19 13:51:18,135 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'viewControllerHandlerMapping' via factory method to bean named 'mvcResourceUrlProvider'
+2020-06-19 13:51:18,136 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'beanNameHandlerMapping'
+2020-06-19 13:51:18,137 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'beanNameHandlerMapping' via factory method to bean named 'mvcConversionService'
+2020-06-19 13:51:18,137 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'beanNameHandlerMapping' via factory method to bean named 'mvcResourceUrlProvider'
+2020-06-19 13:51:18,140 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'routerFunctionMapping'
+2020-06-19 13:51:18,141 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'routerFunctionMapping' via factory method to bean named 'mvcConversionService'
+2020-06-19 13:51:18,142 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'routerFunctionMapping' via factory method to bean named 'mvcResourceUrlProvider'
+2020-06-19 13:51:18,145 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'resourceHandlerMapping'
+2020-06-19 13:51:18,149 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'resourceHandlerMapping' via factory method to bean named 'mvcUrlPathHelper'
+2020-06-19 13:51:18,149 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'resourceHandlerMapping' via factory method to bean named 'mvcPathMatcher'
+2020-06-19 13:51:18,149 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'resourceHandlerMapping' via factory method to bean named 'mvcContentNegotiationManager'
+2020-06-19 13:51:18,150 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'resourceHandlerMapping' via factory method to bean named 'mvcConversionService'
+2020-06-19 13:51:18,151 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'resourceHandlerMapping' via factory method to bean named 'mvcResourceUrlProvider'
+2020-06-19 13:51:18,200 DEBUG o.s.w.s.h.SimpleUrlHandlerMapping [main] Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2020-06-19 13:51:18,201 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'defaultServletHandlerMapping'
+2020-06-19 13:51:18,201 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'handlerFunctionAdapter'
+2020-06-19 13:51:18,203 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'mvcUriComponentsContributor'
+2020-06-19 13:51:18,205 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'mvcUriComponentsContributor' via factory method to bean named 'mvcConversionService'
+2020-06-19 13:51:18,205 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'mvcUriComponentsContributor' via factory method to bean named 'requestMappingHandlerAdapter'
+2020-06-19 13:51:18,209 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'httpRequestHandlerAdapter'
+2020-06-19 13:51:18,210 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'simpleControllerHandlerAdapter'
+2020-06-19 13:51:18,212 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'handlerExceptionResolver'
+2020-06-19 13:51:18,217 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'handlerExceptionResolver' via factory method to bean named 'mvcContentNegotiationManager'
+2020-06-19 13:51:18,223 DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver [main] ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-06-19 13:51:18,245 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'mvcViewResolver'
+2020-06-19 13:51:18,246 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'mvcViewResolver' via factory method to bean named 'mvcContentNegotiationManager'
+2020-06-19 13:51:18,250 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'defaultViewResolver'
+2020-06-19 13:51:18,256 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'viewResolver'
+2020-06-19 13:51:18,257 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'viewResolver' via factory method to bean named 'org.springframework.beans.factory.support.DefaultListableBeanFactory@1e63ec0b'
+2020-06-19 13:51:18,261 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.aop.AopAutoConfiguration$ClassProxyingConfiguration'
+2020-06-19 13:51:18,262 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'org.springframework.boot.autoconfigure.aop.AopAutoConfiguration$ClassProxyingConfiguration' via constructor to bean named 'org.springframework.beans.factory.support.DefaultListableBeanFactory@1e63ec0b'
+2020-06-19 13:51:18,266 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.aop.AopAutoConfiguration'
+2020-06-19 13:51:18,267 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.context.ConfigurationPropertiesAutoConfiguration'
+2020-06-19 13:51:18,268 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.http.JacksonHttpMessageConvertersConfiguration'
+2020-06-19 13:51:18,272 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.info.ProjectInfoAutoConfiguration'
+2020-06-19 13:51:18,275 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'spring.info-org.springframework.boot.autoconfigure.info.ProjectInfoProperties'
+2020-06-19 13:51:18,277 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'org.springframework.boot.autoconfigure.info.ProjectInfoAutoConfiguration' via constructor to bean named 'spring.info-org.springframework.boot.autoconfigure.info.ProjectInfoProperties'
+2020-06-19 13:51:18,279 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.security.oauth2.resource.servlet.OAuth2ResourceServerAutoConfiguration'
+2020-06-19 13:51:18,279 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'spring.security.oauth2.resourceserver-org.springframework.boot.autoconfigure.security.oauth2.resource.OAuth2ResourceServerProperties'
+2020-06-19 13:51:18,290 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.task.TaskSchedulingAutoConfiguration'
+2020-06-19 13:51:18,292 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'taskSchedulerBuilder'
+2020-06-19 13:51:18,293 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'spring.task.scheduling-org.springframework.boot.autoconfigure.task.TaskSchedulingProperties'
+2020-06-19 13:51:18,296 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'taskSchedulerBuilder' via factory method to bean named 'spring.task.scheduling-org.springframework.boot.autoconfigure.task.TaskSchedulingProperties'
+2020-06-19 13:51:18,299 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.client.RestTemplateAutoConfiguration'
+2020-06-19 13:51:18,299 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'restTemplateBuilder'
+2020-06-19 13:51:18,304 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.embedded.EmbeddedWebServerFactoryCustomizerAutoConfiguration'
+2020-06-19 13:51:18,305 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'multipartResolver'
+2020-06-19 13:51:18,364 DEBUG o.s.b.a.l.ConditionEvaluationReportLoggingListener [main] 
 
 
 ============================
@@ -1013,8 +1013,74 @@ Unconditional classes:
 
 
 
-2020-06-18 13:13:56,654 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
-2020-06-18 13:13:56,736 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
-2020-06-18 13:13:56,755 INFO o.s.b.StartupInfoLogger [main] Started Main in 5.017 seconds (JVM running for 7.019)
-2020-06-18 13:13:59,866 DEBUG o.s.c.s.AbstractApplicationContext [SpringContextShutdownHook] Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1a6c1270, started on Thu Jun 18 13:13:53 EDT 2020
-2020-06-18 13:13:59,897 INFO o.s.s.c.ExecutorConfigurationSupport [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-19 13:51:18,380 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2020-06-19 13:51:18,438 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2020-06-19 13:51:18,453 INFO o.s.b.StartupInfoLogger [main] Started Main in 4.109 seconds (JVM running for 5.308)
+2020-06-19 13:51:25,640 INFO o.a.j.l.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-19 13:51:25,641 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2020-06-19 13:51:25,641 DEBUG o.s.w.s.DispatcherServlet [http-nio-8080-exec-1] Detected StandardServletMultipartResolver
+2020-06-19 13:51:25,652 DEBUG o.s.w.s.FrameworkServlet [http-nio-8080-exec-1] enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2020-06-19 13:51:25,653 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 11 ms
+2020-06-19 13:51:25,666 DEBUG o.s.c.l.LogFormatUtils [http-nio-8080-exec-1] DELETE "/mark?idMark=67", parameters={masked}
+2020-06-19 13:51:25,672 DEBUG o.s.w.s.h.AbstractHandlerMapping [http-nio-8080-exec-1] Mapped to httpControllers.MarkController#deleteMark(int)
+2020-06-19 13:51:25,777 DEBUG o.a.i.l.LogFactory [http-nio-8080-exec-1] Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2020-06-19 13:51:25,917 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-1] PooledDataSource forcefully closed/removed all connections.
+2020-06-19 13:51:25,917 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-1] PooledDataSource forcefully closed/removed all connections.
+2020-06-19 13:51:25,919 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-1] PooledDataSource forcefully closed/removed all connections.
+2020-06-19 13:51:25,920 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-1] PooledDataSource forcefully closed/removed all connections.
+2020-06-19 13:51:26,100 DEBUG p.SchoolDb2 [http-nio-8080-exec-1] deleteMark(67)
+2020-06-19 13:51:26,119 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-1] Opening JDBC Connection
+2020-06-19 13:51:26,465 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-1] Created connection 1539480269.
+2020-06-19 13:51:26,469 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-1] Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@5bc29acd]
+2020-06-19 13:51:26,475 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-1] ==>  Preparing: delete from Mark where idMark = ? 
+2020-06-19 13:51:26,543 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-1] ==> Parameters: 67(Integer)
+2020-06-19 13:51:26,544 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-1] <==    Updates: 1
+2020-06-19 13:51:26,545 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-1] Committing JDBC Connection [com.mysql.jdbc.JDBC4Connection@5bc29acd]
+2020-06-19 13:51:26,551 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-1] Resetting autocommit to true on JDBC Connection [com.mysql.jdbc.JDBC4Connection@5bc29acd]
+2020-06-19 13:51:26,553 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-1] Closing JDBC Connection [com.mysql.jdbc.JDBC4Connection@5bc29acd]
+2020-06-19 13:51:26,553 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-1] Returned connection 1539480269 to pool.
+2020-06-19 13:51:26,587 DEBUG o.s.w.s.m.m.a.AbstractMessageConverterMethodProcessor [http-nio-8080-exec-1] Using 'text/plain', given [*/*] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+2020-06-19 13:51:26,588 DEBUG o.s.c.l.LogFormatUtils [http-nio-8080-exec-1] Writing ["Success"]
+2020-06-19 13:51:26,607 DEBUG o.s.w.s.FrameworkServlet [http-nio-8080-exec-1] Completed 200 OK
+2020-06-19 13:51:28,607 DEBUG o.s.c.l.LogFormatUtils [http-nio-8080-exec-3] DELETE "/mark?idMark=67", parameters={masked}
+2020-06-19 13:51:28,608 DEBUG o.s.w.s.h.AbstractHandlerMapping [http-nio-8080-exec-3] Mapped to httpControllers.MarkController#deleteMark(int)
+2020-06-19 13:51:28,628 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-3] PooledDataSource forcefully closed/removed all connections.
+2020-06-19 13:51:28,629 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-3] PooledDataSource forcefully closed/removed all connections.
+2020-06-19 13:51:28,629 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-3] PooledDataSource forcefully closed/removed all connections.
+2020-06-19 13:51:28,630 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-3] PooledDataSource forcefully closed/removed all connections.
+2020-06-19 13:51:28,695 DEBUG p.SchoolDb2 [http-nio-8080-exec-3] deleteMark(67)
+2020-06-19 13:51:28,695 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-3] Opening JDBC Connection
+2020-06-19 13:51:28,709 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-3] Created connection 123774125.
+2020-06-19 13:51:28,711 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-3] Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@760a4ad]
+2020-06-19 13:51:28,712 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-3] ==>  Preparing: delete from Mark where idMark = ? 
+2020-06-19 13:51:28,713 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-3] ==> Parameters: 67(Integer)
+2020-06-19 13:51:28,714 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-3] <==    Updates: 0
+2020-06-19 13:51:28,715 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-3] Committing JDBC Connection [com.mysql.jdbc.JDBC4Connection@760a4ad]
+2020-06-19 13:51:28,716 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-3] Resetting autocommit to true on JDBC Connection [com.mysql.jdbc.JDBC4Connection@760a4ad]
+2020-06-19 13:51:28,717 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-3] Closing JDBC Connection [com.mysql.jdbc.JDBC4Connection@760a4ad]
+2020-06-19 13:51:28,718 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-3] Returned connection 123774125 to pool.
+2020-06-19 13:51:28,722 DEBUG o.s.w.s.m.m.a.AbstractMessageConverterMethodProcessor [http-nio-8080-exec-3] Using 'text/plain', given [*/*] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+2020-06-19 13:51:28,723 DEBUG o.s.c.l.LogFormatUtils [http-nio-8080-exec-3] Writing ["Success"]
+2020-06-19 13:51:28,726 DEBUG o.s.w.s.FrameworkServlet [http-nio-8080-exec-3] Completed 200 OK
+2020-06-19 13:51:36,594 DEBUG o.s.c.l.LogFormatUtils [http-nio-8080-exec-4] GET "/marks?semester=2", parameters={masked}
+2020-06-19 13:51:36,596 DEBUG o.s.w.s.h.AbstractHandlerMapping [http-nio-8080-exec-4] Mapped to httpControllers.MarkController#marks(int)
+2020-06-19 13:51:36,631 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-4] PooledDataSource forcefully closed/removed all connections.
+2020-06-19 13:51:36,631 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-4] PooledDataSource forcefully closed/removed all connections.
+2020-06-19 13:51:36,632 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-4] PooledDataSource forcefully closed/removed all connections.
+2020-06-19 13:51:36,632 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-4] PooledDataSource forcefully closed/removed all connections.
+2020-06-19 13:51:36,725 DEBUG s.MarkService [http-nio-8080-exec-4] getMarks(2)
+2020-06-19 13:51:36,726 DEBUG p.SchoolDb2 [http-nio-8080-exec-4] getMarks(2)
+2020-06-19 13:51:36,729 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-4] Opening JDBC Connection
+2020-06-19 13:51:36,745 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-4] Created connection 1966063709.
+2020-06-19 13:51:36,745 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-4] Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@752fc05d]
+2020-06-19 13:51:36,749 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-4] ==>  Preparing: select m.idMark as idMark, m.idClass as idClass, m.idCategory as idCategory, m.description as markDescription, m.mark as mark, m.weight as weight, ca.description as categoryDescription, cl.code as classCode, cl.semester as semester, cl.description as classDescription, cl.credits as classCredits from Mark m inner join Category ca on ca.idCategory = m.idCategory inner join Class cl on cl.idClass = m.idClass where semester = ? 
+2020-06-19 13:51:36,750 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-4] ==> Parameters: 2(Integer)
+2020-06-19 13:51:36,799 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-4] <==      Total: 15
+2020-06-19 13:51:36,800 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-4] Resetting autocommit to true on JDBC Connection [com.mysql.jdbc.JDBC4Connection@752fc05d]
+2020-06-19 13:51:36,801 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-4] Closing JDBC Connection [com.mysql.jdbc.JDBC4Connection@752fc05d]
+2020-06-19 13:51:36,802 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-4] Returned connection 1966063709 to pool.
+2020-06-19 13:51:36,811 DEBUG o.s.w.s.m.m.a.AbstractMessageConverterMethodProcessor [http-nio-8080-exec-4] Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-06-19 13:51:36,811 DEBUG o.s.c.l.LogFormatUtils [http-nio-8080-exec-4] Writing [[dataObjects.Mark@74c10d05, dataObjects.Mark@27b2f339, dataObjects.Mark@7fbdba98, dataObjects.Mark@7 (truncated)...]
+2020-06-19 13:51:36,895 DEBUG o.s.w.s.FrameworkServlet [http-nio-8080-exec-4] Completed 200 OK
+2020-06-19 13:51:45,641 DEBUG o.s.c.s.AbstractApplicationContext [SpringContextShutdownHook] Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@531f4093, started on Fri Jun 19 13:51:15 EDT 2020
+2020-06-19 13:51:45,645 INFO o.s.s.c.ExecutorConfigurationSupport [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'

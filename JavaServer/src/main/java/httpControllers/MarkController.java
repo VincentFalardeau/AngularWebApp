@@ -77,7 +77,6 @@ public class MarkController {
 			
 		} catch (Exception e) {
 			
-			
 			log.error(Throwables.getStackTraceAsString(e));
 			
 			//Generate internal server error
@@ -107,7 +106,6 @@ public class MarkController {
 			
 		} catch (Exception e) {
 
-			
 			log.error(Throwables.getStackTraceAsString(e));
 			
 			//Generate internal server error
@@ -118,7 +116,7 @@ public class MarkController {
 	}
 	
 	//Adds a mark in the database.
-	@PostMapping("/mark")
+	@PostMapping(URL)
 	public ResponseEntity<?> addMark(
 			@RequestParam(value = "mark") float mark,
 			@RequestParam(value = "description") String description,
@@ -149,6 +147,47 @@ public class MarkController {
 			
 		} catch (Exception e) {
 			
+			log.error(Throwables.getStackTraceAsString(e));
+			
+			//Generate internal server error
+			responseEntity = responseEntityGenerator.generateInternalServerError();
+		}
+		
+		return responseEntity;
+	}
+	
+	//Updates a mark.
+	@PatchMapping(URL)
+	public ResponseEntity<?> updateMark(
+			@RequestParam(value = "idMark") int idMark,
+			@RequestParam(value = "mark") float mark,
+			@RequestParam(value = "description") String description,
+			@RequestParam(value = "weight") float weight,
+			@RequestParam(value = "idCategory") int idCategory,
+			@RequestParam(value = "idCourse") int idCourse) {
+		
+		Logger log = LogManager.getLogger(MarkController.class);
+		
+		ResponseEntityGenerator responseEntityGenerator = new ResponseEntityGenerator();
+		ResponseEntity<?> responseEntity;
+		
+		try {
+			
+			//Update the mark.
+			MarkService markService = new MarkService();
+			markService.updateMark(idMark, mark, description, weight, idCategory, idCourse);
+			
+			//Generate OK response.
+			responseEntity = responseEntityGenerator.generateOK();
+			
+		} catch (ParameterException pe) {
+			
+			log.error(Throwables.getStackTraceAsString(pe));
+			
+			//Generate bad request
+			responseEntity = responseEntityGenerator.generateBadRequest(pe.getGenericErrorMessage());
+			
+		} catch (Exception e) {
 			
 			log.error(Throwables.getStackTraceAsString(e));
 			
@@ -158,77 +197,32 @@ public class MarkController {
 		
 		return responseEntity;
 	}
-//	
-//	//Updates a mark.
-//	@PatchMapping("/mark")
-//	public ResponseEntity<?> updateMark(
-//			@RequestParam(value = "idMark") int idMark,
-//			@RequestParam(value = "mark") float mark,
-//			@RequestParam(value = "description") String description,
-//			@RequestParam(value = "weight") float weight,
-//			@RequestParam(value = "idCategory") int idCategory,
-//			@RequestParam(value = "idCourse") int idCourse) {
-//		ResponseEntity<?> responseEntity;
-//		
-//		//Log current http call
-//		//LOGGER.info("PATCH - /mark?idMark="+idMark+"&mark="+mark+"&description="+description+"&weight="+weight+"&idCategory="+idCategory+"&idCourse="+idCourse);
-//		
-//		try {
-//			//Update the mark.
-//			MarkService markService = new MarkService();
-//			markService.updateMark(idMark, mark, description, weight, idCategory, idCourse);
-//			
-//			//Generate OK response.
-//			responseEntity = responseEntityGenerator.generateOK();
-//			
-//		} catch (ParameterException pe) {
-//			p
-//			
-//			//ParameterExceptions will occur when idCategory and/or idCourse refer to nothing in the database.
-//			responseEntity = responseEntityGenerator.generateBadRequest(pe.getGenericErrorMessage());
-//			
-//			//Log the error
-//			//LOGGER.severe(Throwables.getStackTraceAsString(pe));
-//			
-//		} catch (Exception e) {
-//			
-//			
-//			//Internal server error if any other exception thrown.
-//			responseEntity = responseEntityGenerator.generateInternalServerError();
-//			
-//			//Log the error
-//			//LOGGER.severe(Throwables.getStackTraceAsString(e));
-//		}
-//		
-//		return responseEntity;
-//	}
-//	
-//	//Deletes a mark.
-//	@DeleteMapping("/mark")
-//	public ResponseEntity<?> deleteMark(@RequestParam(value = "idMark") int idMark) {
-//		ResponseEntity<?> responseEntity;
-//		
-//		//Log current http call
-//		//LOGGER.info("DELETE - /mark?idMark="+idMark);
-//		
-//		try {
-//			//Delete the mark.
-//			MarkService markService = new MarkService();
-//			markService.deleteMark(idMark);
-//			
-//			//Generate OK response.
-//			responseEntity = responseEntityGenerator.generateOK();
-//			
-//		} catch (Exception e) {
-//			
-//			
-//			//Internal server error if exception thrown.
-//			responseEntity = responseEntityGenerator.generateInternalServerError();
-//			
-//			//Log the error
-//			//LOGGER.severe(Throwables.getStackTraceAsString(e));
-//		}
-//		
-//		return responseEntity;
-//	}
+	
+	//Deletes a mark.
+	@DeleteMapping(URL)
+	public ResponseEntity<?> deleteMark(@RequestParam(value = "idMark") int idMark) {
+		
+		Logger log = LogManager.getLogger(MarkController.class);
+		
+		ResponseEntityGenerator responseEntityGenerator = new ResponseEntityGenerator();
+		ResponseEntity<?> responseEntity;
+		
+		try {
+			//Delete the mark.
+			MarkService markService = new MarkService();
+			markService.deleteMark(idMark);
+			
+			//Generate OK response.
+			responseEntity = responseEntityGenerator.generateOK();
+			
+		} catch (Exception e) {
+			
+			log.error(Throwables.getStackTraceAsString(e));
+			
+			//Generate internal server error
+			responseEntity = responseEntityGenerator.generateInternalServerError();
+		}
+		
+		return responseEntity;
+	}
 }

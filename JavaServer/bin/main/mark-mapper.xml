@@ -61,5 +61,12 @@
 	<insert id = "insert" parameterType = "dataObjects.MarkData">
       INSERT INTO Mark VALUES (null, #{idCourse}, #{idCategory}, #{description}, #{mark}, #{weight})
    	</insert>
+
+	<update id="update" parameterType = "dataObjects.MarkData">
+		update Mark set idClass = #{idCourse}, idCategory = #{idCategory}, description = #{description},  mark = #{mark}, weight = #{weight} where idMark = #{id}
+	</update>  
 	
+	<delete id="delete" parameterType = "int">
+		delete from Mark where idMark = #{id}
+	</delete>   	
 </mapper>

@@ -19,12 +19,7 @@ import dataObjects.Course;
 import dataObjects.Mark;
 import dataObjects.MarkData;
 
-public class SchoolDb2 {
-	
-	//TODO: Open the session that way every time.
-	//Do this for everything that has to be closed.
-	//TODO: use lambda for stats
-			
+public class SchoolDb2 {			
 	
 	private final String CONFIG_FILE = "mybatis-config.xml";
 	
@@ -185,12 +180,41 @@ public class SchoolDb2 {
 				
 		try (SqlSession session = mSqlSessionFactory.openSession()){
 			
-			MarkData markData = new MarkData(description, mark, weight, idCourse, idCategory);
+			MarkData markData = new MarkData(null, description, mark, weight, idCourse, idCategory);
 			
 			session.insert("dataObjects.Mark.insert", markData);
 			
 			session.commit();
 		}
 		
+	}
+	
+	public void updateMark(int idMark, float mark, String description, float weight, int idCategory, int idCourse) throws PersistenceException{
+		
+		Logger log = LogManager.getLogger(SchoolDb2.class);
+		log.debug("updateMark("+idMark+", "+mark+", "+description+", "+weight+", "+idCategory+", "+idCourse+")");
+				
+		try (SqlSession session = mSqlSessionFactory.openSession()){
+			
+			MarkData markData = new MarkData(idMark, description, mark, weight, idCourse, idCategory);
+			
+			session.update("dataObjects.Mark.update", markData);
+			
+			session.commit();
+		}
+		
+	}
+	
+	public void deleteMark(int idMark) {
+		
+		Logger log = LogManager.getLogger(SchoolDb2.class);
+		log.debug("deleteMark("+idMark+")");
+				
+		try (SqlSession session = mSqlSessionFactory.openSession()){
+			
+			session.delete("dataObjects.Mark.delete", idMark);
+			
+			session.commit();
+		}
 	}
 }
