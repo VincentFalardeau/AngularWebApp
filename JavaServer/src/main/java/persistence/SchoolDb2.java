@@ -148,6 +148,23 @@ public class SchoolDb2 {
 		return marks;
 	}
 	
+	//Gives all the marks for a course.
+	public ArrayList<Mark> getCourseMarks(int idCourse) {
+			
+		Logger log = LogManager.getLogger(SchoolDb2.class);
+		log.debug("getCourseMarks("+idCourse+")");
+			
+		ArrayList<Mark> marks = null;
+			
+		try (SqlSession session = mSqlSessionFactory.openSession()){
+			marks = (ArrayList)session.selectList("dataObjects.Mark.getMarksForCourse", idCourse);
+
+			session.commit();
+		}
+				
+		return marks;
+	}
+	
 	//Gives a single mark specified by an id.
 	public Mark getMark(int idMark) {
 			

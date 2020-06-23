@@ -14,7 +14,6 @@ public class Main {
 
 //TODO: Code cleanup and commenting
 //TODO: Create a function that prints (gives a string of) the current method's name and parameters.
-//TODO: Make MarkController functional and test it.
 //TODO: Create a statistics service.
 //TODO: use lambda for statistics.
 

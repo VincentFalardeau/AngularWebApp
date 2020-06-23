@@ -20,6 +20,10 @@
 		<include refid="query"/> where semester =
 	</sql>
 	
+	<sql id="queryForCourse">
+		<include refid="query"/> where idClass =
+	</sql>
+	
 	<sql id="querySingleMark">
 		<include refid="query"/> where idMark =
 	</sql>
@@ -52,6 +56,10 @@
 	
 	<select id="getMarksForSemester" parameterType = "int" resultMap="markResultMap">
 		<include refid="queryForSemester"/> #{semester}
+	</select>
+	
+	<select id="getMarksForCourse" parameterType = "int" resultMap="markResultMap">
+		<include refid="queryForCourse"/> #{idCourse}
 	</select>
 	
 	<select id="getMark" parameterType = "int" resultMap="markResultMap">

@@ -25,7 +25,7 @@ public class MarkController {
 	
 	private final String URL = "mark";
 	private final String MULTIPLE_MARKS_URL= URL + "s";
-	private final String ALL_MARKS_URL = URL + "/all";
+	private final String ALL_MARKS_URL = MULTIPLE_MARKS_URL + "/all";
 	
 	//Gives all the marks.
 	@GetMapping(ALL_MARKS_URL)
