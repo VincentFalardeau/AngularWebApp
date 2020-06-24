@@ -26,19 +26,31 @@
                 </li>
             </ul> -->
 
-            <table>
+            <!-- <table>
                 <tr ng-repeat="grade in grades">
                     <td>{{ grade.course.code }}</td>
                     <td>{{ grade.letter }}</td>
                 </tr>
             </table>
-            <br>
+            <br> -->
 
-
+            <!-- Semester: 
             <select ng-model="semester" ng-change="refreshMarks()"  ng-options="semester for semester in semesters">
-                <!-- <option ng-repeat="course in courses">{{ course.code }}</option> -->
-                <!-- <option ng-repeat="semester in semesters">{{ semester }}</option> -->
+                 <option ng-repeat="course in courses">{{ course.code }}</option> 
+                <option ng-repeat="semester in semesters">{{ semester }}</option>
             </select>
+
+            <table>
+                <tr ng-repeat="mark in marks">
+                    <td>{{ mark.course.description }}</td>
+                    <td>{{ mark.description }}</td>
+                    <td>{{ mark.mark }}</td>
+                </tr>
+            </table> -->
+
+
+            Course: 
+            <select ng-model="course" ng-change="refreshMarks()"  ng-options="course.code for course in courses"></select>
 
             <table>
                 <tr ng-repeat="mark in marks">

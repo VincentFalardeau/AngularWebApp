@@ -15,14 +15,32 @@ app.controller('myCtrl', function($scope, $http) {
     //     'Kai'
     // ];
 
-    $scope.semesters = [1, 2, 3, 4, 5, 6];
-    $scope.semester = $scope.semesters[0];
+    $http.get("http://127.0.0.1:8080/courses/all").then(function (response) {
 
-    $scope.refreshMarks = function(){
+        $scope.courses = response.data;
+        $scope.course = $scope.courses[0];
 
-        console.log("allo");
+    }, function(response) {
 
-        $http.get("http://127.0.0.1:8080/marks?semester=" + $scope.semester).then(function (response) {
+        // Second function handles error
+        //$scope.result = "Something went wrong";
+    });
+
+   
+
+    let refreshMarks = function(){
+
+        // $http.get("http://127.0.0.1:8080/marks?semester=" + $scope.semester).then(function (response) {
+
+        //     $scope.marks = response.data;
+
+        // }, function(response) {
+
+        //     // Second function handles error
+        //     //$scope.result = "Something went wrong";
+        // });
+
+        $http.get("http://127.0.0.1:8080/marks/course?id=" + $scope.course.id).then(function (response) {
 
             $scope.marks = response.data;
 
@@ -33,34 +51,16 @@ app.controller('myCtrl', function($scope, $http) {
         });
     };
 
-    
+    $scope.refreshMarks = refreshMarks;
 
-    $http.get("http://127.0.0.1:8080/grades?semester=1").then(function (response) {
+    //$scope.semesters = [1, 2, 3, 4, 5, 6];
+    //$scope.semester = 1;
 
-        $scope.grades = response.data;
+    refreshMarks();
 
-    }, function(response) {
+    // $http.get("http://127.0.0.1:8080/grades?semester=1").then(function (response) {
 
-        // Second function handles error
-        //$scope.result = "Something went wrong";
-    });
-
-    $http.get("http://127.0.0.1:8080/marks?semester=" + $scope.semester).then(function (response) {
-
-        $scope.marks = response.data;
-
-    }, function(response) {
-
-        // Second function handles error
-        //$scope.result = "Something went wrong";
-    });
-
-
-
-
-    // $http.get("http://127.0.0.1:8080/courses/all").then(function (response) {
-
-    //     $scope.courses = response.data;
+    //     $scope.grades = response.data;
 
     // }, function(response) {
 

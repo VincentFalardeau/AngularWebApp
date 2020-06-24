@@ -25,6 +25,7 @@ public class MarkController {
 
 	private final String URL = "mark";
 	private final String MULTIPLE_MARKS_URL = URL + "s";
+	private final String COURSE_MARKS_URL = MULTIPLE_MARKS_URL + "/course";
 	private final String ALL_MARKS_URL = MULTIPLE_MARKS_URL + "/all";
 
 	// Gives all the marks.
@@ -71,6 +72,35 @@ public class MarkController {
 			// Get the marks.
 			MarkService markService = new MarkService();
 			ArrayList<Mark> marks = markService.getMarks(semester);
+
+			// Generate OK response with the marks.
+			responseEntity = responseEntityGenerator.generateOK(marks);
+
+		} catch (Exception e) {
+
+			log.error(Throwables.getStackTraceAsString(e));
+
+			// Generate internal server error
+			responseEntity = responseEntityGenerator.generateInternalServerError();
+		}
+
+		return responseEntity;
+	}
+	
+	// Gives all the marks for a specific course.
+	@GetMapping(COURSE_MARKS_URL)
+	public ResponseEntity<?> courseMarks(@RequestParam(value = "id") int idCourse) {
+
+		Logger log = LogManager.getLogger(MarkController.class);
+
+		ResponseEntityGenerator responseEntityGenerator = new ResponseEntityGenerator();
+		ResponseEntity<?> responseEntity;
+
+		try {
+
+			// Get the marks.
+			MarkService markService = new MarkService();
+			ArrayList<Mark> marks = markService.getCourseMarks(idCourse);
 
 			// Generate OK response with the marks.
 			responseEntity = responseEntityGenerator.generateOK(marks);

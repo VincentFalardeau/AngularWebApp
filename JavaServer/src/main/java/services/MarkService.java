@@ -38,6 +38,14 @@ public class MarkService {
 		
 		return mSchoolDb2.getMarks(semester);
 	}
+	
+	//Gives the marks of a course.
+	public ArrayList<Mark> getCourseMarks(int idCourse) throws NumberFormatException, SQLException, IOException, ClassNotFoundException{
+			
+		logger.debug("getCourseMarks("+idCourse+")");
+			
+		return mSchoolDb2.getCourseMarks(idCourse);
+	}
 
 	//Gives the mark having the specified id.
 	public Mark getMark(int idMark) throws NumberFormatException, SQLException, IOException, ClassNotFoundException{
