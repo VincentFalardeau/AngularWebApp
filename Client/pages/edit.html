@@ -1,21 +1,26 @@
 Course:
 <select ng-model="course" ng-change="refreshMarks()"  ng-options="course.code for course in courses"></select><br>
 
-<table>
+<table class="table table-hover">
     <tr>
-        <th>Course</th>
-        <th>Semester</th>
         <th>Category</th>
         <th>Description</th>
         <th>Mark</th>
         <th>Weight</th>
     </tr>
-    <tr ng-repeat="mark in marks">
-        <td>{{ mark.course.code }}</td>
-        <td>{{ mark.course.semester }}</td>
+    <tr ng-repeat="mark in marks" ng-click="edit(mark)">
         <td>{{ mark.category.description }}</td>
         <td>{{ mark.description }}</td>
         <td>{{ mark.mark }}</td>
         <td>{{ mark.weight }}</td>
     </tr>
-</table>
+</table><br><br>
+
+<h2>Editing: {{ selectedMark.description }}</h2>
+<form>
+    <!-- Category: <select ng-model="selectedMark.category.description" ng-options="category.description for category in categories"></select> -->
+    Description: <input type="text" ng-model="selectedMark.description" required>
+    <!-- Description: <input type="number" min="0" step=".01" ng-model="selectedMark.mark" required> -->
+    <!-- Description: <input type="number" min="0" step=".01" ng-model="selectedMark.weight" required> -->
+</form>
+
