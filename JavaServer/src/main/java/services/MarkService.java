@@ -53,7 +53,6 @@ public class MarkService {
 		logger.debug("addMark("+mark+", "+description+", "+weight+", "+idCategory+", "+idCourse+")");
 		
 		try {
-			
 			mSchoolDb2.addMark(mark, description, weight, idCategory, idCourse);
 			
 		}catch(PersistenceException pe) {
@@ -68,9 +67,7 @@ public class MarkService {
 			
 			throw pe;
 		
-		}
-		
-		
+		}		
 	
 	}
 	

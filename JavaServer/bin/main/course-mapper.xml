@@ -6,6 +6,10 @@
 <mapper namespace="dataObjects.Course">
 
 	<sql id="query">select * from Class</sql>
+	
+	<sql id="queryForSemester">
+		<include refid="query"/> where semester =
+	</sql>
 
 	<resultMap id="courseResultMap" type="dataObjects.Course">
  		<id property="id" column="idClass" />
@@ -17,6 +21,10 @@
     
     <select id="getCourses" resultMap="courseResultMap">
 		<include refid="query"/>
+	</select>
+	
+	 <select id="getCoursesForSemester" parameterType = "int" resultMap="courseResultMap">
+		<include refid="queryForSemester"/> #{semester}
 	</select>
 	
 	<select id="getCourse" parameterType = "int" resultMap="courseResultMap">

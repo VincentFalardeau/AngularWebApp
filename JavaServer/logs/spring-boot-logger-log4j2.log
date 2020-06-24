@@ -1,236 +1,238 @@
-2020-06-19 13:51:15,044 DEBUG o.s.b.c.l.ClasspathLoggingApplicationListener [main] Application started with classpath: unknown
-2020-06-19 13:51:15,231 INFO o.s.b.StartupInfoLogger [main] Starting Main on VinceLaptop with PID 30115 (/home/vince/workspace/summer/JavaServer/bin/main started by vince in /home/vince/workspace/summer/JavaServer)
-2020-06-19 13:51:15,239 DEBUG o.s.b.StartupInfoLogger [main] Running with Spring Boot v2.2.2.RELEASE, Spring v5.2.2.RELEASE
-2020-06-19 13:51:15,245 INFO o.s.b.SpringApplication [main] No active profile set, falling back to default profiles: default
-2020-06-19 13:51:15,247 DEBUG o.s.b.SpringApplication [main] Loading source class httpControllers.Main
-2020-06-19 13:51:15,358 DEBUG o.s.c.s.AbstractApplicationContext [main] Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@531f4093
-2020-06-19 13:51:15,428 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
-2020-06-19 13:51:15,456 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.internalCachingMetadataReaderFactory'
-2020-06-19 13:51:15,552 DEBUG o.s.c.a.ClassPathScanningCandidateComponentProvider [main] Identified candidate component class: file [/home/vince/workspace/summer/JavaServer/bin/main/httpControllers/CategoryController.class]
-2020-06-19 13:51:15,553 DEBUG o.s.c.a.ClassPathScanningCandidateComponentProvider [main] Identified candidate component class: file [/home/vince/workspace/summer/JavaServer/bin/main/httpControllers/CourseController.class]
-2020-06-19 13:51:15,561 DEBUG o.s.c.a.ClassPathScanningCandidateComponentProvider [main] Identified candidate component class: file [/home/vince/workspace/summer/JavaServer/bin/main/httpControllers/MarkController.class]
-2020-06-19 13:51:16,427 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'propertySourcesPlaceholderConfigurer'
-2020-06-19 13:51:16,447 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.context.properties.ConfigurationPropertiesBeanDefinitionValidator'
-2020-06-19 13:51:16,564 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerProcessor'
-2020-06-19 13:51:16,567 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'preserveErrorControllerTargetClassPostProcessor'
-2020-06-19 13:51:16,569 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerFactory'
-2020-06-19 13:51:16,574 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
-2020-06-19 13:51:16,575 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
-2020-06-19 13:51:16,579 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor'
-2020-06-19 13:51:16,580 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.context.internalConfigurationPropertiesBinder'
-2020-06-19 13:51:16,581 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.context.internalConfigurationPropertiesBinderFactory'
-2020-06-19 13:51:16,586 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'methodValidationPostProcessor'
-2020-06-19 13:51:16,605 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'methodValidationPostProcessor' via factory method to bean named 'environment'
-2020-06-19 13:51:16,619 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'webServerFactoryCustomizerBeanPostProcessor'
-2020-06-19 13:51:16,621 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'errorPageRegistrarBeanPostProcessor'
-2020-06-19 13:51:16,626 DEBUG o.s.u.c.s.UiApplicationContextUtils [main] Unable to locate ThemeSource with name 'themeSource': using default [org.springframework.ui.context.support.ResourceBundleThemeSource@b8a7e43]
-2020-06-19 13:51:16,627 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'tomcatServletWebServerFactory'
-2020-06-19 13:51:16,628 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.ServletWebServerFactoryConfiguration$EmbeddedTomcat'
-2020-06-19 13:51:16,678 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'websocketServletWebServerCustomizer'
-2020-06-19 13:51:16,679 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.websocket.servlet.WebSocketServletAutoConfiguration$TomcatWebSocketConfiguration'
-2020-06-19 13:51:16,683 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'servletWebServerFactoryCustomizer'
-2020-06-19 13:51:16,684 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.ServletWebServerFactoryAutoConfiguration'
-2020-06-19 13:51:16,687 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'server-org.springframework.boot.autoconfigure.web.ServerProperties'
-2020-06-19 13:51:16,723 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'servletWebServerFactoryCustomizer' via factory method to bean named 'server-org.springframework.boot.autoconfigure.web.ServerProperties'
-2020-06-19 13:51:16,724 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'tomcatServletWebServerFactoryCustomizer'
-2020-06-19 13:51:16,727 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'tomcatServletWebServerFactoryCustomizer' via factory method to bean named 'server-org.springframework.boot.autoconfigure.web.ServerProperties'
-2020-06-19 13:51:16,728 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'tomcatWebServerFactoryCustomizer'
-2020-06-19 13:51:16,729 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.embedded.EmbeddedWebServerFactoryCustomizerAutoConfiguration$TomcatWebServerFactoryCustomizerConfiguration'
-2020-06-19 13:51:16,732 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'tomcatWebServerFactoryCustomizer' via factory method to bean named 'environment'
-2020-06-19 13:51:16,733 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'tomcatWebServerFactoryCustomizer' via factory method to bean named 'server-org.springframework.boot.autoconfigure.web.ServerProperties'
-2020-06-19 13:51:16,735 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'localeCharsetMappingsCustomizer'
-2020-06-19 13:51:16,736 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.HttpEncodingAutoConfiguration'
-2020-06-19 13:51:16,740 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'spring.http-org.springframework.boot.autoconfigure.http.HttpProperties'
-2020-06-19 13:51:16,746 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.HttpEncodingAutoConfiguration' via constructor to bean named 'spring.http-org.springframework.boot.autoconfigure.http.HttpProperties'
-2020-06-19 13:51:16,802 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'errorPageCustomizer'
-2020-06-19 13:51:16,802 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration'
-2020-06-19 13:51:16,804 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration' via constructor to bean named 'server-org.springframework.boot.autoconfigure.web.ServerProperties'
-2020-06-19 13:51:16,806 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'dispatcherServletRegistration'
-2020-06-19 13:51:16,806 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.DispatcherServletAutoConfiguration$DispatcherServletRegistrationConfiguration'
-2020-06-19 13:51:16,809 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'dispatcherServlet'
-2020-06-19 13:51:16,809 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.DispatcherServletAutoConfiguration$DispatcherServletConfiguration'
-2020-06-19 13:51:16,812 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'spring.mvc-org.springframework.boot.autoconfigure.web.servlet.WebMvcProperties'
-2020-06-19 13:51:16,821 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'dispatcherServlet' via factory method to bean named 'spring.http-org.springframework.boot.autoconfigure.http.HttpProperties'
-2020-06-19 13:51:16,821 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'dispatcherServlet' via factory method to bean named 'spring.mvc-org.springframework.boot.autoconfigure.web.servlet.WebMvcProperties'
-2020-06-19 13:51:16,837 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'dispatcherServletRegistration' via factory method to bean named 'dispatcherServlet'
-2020-06-19 13:51:16,838 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'dispatcherServletRegistration' via factory method to bean named 'spring.mvc-org.springframework.boot.autoconfigure.web.servlet.WebMvcProperties'
-2020-06-19 13:51:16,841 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'multipartConfigElement'
-2020-06-19 13:51:16,841 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.MultipartAutoConfiguration'
-2020-06-19 13:51:16,843 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'spring.servlet.multipart-org.springframework.boot.autoconfigure.web.servlet.MultipartProperties'
-2020-06-19 13:51:16,850 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.MultipartAutoConfiguration' via constructor to bean named 'spring.servlet.multipart-org.springframework.boot.autoconfigure.web.servlet.MultipartProperties'
-2020-06-19 13:51:16,860 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'errorPageCustomizer' via factory method to bean named 'dispatcherServletRegistration'
-2020-06-19 13:51:17,061 DEBUG o.s.b.w.s.s.DocumentRoot [main] Code archive: /home/vince/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot/2.2.2.RELEASE/cc636f24a5ebbfb21f1c8c30ed9c3b13512c16ec/spring-boot-2.2.2.RELEASE.jar
-2020-06-19 13:51:17,062 DEBUG o.s.b.w.s.s.DocumentRoot [main] Code archive: /home/vince/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot/2.2.2.RELEASE/cc636f24a5ebbfb21f1c8c30ed9c3b13512c16ec/spring-boot-2.2.2.RELEASE.jar
-2020-06-19 13:51:17,062 DEBUG o.s.b.w.s.s.DocumentRoot [main] None of the document roots [src/main/webapp, public, static] point to a directory and will be ignored.
-2020-06-19 13:51:17,109 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
-2020-06-19 13:51:17,169 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
-2020-06-19 13:51:17,177 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
-2020-06-19 13:51:17,179 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.29]
-2020-06-19 13:51:17,378 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
-2020-06-19 13:51:17,379 DEBUG o.s.b.w.s.c.ServletWebServerApplicationContext [main] Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
-2020-06-19 13:51:17,380 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2021 ms
-2020-06-19 13:51:17,392 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'requestContextFilter'
-2020-06-19 13:51:17,396 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'formContentFilter'
-2020-06-19 13:51:17,397 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration'
-2020-06-19 13:51:17,402 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'characterEncodingFilter'
-2020-06-19 13:51:17,415 DEBUG o.s.b.w.s.ServletContextInitializerBeans [main] Mapping filters: characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
-2020-06-19 13:51:17,416 DEBUG o.s.b.w.s.ServletContextInitializerBeans [main] Mapping servlets: dispatcherServlet urls=[/]
-2020-06-19 13:51:17,452 DEBUG o.s.w.f.GenericFilterBean [main] Filter 'requestContextFilter' configured for use
-2020-06-19 13:51:17,454 DEBUG o.s.w.f.GenericFilterBean [main] Filter 'characterEncodingFilter' configured for use
-2020-06-19 13:51:17,455 DEBUG o.s.w.f.GenericFilterBean [main] Filter 'formContentFilter' configured for use
-2020-06-19 13:51:17,508 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'main'
-2020-06-19 13:51:17,510 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'categoryController'
-2020-06-19 13:51:17,514 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'courseController'
-2020-06-19 13:51:17,528 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'markController'
-2020-06-19 13:51:17,545 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.AutoConfigurationPackages'
-2020-06-19 13:51:17,554 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration'
-2020-06-19 13:51:17,562 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.websocket.servlet.WebSocketServletAutoConfiguration'
-2020-06-19 13:51:17,566 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.context.properties.ConfigurationBeanFactoryMetadata'
-2020-06-19 13:51:17,567 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.DispatcherServletAutoConfiguration'
-2020-06-19 13:51:17,568 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.task.TaskExecutionAutoConfiguration'
-2020-06-19 13:51:17,569 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'taskExecutorBuilder'
-2020-06-19 13:51:17,571 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'spring.task.execution-org.springframework.boot.autoconfigure.task.TaskExecutionProperties'
-2020-06-19 13:51:17,591 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'taskExecutorBuilder' via factory method to bean named 'spring.task.execution-org.springframework.boot.autoconfigure.task.TaskExecutionProperties'
-2020-06-19 13:51:17,595 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration'
-2020-06-19 13:51:17,600 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'defaultValidator'
-2020-06-19 13:51:17,603 DEBUG o.h.v.i.e.r.TraversableResolvers [main] Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
-2020-06-19 13:51:17,606 DEBUG o.h.v.m.ResourceBundleMessageInterpolator [main] Loaded expression factory via original TCCL
-2020-06-19 13:51:17,619 DEBUG o.h.v.i.e.r.TraversableResolvers [main] Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
-2020-06-19 13:51:17,621 DEBUG o.h.v.i.e.ConfigurationImpl [main] Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
-2020-06-19 13:51:17,624 DEBUG o.h.v.i.e.ConfigurationImpl [main] Setting custom ConstraintValidatorFactory of type org.springframework.validation.beanvalidation.SpringConstraintValidatorFactory
-2020-06-19 13:51:17,629 DEBUG o.h.v.i.e.ConfigurationImpl [main] Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1
-2020-06-19 13:51:17,635 DEBUG o.h.v.i.x.c.ValidationXmlParser [main] Trying to load META-INF/validation.xml for XML based Validator configuration.
-2020-06-19 13:51:17,637 DEBUG o.h.v.i.x.c.ResourceLoaderHelper [main] Trying to load META-INF/validation.xml via user class loader
-2020-06-19 13:51:17,637 DEBUG o.h.v.i.x.c.ResourceLoaderHelper [main] Trying to load META-INF/validation.xml via TCCL
-2020-06-19 13:51:17,638 DEBUG o.h.v.i.x.c.ResourceLoaderHelper [main] Trying to load META-INF/validation.xml via Hibernate Validator's class loader
-2020-06-19 13:51:17,639 DEBUG o.h.v.i.x.c.ValidationXmlParser [main] No META-INF/validation.xml found. Using annotation based configuration only.
-2020-06-19 13:51:17,658 DEBUG o.h.v.i.e.ValidatorFactoryImpl [main] HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator.
-2020-06-19 13:51:17,658 DEBUG o.h.v.i.e.ValidatorFactoryImpl [main] HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver.
-2020-06-19 13:51:17,661 DEBUG o.h.v.i.e.ValidatorFactoryImpl [main] HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
-2020-06-19 13:51:17,663 DEBUG o.h.v.i.e.ValidatorFactoryImpl [main] HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
-2020-06-19 13:51:17,664 DEBUG o.h.v.i.e.ValidatorFactoryImpl [main] HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
-2020-06-19 13:51:17,669 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration'
-2020-06-19 13:51:17,670 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'error'
-2020-06-19 13:51:17,671 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'beanNameViewResolver'
-2020-06-19 13:51:17,674 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration$DefaultErrorViewResolverConfiguration'
-2020-06-19 13:51:17,677 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'spring.resources-org.springframework.boot.autoconfigure.web.ResourceProperties'
-2020-06-19 13:51:17,682 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration$DefaultErrorViewResolverConfiguration' via constructor to bean named 'org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@531f4093'
-2020-06-19 13:51:17,683 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration$DefaultErrorViewResolverConfiguration' via constructor to bean named 'spring.resources-org.springframework.boot.autoconfigure.web.ResourceProperties'
-2020-06-19 13:51:17,684 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'conventionErrorViewResolver'
-2020-06-19 13:51:17,687 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'errorAttributes'
-2020-06-19 13:51:17,688 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'basicErrorController'
-2020-06-19 13:51:17,689 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'basicErrorController' via factory method to bean named 'errorAttributes'
-2020-06-19 13:51:17,692 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$EnableWebMvcConfiguration'
-2020-06-19 13:51:17,695 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$EnableWebMvcConfiguration' via constructor to bean named 'spring.resources-org.springframework.boot.autoconfigure.web.ResourceProperties'
-2020-06-19 13:51:17,696 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$EnableWebMvcConfiguration' via constructor to bean named 'org.springframework.beans.factory.support.DefaultListableBeanFactory@1e63ec0b'
-2020-06-19 13:51:17,715 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter'
-2020-06-19 13:51:17,716 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter' via constructor to bean named 'spring.resources-org.springframework.boot.autoconfigure.web.ResourceProperties'
-2020-06-19 13:51:17,727 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter' via constructor to bean named 'spring.mvc-org.springframework.boot.autoconfigure.web.servlet.WebMvcProperties'
-2020-06-19 13:51:17,729 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter' via constructor to bean named 'org.springframework.beans.factory.support.DefaultListableBeanFactory@1e63ec0b'
-2020-06-19 13:51:17,734 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'requestMappingHandlerAdapter'
-2020-06-19 13:51:17,737 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'mvcContentNegotiationManager'
-2020-06-19 13:51:17,759 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'mvcConversionService'
-2020-06-19 13:51:17,766 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'mvcValidator'
-2020-06-19 13:51:17,769 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'requestMappingHandlerAdapter' via factory method to bean named 'mvcContentNegotiationManager'
-2020-06-19 13:51:17,770 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'requestMappingHandlerAdapter' via factory method to bean named 'mvcConversionService'
-2020-06-19 13:51:17,770 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'requestMappingHandlerAdapter' via factory method to bean named 'mvcValidator'
-2020-06-19 13:51:17,779 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'requestMappingHandlerAdapter' via factory method to bean named 'mvcContentNegotiationManager'
-2020-06-19 13:51:17,779 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'requestMappingHandlerAdapter' via factory method to bean named 'mvcConversionService'
-2020-06-19 13:51:17,780 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'requestMappingHandlerAdapter' via factory method to bean named 'mvcValidator'
-2020-06-19 13:51:17,792 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'messageConverters'
-2020-06-19 13:51:17,792 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.http.HttpMessageConvertersAutoConfiguration'
-2020-06-19 13:51:17,800 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'stringHttpMessageConverter'
-2020-06-19 13:51:17,800 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.http.HttpMessageConvertersAutoConfiguration$StringHttpMessageConverterConfiguration'
-2020-06-19 13:51:17,802 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'stringHttpMessageConverter' via factory method to bean named 'spring.http-org.springframework.boot.autoconfigure.http.HttpProperties'
-2020-06-19 13:51:17,806 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'mappingJackson2HttpMessageConverter'
-2020-06-19 13:51:17,807 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.http.JacksonHttpMessageConvertersConfiguration$MappingJackson2HttpMessageConverterConfiguration'
-2020-06-19 13:51:17,808 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'jacksonObjectMapper'
-2020-06-19 13:51:17,809 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperConfiguration'
-2020-06-19 13:51:17,811 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperBuilderConfiguration'
-2020-06-19 13:51:17,814 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'standardJacksonObjectMapperBuilderCustomizer'
-2020-06-19 13:51:17,816 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$Jackson2ObjectMapperBuilderCustomizerConfiguration'
-2020-06-19 13:51:17,820 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'spring.jackson-org.springframework.boot.autoconfigure.jackson.JacksonProperties'
-2020-06-19 13:51:17,826 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'standardJacksonObjectMapperBuilderCustomizer' via factory method to bean named 'org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@531f4093'
-2020-06-19 13:51:17,827 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'standardJacksonObjectMapperBuilderCustomizer' via factory method to bean named 'spring.jackson-org.springframework.boot.autoconfigure.jackson.JacksonProperties'
-2020-06-19 13:51:17,829 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'jacksonObjectMapperBuilder' via factory method to bean named 'org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@531f4093'
-2020-06-19 13:51:17,829 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'jacksonObjectMapperBuilder' via factory method to bean named 'standardJacksonObjectMapperBuilderCustomizer'
-2020-06-19 13:51:17,832 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'parameterNamesModule'
-2020-06-19 13:51:17,834 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$ParameterNamesModuleConfiguration'
-2020-06-19 13:51:17,840 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'jsonComponentModule'
-2020-06-19 13:51:17,841 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration'
-2020-06-19 13:51:17,853 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'jacksonObjectMapper' via factory method to bean named 'jacksonObjectMapperBuilder'
-2020-06-19 13:51:17,884 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'mappingJackson2HttpMessageConverter' via factory method to bean named 'jacksonObjectMapper'
-2020-06-19 13:51:17,896 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'applicationTaskExecutor'
-2020-06-19 13:51:17,897 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'applicationTaskExecutor' via factory method to bean named 'taskExecutorBuilder'
-2020-06-19 13:51:17,914 INFO o.s.s.c.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
-2020-06-19 13:51:17,941 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter [main] ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2020-06-19 13:51:17,990 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'requestMappingHandlerMapping'
-2020-06-19 13:51:17,994 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'mvcResourceUrlProvider'
-2020-06-19 13:51:17,997 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'requestMappingHandlerMapping' via factory method to bean named 'mvcContentNegotiationManager'
-2020-06-19 13:51:17,998 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'requestMappingHandlerMapping' via factory method to bean named 'mvcConversionService'
-2020-06-19 13:51:17,998 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'requestMappingHandlerMapping' via factory method to bean named 'mvcResourceUrlProvider'
-2020-06-19 13:51:18,000 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'requestMappingHandlerMapping' via factory method to bean named 'mvcContentNegotiationManager'
-2020-06-19 13:51:18,001 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'requestMappingHandlerMapping' via factory method to bean named 'mvcConversionService'
-2020-06-19 13:51:18,001 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'requestMappingHandlerMapping' via factory method to bean named 'mvcResourceUrlProvider'
-2020-06-19 13:51:18,119 DEBUG o.s.w.s.h.AbstractHandlerMethodMapping [main] 10 mappings in 'requestMappingHandlerMapping'
-2020-06-19 13:51:18,120 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'welcomePageHandlerMapping'
-2020-06-19 13:51:18,121 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'welcomePageHandlerMapping' via factory method to bean named 'org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@531f4093'
-2020-06-19 13:51:18,121 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'welcomePageHandlerMapping' via factory method to bean named 'mvcConversionService'
-2020-06-19 13:51:18,122 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'welcomePageHandlerMapping' via factory method to bean named 'mvcResourceUrlProvider'
-2020-06-19 13:51:18,128 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'mvcPathMatcher'
-2020-06-19 13:51:18,130 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'mvcUrlPathHelper'
-2020-06-19 13:51:18,131 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'viewControllerHandlerMapping'
-2020-06-19 13:51:18,134 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'viewControllerHandlerMapping' via factory method to bean named 'mvcPathMatcher'
-2020-06-19 13:51:18,134 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'viewControllerHandlerMapping' via factory method to bean named 'mvcUrlPathHelper'
-2020-06-19 13:51:18,134 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'viewControllerHandlerMapping' via factory method to bean named 'mvcConversionService'
-2020-06-19 13:51:18,135 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'viewControllerHandlerMapping' via factory method to bean named 'mvcResourceUrlProvider'
-2020-06-19 13:51:18,136 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'beanNameHandlerMapping'
-2020-06-19 13:51:18,137 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'beanNameHandlerMapping' via factory method to bean named 'mvcConversionService'
-2020-06-19 13:51:18,137 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'beanNameHandlerMapping' via factory method to bean named 'mvcResourceUrlProvider'
-2020-06-19 13:51:18,140 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'routerFunctionMapping'
-2020-06-19 13:51:18,141 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'routerFunctionMapping' via factory method to bean named 'mvcConversionService'
-2020-06-19 13:51:18,142 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'routerFunctionMapping' via factory method to bean named 'mvcResourceUrlProvider'
-2020-06-19 13:51:18,145 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'resourceHandlerMapping'
-2020-06-19 13:51:18,149 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'resourceHandlerMapping' via factory method to bean named 'mvcUrlPathHelper'
-2020-06-19 13:51:18,149 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'resourceHandlerMapping' via factory method to bean named 'mvcPathMatcher'
-2020-06-19 13:51:18,149 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'resourceHandlerMapping' via factory method to bean named 'mvcContentNegotiationManager'
-2020-06-19 13:51:18,150 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'resourceHandlerMapping' via factory method to bean named 'mvcConversionService'
-2020-06-19 13:51:18,151 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'resourceHandlerMapping' via factory method to bean named 'mvcResourceUrlProvider'
-2020-06-19 13:51:18,200 DEBUG o.s.w.s.h.SimpleUrlHandlerMapping [main] Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2020-06-19 13:51:18,201 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'defaultServletHandlerMapping'
-2020-06-19 13:51:18,201 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'handlerFunctionAdapter'
-2020-06-19 13:51:18,203 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'mvcUriComponentsContributor'
-2020-06-19 13:51:18,205 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'mvcUriComponentsContributor' via factory method to bean named 'mvcConversionService'
-2020-06-19 13:51:18,205 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'mvcUriComponentsContributor' via factory method to bean named 'requestMappingHandlerAdapter'
-2020-06-19 13:51:18,209 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'httpRequestHandlerAdapter'
-2020-06-19 13:51:18,210 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'simpleControllerHandlerAdapter'
-2020-06-19 13:51:18,212 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'handlerExceptionResolver'
-2020-06-19 13:51:18,217 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'handlerExceptionResolver' via factory method to bean named 'mvcContentNegotiationManager'
-2020-06-19 13:51:18,223 DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver [main] ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2020-06-19 13:51:18,245 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'mvcViewResolver'
-2020-06-19 13:51:18,246 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'mvcViewResolver' via factory method to bean named 'mvcContentNegotiationManager'
-2020-06-19 13:51:18,250 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'defaultViewResolver'
-2020-06-19 13:51:18,256 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'viewResolver'
-2020-06-19 13:51:18,257 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'viewResolver' via factory method to bean named 'org.springframework.beans.factory.support.DefaultListableBeanFactory@1e63ec0b'
-2020-06-19 13:51:18,261 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.aop.AopAutoConfiguration$ClassProxyingConfiguration'
-2020-06-19 13:51:18,262 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'org.springframework.boot.autoconfigure.aop.AopAutoConfiguration$ClassProxyingConfiguration' via constructor to bean named 'org.springframework.beans.factory.support.DefaultListableBeanFactory@1e63ec0b'
-2020-06-19 13:51:18,266 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.aop.AopAutoConfiguration'
-2020-06-19 13:51:18,267 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.context.ConfigurationPropertiesAutoConfiguration'
-2020-06-19 13:51:18,268 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.http.JacksonHttpMessageConvertersConfiguration'
-2020-06-19 13:51:18,272 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.info.ProjectInfoAutoConfiguration'
-2020-06-19 13:51:18,275 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'spring.info-org.springframework.boot.autoconfigure.info.ProjectInfoProperties'
-2020-06-19 13:51:18,277 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'org.springframework.boot.autoconfigure.info.ProjectInfoAutoConfiguration' via constructor to bean named 'spring.info-org.springframework.boot.autoconfigure.info.ProjectInfoProperties'
-2020-06-19 13:51:18,279 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.security.oauth2.resource.servlet.OAuth2ResourceServerAutoConfiguration'
-2020-06-19 13:51:18,279 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'spring.security.oauth2.resourceserver-org.springframework.boot.autoconfigure.security.oauth2.resource.OAuth2ResourceServerProperties'
-2020-06-19 13:51:18,290 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.task.TaskSchedulingAutoConfiguration'
-2020-06-19 13:51:18,292 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'taskSchedulerBuilder'
-2020-06-19 13:51:18,293 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'spring.task.scheduling-org.springframework.boot.autoconfigure.task.TaskSchedulingProperties'
-2020-06-19 13:51:18,296 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'taskSchedulerBuilder' via factory method to bean named 'spring.task.scheduling-org.springframework.boot.autoconfigure.task.TaskSchedulingProperties'
-2020-06-19 13:51:18,299 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.client.RestTemplateAutoConfiguration'
-2020-06-19 13:51:18,299 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'restTemplateBuilder'
-2020-06-19 13:51:18,304 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.embedded.EmbeddedWebServerFactoryCustomizerAutoConfiguration'
-2020-06-19 13:51:18,305 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'multipartResolver'
-2020-06-19 13:51:18,364 DEBUG o.s.b.a.l.ConditionEvaluationReportLoggingListener [main] 
+2020-06-24 10:57:48,167 DEBUG o.s.b.c.l.ClasspathLoggingApplicationListener [main] Application started with classpath: unknown
+2020-06-24 10:57:48,344 INFO o.s.b.StartupInfoLogger [main] Starting Main on VinceLaptop with PID 14842 (/home/vince/workspace/summer/JavaServer/bin/main started by vince in /home/vince/workspace/summer/JavaServer)
+2020-06-24 10:57:48,356 DEBUG o.s.b.StartupInfoLogger [main] Running with Spring Boot v2.2.2.RELEASE, Spring v5.2.2.RELEASE
+2020-06-24 10:57:48,358 INFO o.s.b.SpringApplication [main] No active profile set, falling back to default profiles: default
+2020-06-24 10:57:48,359 DEBUG o.s.b.SpringApplication [main] Loading source class httpControllers.Main
+2020-06-24 10:57:48,523 DEBUG o.s.c.s.AbstractApplicationContext [main] Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@3a5ecce3
+2020-06-24 10:57:48,580 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+2020-06-24 10:57:48,603 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.internalCachingMetadataReaderFactory'
+2020-06-24 10:57:48,699 DEBUG o.s.c.a.ClassPathScanningCandidateComponentProvider [main] Identified candidate component class: file [/home/vince/workspace/summer/JavaServer/bin/main/httpControllers/CategoryController.class]
+2020-06-24 10:57:48,701 DEBUG o.s.c.a.ClassPathScanningCandidateComponentProvider [main] Identified candidate component class: file [/home/vince/workspace/summer/JavaServer/bin/main/httpControllers/CourseController.class]
+2020-06-24 10:57:48,702 DEBUG o.s.c.a.ClassPathScanningCandidateComponentProvider [main] Identified candidate component class: file [/home/vince/workspace/summer/JavaServer/bin/main/httpControllers/GradeController.class]
+2020-06-24 10:57:48,711 DEBUG o.s.c.a.ClassPathScanningCandidateComponentProvider [main] Identified candidate component class: file [/home/vince/workspace/summer/JavaServer/bin/main/httpControllers/MarkController.class]
+2020-06-24 10:57:49,491 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'propertySourcesPlaceholderConfigurer'
+2020-06-24 10:57:49,506 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.context.properties.ConfigurationPropertiesBeanDefinitionValidator'
+2020-06-24 10:57:49,589 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerProcessor'
+2020-06-24 10:57:49,591 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'preserveErrorControllerTargetClassPostProcessor'
+2020-06-24 10:57:49,592 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerFactory'
+2020-06-24 10:57:49,598 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+2020-06-24 10:57:49,599 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+2020-06-24 10:57:49,604 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor'
+2020-06-24 10:57:49,606 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.context.internalConfigurationPropertiesBinder'
+2020-06-24 10:57:49,608 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.context.internalConfigurationPropertiesBinderFactory'
+2020-06-24 10:57:49,613 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'methodValidationPostProcessor'
+2020-06-24 10:57:49,636 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'methodValidationPostProcessor' via factory method to bean named 'environment'
+2020-06-24 10:57:49,657 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'webServerFactoryCustomizerBeanPostProcessor'
+2020-06-24 10:57:49,659 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'errorPageRegistrarBeanPostProcessor'
+2020-06-24 10:57:49,664 DEBUG o.s.u.c.s.UiApplicationContextUtils [main] Unable to locate ThemeSource with name 'themeSource': using default [org.springframework.ui.context.support.ResourceBundleThemeSource@3721177d]
+2020-06-24 10:57:49,666 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'tomcatServletWebServerFactory'
+2020-06-24 10:57:49,669 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.ServletWebServerFactoryConfiguration$EmbeddedTomcat'
+2020-06-24 10:57:49,741 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'websocketServletWebServerCustomizer'
+2020-06-24 10:57:49,742 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.websocket.servlet.WebSocketServletAutoConfiguration$TomcatWebSocketConfiguration'
+2020-06-24 10:57:49,745 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'servletWebServerFactoryCustomizer'
+2020-06-24 10:57:49,746 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.ServletWebServerFactoryAutoConfiguration'
+2020-06-24 10:57:49,749 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'server-org.springframework.boot.autoconfigure.web.ServerProperties'
+2020-06-24 10:57:49,790 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'servletWebServerFactoryCustomizer' via factory method to bean named 'server-org.springframework.boot.autoconfigure.web.ServerProperties'
+2020-06-24 10:57:49,792 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'tomcatServletWebServerFactoryCustomizer'
+2020-06-24 10:57:49,793 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'tomcatServletWebServerFactoryCustomizer' via factory method to bean named 'server-org.springframework.boot.autoconfigure.web.ServerProperties'
+2020-06-24 10:57:49,796 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'tomcatWebServerFactoryCustomizer'
+2020-06-24 10:57:49,797 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.embedded.EmbeddedWebServerFactoryCustomizerAutoConfiguration$TomcatWebServerFactoryCustomizerConfiguration'
+2020-06-24 10:57:49,800 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'tomcatWebServerFactoryCustomizer' via factory method to bean named 'environment'
+2020-06-24 10:57:49,800 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'tomcatWebServerFactoryCustomizer' via factory method to bean named 'server-org.springframework.boot.autoconfigure.web.ServerProperties'
+2020-06-24 10:57:49,806 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'localeCharsetMappingsCustomizer'
+2020-06-24 10:57:49,810 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.HttpEncodingAutoConfiguration'
+2020-06-24 10:57:49,814 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'spring.http-org.springframework.boot.autoconfigure.http.HttpProperties'
+2020-06-24 10:57:49,819 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.HttpEncodingAutoConfiguration' via constructor to bean named 'spring.http-org.springframework.boot.autoconfigure.http.HttpProperties'
+2020-06-24 10:57:49,883 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'errorPageCustomizer'
+2020-06-24 10:57:49,884 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration'
+2020-06-24 10:57:49,886 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration' via constructor to bean named 'server-org.springframework.boot.autoconfigure.web.ServerProperties'
+2020-06-24 10:57:49,887 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'dispatcherServletRegistration'
+2020-06-24 10:57:49,888 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.DispatcherServletAutoConfiguration$DispatcherServletRegistrationConfiguration'
+2020-06-24 10:57:49,890 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'dispatcherServlet'
+2020-06-24 10:57:49,891 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.DispatcherServletAutoConfiguration$DispatcherServletConfiguration'
+2020-06-24 10:57:49,893 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'spring.mvc-org.springframework.boot.autoconfigure.web.servlet.WebMvcProperties'
+2020-06-24 10:57:49,901 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'dispatcherServlet' via factory method to bean named 'spring.http-org.springframework.boot.autoconfigure.http.HttpProperties'
+2020-06-24 10:57:49,901 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'dispatcherServlet' via factory method to bean named 'spring.mvc-org.springframework.boot.autoconfigure.web.servlet.WebMvcProperties'
+2020-06-24 10:57:49,921 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'dispatcherServletRegistration' via factory method to bean named 'dispatcherServlet'
+2020-06-24 10:57:49,922 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'dispatcherServletRegistration' via factory method to bean named 'spring.mvc-org.springframework.boot.autoconfigure.web.servlet.WebMvcProperties'
+2020-06-24 10:57:49,925 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'multipartConfigElement'
+2020-06-24 10:57:49,925 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.MultipartAutoConfiguration'
+2020-06-24 10:57:49,927 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'spring.servlet.multipart-org.springframework.boot.autoconfigure.web.servlet.MultipartProperties'
+2020-06-24 10:57:49,934 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.MultipartAutoConfiguration' via constructor to bean named 'spring.servlet.multipart-org.springframework.boot.autoconfigure.web.servlet.MultipartProperties'
+2020-06-24 10:57:49,947 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'errorPageCustomizer' via factory method to bean named 'dispatcherServletRegistration'
+2020-06-24 10:57:50,062 DEBUG o.s.b.w.s.s.DocumentRoot [main] Code archive: /home/vince/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot/2.2.2.RELEASE/cc636f24a5ebbfb21f1c8c30ed9c3b13512c16ec/spring-boot-2.2.2.RELEASE.jar
+2020-06-24 10:57:50,063 DEBUG o.s.b.w.s.s.DocumentRoot [main] Code archive: /home/vince/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot/2.2.2.RELEASE/cc636f24a5ebbfb21f1c8c30ed9c3b13512c16ec/spring-boot-2.2.2.RELEASE.jar
+2020-06-24 10:57:50,063 DEBUG o.s.b.w.s.s.DocumentRoot [main] None of the document roots [src/main/webapp, public, static] point to a directory and will be ignored.
+2020-06-24 10:57:50,098 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2020-06-24 10:57:50,124 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2020-06-24 10:57:50,126 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2020-06-24 10:57:50,127 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-06-24 10:57:50,242 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2020-06-24 10:57:50,244 DEBUG o.s.b.w.s.c.ServletWebServerApplicationContext [main] Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2020-06-24 10:57:50,245 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1722 ms
+2020-06-24 10:57:50,254 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'requestContextFilter'
+2020-06-24 10:57:50,257 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'formContentFilter'
+2020-06-24 10:57:50,258 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration'
+2020-06-24 10:57:50,262 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'characterEncodingFilter'
+2020-06-24 10:57:50,272 DEBUG o.s.b.w.s.ServletContextInitializerBeans [main] Mapping filters: characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
+2020-06-24 10:57:50,273 DEBUG o.s.b.w.s.ServletContextInitializerBeans [main] Mapping servlets: dispatcherServlet urls=[/]
+2020-06-24 10:57:50,301 DEBUG o.s.w.f.GenericFilterBean [main] Filter 'requestContextFilter' configured for use
+2020-06-24 10:57:50,301 DEBUG o.s.w.f.GenericFilterBean [main] Filter 'characterEncodingFilter' configured for use
+2020-06-24 10:57:50,302 DEBUG o.s.w.f.GenericFilterBean [main] Filter 'formContentFilter' configured for use
+2020-06-24 10:57:50,320 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'main'
+2020-06-24 10:57:50,322 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'categoryController'
+2020-06-24 10:57:50,326 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'courseController'
+2020-06-24 10:57:50,327 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'gradeController'
+2020-06-24 10:57:50,328 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'markController'
+2020-06-24 10:57:50,334 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.AutoConfigurationPackages'
+2020-06-24 10:57:50,338 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration'
+2020-06-24 10:57:50,339 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.websocket.servlet.WebSocketServletAutoConfiguration'
+2020-06-24 10:57:50,340 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.context.properties.ConfigurationBeanFactoryMetadata'
+2020-06-24 10:57:50,341 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.DispatcherServletAutoConfiguration'
+2020-06-24 10:57:50,342 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.task.TaskExecutionAutoConfiguration'
+2020-06-24 10:57:50,343 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'taskExecutorBuilder'
+2020-06-24 10:57:50,345 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'spring.task.execution-org.springframework.boot.autoconfigure.task.TaskExecutionProperties'
+2020-06-24 10:57:50,349 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'taskExecutorBuilder' via factory method to bean named 'spring.task.execution-org.springframework.boot.autoconfigure.task.TaskExecutionProperties'
+2020-06-24 10:57:50,354 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration'
+2020-06-24 10:57:50,355 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'defaultValidator'
+2020-06-24 10:57:50,362 DEBUG o.h.v.i.e.r.TraversableResolvers [main] Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+2020-06-24 10:57:50,363 DEBUG o.h.v.m.ResourceBundleMessageInterpolator [main] Loaded expression factory via original TCCL
+2020-06-24 10:57:50,366 DEBUG o.h.v.i.e.r.TraversableResolvers [main] Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+2020-06-24 10:57:50,367 DEBUG o.h.v.i.e.ConfigurationImpl [main] Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
+2020-06-24 10:57:50,368 DEBUG o.h.v.i.e.ConfigurationImpl [main] Setting custom ConstraintValidatorFactory of type org.springframework.validation.beanvalidation.SpringConstraintValidatorFactory
+2020-06-24 10:57:50,369 DEBUG o.h.v.i.e.ConfigurationImpl [main] Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1
+2020-06-24 10:57:50,371 DEBUG o.h.v.i.x.c.ValidationXmlParser [main] Trying to load META-INF/validation.xml for XML based Validator configuration.
+2020-06-24 10:57:50,371 DEBUG o.h.v.i.x.c.ResourceLoaderHelper [main] Trying to load META-INF/validation.xml via user class loader
+2020-06-24 10:57:50,372 DEBUG o.h.v.i.x.c.ResourceLoaderHelper [main] Trying to load META-INF/validation.xml via TCCL
+2020-06-24 10:57:50,373 DEBUG o.h.v.i.x.c.ResourceLoaderHelper [main] Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+2020-06-24 10:57:50,373 DEBUG o.h.v.i.x.c.ValidationXmlParser [main] No META-INF/validation.xml found. Using annotation based configuration only.
+2020-06-24 10:57:50,381 DEBUG o.h.v.i.e.ValidatorFactoryImpl [main] HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator.
+2020-06-24 10:57:50,385 DEBUG o.h.v.i.e.ValidatorFactoryImpl [main] HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver.
+2020-06-24 10:57:50,386 DEBUG o.h.v.i.e.ValidatorFactoryImpl [main] HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
+2020-06-24 10:57:50,386 DEBUG o.h.v.i.e.ValidatorFactoryImpl [main] HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+2020-06-24 10:57:50,387 DEBUG o.h.v.i.e.ValidatorFactoryImpl [main] HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+2020-06-24 10:57:50,389 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration'
+2020-06-24 10:57:50,390 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'error'
+2020-06-24 10:57:50,391 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'beanNameViewResolver'
+2020-06-24 10:57:50,394 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration$DefaultErrorViewResolverConfiguration'
+2020-06-24 10:57:50,396 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'spring.resources-org.springframework.boot.autoconfigure.web.ResourceProperties'
+2020-06-24 10:57:50,401 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration$DefaultErrorViewResolverConfiguration' via constructor to bean named 'org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@3a5ecce3'
+2020-06-24 10:57:50,401 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration$DefaultErrorViewResolverConfiguration' via constructor to bean named 'spring.resources-org.springframework.boot.autoconfigure.web.ResourceProperties'
+2020-06-24 10:57:50,402 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'conventionErrorViewResolver'
+2020-06-24 10:57:50,405 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'errorAttributes'
+2020-06-24 10:57:50,406 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'basicErrorController'
+2020-06-24 10:57:50,408 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'basicErrorController' via factory method to bean named 'errorAttributes'
+2020-06-24 10:57:50,410 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$EnableWebMvcConfiguration'
+2020-06-24 10:57:50,413 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$EnableWebMvcConfiguration' via constructor to bean named 'spring.resources-org.springframework.boot.autoconfigure.web.ResourceProperties'
+2020-06-24 10:57:50,414 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$EnableWebMvcConfiguration' via constructor to bean named 'org.springframework.beans.factory.support.DefaultListableBeanFactory@41925502'
+2020-06-24 10:57:50,429 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter'
+2020-06-24 10:57:50,431 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter' via constructor to bean named 'spring.resources-org.springframework.boot.autoconfigure.web.ResourceProperties'
+2020-06-24 10:57:50,431 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter' via constructor to bean named 'spring.mvc-org.springframework.boot.autoconfigure.web.servlet.WebMvcProperties'
+2020-06-24 10:57:50,432 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter' via constructor to bean named 'org.springframework.beans.factory.support.DefaultListableBeanFactory@41925502'
+2020-06-24 10:57:50,434 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'requestMappingHandlerAdapter'
+2020-06-24 10:57:50,438 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'mvcContentNegotiationManager'
+2020-06-24 10:57:50,444 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'mvcConversionService'
+2020-06-24 10:57:50,450 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'mvcValidator'
+2020-06-24 10:57:50,453 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'requestMappingHandlerAdapter' via factory method to bean named 'mvcContentNegotiationManager'
+2020-06-24 10:57:50,453 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'requestMappingHandlerAdapter' via factory method to bean named 'mvcConversionService'
+2020-06-24 10:57:50,454 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'requestMappingHandlerAdapter' via factory method to bean named 'mvcValidator'
+2020-06-24 10:57:50,461 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'requestMappingHandlerAdapter' via factory method to bean named 'mvcContentNegotiationManager'
+2020-06-24 10:57:50,462 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'requestMappingHandlerAdapter' via factory method to bean named 'mvcConversionService'
+2020-06-24 10:57:50,462 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'requestMappingHandlerAdapter' via factory method to bean named 'mvcValidator'
+2020-06-24 10:57:50,471 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'messageConverters'
+2020-06-24 10:57:50,472 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.http.HttpMessageConvertersAutoConfiguration'
+2020-06-24 10:57:50,477 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'stringHttpMessageConverter'
+2020-06-24 10:57:50,478 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.http.HttpMessageConvertersAutoConfiguration$StringHttpMessageConverterConfiguration'
+2020-06-24 10:57:50,479 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'stringHttpMessageConverter' via factory method to bean named 'spring.http-org.springframework.boot.autoconfigure.http.HttpProperties'
+2020-06-24 10:57:50,484 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'mappingJackson2HttpMessageConverter'
+2020-06-24 10:57:50,485 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.http.JacksonHttpMessageConvertersConfiguration$MappingJackson2HttpMessageConverterConfiguration'
+2020-06-24 10:57:50,486 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'jacksonObjectMapper'
+2020-06-24 10:57:50,487 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperConfiguration'
+2020-06-24 10:57:50,488 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperBuilderConfiguration'
+2020-06-24 10:57:50,491 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'standardJacksonObjectMapperBuilderCustomizer'
+2020-06-24 10:57:50,491 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$Jackson2ObjectMapperBuilderCustomizerConfiguration'
+2020-06-24 10:57:50,493 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'spring.jackson-org.springframework.boot.autoconfigure.jackson.JacksonProperties'
+2020-06-24 10:57:50,499 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'standardJacksonObjectMapperBuilderCustomizer' via factory method to bean named 'org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@3a5ecce3'
+2020-06-24 10:57:50,499 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'standardJacksonObjectMapperBuilderCustomizer' via factory method to bean named 'spring.jackson-org.springframework.boot.autoconfigure.jackson.JacksonProperties'
+2020-06-24 10:57:50,501 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'jacksonObjectMapperBuilder' via factory method to bean named 'org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@3a5ecce3'
+2020-06-24 10:57:50,501 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'jacksonObjectMapperBuilder' via factory method to bean named 'standardJacksonObjectMapperBuilderCustomizer'
+2020-06-24 10:57:50,503 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'parameterNamesModule'
+2020-06-24 10:57:50,504 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$ParameterNamesModuleConfiguration'
+2020-06-24 10:57:50,509 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'jsonComponentModule'
+2020-06-24 10:57:50,509 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration'
+2020-06-24 10:57:50,518 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'jacksonObjectMapper' via factory method to bean named 'jacksonObjectMapperBuilder'
+2020-06-24 10:57:50,540 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'mappingJackson2HttpMessageConverter' via factory method to bean named 'jacksonObjectMapper'
+2020-06-24 10:57:50,550 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'applicationTaskExecutor'
+2020-06-24 10:57:50,551 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'applicationTaskExecutor' via factory method to bean named 'taskExecutorBuilder'
+2020-06-24 10:57:50,557 INFO o.s.s.c.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-24 10:57:50,569 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter [main] ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2020-06-24 10:57:50,606 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'requestMappingHandlerMapping'
+2020-06-24 10:57:50,608 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'mvcResourceUrlProvider'
+2020-06-24 10:57:50,609 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'requestMappingHandlerMapping' via factory method to bean named 'mvcContentNegotiationManager'
+2020-06-24 10:57:50,610 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'requestMappingHandlerMapping' via factory method to bean named 'mvcConversionService'
+2020-06-24 10:57:50,610 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'requestMappingHandlerMapping' via factory method to bean named 'mvcResourceUrlProvider'
+2020-06-24 10:57:50,612 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'requestMappingHandlerMapping' via factory method to bean named 'mvcContentNegotiationManager'
+2020-06-24 10:57:50,612 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'requestMappingHandlerMapping' via factory method to bean named 'mvcConversionService'
+2020-06-24 10:57:50,613 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'requestMappingHandlerMapping' via factory method to bean named 'mvcResourceUrlProvider'
+2020-06-24 10:57:50,667 DEBUG o.s.w.s.h.AbstractHandlerMethodMapping [main] 15 mappings in 'requestMappingHandlerMapping'
+2020-06-24 10:57:50,668 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'welcomePageHandlerMapping'
+2020-06-24 10:57:50,668 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'welcomePageHandlerMapping' via factory method to bean named 'org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@3a5ecce3'
+2020-06-24 10:57:50,669 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'welcomePageHandlerMapping' via factory method to bean named 'mvcConversionService'
+2020-06-24 10:57:50,669 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'welcomePageHandlerMapping' via factory method to bean named 'mvcResourceUrlProvider'
+2020-06-24 10:57:50,674 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'mvcPathMatcher'
+2020-06-24 10:57:50,676 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'mvcUrlPathHelper'
+2020-06-24 10:57:50,677 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'viewControllerHandlerMapping'
+2020-06-24 10:57:50,680 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'viewControllerHandlerMapping' via factory method to bean named 'mvcPathMatcher'
+2020-06-24 10:57:50,680 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'viewControllerHandlerMapping' via factory method to bean named 'mvcUrlPathHelper'
+2020-06-24 10:57:50,680 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'viewControllerHandlerMapping' via factory method to bean named 'mvcConversionService'
+2020-06-24 10:57:50,681 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'viewControllerHandlerMapping' via factory method to bean named 'mvcResourceUrlProvider'
+2020-06-24 10:57:50,682 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'beanNameHandlerMapping'
+2020-06-24 10:57:50,683 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'beanNameHandlerMapping' via factory method to bean named 'mvcConversionService'
+2020-06-24 10:57:50,683 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'beanNameHandlerMapping' via factory method to bean named 'mvcResourceUrlProvider'
+2020-06-24 10:57:50,686 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'routerFunctionMapping'
+2020-06-24 10:57:50,687 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'routerFunctionMapping' via factory method to bean named 'mvcConversionService'
+2020-06-24 10:57:50,688 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'routerFunctionMapping' via factory method to bean named 'mvcResourceUrlProvider'
+2020-06-24 10:57:50,691 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'resourceHandlerMapping'
+2020-06-24 10:57:50,693 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'resourceHandlerMapping' via factory method to bean named 'mvcUrlPathHelper'
+2020-06-24 10:57:50,693 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'resourceHandlerMapping' via factory method to bean named 'mvcPathMatcher'
+2020-06-24 10:57:50,694 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'resourceHandlerMapping' via factory method to bean named 'mvcContentNegotiationManager'
+2020-06-24 10:57:50,694 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'resourceHandlerMapping' via factory method to bean named 'mvcConversionService'
+2020-06-24 10:57:50,694 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'resourceHandlerMapping' via factory method to bean named 'mvcResourceUrlProvider'
+2020-06-24 10:57:50,707 DEBUG o.s.w.s.h.SimpleUrlHandlerMapping [main] Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2020-06-24 10:57:50,708 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'defaultServletHandlerMapping'
+2020-06-24 10:57:50,708 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'handlerFunctionAdapter'
+2020-06-24 10:57:50,710 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'mvcUriComponentsContributor'
+2020-06-24 10:57:50,711 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'mvcUriComponentsContributor' via factory method to bean named 'mvcConversionService'
+2020-06-24 10:57:50,712 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'mvcUriComponentsContributor' via factory method to bean named 'requestMappingHandlerAdapter'
+2020-06-24 10:57:50,714 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'httpRequestHandlerAdapter'
+2020-06-24 10:57:50,715 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'simpleControllerHandlerAdapter'
+2020-06-24 10:57:50,716 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'handlerExceptionResolver'
+2020-06-24 10:57:50,717 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'handlerExceptionResolver' via factory method to bean named 'mvcContentNegotiationManager'
+2020-06-24 10:57:50,722 DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver [main] ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-06-24 10:57:50,725 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'mvcViewResolver'
+2020-06-24 10:57:50,726 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'mvcViewResolver' via factory method to bean named 'mvcContentNegotiationManager'
+2020-06-24 10:57:50,729 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'defaultViewResolver'
+2020-06-24 10:57:50,733 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'viewResolver'
+2020-06-24 10:57:50,734 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'viewResolver' via factory method to bean named 'org.springframework.beans.factory.support.DefaultListableBeanFactory@41925502'
+2020-06-24 10:57:50,736 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.aop.AopAutoConfiguration$ClassProxyingConfiguration'
+2020-06-24 10:57:50,737 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'org.springframework.boot.autoconfigure.aop.AopAutoConfiguration$ClassProxyingConfiguration' via constructor to bean named 'org.springframework.beans.factory.support.DefaultListableBeanFactory@41925502'
+2020-06-24 10:57:50,741 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.aop.AopAutoConfiguration'
+2020-06-24 10:57:50,742 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.context.ConfigurationPropertiesAutoConfiguration'
+2020-06-24 10:57:50,743 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.http.JacksonHttpMessageConvertersConfiguration'
+2020-06-24 10:57:50,743 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.info.ProjectInfoAutoConfiguration'
+2020-06-24 10:57:50,746 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'spring.info-org.springframework.boot.autoconfigure.info.ProjectInfoProperties'
+2020-06-24 10:57:50,748 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'org.springframework.boot.autoconfigure.info.ProjectInfoAutoConfiguration' via constructor to bean named 'spring.info-org.springframework.boot.autoconfigure.info.ProjectInfoProperties'
+2020-06-24 10:57:50,749 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.security.oauth2.resource.servlet.OAuth2ResourceServerAutoConfiguration'
+2020-06-24 10:57:50,750 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'spring.security.oauth2.resourceserver-org.springframework.boot.autoconfigure.security.oauth2.resource.OAuth2ResourceServerProperties'
+2020-06-24 10:57:50,753 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.task.TaskSchedulingAutoConfiguration'
+2020-06-24 10:57:50,754 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'taskSchedulerBuilder'
+2020-06-24 10:57:50,755 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'spring.task.scheduling-org.springframework.boot.autoconfigure.task.TaskSchedulingProperties'
+2020-06-24 10:57:50,758 DEBUG o.s.b.f.s.ConstructorResolver [main] Autowiring by type from bean name 'taskSchedulerBuilder' via factory method to bean named 'spring.task.scheduling-org.springframework.boot.autoconfigure.task.TaskSchedulingProperties'
+2020-06-24 10:57:50,760 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.client.RestTemplateAutoConfiguration'
+2020-06-24 10:57:50,761 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'restTemplateBuilder'
+2020-06-24 10:57:50,765 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.embedded.EmbeddedWebServerFactoryCustomizerAutoConfiguration'
+2020-06-24 10:57:50,766 DEBUG o.s.b.f.s.DefaultSingletonBeanRegistry [main] Creating shared instance of singleton bean 'multipartResolver'
+2020-06-24 10:57:50,804 DEBUG o.s.b.a.l.ConditionEvaluationReportLoggingListener [main] 
 
 
 ============================
@@ -1013,74 +1015,371 @@ Unconditional classes:
 
 
 
-2020-06-19 13:51:18,380 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
-2020-06-19 13:51:18,438 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
-2020-06-19 13:51:18,453 INFO o.s.b.StartupInfoLogger [main] Started Main in 4.109 seconds (JVM running for 5.308)
-2020-06-19 13:51:25,640 INFO o.a.j.l.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-06-19 13:51:25,641 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
-2020-06-19 13:51:25,641 DEBUG o.s.w.s.DispatcherServlet [http-nio-8080-exec-1] Detected StandardServletMultipartResolver
-2020-06-19 13:51:25,652 DEBUG o.s.w.s.FrameworkServlet [http-nio-8080-exec-1] enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
-2020-06-19 13:51:25,653 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 11 ms
-2020-06-19 13:51:25,666 DEBUG o.s.c.l.LogFormatUtils [http-nio-8080-exec-1] DELETE "/mark?idMark=67", parameters={masked}
-2020-06-19 13:51:25,672 DEBUG o.s.w.s.h.AbstractHandlerMapping [http-nio-8080-exec-1] Mapped to httpControllers.MarkController#deleteMark(int)
-2020-06-19 13:51:25,777 DEBUG o.a.i.l.LogFactory [http-nio-8080-exec-1] Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
-2020-06-19 13:51:25,917 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-1] PooledDataSource forcefully closed/removed all connections.
-2020-06-19 13:51:25,917 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-1] PooledDataSource forcefully closed/removed all connections.
-2020-06-19 13:51:25,919 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-1] PooledDataSource forcefully closed/removed all connections.
-2020-06-19 13:51:25,920 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-1] PooledDataSource forcefully closed/removed all connections.
-2020-06-19 13:51:26,100 DEBUG p.SchoolDb2 [http-nio-8080-exec-1] deleteMark(67)
-2020-06-19 13:51:26,119 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-1] Opening JDBC Connection
-2020-06-19 13:51:26,465 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-1] Created connection 1539480269.
-2020-06-19 13:51:26,469 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-1] Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@5bc29acd]
-2020-06-19 13:51:26,475 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-1] ==>  Preparing: delete from Mark where idMark = ? 
-2020-06-19 13:51:26,543 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-1] ==> Parameters: 67(Integer)
-2020-06-19 13:51:26,544 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-1] <==    Updates: 1
-2020-06-19 13:51:26,545 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-1] Committing JDBC Connection [com.mysql.jdbc.JDBC4Connection@5bc29acd]
-2020-06-19 13:51:26,551 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-1] Resetting autocommit to true on JDBC Connection [com.mysql.jdbc.JDBC4Connection@5bc29acd]
-2020-06-19 13:51:26,553 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-1] Closing JDBC Connection [com.mysql.jdbc.JDBC4Connection@5bc29acd]
-2020-06-19 13:51:26,553 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-1] Returned connection 1539480269 to pool.
-2020-06-19 13:51:26,587 DEBUG o.s.w.s.m.m.a.AbstractMessageConverterMethodProcessor [http-nio-8080-exec-1] Using 'text/plain', given [*/*] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
-2020-06-19 13:51:26,588 DEBUG o.s.c.l.LogFormatUtils [http-nio-8080-exec-1] Writing ["Success"]
-2020-06-19 13:51:26,607 DEBUG o.s.w.s.FrameworkServlet [http-nio-8080-exec-1] Completed 200 OK
-2020-06-19 13:51:28,607 DEBUG o.s.c.l.LogFormatUtils [http-nio-8080-exec-3] DELETE "/mark?idMark=67", parameters={masked}
-2020-06-19 13:51:28,608 DEBUG o.s.w.s.h.AbstractHandlerMapping [http-nio-8080-exec-3] Mapped to httpControllers.MarkController#deleteMark(int)
-2020-06-19 13:51:28,628 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-3] PooledDataSource forcefully closed/removed all connections.
-2020-06-19 13:51:28,629 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-3] PooledDataSource forcefully closed/removed all connections.
-2020-06-19 13:51:28,629 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-3] PooledDataSource forcefully closed/removed all connections.
-2020-06-19 13:51:28,630 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-3] PooledDataSource forcefully closed/removed all connections.
-2020-06-19 13:51:28,695 DEBUG p.SchoolDb2 [http-nio-8080-exec-3] deleteMark(67)
-2020-06-19 13:51:28,695 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-3] Opening JDBC Connection
-2020-06-19 13:51:28,709 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-3] Created connection 123774125.
-2020-06-19 13:51:28,711 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-3] Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@760a4ad]
-2020-06-19 13:51:28,712 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-3] ==>  Preparing: delete from Mark where idMark = ? 
-2020-06-19 13:51:28,713 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-3] ==> Parameters: 67(Integer)
-2020-06-19 13:51:28,714 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-3] <==    Updates: 0
-2020-06-19 13:51:28,715 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-3] Committing JDBC Connection [com.mysql.jdbc.JDBC4Connection@760a4ad]
-2020-06-19 13:51:28,716 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-3] Resetting autocommit to true on JDBC Connection [com.mysql.jdbc.JDBC4Connection@760a4ad]
-2020-06-19 13:51:28,717 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-3] Closing JDBC Connection [com.mysql.jdbc.JDBC4Connection@760a4ad]
-2020-06-19 13:51:28,718 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-3] Returned connection 123774125 to pool.
-2020-06-19 13:51:28,722 DEBUG o.s.w.s.m.m.a.AbstractMessageConverterMethodProcessor [http-nio-8080-exec-3] Using 'text/plain', given [*/*] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
-2020-06-19 13:51:28,723 DEBUG o.s.c.l.LogFormatUtils [http-nio-8080-exec-3] Writing ["Success"]
-2020-06-19 13:51:28,726 DEBUG o.s.w.s.FrameworkServlet [http-nio-8080-exec-3] Completed 200 OK
-2020-06-19 13:51:36,594 DEBUG o.s.c.l.LogFormatUtils [http-nio-8080-exec-4] GET "/marks?semester=2", parameters={masked}
-2020-06-19 13:51:36,596 DEBUG o.s.w.s.h.AbstractHandlerMapping [http-nio-8080-exec-4] Mapped to httpControllers.MarkController#marks(int)
-2020-06-19 13:51:36,631 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-4] PooledDataSource forcefully closed/removed all connections.
-2020-06-19 13:51:36,631 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-4] PooledDataSource forcefully closed/removed all connections.
-2020-06-19 13:51:36,632 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-4] PooledDataSource forcefully closed/removed all connections.
-2020-06-19 13:51:36,632 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-4] PooledDataSource forcefully closed/removed all connections.
-2020-06-19 13:51:36,725 DEBUG s.MarkService [http-nio-8080-exec-4] getMarks(2)
-2020-06-19 13:51:36,726 DEBUG p.SchoolDb2 [http-nio-8080-exec-4] getMarks(2)
-2020-06-19 13:51:36,729 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-4] Opening JDBC Connection
-2020-06-19 13:51:36,745 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-4] Created connection 1966063709.
-2020-06-19 13:51:36,745 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-4] Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@752fc05d]
-2020-06-19 13:51:36,749 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-4] ==>  Preparing: select m.idMark as idMark, m.idClass as idClass, m.idCategory as idCategory, m.description as markDescription, m.mark as mark, m.weight as weight, ca.description as categoryDescription, cl.code as classCode, cl.semester as semester, cl.description as classDescription, cl.credits as classCredits from Mark m inner join Category ca on ca.idCategory = m.idCategory inner join Class cl on cl.idClass = m.idClass where semester = ? 
-2020-06-19 13:51:36,750 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-4] ==> Parameters: 2(Integer)
-2020-06-19 13:51:36,799 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-4] <==      Total: 15
-2020-06-19 13:51:36,800 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-4] Resetting autocommit to true on JDBC Connection [com.mysql.jdbc.JDBC4Connection@752fc05d]
-2020-06-19 13:51:36,801 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-4] Closing JDBC Connection [com.mysql.jdbc.JDBC4Connection@752fc05d]
-2020-06-19 13:51:36,802 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-4] Returned connection 1966063709 to pool.
-2020-06-19 13:51:36,811 DEBUG o.s.w.s.m.m.a.AbstractMessageConverterMethodProcessor [http-nio-8080-exec-4] Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-06-19 13:51:36,811 DEBUG o.s.c.l.LogFormatUtils [http-nio-8080-exec-4] Writing [[dataObjects.Mark@74c10d05, dataObjects.Mark@27b2f339, dataObjects.Mark@7fbdba98, dataObjects.Mark@7 (truncated)...]
-2020-06-19 13:51:36,895 DEBUG o.s.w.s.FrameworkServlet [http-nio-8080-exec-4] Completed 200 OK
-2020-06-19 13:51:45,641 DEBUG o.s.c.s.AbstractApplicationContext [SpringContextShutdownHook] Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@531f4093, started on Fri Jun 19 13:51:15 EDT 2020
-2020-06-19 13:51:45,645 INFO o.s.s.c.ExecutorConfigurationSupport [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-24 10:57:50,826 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2020-06-24 10:57:50,891 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2020-06-24 10:57:50,896 INFO o.s.b.StartupInfoLogger [main] Started Main in 3.205 seconds (JVM running for 4.118)
+2020-06-24 10:57:54,833 INFO o.a.j.l.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-24 10:57:54,834 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2020-06-24 10:57:54,834 DEBUG o.s.w.s.DispatcherServlet [http-nio-8080-exec-1] Detected StandardServletMultipartResolver
+2020-06-24 10:57:54,842 DEBUG o.s.w.s.FrameworkServlet [http-nio-8080-exec-1] enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2020-06-24 10:57:54,843 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 8 ms
+2020-06-24 10:57:54,852 DEBUG o.s.c.l.LogFormatUtils [http-nio-8080-exec-1] GET "/grade/global?semester=1", parameters={masked}
+2020-06-24 10:57:54,857 DEBUG o.s.w.s.h.AbstractHandlerMapping [http-nio-8080-exec-1] Mapped to httpControllers.GradeController#globalGrade(int)
+2020-06-24 10:57:54,921 DEBUG o.a.i.l.LogFactory [http-nio-8080-exec-1] Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2020-06-24 10:57:55,004 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-1] PooledDataSource forcefully closed/removed all connections.
+2020-06-24 10:57:55,005 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-1] PooledDataSource forcefully closed/removed all connections.
+2020-06-24 10:57:55,005 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-1] PooledDataSource forcefully closed/removed all connections.
+2020-06-24 10:57:55,006 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-1] PooledDataSource forcefully closed/removed all connections.
+2020-06-24 10:57:55,102 DEBUG s.GradeService [http-nio-8080-exec-1] getGlobalGrade(1)
+2020-06-24 10:57:55,102 DEBUG s.GradeService [http-nio-8080-exec-1] getGrades(1)
+2020-06-24 10:57:55,103 DEBUG p.SchoolDb2 [http-nio-8080-exec-1] getCourses(1)
+2020-06-24 10:57:55,115 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-1] Opening JDBC Connection
+2020-06-24 10:57:55,286 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-1] Created connection 1217126112.
+2020-06-24 10:57:55,287 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-1] Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@488bdee0]
+2020-06-24 10:57:55,289 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-1] ==>  Preparing: select * from Class where semester = ? 
+2020-06-24 10:57:55,323 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-1] ==> Parameters: 1(Integer)
+2020-06-24 10:57:55,347 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-1] <==      Total: 5
+2020-06-24 10:57:55,348 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-1] Resetting autocommit to true on JDBC Connection [com.mysql.jdbc.JDBC4Connection@488bdee0]
+2020-06-24 10:57:55,349 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-1] Closing JDBC Connection [com.mysql.jdbc.JDBC4Connection@488bdee0]
+2020-06-24 10:57:55,350 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-1] Returned connection 1217126112 to pool.
+2020-06-24 10:57:55,350 DEBUG p.SchoolDb2 [http-nio-8080-exec-1] getCourseMarks(1)
+2020-06-24 10:57:55,351 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-1] Opening JDBC Connection
+2020-06-24 10:57:55,351 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-1] Checked out connection 1217126112 from pool.
+2020-06-24 10:57:55,351 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-1] Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@488bdee0]
+2020-06-24 10:57:55,352 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-1] ==>  Preparing: select m.idMark as idMark, m.idClass as idClass, m.idCategory as idCategory, m.description as markDescription, m.mark as mark, m.weight as weight, ca.description as categoryDescription, cl.code as classCode, cl.semester as semester, cl.description as classDescription, cl.credits as classCredits from Mark m inner join Category ca on ca.idCategory = m.idCategory inner join Class cl on cl.idClass = m.idClass where m.idClass = ? 
+2020-06-24 10:57:55,352 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-1] ==> Parameters: 1(Integer)
+2020-06-24 10:57:55,363 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-1] <==      Total: 4
+2020-06-24 10:57:55,364 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-1] Resetting autocommit to true on JDBC Connection [com.mysql.jdbc.JDBC4Connection@488bdee0]
+2020-06-24 10:57:55,365 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-1] Closing JDBC Connection [com.mysql.jdbc.JDBC4Connection@488bdee0]
+2020-06-24 10:57:55,365 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-1] Returned connection 1217126112 to pool.
+2020-06-24 10:57:55,366 DEBUG p.SchoolDb2 [http-nio-8080-exec-1] getCourseMarks(2)
+2020-06-24 10:57:55,366 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-1] Opening JDBC Connection
+2020-06-24 10:57:55,366 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-1] Checked out connection 1217126112 from pool.
+2020-06-24 10:57:55,367 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-1] Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@488bdee0]
+2020-06-24 10:57:55,367 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-1] ==>  Preparing: select m.idMark as idMark, m.idClass as idClass, m.idCategory as idCategory, m.description as markDescription, m.mark as mark, m.weight as weight, ca.description as categoryDescription, cl.code as classCode, cl.semester as semester, cl.description as classDescription, cl.credits as classCredits from Mark m inner join Category ca on ca.idCategory = m.idCategory inner join Class cl on cl.idClass = m.idClass where m.idClass = ? 
+2020-06-24 10:57:55,368 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-1] ==> Parameters: 2(Integer)
+2020-06-24 10:57:55,405 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-1] <==      Total: 11
+2020-06-24 10:57:55,406 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-1] Resetting autocommit to true on JDBC Connection [com.mysql.jdbc.JDBC4Connection@488bdee0]
+2020-06-24 10:57:55,407 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-1] Closing JDBC Connection [com.mysql.jdbc.JDBC4Connection@488bdee0]
+2020-06-24 10:57:55,407 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-1] Returned connection 1217126112 to pool.
+2020-06-24 10:57:55,409 DEBUG p.SchoolDb2 [http-nio-8080-exec-1] getCourseMarks(3)
+2020-06-24 10:57:55,413 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-1] Opening JDBC Connection
+2020-06-24 10:57:55,413 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-1] Checked out connection 1217126112 from pool.
+2020-06-24 10:57:55,414 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-1] Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@488bdee0]
+2020-06-24 10:57:55,418 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-1] ==>  Preparing: select m.idMark as idMark, m.idClass as idClass, m.idCategory as idCategory, m.description as markDescription, m.mark as mark, m.weight as weight, ca.description as categoryDescription, cl.code as classCode, cl.semester as semester, cl.description as classDescription, cl.credits as classCredits from Mark m inner join Category ca on ca.idCategory = m.idCategory inner join Class cl on cl.idClass = m.idClass where m.idClass = ? 
+2020-06-24 10:57:55,419 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-1] ==> Parameters: 3(Integer)
+2020-06-24 10:57:55,434 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-1] <==      Total: 11
+2020-06-24 10:57:55,435 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-1] Resetting autocommit to true on JDBC Connection [com.mysql.jdbc.JDBC4Connection@488bdee0]
+2020-06-24 10:57:55,435 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-1] Closing JDBC Connection [com.mysql.jdbc.JDBC4Connection@488bdee0]
+2020-06-24 10:57:55,436 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-1] Returned connection 1217126112 to pool.
+2020-06-24 10:57:55,436 DEBUG p.SchoolDb2 [http-nio-8080-exec-1] getCourseMarks(4)
+2020-06-24 10:57:55,436 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-1] Opening JDBC Connection
+2020-06-24 10:57:55,437 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-1] Checked out connection 1217126112 from pool.
+2020-06-24 10:57:55,437 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-1] Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@488bdee0]
+2020-06-24 10:57:55,437 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-1] ==>  Preparing: select m.idMark as idMark, m.idClass as idClass, m.idCategory as idCategory, m.description as markDescription, m.mark as mark, m.weight as weight, ca.description as categoryDescription, cl.code as classCode, cl.semester as semester, cl.description as classDescription, cl.credits as classCredits from Mark m inner join Category ca on ca.idCategory = m.idCategory inner join Class cl on cl.idClass = m.idClass where m.idClass = ? 
+2020-06-24 10:57:55,439 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-1] ==> Parameters: 4(Integer)
+2020-06-24 10:57:55,447 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-1] <==      Total: 10
+2020-06-24 10:57:55,448 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-1] Resetting autocommit to true on JDBC Connection [com.mysql.jdbc.JDBC4Connection@488bdee0]
+2020-06-24 10:57:55,449 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-1] Closing JDBC Connection [com.mysql.jdbc.JDBC4Connection@488bdee0]
+2020-06-24 10:57:55,449 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-1] Returned connection 1217126112 to pool.
+2020-06-24 10:57:55,449 DEBUG p.SchoolDb2 [http-nio-8080-exec-1] getCourseMarks(5)
+2020-06-24 10:57:55,450 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-1] Opening JDBC Connection
+2020-06-24 10:57:55,450 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-1] Checked out connection 1217126112 from pool.
+2020-06-24 10:57:55,451 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-1] Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@488bdee0]
+2020-06-24 10:57:55,452 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-1] ==>  Preparing: select m.idMark as idMark, m.idClass as idClass, m.idCategory as idCategory, m.description as markDescription, m.mark as mark, m.weight as weight, ca.description as categoryDescription, cl.code as classCode, cl.semester as semester, cl.description as classDescription, cl.credits as classCredits from Mark m inner join Category ca on ca.idCategory = m.idCategory inner join Class cl on cl.idClass = m.idClass where m.idClass = ? 
+2020-06-24 10:57:55,453 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-1] ==> Parameters: 5(Integer)
+2020-06-24 10:57:55,456 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-1] <==      Total: 3
+2020-06-24 10:57:55,457 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-1] Resetting autocommit to true on JDBC Connection [com.mysql.jdbc.JDBC4Connection@488bdee0]
+2020-06-24 10:57:55,458 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-1] Closing JDBC Connection [com.mysql.jdbc.JDBC4Connection@488bdee0]
+2020-06-24 10:57:55,459 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-1] Returned connection 1217126112 to pool.
+2020-06-24 10:57:55,532 DEBUG o.s.w.s.m.m.a.AbstractMessageConverterMethodProcessor [http-nio-8080-exec-1] Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-06-24 10:57:55,537 DEBUG o.s.c.l.LogFormatUtils [http-nio-8080-exec-1] Writing [dataObjects.GlobalGrade@6ca035e9]
+2020-06-24 10:57:55,567 DEBUG o.s.w.s.FrameworkServlet [http-nio-8080-exec-1] Completed 200 OK
+2020-06-24 10:58:01,741 DEBUG o.s.c.l.LogFormatUtils [http-nio-8080-exec-3] GET "/grade/global/all", parameters={}
+2020-06-24 10:58:01,742 DEBUG o.s.w.s.h.AbstractHandlerMapping [http-nio-8080-exec-3] Mapped to httpControllers.GradeController#globalGrade()
+2020-06-24 10:58:01,757 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-3] PooledDataSource forcefully closed/removed all connections.
+2020-06-24 10:58:01,758 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-3] PooledDataSource forcefully closed/removed all connections.
+2020-06-24 10:58:01,758 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-3] PooledDataSource forcefully closed/removed all connections.
+2020-06-24 10:58:01,758 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-3] PooledDataSource forcefully closed/removed all connections.
+2020-06-24 10:58:01,817 DEBUG s.GradeService [http-nio-8080-exec-3] getGlobalGrade()
+2020-06-24 10:58:01,817 DEBUG s.GradeService [http-nio-8080-exec-3] getGrades()
+2020-06-24 10:58:01,818 DEBUG p.SchoolDb2 [http-nio-8080-exec-3] getCourses()
+2020-06-24 10:58:01,818 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-3] Opening JDBC Connection
+2020-06-24 10:58:01,834 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-3] Created connection 1947359155.
+2020-06-24 10:58:01,834 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-3] Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@741257b3]
+2020-06-24 10:58:01,836 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-3] ==>  Preparing: select * from Class 
+2020-06-24 10:58:01,837 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-3] ==> Parameters: 
+2020-06-24 10:58:01,839 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-3] <==      Total: 6
+2020-06-24 10:58:01,840 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-3] Resetting autocommit to true on JDBC Connection [com.mysql.jdbc.JDBC4Connection@741257b3]
+2020-06-24 10:58:01,841 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-3] Closing JDBC Connection [com.mysql.jdbc.JDBC4Connection@741257b3]
+2020-06-24 10:58:01,842 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-3] Returned connection 1947359155 to pool.
+2020-06-24 10:58:01,842 DEBUG p.SchoolDb2 [http-nio-8080-exec-3] getCourseMarks(1)
+2020-06-24 10:58:01,843 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-3] Opening JDBC Connection
+2020-06-24 10:58:01,843 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-3] Checked out connection 1947359155 from pool.
+2020-06-24 10:58:01,844 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-3] Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@741257b3]
+2020-06-24 10:58:01,845 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-3] ==>  Preparing: select m.idMark as idMark, m.idClass as idClass, m.idCategory as idCategory, m.description as markDescription, m.mark as mark, m.weight as weight, ca.description as categoryDescription, cl.code as classCode, cl.semester as semester, cl.description as classDescription, cl.credits as classCredits from Mark m inner join Category ca on ca.idCategory = m.idCategory inner join Class cl on cl.idClass = m.idClass where m.idClass = ? 
+2020-06-24 10:58:01,846 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-3] ==> Parameters: 1(Integer)
+2020-06-24 10:58:01,851 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-3] <==      Total: 4
+2020-06-24 10:58:01,852 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-3] Resetting autocommit to true on JDBC Connection [com.mysql.jdbc.JDBC4Connection@741257b3]
+2020-06-24 10:58:01,853 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-3] Closing JDBC Connection [com.mysql.jdbc.JDBC4Connection@741257b3]
+2020-06-24 10:58:01,854 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-3] Returned connection 1947359155 to pool.
+2020-06-24 10:58:01,855 DEBUG p.SchoolDb2 [http-nio-8080-exec-3] getCourseMarks(2)
+2020-06-24 10:58:01,856 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-3] Opening JDBC Connection
+2020-06-24 10:58:01,857 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-3] Checked out connection 1947359155 from pool.
+2020-06-24 10:58:01,857 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-3] Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@741257b3]
+2020-06-24 10:58:01,858 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-3] ==>  Preparing: select m.idMark as idMark, m.idClass as idClass, m.idCategory as idCategory, m.description as markDescription, m.mark as mark, m.weight as weight, ca.description as categoryDescription, cl.code as classCode, cl.semester as semester, cl.description as classDescription, cl.credits as classCredits from Mark m inner join Category ca on ca.idCategory = m.idCategory inner join Class cl on cl.idClass = m.idClass where m.idClass = ? 
+2020-06-24 10:58:01,859 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-3] ==> Parameters: 2(Integer)
+2020-06-24 10:58:01,869 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-3] <==      Total: 11
+2020-06-24 10:58:01,871 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-3] Resetting autocommit to true on JDBC Connection [com.mysql.jdbc.JDBC4Connection@741257b3]
+2020-06-24 10:58:01,871 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-3] Closing JDBC Connection [com.mysql.jdbc.JDBC4Connection@741257b3]
+2020-06-24 10:58:01,872 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-3] Returned connection 1947359155 to pool.
+2020-06-24 10:58:01,872 DEBUG p.SchoolDb2 [http-nio-8080-exec-3] getCourseMarks(3)
+2020-06-24 10:58:01,873 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-3] Opening JDBC Connection
+2020-06-24 10:58:01,873 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-3] Checked out connection 1947359155 from pool.
+2020-06-24 10:58:01,873 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-3] Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@741257b3]
+2020-06-24 10:58:01,875 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-3] ==>  Preparing: select m.idMark as idMark, m.idClass as idClass, m.idCategory as idCategory, m.description as markDescription, m.mark as mark, m.weight as weight, ca.description as categoryDescription, cl.code as classCode, cl.semester as semester, cl.description as classDescription, cl.credits as classCredits from Mark m inner join Category ca on ca.idCategory = m.idCategory inner join Class cl on cl.idClass = m.idClass where m.idClass = ? 
+2020-06-24 10:58:01,876 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-3] ==> Parameters: 3(Integer)
+2020-06-24 10:58:01,883 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-3] <==      Total: 11
+2020-06-24 10:58:01,884 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-3] Resetting autocommit to true on JDBC Connection [com.mysql.jdbc.JDBC4Connection@741257b3]
+2020-06-24 10:58:01,884 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-3] Closing JDBC Connection [com.mysql.jdbc.JDBC4Connection@741257b3]
+2020-06-24 10:58:01,885 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-3] Returned connection 1947359155 to pool.
+2020-06-24 10:58:01,885 DEBUG p.SchoolDb2 [http-nio-8080-exec-3] getCourseMarks(4)
+2020-06-24 10:58:01,886 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-3] Opening JDBC Connection
+2020-06-24 10:58:01,887 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-3] Checked out connection 1947359155 from pool.
+2020-06-24 10:58:01,888 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-3] Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@741257b3]
+2020-06-24 10:58:01,889 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-3] ==>  Preparing: select m.idMark as idMark, m.idClass as idClass, m.idCategory as idCategory, m.description as markDescription, m.mark as mark, m.weight as weight, ca.description as categoryDescription, cl.code as classCode, cl.semester as semester, cl.description as classDescription, cl.credits as classCredits from Mark m inner join Category ca on ca.idCategory = m.idCategory inner join Class cl on cl.idClass = m.idClass where m.idClass = ? 
+2020-06-24 10:58:01,889 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-3] ==> Parameters: 4(Integer)
+2020-06-24 10:58:01,897 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-3] <==      Total: 10
+2020-06-24 10:58:01,897 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-3] Resetting autocommit to true on JDBC Connection [com.mysql.jdbc.JDBC4Connection@741257b3]
+2020-06-24 10:58:01,898 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-3] Closing JDBC Connection [com.mysql.jdbc.JDBC4Connection@741257b3]
+2020-06-24 10:58:01,899 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-3] Returned connection 1947359155 to pool.
+2020-06-24 10:58:01,899 DEBUG p.SchoolDb2 [http-nio-8080-exec-3] getCourseMarks(5)
+2020-06-24 10:58:01,899 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-3] Opening JDBC Connection
+2020-06-24 10:58:01,899 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-3] Checked out connection 1947359155 from pool.
+2020-06-24 10:58:01,900 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-3] Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@741257b3]
+2020-06-24 10:58:01,900 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-3] ==>  Preparing: select m.idMark as idMark, m.idClass as idClass, m.idCategory as idCategory, m.description as markDescription, m.mark as mark, m.weight as weight, ca.description as categoryDescription, cl.code as classCode, cl.semester as semester, cl.description as classDescription, cl.credits as classCredits from Mark m inner join Category ca on ca.idCategory = m.idCategory inner join Class cl on cl.idClass = m.idClass where m.idClass = ? 
+2020-06-24 10:58:01,901 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-3] ==> Parameters: 5(Integer)
+2020-06-24 10:58:01,906 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-3] <==      Total: 3
+2020-06-24 10:58:01,907 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-3] Resetting autocommit to true on JDBC Connection [com.mysql.jdbc.JDBC4Connection@741257b3]
+2020-06-24 10:58:01,909 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-3] Closing JDBC Connection [com.mysql.jdbc.JDBC4Connection@741257b3]
+2020-06-24 10:58:01,909 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-3] Returned connection 1947359155 to pool.
+2020-06-24 10:58:01,910 DEBUG p.SchoolDb2 [http-nio-8080-exec-3] getCourseMarks(6)
+2020-06-24 10:58:01,910 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-3] Opening JDBC Connection
+2020-06-24 10:58:01,910 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-3] Checked out connection 1947359155 from pool.
+2020-06-24 10:58:01,910 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-3] Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@741257b3]
+2020-06-24 10:58:01,911 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-3] ==>  Preparing: select m.idMark as idMark, m.idClass as idClass, m.idCategory as idCategory, m.description as markDescription, m.mark as mark, m.weight as weight, ca.description as categoryDescription, cl.code as classCode, cl.semester as semester, cl.description as classDescription, cl.credits as classCredits from Mark m inner join Category ca on ca.idCategory = m.idCategory inner join Class cl on cl.idClass = m.idClass where m.idClass = ? 
+2020-06-24 10:58:01,912 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-3] ==> Parameters: 6(Integer)
+2020-06-24 10:58:01,922 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-3] <==      Total: 15
+2020-06-24 10:58:01,922 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-3] Resetting autocommit to true on JDBC Connection [com.mysql.jdbc.JDBC4Connection@741257b3]
+2020-06-24 10:58:01,923 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-3] Closing JDBC Connection [com.mysql.jdbc.JDBC4Connection@741257b3]
+2020-06-24 10:58:01,923 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-3] Returned connection 1947359155 to pool.
+2020-06-24 10:58:01,924 DEBUG o.s.w.s.m.m.a.AbstractMessageConverterMethodProcessor [http-nio-8080-exec-3] Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-06-24 10:58:01,925 DEBUG o.s.c.l.LogFormatUtils [http-nio-8080-exec-3] Writing [dataObjects.GlobalGrade@789652de]
+2020-06-24 10:58:01,927 DEBUG o.s.w.s.FrameworkServlet [http-nio-8080-exec-3] Completed 200 OK
+2020-06-24 10:58:09,104 DEBUG o.s.c.l.LogFormatUtils [http-nio-8080-exec-2] GET "/grades?semester=1", parameters={masked}
+2020-06-24 10:58:09,105 DEBUG o.s.w.s.h.AbstractHandlerMapping [http-nio-8080-exec-2] Mapped to httpControllers.GradeController#grades(int)
+2020-06-24 10:58:09,114 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-2] PooledDataSource forcefully closed/removed all connections.
+2020-06-24 10:58:09,114 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-2] PooledDataSource forcefully closed/removed all connections.
+2020-06-24 10:58:09,114 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-2] PooledDataSource forcefully closed/removed all connections.
+2020-06-24 10:58:09,115 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-2] PooledDataSource forcefully closed/removed all connections.
+2020-06-24 10:58:09,153 DEBUG s.GradeService [http-nio-8080-exec-2] getGrades(1)
+2020-06-24 10:58:09,153 DEBUG p.SchoolDb2 [http-nio-8080-exec-2] getCourses(1)
+2020-06-24 10:58:09,153 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-2] Opening JDBC Connection
+2020-06-24 10:58:09,164 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-2] Created connection 1205496998.
+2020-06-24 10:58:09,164 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-2] Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@47da6ca6]
+2020-06-24 10:58:09,164 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-2] ==>  Preparing: select * from Class where semester = ? 
+2020-06-24 10:58:09,165 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-2] ==> Parameters: 1(Integer)
+2020-06-24 10:58:09,167 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-2] <==      Total: 5
+2020-06-24 10:58:09,167 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-2] Resetting autocommit to true on JDBC Connection [com.mysql.jdbc.JDBC4Connection@47da6ca6]
+2020-06-24 10:58:09,168 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-2] Closing JDBC Connection [com.mysql.jdbc.JDBC4Connection@47da6ca6]
+2020-06-24 10:58:09,168 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-2] Returned connection 1205496998 to pool.
+2020-06-24 10:58:09,168 DEBUG p.SchoolDb2 [http-nio-8080-exec-2] getCourseMarks(1)
+2020-06-24 10:58:09,169 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-2] Opening JDBC Connection
+2020-06-24 10:58:09,169 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-2] Checked out connection 1205496998 from pool.
+2020-06-24 10:58:09,169 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-2] Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@47da6ca6]
+2020-06-24 10:58:09,169 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-2] ==>  Preparing: select m.idMark as idMark, m.idClass as idClass, m.idCategory as idCategory, m.description as markDescription, m.mark as mark, m.weight as weight, ca.description as categoryDescription, cl.code as classCode, cl.semester as semester, cl.description as classDescription, cl.credits as classCredits from Mark m inner join Category ca on ca.idCategory = m.idCategory inner join Class cl on cl.idClass = m.idClass where m.idClass = ? 
+2020-06-24 10:58:09,170 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-2] ==> Parameters: 1(Integer)
+2020-06-24 10:58:09,172 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-2] <==      Total: 4
+2020-06-24 10:58:09,173 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-2] Resetting autocommit to true on JDBC Connection [com.mysql.jdbc.JDBC4Connection@47da6ca6]
+2020-06-24 10:58:09,174 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-2] Closing JDBC Connection [com.mysql.jdbc.JDBC4Connection@47da6ca6]
+2020-06-24 10:58:09,175 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-2] Returned connection 1205496998 to pool.
+2020-06-24 10:58:09,175 DEBUG p.SchoolDb2 [http-nio-8080-exec-2] getCourseMarks(2)
+2020-06-24 10:58:09,176 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-2] Opening JDBC Connection
+2020-06-24 10:58:09,176 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-2] Checked out connection 1205496998 from pool.
+2020-06-24 10:58:09,176 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-2] Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@47da6ca6]
+2020-06-24 10:58:09,177 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-2] ==>  Preparing: select m.idMark as idMark, m.idClass as idClass, m.idCategory as idCategory, m.description as markDescription, m.mark as mark, m.weight as weight, ca.description as categoryDescription, cl.code as classCode, cl.semester as semester, cl.description as classDescription, cl.credits as classCredits from Mark m inner join Category ca on ca.idCategory = m.idCategory inner join Class cl on cl.idClass = m.idClass where m.idClass = ? 
+2020-06-24 10:58:09,179 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-2] ==> Parameters: 2(Integer)
+2020-06-24 10:58:09,185 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-2] <==      Total: 11
+2020-06-24 10:58:09,186 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-2] Resetting autocommit to true on JDBC Connection [com.mysql.jdbc.JDBC4Connection@47da6ca6]
+2020-06-24 10:58:09,187 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-2] Closing JDBC Connection [com.mysql.jdbc.JDBC4Connection@47da6ca6]
+2020-06-24 10:58:09,187 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-2] Returned connection 1205496998 to pool.
+2020-06-24 10:58:09,187 DEBUG p.SchoolDb2 [http-nio-8080-exec-2] getCourseMarks(3)
+2020-06-24 10:58:09,188 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-2] Opening JDBC Connection
+2020-06-24 10:58:09,188 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-2] Checked out connection 1205496998 from pool.
+2020-06-24 10:58:09,188 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-2] Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@47da6ca6]
+2020-06-24 10:58:09,189 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-2] ==>  Preparing: select m.idMark as idMark, m.idClass as idClass, m.idCategory as idCategory, m.description as markDescription, m.mark as mark, m.weight as weight, ca.description as categoryDescription, cl.code as classCode, cl.semester as semester, cl.description as classDescription, cl.credits as classCredits from Mark m inner join Category ca on ca.idCategory = m.idCategory inner join Class cl on cl.idClass = m.idClass where m.idClass = ? 
+2020-06-24 10:58:09,190 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-2] ==> Parameters: 3(Integer)
+2020-06-24 10:58:09,198 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-2] <==      Total: 11
+2020-06-24 10:58:09,199 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-2] Resetting autocommit to true on JDBC Connection [com.mysql.jdbc.JDBC4Connection@47da6ca6]
+2020-06-24 10:58:09,199 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-2] Closing JDBC Connection [com.mysql.jdbc.JDBC4Connection@47da6ca6]
+2020-06-24 10:58:09,200 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-2] Returned connection 1205496998 to pool.
+2020-06-24 10:58:09,200 DEBUG p.SchoolDb2 [http-nio-8080-exec-2] getCourseMarks(4)
+2020-06-24 10:58:09,200 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-2] Opening JDBC Connection
+2020-06-24 10:58:09,200 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-2] Checked out connection 1205496998 from pool.
+2020-06-24 10:58:09,200 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-2] Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@47da6ca6]
+2020-06-24 10:58:09,201 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-2] ==>  Preparing: select m.idMark as idMark, m.idClass as idClass, m.idCategory as idCategory, m.description as markDescription, m.mark as mark, m.weight as weight, ca.description as categoryDescription, cl.code as classCode, cl.semester as semester, cl.description as classDescription, cl.credits as classCredits from Mark m inner join Category ca on ca.idCategory = m.idCategory inner join Class cl on cl.idClass = m.idClass where m.idClass = ? 
+2020-06-24 10:58:09,202 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-2] ==> Parameters: 4(Integer)
+2020-06-24 10:58:09,206 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-2] <==      Total: 10
+2020-06-24 10:58:09,207 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-2] Resetting autocommit to true on JDBC Connection [com.mysql.jdbc.JDBC4Connection@47da6ca6]
+2020-06-24 10:58:09,207 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-2] Closing JDBC Connection [com.mysql.jdbc.JDBC4Connection@47da6ca6]
+2020-06-24 10:58:09,208 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-2] Returned connection 1205496998 to pool.
+2020-06-24 10:58:09,208 DEBUG p.SchoolDb2 [http-nio-8080-exec-2] getCourseMarks(5)
+2020-06-24 10:58:09,208 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-2] Opening JDBC Connection
+2020-06-24 10:58:09,209 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-2] Checked out connection 1205496998 from pool.
+2020-06-24 10:58:09,209 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-2] Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@47da6ca6]
+2020-06-24 10:58:09,209 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-2] ==>  Preparing: select m.idMark as idMark, m.idClass as idClass, m.idCategory as idCategory, m.description as markDescription, m.mark as mark, m.weight as weight, ca.description as categoryDescription, cl.code as classCode, cl.semester as semester, cl.description as classDescription, cl.credits as classCredits from Mark m inner join Category ca on ca.idCategory = m.idCategory inner join Class cl on cl.idClass = m.idClass where m.idClass = ? 
+2020-06-24 10:58:09,210 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-2] ==> Parameters: 5(Integer)
+2020-06-24 10:58:09,212 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-2] <==      Total: 3
+2020-06-24 10:58:09,213 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-2] Resetting autocommit to true on JDBC Connection [com.mysql.jdbc.JDBC4Connection@47da6ca6]
+2020-06-24 10:58:09,213 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-2] Closing JDBC Connection [com.mysql.jdbc.JDBC4Connection@47da6ca6]
+2020-06-24 10:58:09,214 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-2] Returned connection 1205496998 to pool.
+2020-06-24 10:58:09,218 DEBUG o.s.w.s.m.m.a.AbstractMessageConverterMethodProcessor [http-nio-8080-exec-2] Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-06-24 10:58:09,219 DEBUG o.s.c.l.LogFormatUtils [http-nio-8080-exec-2] Writing [[dataObjects.Grade@343149bb, dataObjects.Grade@1e9c8c51, dataObjects.Grade@5a5da95b, dataObjects.Gra (truncated)...]
+2020-06-24 10:58:09,227 DEBUG o.s.w.s.FrameworkServlet [http-nio-8080-exec-2] Completed 200 OK
+2020-06-24 10:58:13,398 DEBUG o.s.c.l.LogFormatUtils [http-nio-8080-exec-4] GET "/grades/all", parameters={}
+2020-06-24 10:58:13,398 DEBUG o.s.w.s.h.AbstractHandlerMapping [http-nio-8080-exec-4] Mapped to httpControllers.GradeController#grades()
+2020-06-24 10:58:13,410 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-4] PooledDataSource forcefully closed/removed all connections.
+2020-06-24 10:58:13,411 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-4] PooledDataSource forcefully closed/removed all connections.
+2020-06-24 10:58:13,411 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-4] PooledDataSource forcefully closed/removed all connections.
+2020-06-24 10:58:13,411 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-4] PooledDataSource forcefully closed/removed all connections.
+2020-06-24 10:58:13,456 DEBUG s.GradeService [http-nio-8080-exec-4] getGrades()
+2020-06-24 10:58:13,456 DEBUG p.SchoolDb2 [http-nio-8080-exec-4] getCourses()
+2020-06-24 10:58:13,457 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-4] Opening JDBC Connection
+2020-06-24 10:58:13,467 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-4] Created connection 937948933.
+2020-06-24 10:58:13,468 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-4] Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@37e7f705]
+2020-06-24 10:58:13,468 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-4] ==>  Preparing: select * from Class 
+2020-06-24 10:58:13,469 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-4] ==> Parameters: 
+2020-06-24 10:58:13,470 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-4] <==      Total: 6
+2020-06-24 10:58:13,471 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-4] Resetting autocommit to true on JDBC Connection [com.mysql.jdbc.JDBC4Connection@37e7f705]
+2020-06-24 10:58:13,472 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-4] Closing JDBC Connection [com.mysql.jdbc.JDBC4Connection@37e7f705]
+2020-06-24 10:58:13,472 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-4] Returned connection 937948933 to pool.
+2020-06-24 10:58:13,472 DEBUG p.SchoolDb2 [http-nio-8080-exec-4] getCourseMarks(1)
+2020-06-24 10:58:13,472 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-4] Opening JDBC Connection
+2020-06-24 10:58:13,473 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-4] Checked out connection 937948933 from pool.
+2020-06-24 10:58:13,473 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-4] Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@37e7f705]
+2020-06-24 10:58:13,475 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-4] ==>  Preparing: select m.idMark as idMark, m.idClass as idClass, m.idCategory as idCategory, m.description as markDescription, m.mark as mark, m.weight as weight, ca.description as categoryDescription, cl.code as classCode, cl.semester as semester, cl.description as classDescription, cl.credits as classCredits from Mark m inner join Category ca on ca.idCategory = m.idCategory inner join Class cl on cl.idClass = m.idClass where m.idClass = ? 
+2020-06-24 10:58:13,476 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-4] ==> Parameters: 1(Integer)
+2020-06-24 10:58:13,479 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-4] <==      Total: 4
+2020-06-24 10:58:13,479 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-4] Resetting autocommit to true on JDBC Connection [com.mysql.jdbc.JDBC4Connection@37e7f705]
+2020-06-24 10:58:13,479 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-4] Closing JDBC Connection [com.mysql.jdbc.JDBC4Connection@37e7f705]
+2020-06-24 10:58:13,480 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-4] Returned connection 937948933 to pool.
+2020-06-24 10:58:13,480 DEBUG p.SchoolDb2 [http-nio-8080-exec-4] getCourseMarks(2)
+2020-06-24 10:58:13,480 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-4] Opening JDBC Connection
+2020-06-24 10:58:13,480 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-4] Checked out connection 937948933 from pool.
+2020-06-24 10:58:13,480 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-4] Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@37e7f705]
+2020-06-24 10:58:13,481 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-4] ==>  Preparing: select m.idMark as idMark, m.idClass as idClass, m.idCategory as idCategory, m.description as markDescription, m.mark as mark, m.weight as weight, ca.description as categoryDescription, cl.code as classCode, cl.semester as semester, cl.description as classDescription, cl.credits as classCredits from Mark m inner join Category ca on ca.idCategory = m.idCategory inner join Class cl on cl.idClass = m.idClass where m.idClass = ? 
+2020-06-24 10:58:13,481 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-4] ==> Parameters: 2(Integer)
+2020-06-24 10:58:13,485 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-4] <==      Total: 11
+2020-06-24 10:58:13,486 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-4] Resetting autocommit to true on JDBC Connection [com.mysql.jdbc.JDBC4Connection@37e7f705]
+2020-06-24 10:58:13,486 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-4] Closing JDBC Connection [com.mysql.jdbc.JDBC4Connection@37e7f705]
+2020-06-24 10:58:13,487 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-4] Returned connection 937948933 to pool.
+2020-06-24 10:58:13,487 DEBUG p.SchoolDb2 [http-nio-8080-exec-4] getCourseMarks(3)
+2020-06-24 10:58:13,487 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-4] Opening JDBC Connection
+2020-06-24 10:58:13,487 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-4] Checked out connection 937948933 from pool.
+2020-06-24 10:58:13,488 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-4] Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@37e7f705]
+2020-06-24 10:58:13,488 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-4] ==>  Preparing: select m.idMark as idMark, m.idClass as idClass, m.idCategory as idCategory, m.description as markDescription, m.mark as mark, m.weight as weight, ca.description as categoryDescription, cl.code as classCode, cl.semester as semester, cl.description as classDescription, cl.credits as classCredits from Mark m inner join Category ca on ca.idCategory = m.idCategory inner join Class cl on cl.idClass = m.idClass where m.idClass = ? 
+2020-06-24 10:58:13,489 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-4] ==> Parameters: 3(Integer)
+2020-06-24 10:58:13,495 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-4] <==      Total: 11
+2020-06-24 10:58:13,496 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-4] Resetting autocommit to true on JDBC Connection [com.mysql.jdbc.JDBC4Connection@37e7f705]
+2020-06-24 10:58:13,496 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-4] Closing JDBC Connection [com.mysql.jdbc.JDBC4Connection@37e7f705]
+2020-06-24 10:58:13,496 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-4] Returned connection 937948933 to pool.
+2020-06-24 10:58:13,496 DEBUG p.SchoolDb2 [http-nio-8080-exec-4] getCourseMarks(4)
+2020-06-24 10:58:13,497 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-4] Opening JDBC Connection
+2020-06-24 10:58:13,497 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-4] Checked out connection 937948933 from pool.
+2020-06-24 10:58:13,497 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-4] Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@37e7f705]
+2020-06-24 10:58:13,498 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-4] ==>  Preparing: select m.idMark as idMark, m.idClass as idClass, m.idCategory as idCategory, m.description as markDescription, m.mark as mark, m.weight as weight, ca.description as categoryDescription, cl.code as classCode, cl.semester as semester, cl.description as classDescription, cl.credits as classCredits from Mark m inner join Category ca on ca.idCategory = m.idCategory inner join Class cl on cl.idClass = m.idClass where m.idClass = ? 
+2020-06-24 10:58:13,500 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-4] ==> Parameters: 4(Integer)
+2020-06-24 10:58:13,505 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-4] <==      Total: 10
+2020-06-24 10:58:13,505 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-4] Resetting autocommit to true on JDBC Connection [com.mysql.jdbc.JDBC4Connection@37e7f705]
+2020-06-24 10:58:13,506 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-4] Closing JDBC Connection [com.mysql.jdbc.JDBC4Connection@37e7f705]
+2020-06-24 10:58:13,506 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-4] Returned connection 937948933 to pool.
+2020-06-24 10:58:13,506 DEBUG p.SchoolDb2 [http-nio-8080-exec-4] getCourseMarks(5)
+2020-06-24 10:58:13,507 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-4] Opening JDBC Connection
+2020-06-24 10:58:13,510 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-4] Checked out connection 937948933 from pool.
+2020-06-24 10:58:13,510 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-4] Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@37e7f705]
+2020-06-24 10:58:13,511 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-4] ==>  Preparing: select m.idMark as idMark, m.idClass as idClass, m.idCategory as idCategory, m.description as markDescription, m.mark as mark, m.weight as weight, ca.description as categoryDescription, cl.code as classCode, cl.semester as semester, cl.description as classDescription, cl.credits as classCredits from Mark m inner join Category ca on ca.idCategory = m.idCategory inner join Class cl on cl.idClass = m.idClass where m.idClass = ? 
+2020-06-24 10:58:13,512 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-4] ==> Parameters: 5(Integer)
+2020-06-24 10:58:13,520 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-4] <==      Total: 3
+2020-06-24 10:58:13,520 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-4] Resetting autocommit to true on JDBC Connection [com.mysql.jdbc.JDBC4Connection@37e7f705]
+2020-06-24 10:58:13,521 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-4] Closing JDBC Connection [com.mysql.jdbc.JDBC4Connection@37e7f705]
+2020-06-24 10:58:13,521 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-4] Returned connection 937948933 to pool.
+2020-06-24 10:58:13,522 DEBUG p.SchoolDb2 [http-nio-8080-exec-4] getCourseMarks(6)
+2020-06-24 10:58:13,522 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-4] Opening JDBC Connection
+2020-06-24 10:58:13,522 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-4] Checked out connection 937948933 from pool.
+2020-06-24 10:58:13,522 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-4] Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@37e7f705]
+2020-06-24 10:58:13,523 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-4] ==>  Preparing: select m.idMark as idMark, m.idClass as idClass, m.idCategory as idCategory, m.description as markDescription, m.mark as mark, m.weight as weight, ca.description as categoryDescription, cl.code as classCode, cl.semester as semester, cl.description as classDescription, cl.credits as classCredits from Mark m inner join Category ca on ca.idCategory = m.idCategory inner join Class cl on cl.idClass = m.idClass where m.idClass = ? 
+2020-06-24 10:58:13,523 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-4] ==> Parameters: 6(Integer)
+2020-06-24 10:58:13,527 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-4] <==      Total: 15
+2020-06-24 10:58:13,528 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-4] Resetting autocommit to true on JDBC Connection [com.mysql.jdbc.JDBC4Connection@37e7f705]
+2020-06-24 10:58:13,528 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-4] Closing JDBC Connection [com.mysql.jdbc.JDBC4Connection@37e7f705]
+2020-06-24 10:58:13,529 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-4] Returned connection 937948933 to pool.
+2020-06-24 10:58:13,530 DEBUG o.s.w.s.m.m.a.AbstractMessageConverterMethodProcessor [http-nio-8080-exec-4] Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-06-24 10:58:13,530 DEBUG o.s.c.l.LogFormatUtils [http-nio-8080-exec-4] Writing [[dataObjects.Grade@5f843f61, dataObjects.Grade@682fd8b3, dataObjects.Grade@68f360b7, dataObjects.Gra (truncated)...]
+2020-06-24 10:58:13,532 DEBUG o.s.w.s.FrameworkServlet [http-nio-8080-exec-4] Completed 200 OK
+2020-06-24 10:58:17,588 DEBUG o.s.c.l.LogFormatUtils [http-nio-8080-exec-5] GET "/grade?id=1", parameters={masked}
+2020-06-24 10:58:17,589 DEBUG o.s.w.s.h.AbstractHandlerMapping [http-nio-8080-exec-5] Mapped to httpControllers.GradeController#grade(int)
+2020-06-24 10:58:17,598 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-5] PooledDataSource forcefully closed/removed all connections.
+2020-06-24 10:58:17,599 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-5] PooledDataSource forcefully closed/removed all connections.
+2020-06-24 10:58:17,599 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-5] PooledDataSource forcefully closed/removed all connections.
+2020-06-24 10:58:17,599 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-5] PooledDataSource forcefully closed/removed all connections.
+2020-06-24 10:58:17,644 DEBUG s.GradeService [http-nio-8080-exec-5] getGrade(1)
+2020-06-24 10:58:17,644 DEBUG p.SchoolDb2 [http-nio-8080-exec-5] getCourse(1)
+2020-06-24 10:58:17,645 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-5] Opening JDBC Connection
+2020-06-24 10:58:17,657 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-5] Created connection 501814287.
+2020-06-24 10:58:17,657 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-5] Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@1de9140f]
+2020-06-24 10:58:17,658 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-5] ==>  Preparing: select * from Class where idClass = ? 
+2020-06-24 10:58:17,659 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-5] ==> Parameters: 1(Integer)
+2020-06-24 10:58:17,664 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-5] <==      Total: 1
+2020-06-24 10:58:17,665 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-5] Resetting autocommit to true on JDBC Connection [com.mysql.jdbc.JDBC4Connection@1de9140f]
+2020-06-24 10:58:17,666 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-5] Closing JDBC Connection [com.mysql.jdbc.JDBC4Connection@1de9140f]
+2020-06-24 10:58:17,666 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-5] Returned connection 501814287 to pool.
+2020-06-24 10:58:17,666 DEBUG p.SchoolDb2 [http-nio-8080-exec-5] getCourseMarks(1)
+2020-06-24 10:58:17,667 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-5] Opening JDBC Connection
+2020-06-24 10:58:17,667 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-5] Checked out connection 501814287 from pool.
+2020-06-24 10:58:17,667 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-5] Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@1de9140f]
+2020-06-24 10:58:17,668 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-5] ==>  Preparing: select m.idMark as idMark, m.idClass as idClass, m.idCategory as idCategory, m.description as markDescription, m.mark as mark, m.weight as weight, ca.description as categoryDescription, cl.code as classCode, cl.semester as semester, cl.description as classDescription, cl.credits as classCredits from Mark m inner join Category ca on ca.idCategory = m.idCategory inner join Class cl on cl.idClass = m.idClass where m.idClass = ? 
+2020-06-24 10:58:17,669 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-5] ==> Parameters: 1(Integer)
+2020-06-24 10:58:17,674 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-5] <==      Total: 4
+2020-06-24 10:58:17,674 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-5] Resetting autocommit to true on JDBC Connection [com.mysql.jdbc.JDBC4Connection@1de9140f]
+2020-06-24 10:58:17,675 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-5] Closing JDBC Connection [com.mysql.jdbc.JDBC4Connection@1de9140f]
+2020-06-24 10:58:17,677 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-5] Returned connection 501814287 to pool.
+2020-06-24 10:58:17,683 DEBUG o.s.w.s.m.m.a.AbstractMessageConverterMethodProcessor [http-nio-8080-exec-5] Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-06-24 10:58:17,683 DEBUG o.s.c.l.LogFormatUtils [http-nio-8080-exec-5] Writing [dataObjects.Grade@6f51ad9b]
+2020-06-24 10:58:17,694 DEBUG o.s.w.s.FrameworkServlet [http-nio-8080-exec-5] Completed 200 OK
+2020-06-24 10:58:21,085 DEBUG o.s.c.l.LogFormatUtils [http-nio-8080-exec-7] GET "/marks?semester=2", parameters={masked}
+2020-06-24 10:58:21,086 DEBUG o.s.w.s.h.AbstractHandlerMapping [http-nio-8080-exec-7] Mapped to httpControllers.MarkController#marks(int)
+2020-06-24 10:58:21,115 DEBUG o.a.i.d.p.PooledDataSource [Finalizer] PooledDataSource forcefully closed/removed all connections.
+2020-06-24 10:58:21,119 DEBUG o.a.i.d.p.PooledDataSource [Finalizer] PooledDataSource forcefully closed/removed all connections.
+2020-06-24 10:58:21,119 DEBUG o.a.i.d.p.PooledDataSource [Finalizer] PooledDataSource forcefully closed/removed all connections.
+2020-06-24 10:58:21,120 DEBUG o.a.i.d.p.PooledDataSource [Finalizer] PooledDataSource forcefully closed/removed all connections.
+2020-06-24 10:58:21,120 DEBUG o.a.i.d.p.PooledDataSource [Finalizer] PooledDataSource forcefully closed/removed all connections.
+2020-06-24 10:58:21,120 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-7] PooledDataSource forcefully closed/removed all connections.
+2020-06-24 10:58:21,120 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-7] PooledDataSource forcefully closed/removed all connections.
+2020-06-24 10:58:21,121 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-7] PooledDataSource forcefully closed/removed all connections.
+2020-06-24 10:58:21,121 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-7] PooledDataSource forcefully closed/removed all connections.
+2020-06-24 10:58:21,145 DEBUG s.MarkService [http-nio-8080-exec-7] getMarks(2)
+2020-06-24 10:58:21,145 DEBUG p.SchoolDb2 [http-nio-8080-exec-7] getMarks(2)
+2020-06-24 10:58:21,145 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-7] Opening JDBC Connection
+2020-06-24 10:58:21,154 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-7] Created connection 199966045.
+2020-06-24 10:58:21,155 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-7] Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@beb3d5d]
+2020-06-24 10:58:21,155 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-7] ==>  Preparing: select m.idMark as idMark, m.idClass as idClass, m.idCategory as idCategory, m.description as markDescription, m.mark as mark, m.weight as weight, ca.description as categoryDescription, cl.code as classCode, cl.semester as semester, cl.description as classDescription, cl.credits as classCredits from Mark m inner join Category ca on ca.idCategory = m.idCategory inner join Class cl on cl.idClass = m.idClass where semester = ? 
+2020-06-24 10:58:21,156 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-7] ==> Parameters: 2(Integer)
+2020-06-24 10:58:21,162 DEBUG o.a.i.l.j.BaseJdbcLogger [http-nio-8080-exec-7] <==      Total: 15
+2020-06-24 10:58:21,163 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-7] Resetting autocommit to true on JDBC Connection [com.mysql.jdbc.JDBC4Connection@beb3d5d]
+2020-06-24 10:58:21,163 DEBUG o.a.i.t.j.JdbcTransaction [http-nio-8080-exec-7] Closing JDBC Connection [com.mysql.jdbc.JDBC4Connection@beb3d5d]
+2020-06-24 10:58:21,163 DEBUG o.a.i.d.p.PooledDataSource [http-nio-8080-exec-7] Returned connection 199966045 to pool.
+2020-06-24 10:58:21,164 DEBUG o.s.w.s.m.m.a.AbstractMessageConverterMethodProcessor [http-nio-8080-exec-7] Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-06-24 10:58:21,164 DEBUG o.s.c.l.LogFormatUtils [http-nio-8080-exec-7] Writing [[dataObjects.Mark@58e55732, dataObjects.Mark@ab688a6, dataObjects.Mark@7899942e, dataObjects.Mark@43 (truncated)...]
+2020-06-24 10:58:21,171 DEBUG o.s.w.s.FrameworkServlet [http-nio-8080-exec-7] Completed 200 OK
+2020-06-24 10:58:27,590 DEBUG o.s.c.s.AbstractApplicationContext [SpringContextShutdownHook] Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@3a5ecce3, started on Wed Jun 24 10:57:48 EDT 2020
+2020-06-24 10:58:27,595 INFO o.s.s.c.ExecutorConfigurationSupport [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'

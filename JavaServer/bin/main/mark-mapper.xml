@@ -21,7 +21,7 @@
 	</sql>
 	
 	<sql id="queryForCourse">
-		<include refid="query"/> where idClass =
+		<include refid="query"/> where m.idClass =
 	</sql>
 	
 	<sql id="querySingleMark">

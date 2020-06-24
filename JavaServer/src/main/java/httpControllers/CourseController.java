@@ -17,38 +17,37 @@ import services.CourseService;
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 public class CourseController {
-	
-	private final String URL= "/courses";
+
+	private final String URL = "/courses";
 	private final String ALL_COURSES_URL = URL + "/all";
-	
-	//Gives all the courses.
+
+	// Gives all the courses.
 	@GetMapping(ALL_COURSES_URL)
 	public ResponseEntity<?> courses() {
-		
+
 		Logger log = LogManager.getLogger(CourseController.class);
-		
+
 		ResponseEntityGenerator responseEntityGenerator = new ResponseEntityGenerator();
 		ResponseEntity<?> responseEntity;
-		
+
 		try {
-	
-			//Get the courses.
+
+			// Get the courses.
 			CourseService courseService = new CourseService();
 			ArrayList<Course> courses = courseService.getCourses();
-			
-			//Generate OK response with the courses.
+
+			// Generate OK response with the courses.
 			responseEntity = responseEntityGenerator.generateOK(courses);
-			
+
 		} catch (Exception e) {
-			
-			//Log the error.
-			e.printStackTrace();
+
+			// Log the error.
 			log.error(Throwables.getStackTraceAsString(e));
-			
-			//Generate internal server error.
+
+			// Generate internal server error.
 			responseEntity = responseEntityGenerator.generateInternalServerError();
 		}
-		
+
 		return responseEntity;
 	}
 }

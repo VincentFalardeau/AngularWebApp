@@ -1,25 +1,23 @@
 package dataObjects;
 
-public class Grade {
+public class GlobalGrade {
 	
-	private Course course;
+	private int semester;
 	private float average;
 	private float gpa;
 	private String letter;
 	
-	public Grade(Course course, float average, float gpa, String letter) {
-		this.setCourse(course);
+	public GlobalGrade(int semester, float average, float gpa, String letter) {
+		this.setSemester(semester);
 		this.setAverage(average);
 		this.setGpa(gpa);
 		this.setLetter(letter);
 	}
-
-	public Course getCourse() {
-		return course;
-	}
-
-	public void setCourse(Course course) {
-		this.course = course;
+	
+	public GlobalGrade(float average, float gpa, String letter) {
+		this.setAverage(average);
+		this.setGpa(gpa);
+		this.setLetter(letter);
 	}
 
 	public float getAverage() {
@@ -44,5 +42,13 @@ public class Grade {
 
 	public void setLetter(String letter) {
 		this.letter = letter;
+	}
+
+	public int getSemester() {
+		return semester;
+	}
+
+	public void setSemester(int semester) {
+		this.semester = semester;
 	}
 }

@@ -14,18 +14,18 @@ public class CourseService {
 
 	private Logger logger;
 	private SchoolDb2 mSchoolDb2;
-	
+
 	public CourseService() throws ClassNotFoundException, SQLException, IOException {
-		
+
 		logger = LogManager.getLogger(CourseService.class);
 		mSchoolDb2 = new SchoolDb2();
 	}
-	
-	//Gives all the courses
+
+	// Gives all the courses
 	public ArrayList<Course> getCourses() throws SQLException, ClassNotFoundException {
-		
+
 		logger.debug("getCourses()");
-		
+
 		return mSchoolDb2.getCourses();
 	}
 }

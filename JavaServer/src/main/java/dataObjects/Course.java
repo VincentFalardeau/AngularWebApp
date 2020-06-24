@@ -10,6 +10,14 @@ public class Course {
 	private String description;
 	private float credits;
 	
+	public static Course globalCourse() {
+		return new Course (-1, "GLOBAL", -1, "Global", 0.0f);
+	}
+	
+	public static Course globalCourse(Integer semester) {
+		return new Course (-1, "GLOBAL", semester, "Global", 0.0f);
+	}
+	
 	public Course(Integer id, String code, Integer semester, String description, float credits) {
 		this.setId(id);
 		this.setCode(code);
