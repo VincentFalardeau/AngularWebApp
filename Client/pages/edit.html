@@ -1,0 +1,21 @@
+Course:
+<select ng-model="course" ng-change="refreshMarks()"  ng-options="course.code for course in courses"></select><br>
+
+<table>
+    <tr>
+        <th>Course</th>
+        <th>Semester</th>
+        <th>Category</th>
+        <th>Description</th>
+        <th>Mark</th>
+        <th>Weight</th>
+    </tr>
+    <tr ng-repeat="mark in marks">
+        <td>{{ mark.course.code }}</td>
+        <td>{{ mark.course.semester }}</td>
+        <td>{{ mark.category.description }}</td>
+        <td>{{ mark.description }}</td>
+        <td>{{ mark.mark }}</td>
+        <td>{{ mark.weight }}</td>
+    </tr>
+</table>

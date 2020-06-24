@@ -1,0 +1,12 @@
+Semester: 
+<select ng-model="semester" ng-change="refreshGrades()"  ng-options="semester for semester in semesters"></select><br>
+
+GPA: ({{ globalGrade.gpa }}) <br>
+
+<table>
+    <tr ng-repeat="grade in grades">
+        <td>{{ grade.course.description }}</td>
+        <td>{{ grade.average }}</td>
+        <td>{{ grade.letter }}</td>
+    </tr>
+</table>

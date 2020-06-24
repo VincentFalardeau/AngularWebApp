@@ -1,85 +1,36 @@
 <!DOCTYPE html>
 
-<html lang="fr-ca">
+<html lang="fr-ca" ng-app="myApp">
     <head>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.9/angular-route.min.js"></script>
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="style/style.css">
 
-        <title>Homepage</title>
+        <title>My application</title>
     </head>
     <body>
-        <div ng-app="myApp" ng-controller="myCtrl">
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <ul class="nav navbar-nav">
+                    <li><a href="#!/">Home</a></li>
+                    <li><a href="#!/marks">Marks</a></li>
+                    <li><a href="#!/grades">Grades</a></li>
+                    <li><a href="#!/edit">Edit</a></li>
+                </ul>
+            </div>
+        </nav>
 
-            <!-- <h1>App status</h1>
-            <b>Valid:</b>   {{myForm.email.$valid}}   (if true, the email meets all criteria)<br>
-            <b>Dirty:</b>   {{myForm.email.$dirty}}   (if true, the email has been changed)<br>
-            <b>Touched:</b> {{myForm.email.$touched}} (if true, the email field has been in focus)<br>
-            <hr> -->
-
-           <!--  Request result:<br>
-            {{ result }} <br>
-            <hr> -->
-
-           <!--  <ul>
-                <li ng-repeat="grade in grades">
-                    {{ grade.course.code + ', ' + grade.letter }}
-                </li>
-            </ul> -->
-
-            <!-- <table>
-                <tr ng-repeat="grade in grades">
-                    <td>{{ grade.course.code }}</td>
-                    <td>{{ grade.letter }}</td>
-                </tr>
-            </table>
-            <br> -->
-
-            <!-- Semester: 
-            <select ng-model="semester" ng-change="refreshMarks()"  ng-options="semester for semester in semesters">
-                 <option ng-repeat="course in courses">{{ course.code }}</option> 
-                <option ng-repeat="semester in semesters">{{ semester }}</option>
-            </select>
-
-            <table>
-                <tr ng-repeat="mark in marks">
-                    <td>{{ mark.course.description }}</td>
-                    <td>{{ mark.description }}</td>
-                    <td>{{ mark.mark }}</td>
-                </tr>
-            </table> -->
-
-
-            Course: 
-            <select ng-model="course" ng-change="refreshMarks()"  ng-options="course.code for course in courses"></select>
-
-            <table>
-                <tr ng-repeat="mark in marks">
-                    <td>{{ mark.course.description }}</td>
-                    <td>{{ mark.description }}</td>
-                    <td>{{ mark.mark }}</td>
-                </tr>
-            </table>
-           
-
-            <!--<b>{{ lastName | uppercase }}, {{ firstName }} / {{ email }}</b><br><br>
-            <hr>
-
-            Firstname: <input type="text" ng-model="firstName"><br>
-            <ul>
-                <li ng-repeat="name in firstNames | filter:firstName">
-                    {{ name }}
-                </li>
-            </ul><br>
-            Lastname:  <input type="text" ng-model="lastName"><br>
-            <form name="myForm">
-                Email:
-                <input type="email" name="email" ng-model="email" required>
-                <span ng-show="myForm.email.$error.email">Not a valid e-mail address</span>
-            </form> -->
-            
-        </div>
+        <div class="container-fluid main" ng-view></div>
 
         <script src="script/myApp.js"></script>
-        <script src="script/myCtrl.js"></script>
+        <script src="script/homeController.js"></script>
+        <script src="script/marksController.js"></script>
+        <script src="script/gradesController.js"></script>
+        <script src="script/editController.js"></script>
+    </body>
     </body>
 </html>

@@ -15,19 +15,6 @@ app.controller('myCtrl', function($scope, $http) {
     //     'Kai'
     // ];
 
-    $http.get("http://127.0.0.1:8080/courses/all").then(function (response) {
-
-        $scope.courses = response.data;
-        $scope.course = $scope.courses[0];
-
-    }, function(response) {
-
-        // Second function handles error
-        //$scope.result = "Something went wrong";
-    });
-
-   
-
     let refreshMarks = function(){
 
         // $http.get("http://127.0.0.1:8080/marks?semester=" + $scope.semester).then(function (response) {
@@ -49,14 +36,43 @@ app.controller('myCtrl', function($scope, $http) {
             // Second function handles error
             //$scope.result = "Something went wrong";
         });
+
+        $http.get("http://127.0.0.1:8080/grade?id=" + $scope.course.id).then(function (response) {
+
+            $scope.grade = response.data;
+
+        }, function(response) {
+
+            // Second function handles error
+            //$scope.result = "Something went wrong";
+        });
     };
 
     $scope.refreshMarks = refreshMarks;
 
+    $http.get("http://127.0.0.1:8080/courses/all").then(function (response) {
+
+        $scope.courses = response.data;
+        $scope.course = $scope.courses[0];
+
+        refreshMarks();
+
+    }, function(response) {
+
+        // Second function handles error
+        //$scope.result = "Something went wrong";
+    });
+
+   
+
+    
+
+   
+
     //$scope.semesters = [1, 2, 3, 4, 5, 6];
     //$scope.semester = 1;
 
-    refreshMarks();
+    
 
     // $http.get("http://127.0.0.1:8080/grades?semester=1").then(function (response) {
 

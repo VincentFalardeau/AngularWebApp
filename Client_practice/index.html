@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html lang="fr-ca">
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+        <link rel="stylesheet" href="style/style.css">
+
+        <title>Homepage</title>
+    </head>
+    <body>
+        <div ng-app="myApp" ng-controller="myCtrl">
+
+            <!-- <h1>App status</h1>
+            <b>Valid:</b>   {{myForm.email.$valid}}   (if true, the email meets all criteria)<br>
+            <b>Dirty:</b>   {{myForm.email.$dirty}}   (if true, the email has been changed)<br>
+            <b>Touched:</b> {{myForm.email.$touched}} (if true, the email field has been in focus)<br>
+            <hr> -->
+
+           <!--  Request result:<br>
+            {{ result }} <br>
+            <hr> -->
+
+           <!--  <ul>
+                <li ng-repeat="grade in grades">
+                    {{ grade.course.code + ', ' + grade.letter }}
+                </li>
+            </ul> -->
+
+            <!-- <table>
+                <tr ng-repeat="grade in grades">
+                    <td>{{ grade.course.code }}</td>
+                    <td>{{ grade.letter }}</td>
+                </tr>
+            </table>
+            <br> -->
+
+            <!-- Semester: 
+            <select ng-model="semester" ng-change="refreshMarks()"  ng-options="semester for semester in semesters">
+                 <option ng-repeat="course in courses">{{ course.code }}</option> 
+                <option ng-repeat="semester in semesters">{{ semester }}</option>
+            </select>
+
+            <table>
+                <tr ng-repeat="mark in marks">
+                    <td>{{ mark.course.description }}</td>
+                    <td>{{ mark.description }}</td>
+                    <td>{{ mark.mark }}</td>
+                </tr>
+            </table> -->
+
+
+            Course: 
+            <select ng-model="course" ng-change="refreshMarks()"  ng-options="course.code for course in courses"></select><br>
+
+            {{ course.description }} ({{ grade.letter }}) <br>
+
+            <table>
+                <tr ng-repeat="mark in marks">
+                    <td>{{ mark.description }}</td>
+                    <td>{{ mark.mark }}</td>
+                </tr>
+            </table>
+           
+
+            <!--<b>{{ lastName | uppercase }}, {{ firstName }} / {{ email }}</b><br><br>
+            <hr>
+
+            Firstname: <input type="text" ng-model="firstName"><br>
+            <ul>
+                <li ng-repeat="name in firstNames | filter:firstName">
+                    {{ name }}
+                </li>
+            </ul><br>
+            Lastname:  <input type="text" ng-model="lastName"><br>
+            <form name="myForm">
+                Email:
+                <input type="email" name="email" ng-model="email" required>
+                <span ng-show="myForm.email.$error.email">Not a valid e-mail address</span>
+            </form> -->
+            
+        </div>
+
+        <script src="script/myApp.js"></script>
+        <script src="script/myCtrl.js"></script>
+    </body>
+</html>
