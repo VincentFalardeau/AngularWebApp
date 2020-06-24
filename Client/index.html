@@ -16,7 +16,40 @@
             <b>Touched:</b> {{myForm.email.$touched}} (if true, the email field has been in focus)<br>
             <hr> -->
 
-            <b>{{ lastName | uppercase }}, {{ firstName }} / {{ email }}</b><br><br>
+           <!--  Request result:<br>
+            {{ result }} <br>
+            <hr> -->
+
+           <!--  <ul>
+                <li ng-repeat="grade in grades">
+                    {{ grade.course.code + ', ' + grade.letter }}
+                </li>
+            </ul> -->
+
+            <table>
+                <tr ng-repeat="grade in grades">
+                    <td>{{ grade.course.code }}</td>
+                    <td>{{ grade.letter }}</td>
+                </tr>
+            </table>
+            <br>
+
+
+            <select ng-model="semester" ng-change="refreshMarks()"  ng-options="semester for semester in semesters">
+                <!-- <option ng-repeat="course in courses">{{ course.code }}</option> -->
+                <!-- <option ng-repeat="semester in semesters">{{ semester }}</option> -->
+            </select>
+
+            <table>
+                <tr ng-repeat="mark in marks">
+                    <td>{{ mark.course.description }}</td>
+                    <td>{{ mark.description }}</td>
+                    <td>{{ mark.mark }}</td>
+                </tr>
+            </table>
+           
+
+            <!--<b>{{ lastName | uppercase }}, {{ firstName }} / {{ email }}</b><br><br>
             <hr>
 
             Firstname: <input type="text" ng-model="firstName"><br>
@@ -30,7 +63,7 @@
                 Email:
                 <input type="email" name="email" ng-model="email" required>
                 <span ng-show="myForm.email.$error.email">Not a valid e-mail address</span>
-            </form>
+            </form> -->
             
         </div>
 
