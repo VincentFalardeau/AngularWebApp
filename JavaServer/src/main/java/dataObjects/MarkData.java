@@ -20,6 +20,15 @@ public class MarkData {
 		this.setIdCategory(idCategory);
 	}
 	
+	public MarkData(MarkDataPrimitive markDataPrimitive) {
+		this.setId(markDataPrimitive.getId());
+		this.setDescription(markDataPrimitive.getDescription());
+		this.setMark(BigDecimal.valueOf(markDataPrimitive.getMark()));
+		this.setWeight(BigDecimal.valueOf(markDataPrimitive.getWeight()));
+		this.setIdCourse(markDataPrimitive.getIdCourse());
+		this.setIdCategory(markDataPrimitive.getIdCategory());
+	}
+	
 	public String getDescription() {
 		return description;
 	}

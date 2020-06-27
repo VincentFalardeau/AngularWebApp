@@ -16,11 +16,23 @@ Course:
     </tr>
 </table><br><br>
 
-<h2>Editing: {{ selectedMark.description }}</h2>
+<!-- <h2>Editing: {{ selectedMark.description }}</h2>
+
 <form>
-    <!-- Category: <select ng-model="selectedMark.category.description" ng-options="category.description for category in categories"></select> -->
+    Category: <select ng-model="selectedMark.category" ng-options="category.description for category in categories"></select>
     Description: <input type="text" ng-model="selectedMark.description" required>
-    <!-- Description: <input type="number" min="0" step=".01" ng-model="selectedMark.mark" required> -->
-    <!-- Description: <input type="number" min="0" step=".01" ng-model="selectedMark.weight" required> -->
+    Mark: <input type="text" ng-model="selectedMark.mark" required>
+    Weight: <input type="text" ng-model="selectedMark.weight" required>
+    <button>Save changes</button>
+</form> -->
+
+<h2>New mark</h2>
+
+<form>
+    Category: <select ng-model="newMark.category" ng-options="category.description for category in categories"></select>
+    Description: <input type="text" ng-model="newMark.description" required>
+    Mark: <input type="text" ng-model="newMark.mark" required>
+    Weight: <input type="text" ng-model="newMark.weight" required>
+    <button ng-click="add(newMark)">Add</button>
 </form>
 

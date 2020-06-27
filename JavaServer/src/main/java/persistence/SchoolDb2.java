@@ -18,6 +18,7 @@ import dataObjects.Category;
 import dataObjects.Course;
 import dataObjects.Mark;
 import dataObjects.MarkData;
+import dataObjects.MarkDataPrimitive;
 
 public class SchoolDb2 {
 
@@ -221,6 +222,22 @@ public class SchoolDb2 {
 
 	}
 
+	// Adds a mark.
+	public void addMark(MarkDataPrimitive markDataPrimitive) {
+
+		Logger log = LogManager.getLogger(SchoolDb2.class);
+		log.debug("addMark(" + markDataPrimitive.toString() + ")");
+
+		try (SqlSession session = mSqlSessionFactory.openSession()) {
+			
+			MarkData markData = new MarkData(markDataPrimitive);
+
+			session.insert("dataObjects.Mark.insert", markData);
+			session.commit();
+		}
+
+	}
+
 	// Updates a mark.
 	public void updateMark(int idMark, float mark, String description, float weight, int idCategory, int idCourse)
 			throws PersistenceException {
@@ -251,4 +268,5 @@ public class SchoolDb2 {
 			session.commit();
 		}
 	}
+
 }

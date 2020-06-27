@@ -9,6 +9,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import dataObjects.Mark;
+import dataObjects.MarkData;
+import dataObjects.MarkDataPrimitive;
 import exceptions.ParameterException;
 import persistence.SchoolDb2;
 
@@ -79,6 +81,31 @@ public class MarkService {
 	
 	}
 	
+	//Adds a mark.
+	public void addMark(MarkDataPrimitive markDataPrimitive) throws ParameterException {
+		
+		logger.debug("addMark("+markDataPrimitive.toString()+")");
+		
+		try {
+			mSchoolDb2.addMark(markDataPrimitive);
+			
+		}catch(PersistenceException pe) {
+			
+			if(mSchoolDb2.getCourse(markDataPrimitive.getIdCourse()) == null) {
+				throw new ParameterException("idCourse not referring to an existing course", pe);
+			}
+			
+			if(mSchoolDb2.getCategory(markDataPrimitive.getIdCourse()) == null) {
+				throw new ParameterException("idCategory not referring to an existing category", pe);
+			}
+			
+			throw pe;
+		
+		}
+		
+	}
+
+	
 	//Updates a mark.
 	public void updateMark(int idMark,float mark, String description, float weight, int idCategory, int idCourse) throws SQLException, ParameterException, ClassNotFoundException {
 		
@@ -108,5 +135,4 @@ public class MarkService {
 		
 		mSchoolDb2.deleteMark(idMark);
 	}
-
 }
