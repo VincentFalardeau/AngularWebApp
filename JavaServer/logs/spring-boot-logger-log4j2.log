@@ -1,16 +1,16 @@
-2020-06-26 22:27:49,205 INFO o.s.b.StartupInfoLogger [main] Starting Main on VinceLaptop with PID 12253 (/home/vince/workspace/summer/JavaServer/bin/main started by vince in /home/vince/workspace/summer/JavaServer)
-2020-06-26 22:27:49,236 INFO o.s.b.SpringApplication [main] No active profile set, falling back to default profiles: default
-2020-06-26 22:27:50,756 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
-2020-06-26 22:27:50,782 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
-2020-06-26 22:27:50,783 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
-2020-06-26 22:27:50,785 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.29]
-2020-06-26 22:27:50,905 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
-2020-06-26 22:27:50,906 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1530 ms
-2020-06-26 22:27:51,144 INFO o.s.s.c.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
-2020-06-26 22:27:51,359 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
-2020-06-26 22:27:51,404 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
-2020-06-26 22:27:51,409 INFO o.s.b.StartupInfoLogger [main] Started Main in 2.887 seconds (JVM running for 3.841)
-2020-06-26 22:27:55,142 INFO o.a.j.l.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-06-26 22:27:55,143 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
-2020-06-26 22:27:55,154 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 10 ms
-2020-06-26 22:28:56,280 INFO o.s.s.c.ExecutorConfigurationSupport [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-29 19:07:13,785 INFO o.s.b.StartupInfoLogger [main] Starting Main on VinceLaptop with PID 21434 (/home/vince/workspace/summer/JavaServer/bin/main started by vince in /home/vince/workspace/summer/JavaServer)
+2020-06-29 19:07:13,805 INFO o.s.b.SpringApplication [main] No active profile set, falling back to default profiles: default
+2020-06-29 19:07:15,638 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2020-06-29 19:07:15,674 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2020-06-29 19:07:15,676 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2020-06-29 19:07:15,677 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-06-29 19:07:15,848 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2020-06-29 19:07:15,849 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1940 ms
+2020-06-29 19:07:16,269 INFO o.s.s.c.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-29 19:07:16,500 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2020-06-29 19:07:16,553 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2020-06-29 19:07:16,559 INFO o.s.b.StartupInfoLogger [main] Started Main in 3.628 seconds (JVM running for 5.055)
+2020-06-29 19:07:21,467 INFO o.a.j.l.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-29 19:07:21,469 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2020-06-29 19:07:21,503 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 32 ms
+2020-06-29 19:07:36,084 INFO o.s.s.c.ExecutorConfigurationSupport [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'

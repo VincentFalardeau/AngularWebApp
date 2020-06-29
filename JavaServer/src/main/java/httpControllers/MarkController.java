@@ -146,46 +146,46 @@ public class MarkController {
 		return responseEntity;
 	}
 
-	// Adds a mark in the database.
-	@PostMapping(URL)
-	public ResponseEntity<?> addMark(@RequestParam(value = "mark") float mark,
-			@RequestParam(value = "description") String description, @RequestParam(value = "weight") float weight,
-			@RequestParam(value = "idCategory") int idCategory, @RequestParam(value = "idCourse") int idCourse) {
-
-		Logger log = LogManager.getLogger(MarkController.class);
-
-		ResponseEntityGenerator responseEntityGenerator = new ResponseEntityGenerator();
-		ResponseEntity<?> responseEntity;
-
-		try {
-
-			// Add the mark.
-			MarkService markService = new MarkService();
-			markService.addMark(mark, description, weight, idCategory, idCourse);
-
-			// Generate OK response.
-			responseEntity = responseEntityGenerator.generateOK();
-
-		} catch (ParameterException pe) {
-
-			log.error(Throwables.getStackTraceAsString(pe));
-
-			// Generate bad request
-			responseEntity = responseEntityGenerator.generateBadRequest(pe.getGenericErrorMessage());
-
-		} catch (Exception e) {
-
-			log.error(Throwables.getStackTraceAsString(e));
-
-			// Generate internal server error
-			responseEntity = responseEntityGenerator.generateInternalServerError();
-		}
-
-		return responseEntity;
-	}
+//	// Adds a mark in the database.
+//	@PostMapping(URL)
+//	public ResponseEntity<?> addMark(@RequestParam(value = "mark") float mark,
+//			@RequestParam(value = "description") String description, @RequestParam(value = "weight") float weight,
+//			@RequestParam(value = "idCategory") int idCategory, @RequestParam(value = "idCourse") int idCourse) {
+//
+//		Logger log = LogManager.getLogger(MarkController.class);
+//
+//		ResponseEntityGenerator responseEntityGenerator = new ResponseEntityGenerator();
+//		ResponseEntity<?> responseEntity;
+//
+//		try {
+//
+//			// Add the mark.
+//			MarkService markService = new MarkService();
+//			markService.addMark(mark, description, weight, idCategory, idCourse);
+//
+//			// Generate OK response.
+//			responseEntity = responseEntityGenerator.generateOK();
+//
+//		} catch (ParameterException pe) {
+//
+//			log.error(Throwables.getStackTraceAsString(pe));
+//
+//			// Generate bad request
+//			responseEntity = responseEntityGenerator.generateBadRequest(pe.getGenericErrorMessage());
+//
+//		} catch (Exception e) {
+//
+//			log.error(Throwables.getStackTraceAsString(e));
+//
+//			// Generate internal server error
+//			responseEntity = responseEntityGenerator.generateInternalServerError();
+//		}
+//
+//		return responseEntity;
+//	}
 	
 	// Adds a mark in the database.
-	@PostMapping(URL + "/reqBody")
+	@PostMapping(URL)
 	public ResponseEntity<?> addMark(@RequestBody MarkDataPrimitive markDataPrimitive) {
 
 		Logger log = LogManager.getLogger(MarkController.class);

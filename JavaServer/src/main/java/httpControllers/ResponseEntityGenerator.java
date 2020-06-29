@@ -12,8 +12,8 @@ import dataObjects.Mark;
 public class ResponseEntityGenerator {
 
 	// Constants
-	private final String INTERNAL_SERVER_ERROR_MESSSAGE = "Internal server error";
-	private final String OK_MESSAGE = "Success";
+	private final String INTERNAL_SERVER_ERROR_MESSSAGE = "{\"Internal server error\"}";
+	private final String OK_MESSAGE = "{\"success\"}";
 
 	// Generates an Internal Server Error ResponseEntity.
 	public ResponseEntity<String> generateInternalServerError() {

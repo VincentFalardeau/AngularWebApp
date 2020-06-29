@@ -13,7 +13,7 @@ app.controller('editController', function($scope, $http) {
     function toMarkData(mark){
 
         return {
-            id: null,
+            id: mark.id,
             mark: parseFloat(mark.mark),
             idCourse: parseInt($scope.course.id),
             idCategory: parseInt(mark.category.id),
@@ -45,26 +45,16 @@ app.controller('editController', function($scope, $http) {
 
     $scope.add = function(mark){
 
-        mark = toMarkData(mark);
+        let newMark = toMarkData(mark);
+        newMark.id = null;
 
-        console.log(mark);
+        console.log(newMark);
 
-        $http.post("http://127.0.0.1:8080/mark/reqBody", mark).then(function(response){
+        $http.post("http://127.0.0.1:8080/mark", newMark).then(function(response){
+            console.log("allo");
             $scope.marks.push(mark);
             $scope.newMark = null;
         });
 
-        //mark.idCourse = parseInt($scope.course.id);
-        //mark.idCategory = parseInt(mark.category.id);
-        //mark.mark = parseFloat(mark.mark);
-        //mark.weight = parseFloat(mark.weight);
-
-        //console.log(mark);
-
-        //$http.post("http://127.0.0.1:8080/mark", mark).subscribe(mark => $scope.marks.push(mark));
-
-        // $http.post("http://127.0.0.1:8080/mark?mark="+mark.mark+"&description="+mark.description+"&weight="+mark.weight+"&idCourse="+$scope.course.id+"&idCategory="+mark.category.id);//.success(function(response){
-        //      //$scope.marks.push(mark);
-        // //});
     }
 });
