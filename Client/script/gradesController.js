@@ -5,13 +5,13 @@ app.controller('gradesController', function($scope, $http) {
 
     let refreshGrades = function(){
 
-        $http.get("http://127.0.0.1:8080/grades?semester=" + $scope.semester).then(function (response) {
+        $http.get("http://127.0.0.1:8080/semesters/" + $scope.semester + "/grades").then(function (response) {
 
             $scope.grades = response.data;
 
         });
 
-        $http.get("http://127.0.0.1:8080/grade/global?semester=" + $scope.semester).then(function (response) {
+        $http.get("http://127.0.0.1:8080/semesters/" + $scope.semester + "/global-grade").then(function (response) {
 
             $scope.globalGrade = response.data;
 

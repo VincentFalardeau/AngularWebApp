@@ -16,23 +16,54 @@ Course:
     </tr>
 </table><br><br>
 
-<!-- <h2>Editing: {{ selectedMark.description }}</h2>
+<button ng-click="update(marks)" class="btn btn-primary">Save changes</button>
 
 <form>
-    Category: <select ng-model="selectedMark.category" ng-options="category.description for category in categories"></select>
-    Description: <input type="text" ng-model="selectedMark.description" required>
-    Mark: <input type="text" ng-model="selectedMark.mark" required>
-    Weight: <input type="text" ng-model="selectedMark.weight" required>
-    <button>Save changes</button>
-</form> -->
-
-<h2>New mark</h2>
-
-<form>
-    Category: <select ng-model="newMark.category" ng-options="category.description for category in categories"></select>
-    Description: <input type="text" ng-model="newMark.description" required>
-    Mark: <input type="text" ng-model="newMark.mark" required>
-    Weight: <input type="text" ng-model="newMark.weight" required>
-    <button ng-click="add(newMark)">Add</button>
+    <div lass="form-group">
+        <h3>Editing: {{ selectedMark.description }}</h3>
+    </div>
+    <div class="form-group">
+        <label for="">Category:</label>
+        <select ng-model="selectedMark.category" ng-options="category.description for category in categories"></select>
+    </div>
+    <div class="form-group">
+        <label>Description:</label>
+        <input type="text" ng-model="selectedMark.description">
+    </div>
+    <div class="form-group">
+        <label>Mark:</label>
+        <input type="text" ng-model="selectedMark.mark">
+    </div>
+    <div class="form-group">
+        <label>Weight:</label>
+        <input type="text" ng-model="selectedMark.weight">
+    </div>
 </form>
+<!-- 
+<fieldset>
+    
+    <form>
+        Category: 
+        Description: <input type="text" ng-model="selectedMark.description">
+        Mark: <input type="text" ng-model="selectedMark.mark">
+        Weight: <input type="text" ng-model="selectedMark.weight">
+    </form>
+</fieldset> -->
+
+<fieldset>
+    <h2>Delete: {{ selectedMark.description }} ?</h2>
+    <button ng-click="delete(selectedMark)">Delete</button>
+</fieldset>
+
+<fieldset>
+    <h2>New mark</h2>
+
+    <form>
+        Category: <select ng-model="newMark.category" ng-options="category.description for category in categories"></select>
+        Description: <input type="text" ng-model="newMark.description">
+        Mark: <input type="text" ng-model="newMark.mark">
+        Weight: <input type="text" ng-model="newMark.weight"    >
+        <button ng-click="add(newMark)">Add</button>
+    </form>
+</fieldset>
 

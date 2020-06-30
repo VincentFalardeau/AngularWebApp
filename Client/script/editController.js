@@ -2,7 +2,7 @@ app.controller('editController', function($scope, $http) {
 
     let refreshMarks = function(){
 
-        $http.get("http://127.0.0.1:8080/marks/course?id=" + $scope.course.id).then(function (response) {
+        $http.get("http://127.0.0.1:8080/courses/" + $scope.course.id + "/marks").then(function (response) {
 
             $scope.marks = response.data;
             $scope.selectedMark = $scope.marks[0];
@@ -24,7 +24,7 @@ app.controller('editController', function($scope, $http) {
 
     $scope.refreshMarks = refreshMarks;
 
-    $http.get("http://127.0.0.1:8080/courses/all").then(function (response) {
+    $http.get("http://127.0.0.1:8080/courses").then(function (response) {
 
         $scope.courses = response.data;
         $scope.course = $scope.courses[0];
@@ -32,7 +32,7 @@ app.controller('editController', function($scope, $http) {
         refreshMarks();
     });
 
-    $http.get("http://127.0.0.1:8080/categories/all").then(function (response) {
+    $http.get("http://127.0.0.1:8080/categories").then(function (response) {
 
         $scope.categories = response.data;
         $scope.category = $scope.categories[0];
@@ -40,6 +40,7 @@ app.controller('editController', function($scope, $http) {
     });
 
     $scope.edit = function(mark){
+        
         $scope.selectedMark = mark;
     }
 
@@ -48,17 +49,27 @@ app.controller('editController', function($scope, $http) {
         let newMark = toMarkData(mark);
         newMark.id = null;
 
-        console.log(newMark);
-
-        // $http.post("http://127.0.0.1:8080/mark", newMark).then(function(response){
-        //     console.log("allo");
-        //     $scope.marks.push(mark);
-        //     $scope.newMark = null;
-        // });
-
-        $http.post("http://127.0.0.1:8080/mark", newMark).then(function (response) {
+        $http.post("http://127.0.0.1:8080/marks", newMark).then(function (response) {
             $scope.marks.push(mark);
+            $scope.newMark = null;
         });
 
+    }
+
+    $scope.update = function(marks){
+
+        let list = [];
+        marks.forEach(mark => list.push(toMarkData(mark)));
+
+        $http.put("http://127.0.0.1:8080/marks", list).then(function (response) {
+            console.log("allo");
+        });
+    }
+
+    $scope.delete = function(mark){
+
+        $http.delete("http://127.0.0.1:8080/marks/" + mark.id).then(function (response) {
+            refreshMarks();
+        });
     }
 });
