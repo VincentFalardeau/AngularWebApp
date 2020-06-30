@@ -16,43 +16,27 @@ import persistence.SchoolDb2;
 
 public class MarkService {
 	
-	private Logger logger;
+	private Logger mLogger;
 	private SchoolDb2 mSchoolDb2;
 	
 	public MarkService() throws ClassNotFoundException, SQLException, IOException {
 		
-		logger = LogManager.getLogger(MarkService.class);
+		mLogger = LogManager.getLogger(MarkService.class);
 		mSchoolDb2 = new SchoolDb2();
 	}
 	
 	//Gives all the marks.
 	public ArrayList<Mark> getMarks() throws SQLException, IOException, ClassNotFoundException{
 		
-		logger.debug("getMarks()");
+		mLogger.debug("getMarks()");
 		
 		return mSchoolDb2.getMarks();
-	}
-
-	//Gives the marks for a semester.
-	public ArrayList<Mark> getMarks(int semester) throws NumberFormatException, SQLException, IOException, ClassNotFoundException{
-		
-		logger.debug("getMarks("+semester+")");
-		
-		return mSchoolDb2.getMarks(semester);
-	}
-	
-	//Gives the marks of a course.
-	public ArrayList<Mark> getCourseMarks(int idCourse) throws NumberFormatException, SQLException, IOException, ClassNotFoundException{
-			
-		logger.debug("getCourseMarks("+idCourse+")");
-			
-		return mSchoolDb2.getCourseMarks(idCourse);
 	}
 
 	//Gives the mark having the specified id.
 	public Mark getMark(int idMark) throws NumberFormatException, SQLException, IOException, ClassNotFoundException{
 		
-		logger.debug("getMark("+idMark+")");
+		mLogger.debug("getMark("+idMark+")");
 		
 		return mSchoolDb2.getMark(idMark);
 	}
@@ -60,7 +44,7 @@ public class MarkService {
 	//Adds a mark.
 	public void addMark(MarkDataPrimitive markDataPrimitive) throws ParameterException {
 		
-		logger.debug("addMark("+markDataPrimitive.toString()+")");
+		mLogger.debug("addMark("+markDataPrimitive.toString()+")");
 		
 		try {
 			mSchoolDb2.addMark(markDataPrimitive);
@@ -80,12 +64,11 @@ public class MarkService {
 		}
 		
 	}
-
 	
 	//Updates a mark.
 	public void updateMark(MarkDataPrimitive markDataPrimitive) throws SQLException, ParameterException, ClassNotFoundException {
 		
-		logger.debug("updateMark("+markDataPrimitive.toString()+")");
+		mLogger.debug("updateMark("+markDataPrimitive.toString()+")");
 		
 		try {
 			mSchoolDb2.updateMark(markDataPrimitive);

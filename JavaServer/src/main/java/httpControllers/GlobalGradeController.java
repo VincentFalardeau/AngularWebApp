@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.google.common.base.Throwables;
 
 import dataObjects.GlobalGrade;
-import services.GradeService;
+import services.GlobalGradeService;
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
@@ -28,8 +28,8 @@ public class GlobalGradeController {
 		try {
 
 			// Get the grade.
-			GradeService gradeService = new GradeService();
-			GlobalGrade grade = gradeService.getGlobalGrade();
+			GlobalGradeService globalGradeService = new GlobalGradeService();
+			GlobalGrade grade = globalGradeService.getGlobalGrade();
 
 			// Generate OK response with the grade.
 			responseEntity = responseEntityGenerator.generateOK(grade);

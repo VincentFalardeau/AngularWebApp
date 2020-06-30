@@ -12,19 +12,19 @@ import persistence.SchoolDb2;
 
 public class CategoryService {
 	
-	private Logger logger;
+	private Logger mLogger;
 	private SchoolDb2 mSchoolDb2;
 	
 	public CategoryService() throws ClassNotFoundException, SQLException, IOException {
 		
-		logger = LogManager.getLogger(CategoryService.class);
+		mLogger = LogManager.getLogger(CategoryService.class);
 		mSchoolDb2 = new SchoolDb2();
 	}
 	
 	//Gives all the categories
 	public ArrayList<Category> getCategories() throws SQLException, ClassNotFoundException {
 		
-		logger.debug("getCategories()");
+		mLogger.debug("getCategories()");
 		
 		return mSchoolDb2.getCategories();
 	}

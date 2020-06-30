@@ -67,8 +67,8 @@ public class CourseController {
 		try {
 
 			// Get the courses.
-			MarkService markService = new MarkService();
-			ArrayList<Mark> marks = markService.getCourseMarks(id);
+			CourseService courseService = new CourseService();
+			ArrayList<Mark> marks = courseService.getMarks(id);
 
 			// Generate OK response with the courses.
 			responseEntity = responseEntityGenerator.generateOK(marks);
@@ -97,8 +97,8 @@ public class CourseController {
 		try {
 
 			// Get the grade.
-			GradeService gradeService = new GradeService();
-			Grade grade = gradeService.getGrade(id);
+			CourseService courseService = new CourseService();
+			Grade grade = courseService.getGrade(id);
 
 			// Generate OK response with the grade.
 			responseEntity = responseEntityGenerator.generateOK(grade);

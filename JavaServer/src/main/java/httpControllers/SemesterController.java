@@ -17,6 +17,7 @@ import dataObjects.Grade;
 import dataObjects.Mark;
 import services.GradeService;
 import services.MarkService;
+import services.SemesterService;
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
@@ -36,8 +37,8 @@ public class SemesterController {
 		try {
 
 			// Get the courses.
-			MarkService markService = new MarkService();
-			ArrayList<Mark> marks = markService.getMarks(semester);
+			SemesterService semesterService = new SemesterService();
+			ArrayList<Mark> marks = semesterService.getMarks(semester);
 
 			// Generate OK response with the courses.
 			responseEntity = responseEntityGenerator.generateOK(marks);
@@ -66,8 +67,8 @@ public class SemesterController {
 		try {
 
 			// Get the grades.
-			GradeService gradeService = new GradeService();
-			ArrayList<Grade> grades = gradeService.getGrades(semester);
+			SemesterService semesterService = new SemesterService();
+			ArrayList<Grade> grades = semesterService.getGrades(semester);
 
 			// Generate OK response with the grades.
 			responseEntity = responseEntityGenerator.generateOK(grades);
@@ -96,8 +97,8 @@ public class SemesterController {
 		try {
 
 			// Get the grade.
-			GradeService gradeService = new GradeService();
-			GlobalGrade grade = gradeService.getGlobalGrade(semester);
+			SemesterService semesterService = new SemesterService();
+			GlobalGrade grade = semesterService.getGlobalGrade(semester);
 
 			// Generate OK response with the grade.
 			responseEntity = responseEntityGenerator.generateOK(grade);
