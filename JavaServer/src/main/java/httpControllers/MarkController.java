@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,14 +26,14 @@ import exceptions.ParameterException;
 @RestController
 public class MarkController {
 
-	private final String URL = "mark";
-	private final String MULTIPLE_MARKS_URL = URL + "s";
-	private final String COURSE_MARKS_URL = MULTIPLE_MARKS_URL + "/course";
-	private final String ALL_MARKS_URL = MULTIPLE_MARKS_URL + "/all";
+	private final String URL = "marks";
 
 	// Gives all the marks.
-	@GetMapping(ALL_MARKS_URL)
-	public ResponseEntity<?> marks() {
+	@GetMapping(URL)
+	public ResponseEntity<?> getMarks(@RequestParam(value = "startIndex", defaultValue = "0") int startIndex,
+			@RequestParam(value = "size", defaultValue = "0") int size) {
+		
+		//TODO: Use startIndex and size.
 
 		Logger log = LogManager.getLogger(MarkController.class);
 
@@ -59,67 +61,67 @@ public class MarkController {
 		return responseEntity;
 	}
 
-	// Gives all the marks for a specific semester.
-	@GetMapping(MULTIPLE_MARKS_URL)
-	public ResponseEntity<?> marks(@RequestParam(value = "semester") int semester) {
+//	// Gives all the marks for a specific semester.
+//	@GetMapping(URLs + "/{semester}")
+//	public ResponseEntity<?> getMarksForSemester(@PathVariable int semester) {
+//
+//		Logger log = LogManager.getLogger(MarkController.class);
+//
+//		ResponseEntityGenerator responseEntityGenerator = new ResponseEntityGenerator();
+//		ResponseEntity<?> responseEntity;
+//
+//		try {
+//
+//			// Get the marks.
+//			MarkService markService = new MarkService();
+//			ArrayList<Mark> marks = markService.getMarks(semester);
+//
+//			// Generate OK response with the marks.
+//			responseEntity = responseEntityGenerator.generateOK(marks);
+//
+//		} catch (Exception e) {
+//
+//			log.error(Throwables.getStackTraceAsString(e));
+//
+//			// Generate internal server error
+//			responseEntity = responseEntityGenerator.generateInternalServerError();
+//		}
+//
+//		return responseEntity;
+//	}
 
-		Logger log = LogManager.getLogger(MarkController.class);
-
-		ResponseEntityGenerator responseEntityGenerator = new ResponseEntityGenerator();
-		ResponseEntity<?> responseEntity;
-
-		try {
-
-			// Get the marks.
-			MarkService markService = new MarkService();
-			ArrayList<Mark> marks = markService.getMarks(semester);
-
-			// Generate OK response with the marks.
-			responseEntity = responseEntityGenerator.generateOK(marks);
-
-		} catch (Exception e) {
-
-			log.error(Throwables.getStackTraceAsString(e));
-
-			// Generate internal server error
-			responseEntity = responseEntityGenerator.generateInternalServerError();
-		}
-
-		return responseEntity;
-	}
-	
-	// Gives all the marks for a specific course.
-	@GetMapping(COURSE_MARKS_URL)
-	public ResponseEntity<?> courseMarks(@RequestParam(value = "id") int idCourse) {
-
-		Logger log = LogManager.getLogger(MarkController.class);
-
-		ResponseEntityGenerator responseEntityGenerator = new ResponseEntityGenerator();
-		ResponseEntity<?> responseEntity;
-
-		try {
-
-			// Get the marks.
-			MarkService markService = new MarkService();
-			ArrayList<Mark> marks = markService.getCourseMarks(idCourse);
-
-			// Generate OK response with the marks.
-			responseEntity = responseEntityGenerator.generateOK(marks);
-
-		} catch (Exception e) {
-
-			log.error(Throwables.getStackTraceAsString(e));
-
-			// Generate internal server error
-			responseEntity = responseEntityGenerator.generateInternalServerError();
-		}
-
-		return responseEntity;
-	}
+//	// Gives all the marks for a specific course.
+//	@GetMapping(URLs)
+//	public ResponseEntity<?> courseMarks(@RequestParam(value = "id") int idCourse) {
+//
+//		Logger log = LogManager.getLogger(MarkController.class);
+//
+//		ResponseEntityGenerator responseEntityGenerator = new ResponseEntityGenerator();
+//		ResponseEntity<?> responseEntity;
+//
+//		try {
+//
+//			// Get the marks.
+//			MarkService markService = new MarkService();
+//			ArrayList<Mark> marks = markService.getCourseMarks(idCourse);
+//
+//			// Generate OK response with the marks.
+//			responseEntity = responseEntityGenerator.generateOK(marks);
+//
+//		} catch (Exception e) {
+//
+//			log.error(Throwables.getStackTraceAsString(e));
+//
+//			// Generate internal server error
+//			responseEntity = responseEntityGenerator.generateInternalServerError();
+//		}
+//
+//		return responseEntity;
+//	}
 
 	// Gives the mark having the specified id.
-	@GetMapping(URL)
-	public ResponseEntity<?> mark(@RequestParam(value = "id") int idMark) {
+	@GetMapping(URL + "/{id}")
+	public ResponseEntity<?> getMark(@PathVariable int id) {
 
 		Logger log = LogManager.getLogger(MarkController.class);
 
@@ -130,7 +132,7 @@ public class MarkController {
 
 			// Get the mark.
 			MarkService markService = new MarkService();
-			Mark mark = markService.getMark(idMark);
+			Mark mark = markService.getMark(id);
 
 			// Generate OK response with the mark.
 			responseEntity = responseEntityGenerator.generateOK(mark);
@@ -146,44 +148,6 @@ public class MarkController {
 		return responseEntity;
 	}
 
-//	// Adds a mark in the database.
-//	@PostMapping(URL)
-//	public ResponseEntity<?> addMark(@RequestParam(value = "mark") float mark,
-//			@RequestParam(value = "description") String description, @RequestParam(value = "weight") float weight,
-//			@RequestParam(value = "idCategory") int idCategory, @RequestParam(value = "idCourse") int idCourse) {
-//
-//		Logger log = LogManager.getLogger(MarkController.class);
-//
-//		ResponseEntityGenerator responseEntityGenerator = new ResponseEntityGenerator();
-//		ResponseEntity<?> responseEntity;
-//
-//		try {
-//
-//			// Add the mark.
-//			MarkService markService = new MarkService();
-//			markService.addMark(mark, description, weight, idCategory, idCourse);
-//
-//			// Generate OK response.
-//			responseEntity = responseEntityGenerator.generateOK();
-//
-//		} catch (ParameterException pe) {
-//
-//			log.error(Throwables.getStackTraceAsString(pe));
-//
-//			// Generate bad request
-//			responseEntity = responseEntityGenerator.generateBadRequest(pe.getGenericErrorMessage());
-//
-//		} catch (Exception e) {
-//
-//			log.error(Throwables.getStackTraceAsString(e));
-//
-//			// Generate internal server error
-//			responseEntity = responseEntityGenerator.generateInternalServerError();
-//		}
-//
-//		return responseEntity;
-//	}
-	
 	// Adds a mark in the database.
 	@PostMapping(URL)
 	public ResponseEntity<?> addMark(@RequestBody MarkDataPrimitive markDataPrimitive) {
@@ -221,11 +185,8 @@ public class MarkController {
 	}
 
 	// Updates a mark.
-	@PatchMapping(URL)
-	public ResponseEntity<?> updateMark(@RequestParam(value = "idMark") int idMark,
-			@RequestParam(value = "mark") float mark, @RequestParam(value = "description") String description,
-			@RequestParam(value = "weight") float weight, @RequestParam(value = "idCategory") int idCategory,
-			@RequestParam(value = "idCourse") int idCourse) {
+	@PutMapping(URL + "/{id}")
+	public ResponseEntity<?> updateMark(@PathVariable int id, @RequestBody MarkDataPrimitive markDataPrimitive) {
 
 		Logger log = LogManager.getLogger(MarkController.class);
 
@@ -234,9 +195,11 @@ public class MarkController {
 
 		try {
 
+			markDataPrimitive.setId(id);
+
 			// Update the mark.
 			MarkService markService = new MarkService();
-			markService.updateMark(idMark, mark, description, weight, idCategory, idCourse);
+			markService.updateMark(markDataPrimitive);
 
 			// Generate OK response.
 			responseEntity = responseEntityGenerator.generateOK();
@@ -260,8 +223,8 @@ public class MarkController {
 	}
 
 	// Deletes a mark.
-	@DeleteMapping(URL)
-	public ResponseEntity<?> deleteMark(@RequestParam(value = "idMark") int idMark) {
+	@DeleteMapping(URL + "/{id}")
+	public ResponseEntity<?> deleteMark(@PathVariable int id) {
 
 		Logger log = LogManager.getLogger(MarkController.class);
 
@@ -271,7 +234,7 @@ public class MarkController {
 		try {
 			// Delete the mark.
 			MarkService markService = new MarkService();
-			markService.deleteMark(idMark);
+			markService.deleteMark(id);
 
 			// Generate OK response.
 			responseEntity = responseEntityGenerator.generateOK();

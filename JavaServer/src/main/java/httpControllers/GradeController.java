@@ -7,6 +7,7 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,13 +24,10 @@ import services.MarkService;
 public class GradeController {
 
 	private final String URL = "grade";
-	private final String MULTIPLE_GRADES_URL = URL + "s";
-	private final String ALL_GRADES_URL = MULTIPLE_GRADES_URL + "/all";
-	private final String GLOBAL_GRADE_URL = URL + "/global";
-	private final String ULTIMATE_GLOBAL_GRADE_URL = GLOBAL_GRADE_URL + "/all";
+	private final String URLs = URL + "s";
 
 	// Gives all the grades.
-	@GetMapping(ALL_GRADES_URL)
+	@GetMapping(URLs)
 	public ResponseEntity<?> grades() {
 
 		Logger log = LogManager.getLogger(GradeController.class);
@@ -59,8 +57,8 @@ public class GradeController {
 	}
 
 	// Gives all the grades for a semester.
-	@GetMapping(MULTIPLE_GRADES_URL)
-	public ResponseEntity<?> grades(@RequestParam(value = "semester") int semester) {
+	@GetMapping(URLs + "/{semester}")
+	public ResponseEntity<?> grades(@PathVariable int semester) {
 
 		Logger log = LogManager.getLogger(GradeController.class);
 
@@ -118,7 +116,7 @@ public class GradeController {
 	}
 
 	// Gives the global grade.
-	@GetMapping(ULTIMATE_GLOBAL_GRADE_URL)
+	@GetMapping(URL + "/global")
 	public ResponseEntity<?> globalGrade() {
 
 		Logger log = LogManager.getLogger(GradeController.class);
@@ -147,8 +145,8 @@ public class GradeController {
 	}
 
 	// Gives the global grade for a semester.
-	@GetMapping(GLOBAL_GRADE_URL)
-	public ResponseEntity<?> globalGrade(@RequestParam(value = "semester") int semester) {
+	@GetMapping(URL + "global/{semester}")
+	public ResponseEntity<?> globalGrade(@PathVariable int semester) {
 
 		Logger log = LogManager.getLogger(GradeController.class);
 

@@ -206,23 +206,6 @@ public class SchoolDb2 {
 	}
 
 	// Adds a mark.
-	public void addMark(float mark, String description, float weight, int idCategory, int idCourse)
-			throws PersistenceException {
-
-		Logger log = LogManager.getLogger(SchoolDb2.class);
-		log.debug("addMark(" + mark + ", " + description + ", " + weight + ", " + idCategory + ", " + idCourse + ")");
-
-		try (SqlSession session = mSqlSessionFactory.openSession()) {
-
-			MarkData markData = new MarkData(null, description, mark, weight, idCourse, idCategory);
-
-			session.insert("dataObjects.Mark.insert", markData);
-			session.commit();
-		}
-
-	}
-
-	// Adds a mark.
 	public void addMark(MarkDataPrimitive markDataPrimitive) {
 
 		Logger log = LogManager.getLogger(SchoolDb2.class);
@@ -239,16 +222,15 @@ public class SchoolDb2 {
 	}
 
 	// Updates a mark.
-	public void updateMark(int idMark, float mark, String description, float weight, int idCategory, int idCourse)
+	public void updateMark(MarkDataPrimitive markDataPrimitive)
 			throws PersistenceException {
 
 		Logger log = LogManager.getLogger(SchoolDb2.class);
-		log.debug("updateMark(" + idMark + ", " + mark + ", " + description + ", " + weight + ", " + idCategory + ", "
-				+ idCourse + ")");
+		log.debug("updateMark(" + markDataPrimitive.toString() + ")");
 
 		try (SqlSession session = mSqlSessionFactory.openSession()) {
 
-			MarkData markData = new MarkData(idMark, description, mark, weight, idCourse, idCategory);
+			MarkData markData = new MarkData(markDataPrimitive);
 
 			session.update("dataObjects.Mark.update", markData);
 			session.commit();

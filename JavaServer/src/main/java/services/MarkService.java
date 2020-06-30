@@ -58,30 +58,6 @@ public class MarkService {
 	}
 	
 	//Adds a mark.
-	public void addMark(float mark, String description, float weight, int idCategory, int idCourse) throws SQLException, ParameterException, ClassNotFoundException {
-		
-		logger.debug("addMark("+mark+", "+description+", "+weight+", "+idCategory+", "+idCourse+")");
-		
-		try {
-			mSchoolDb2.addMark(mark, description, weight, idCategory, idCourse);
-			
-		}catch(PersistenceException pe) {
-			
-			if(mSchoolDb2.getCourse(idCourse) == null) {
-				throw new ParameterException("idCourse not referring to an existing course", pe);
-			}
-			
-			if(mSchoolDb2.getCategory(idCategory) == null) {
-				throw new ParameterException("idCategory not referring to an existing category", pe);
-			}
-			
-			throw pe;
-		
-		}		
-	
-	}
-	
-	//Adds a mark.
 	public void addMark(MarkDataPrimitive markDataPrimitive) throws ParameterException {
 		
 		logger.debug("addMark("+markDataPrimitive.toString()+")");
@@ -95,7 +71,7 @@ public class MarkService {
 				throw new ParameterException("idCourse not referring to an existing course", pe);
 			}
 			
-			if(mSchoolDb2.getCategory(markDataPrimitive.getIdCourse()) == null) {
+			if(mSchoolDb2.getCategory(markDataPrimitive.getIdCategory()) == null) {
 				throw new ParameterException("idCategory not referring to an existing category", pe);
 			}
 			
@@ -107,20 +83,20 @@ public class MarkService {
 
 	
 	//Updates a mark.
-	public void updateMark(int idMark,float mark, String description, float weight, int idCategory, int idCourse) throws SQLException, ParameterException, ClassNotFoundException {
+	public void updateMark(MarkDataPrimitive markDataPrimitive) throws SQLException, ParameterException, ClassNotFoundException {
 		
-		logger.debug("updateMark("+idMark+", "+mark+", "+description+", "+weight+", "+idCategory+", "+idCourse+")");
+		logger.debug("updateMark("+markDataPrimitive.toString()+")");
 		
 		try {
-			mSchoolDb2.updateMark(idMark, mark, description, weight, idCategory, idCourse);
+			mSchoolDb2.updateMark(markDataPrimitive);
 			
 		}catch(PersistenceException pe) {	
 			
-			if(mSchoolDb2.getCourse(idCourse) == null) {
+			if(mSchoolDb2.getCourse(markDataPrimitive.getIdCourse()) == null) {
 				throw new ParameterException("idCourse not referring to an existing course", pe);
 			}
 			
-			if(mSchoolDb2.getCategory(idCategory) == null) {
+			if(mSchoolDb2.getCategory(markDataPrimitive.getIdCategory()) == null) {
 				throw new ParameterException("idCategory not referring to an existing category", pe);
 			}
 			

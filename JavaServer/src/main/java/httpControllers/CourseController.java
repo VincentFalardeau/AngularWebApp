@@ -19,10 +19,9 @@ import services.CourseService;
 public class CourseController {
 
 	private final String URL = "/courses";
-	private final String ALL_COURSES_URL = URL + "/all";
 
 	// Gives all the courses.
-	@GetMapping(ALL_COURSES_URL)
+	@GetMapping(URL)
 	public ResponseEntity<?> courses() {
 
 		Logger log = LogManager.getLogger(CourseController.class);

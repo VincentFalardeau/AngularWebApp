@@ -50,10 +50,14 @@ app.controller('editController', function($scope, $http) {
 
         console.log(newMark);
 
-        $http.post("http://127.0.0.1:8080/mark", newMark).then(function(response){
-            console.log("allo");
+        // $http.post("http://127.0.0.1:8080/mark", newMark).then(function(response){
+        //     console.log("allo");
+        //     $scope.marks.push(mark);
+        //     $scope.newMark = null;
+        // });
+
+        $http.post("http://127.0.0.1:8080/mark", newMark).then(function (response) {
             $scope.marks.push(mark);
-            $scope.newMark = null;
         });
 
     }
