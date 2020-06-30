@@ -163,6 +163,42 @@ public class MarkController {
 
 		return responseEntity;
 	}
+	
+	// Updates a batch of mark.
+	@PutMapping(URL)
+	public ResponseEntity<?> updateMark(@RequestBody MarkDataPrimitive[] markDataPrimitive) {
+
+		Logger log = LogManager.getLogger(MarkController.class);
+
+		ResponseEntityGenerator responseEntityGenerator = new ResponseEntityGenerator();
+		ResponseEntity<?> responseEntity;
+
+		try {
+
+			// Update the mark.
+			MarkService markService = new MarkService();
+			markService.updateMark(markDataPrimitive);
+
+			// Generate OK response.
+			responseEntity = responseEntityGenerator.generateOK();
+
+		} catch (ParameterException pe) {
+
+			log.error(Throwables.getStackTraceAsString(pe));
+
+			// Generate bad request
+			responseEntity = responseEntityGenerator.generateBadRequest(pe.getGenericErrorMessage());
+
+		} catch (Exception e) {
+
+			log.error(Throwables.getStackTraceAsString(e));
+
+			// Generate internal server error
+			responseEntity = responseEntityGenerator.generateInternalServerError();
+		}
+
+		return responseEntity;
+	}
 
 	// Deletes a mark.
 	@DeleteMapping(URL + "/{id}")

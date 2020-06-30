@@ -3,9 +3,11 @@ package persistence;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.ibatis.exceptions.PersistenceException;
 import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.ExecutorType;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
@@ -206,14 +208,12 @@ public class SchoolDb2 {
 	}
 
 	// Adds a mark.
-	public void addMark(MarkDataPrimitive markDataPrimitive) {
+	public void addMark(MarkData markData) {
 
 		Logger log = LogManager.getLogger(SchoolDb2.class);
-		log.debug("addMark(" + markDataPrimitive.toString() + ")");
+		log.debug("addMark(" + markData.toString() + ")");
 
 		try (SqlSession session = mSqlSessionFactory.openSession()) {
-			
-			MarkData markData = new MarkData(markDataPrimitive);
 
 			session.insert("dataObjects.Mark.insert", markData);
 			session.commit();
@@ -222,17 +222,31 @@ public class SchoolDb2 {
 	}
 
 	// Updates a mark.
-	public void updateMark(MarkDataPrimitive markDataPrimitive)
-			throws PersistenceException {
+	public void updateMark(MarkData markData) throws PersistenceException {
 
 		Logger log = LogManager.getLogger(SchoolDb2.class);
-		log.debug("updateMark(" + markDataPrimitive.toString() + ")");
+		log.debug("updateMark(" + markData.toString() + ")");
 
 		try (SqlSession session = mSqlSessionFactory.openSession()) {
 
-			MarkData markData = new MarkData(markDataPrimitive);
-
 			session.update("dataObjects.Mark.update", markData);
+			session.commit();
+		}
+
+	}
+
+	// Updates an array of mark.
+	public void updateMark(ArrayList<MarkData> marks) throws PersistenceException {
+
+		Logger log = LogManager.getLogger(SchoolDb2.class);
+		log.debug("updateMark(" + marks.toString() + ")");
+
+		try (SqlSession session = mSqlSessionFactory.openSession(ExecutorType.BATCH)) {
+			
+			for(MarkData mark : marks) {
+				session.update("dataObjects.Mark.update", mark);
+			}
+			
 			session.commit();
 		}
 

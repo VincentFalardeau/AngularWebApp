@@ -20,7 +20,7 @@ public class MarkData {
 		this.setIdCategory(idCategory);
 	}
 	
-	public MarkData(MarkDataPrimitive markDataPrimitive) {
+	public MarkData(MarkDataPrimitive markDataPrimitive) throws Exception{
 		this.setId(markDataPrimitive.getId());
 		this.setDescription(markDataPrimitive.getDescription());
 		this.setMark(BigDecimal.valueOf(markDataPrimitive.getMark()));

@@ -3,6 +3,7 @@ package services;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.ibatis.exceptions.PersistenceException;
 import org.apache.logging.log4j.LogManager;
@@ -42,12 +43,12 @@ public class MarkService {
 	}
 	
 	//Adds a mark.
-	public void addMark(MarkDataPrimitive markDataPrimitive) throws ParameterException {
+	public void addMark(MarkDataPrimitive markDataPrimitive) throws Exception {
 		
 		mLogger.debug("addMark("+markDataPrimitive.toString()+")");
 		
 		try {
-			mSchoolDb2.addMark(markDataPrimitive);
+			mSchoolDb2.addMark(new MarkData(markDataPrimitive));
 			
 		}catch(PersistenceException pe) {
 			
@@ -66,14 +67,18 @@ public class MarkService {
 	}
 	
 	//Updates a mark.
-	public void updateMark(MarkDataPrimitive markDataPrimitive) throws SQLException, ParameterException, ClassNotFoundException {
+	public void updateMark(MarkDataPrimitive markDataPrimitive) throws Exception {
 		
 		mLogger.debug("updateMark("+markDataPrimitive.toString()+")");
 		
 		try {
-			mSchoolDb2.updateMark(markDataPrimitive);
+			mSchoolDb2.updateMark(new MarkData(markDataPrimitive));
 			
-		}catch(PersistenceException pe) {	
+		}catch(PersistenceException pe) {
+			
+			if(mSchoolDb2.getMark(markDataPrimitive.getId()) == null) {
+				throw new ParameterException("idCourse not referring to an existing course", pe);
+			}
 			
 			if(mSchoolDb2.getCourse(markDataPrimitive.getIdCourse()) == null) {
 				throw new ParameterException("idCourse not referring to an existing course", pe);
@@ -88,6 +93,46 @@ public class MarkService {
 		
 		
 	}
+	
+	//Updates an array of mark.
+	public void updateMark(MarkDataPrimitive[] marks) throws Exception {
+		
+		mLogger.debug("updateMark("+marks.toString()+")");
+		
+		try {
+			
+			ArrayList<MarkData> list = new ArrayList<MarkData>();
+			
+			for(MarkDataPrimitive mark : marks) {
+				list.add(new MarkData(mark));
+			}
+			
+			mSchoolDb2.updateMark(list);
+			
+		}catch(PersistenceException pe) {	
+			
+			for(MarkDataPrimitive mark : marks) {
+				
+				if(mSchoolDb2.getMark(mark.getId()) == null) {
+					throw new ParameterException("idCourse not referring to an existing course", pe);
+				}
+				
+				if(mSchoolDb2.getCourse(mark.getIdCourse()) == null) {
+					throw new ParameterException("idCourse not referring to an existing course", pe);
+				}
+				
+				if(mSchoolDb2.getCategory(mark.getIdCategory()) == null) {
+					throw new ParameterException("idCategory not referring to an existing category", pe);
+				}
+			}
+			
+			throw pe;
+		}
+		
+		
+	}
+	
+	
 
 	//Deletes a mark.
 	public void deleteMark(int idMark) throws SQLException, ClassNotFoundException {
