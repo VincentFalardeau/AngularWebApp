@@ -12,52 +12,21 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.google.common.base.Throwables;
 
-import dataObjects.Course;
+import dataObjects.GlobalGrade;
 import dataObjects.Grade;
 import dataObjects.Mark;
-import services.CourseService;
 import services.GradeService;
 import services.MarkService;
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
-public class CourseController {
-
-	private final String URL = "/courses";
-
-	// Gives all the courses.
-	@GetMapping(URL)
-	public ResponseEntity<?> getCourses() {
-
-		Logger log = LogManager.getLogger(CourseController.class);
-
-		ResponseEntityGenerator responseEntityGenerator = new ResponseEntityGenerator();
-		ResponseEntity<?> responseEntity;
-
-		try {
-
-			// Get the courses.
-			CourseService courseService = new CourseService();
-			ArrayList<Course> courses = courseService.getCourses();
-
-			// Generate OK response with the courses.
-			responseEntity = responseEntityGenerator.generateOK(courses);
-
-		} catch (Exception e) {
-
-			// Log the error.
-			log.error(Throwables.getStackTraceAsString(e));
-
-			// Generate internal server error.
-			responseEntity = responseEntityGenerator.generateInternalServerError();
-		}
-
-		return responseEntity;
-	}
+public class SemesterController {
 	
-	// Gives all the marks for a course.
-	@GetMapping(URL + "/{id}/marks")
-	public ResponseEntity<?> getCourseMarks(@PathVariable int id) {
+	private final String URL = "/semesters";
+	
+	// Gives all the marks for a semester.
+	@GetMapping(URL + "/{semester}/marks")
+	public ResponseEntity<?> getMarksCourses(@PathVariable int semester) {
 
 		Logger log = LogManager.getLogger(CourseController.class);
 
@@ -68,7 +37,7 @@ public class CourseController {
 
 			// Get the courses.
 			MarkService markService = new MarkService();
-			ArrayList<Mark> marks = markService.getCourseMarks(id);
+			ArrayList<Mark> marks = markService.getMarks(semester);
 
 			// Generate OK response with the courses.
 			responseEntity = responseEntityGenerator.generateOK(marks);
@@ -85,9 +54,39 @@ public class CourseController {
 		return responseEntity;
 	}
 	
-	// Gives all the marks for a course.
-	@GetMapping(URL + "/{id}/grade")
-	public ResponseEntity<?> getCourseGrade(@PathVariable int id) {
+	// Gives all the grades for a semester.
+	@GetMapping(URL + "/{semester}/grades")
+	public ResponseEntity<?> grades(@PathVariable int semester) {
+
+		Logger log = LogManager.getLogger(GradeController.class);
+
+		ResponseEntityGenerator responseEntityGenerator = new ResponseEntityGenerator();
+		ResponseEntity<?> responseEntity;
+
+		try {
+
+			// Get the grades.
+			GradeService gradeService = new GradeService();
+			ArrayList<Grade> grades = gradeService.getGrades(semester);
+
+			// Generate OK response with the grades.
+			responseEntity = responseEntityGenerator.generateOK(grades);
+
+		} catch (Exception e) {
+
+			log.error(Throwables.getStackTraceAsString(e));
+
+			// Generate internal server error
+			responseEntity = responseEntityGenerator.generateInternalServerError();
+
+		}
+
+		return responseEntity;
+	}
+
+	// Gives the global grade for a semester.
+	@GetMapping(URL + "/{semester}/global-grade")
+	public ResponseEntity<?> globalGrade(@PathVariable int semester) {
 
 		Logger log = LogManager.getLogger(GradeController.class);
 
@@ -98,7 +97,7 @@ public class CourseController {
 
 			// Get the grade.
 			GradeService gradeService = new GradeService();
-			Grade grade = gradeService.getGrade(id);
+			GlobalGrade grade = gradeService.getGlobalGrade(semester);
 
 			// Generate OK response with the grade.
 			responseEntity = responseEntityGenerator.generateOK(grade);
@@ -113,6 +112,5 @@ public class CourseController {
 
 		return responseEntity;
 	}
-	
-	
+
 }

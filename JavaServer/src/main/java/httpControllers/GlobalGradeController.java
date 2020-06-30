@@ -1,33 +1,24 @@
 package httpControllers;
 
-import java.util.ArrayList;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.google.common.base.Throwables;
 
 import dataObjects.GlobalGrade;
-import dataObjects.Grade;
-import dataObjects.Mark;
 import services.GradeService;
-import services.MarkService;
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
-public class GradeController {
+public class GlobalGradeController {
 
-	private final String URL = "grades";
-
-	// Gives all the grades.
-	@GetMapping(URL)
-	public ResponseEntity<?> getGrades() {
+	// Gives the global grade.
+	@GetMapping("global-grade")
+	public ResponseEntity<?> globalGrade() {
 
 		Logger log = LogManager.getLogger(GradeController.class);
 
@@ -36,12 +27,12 @@ public class GradeController {
 
 		try {
 
-			// Get the grades.
+			// Get the grade.
 			GradeService gradeService = new GradeService();
-			ArrayList<Grade> grades = gradeService.getGrades();
+			GlobalGrade grade = gradeService.getGlobalGrade();
 
-			// Generate OK response with the grades.
-			responseEntity = responseEntityGenerator.generateOK(grades);
+			// Generate OK response with the grade.
+			responseEntity = responseEntityGenerator.generateOK(grade);
 
 		} catch (Exception e) {
 
@@ -49,7 +40,6 @@ public class GradeController {
 
 			// Generate internal server error
 			responseEntity = responseEntityGenerator.generateInternalServerError();
-
 		}
 
 		return responseEntity;

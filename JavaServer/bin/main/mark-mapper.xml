@@ -71,7 +71,7 @@
    	</insert>
 
 	<update id="update" parameterType = "dataObjects.MarkData">
-		update Mark set idClass = #{idCourse}, idCategory = #{idCategory}, description = #{description},  mark = #{mark}, weight = #{weight} where idMark = #{id}
+		update Mark set idClass = #{idCourse}, idCategory = #{idCategory}, description = #{description}, mark = #{mark}, weight = #{weight} where idMark = #{id}
 	</update>  
 	
 	<delete id="delete" parameterType = "int">

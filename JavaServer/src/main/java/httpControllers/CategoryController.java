@@ -19,11 +19,10 @@ import services.CategoryService;
 public class CategoryController {
 
 	private final String URL = "/categories";
-	private final String ALL_CATEGORIES_URL = URL + "/all";
 
 	// Gives all the categories.
-	@GetMapping(ALL_CATEGORIES_URL)
-	public ResponseEntity<?> categories() {
+	@GetMapping(URL)
+	public ResponseEntity<?> getCategories() {
 
 		Logger log = LogManager.getLogger(CategoryController.class);
 

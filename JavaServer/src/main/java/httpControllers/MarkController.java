@@ -31,7 +31,7 @@ public class MarkController {
 	// Gives all the marks.
 	@GetMapping(URL)
 	public ResponseEntity<?> getMarks(@RequestParam(value = "startIndex", defaultValue = "0") int startIndex,
-			@RequestParam(value = "size", defaultValue = "0") int size) {
+			@RequestParam(value = "size", defaultValue = "-1") int size) {
 		
 		//TODO: Use startIndex and size.
 
@@ -60,64 +60,6 @@ public class MarkController {
 
 		return responseEntity;
 	}
-
-//	// Gives all the marks for a specific semester.
-//	@GetMapping(URLs + "/{semester}")
-//	public ResponseEntity<?> getMarksForSemester(@PathVariable int semester) {
-//
-//		Logger log = LogManager.getLogger(MarkController.class);
-//
-//		ResponseEntityGenerator responseEntityGenerator = new ResponseEntityGenerator();
-//		ResponseEntity<?> responseEntity;
-//
-//		try {
-//
-//			// Get the marks.
-//			MarkService markService = new MarkService();
-//			ArrayList<Mark> marks = markService.getMarks(semester);
-//
-//			// Generate OK response with the marks.
-//			responseEntity = responseEntityGenerator.generateOK(marks);
-//
-//		} catch (Exception e) {
-//
-//			log.error(Throwables.getStackTraceAsString(e));
-//
-//			// Generate internal server error
-//			responseEntity = responseEntityGenerator.generateInternalServerError();
-//		}
-//
-//		return responseEntity;
-//	}
-
-//	// Gives all the marks for a specific course.
-//	@GetMapping(URLs)
-//	public ResponseEntity<?> courseMarks(@RequestParam(value = "id") int idCourse) {
-//
-//		Logger log = LogManager.getLogger(MarkController.class);
-//
-//		ResponseEntityGenerator responseEntityGenerator = new ResponseEntityGenerator();
-//		ResponseEntity<?> responseEntity;
-//
-//		try {
-//
-//			// Get the marks.
-//			MarkService markService = new MarkService();
-//			ArrayList<Mark> marks = markService.getCourseMarks(idCourse);
-//
-//			// Generate OK response with the marks.
-//			responseEntity = responseEntityGenerator.generateOK(marks);
-//
-//		} catch (Exception e) {
-//
-//			log.error(Throwables.getStackTraceAsString(e));
-//
-//			// Generate internal server error
-//			responseEntity = responseEntityGenerator.generateInternalServerError();
-//		}
-//
-//		return responseEntity;
-//	}
 
 	// Gives the mark having the specified id.
 	@GetMapping(URL + "/{id}")
