@@ -227,4 +227,32 @@ public class MarkController {
 
 		return responseEntity;
 	}
+	
+	// Deletes a batch of mark.
+	@DeleteMapping(URL)
+	public ResponseEntity<?> deleteMark(@RequestBody int[] ids) {
+
+		Logger log = LogManager.getLogger(MarkController.class);
+
+		ResponseEntityGenerator responseEntityGenerator = new ResponseEntityGenerator();
+		ResponseEntity<?> responseEntity;
+
+		try {
+			// Delete the mark.
+			MarkService markService = new MarkService();
+			markService.deleteMark(ids);
+
+			// Generate OK response.
+			responseEntity = responseEntityGenerator.generateOK();
+
+		} catch (Exception e) {
+
+			log.error(Throwables.getStackTraceAsString(e));
+
+			// Generate internal server error
+			responseEntity = responseEntityGenerator.generateInternalServerError();
+		}
+
+		return responseEntity;
+	}
 }

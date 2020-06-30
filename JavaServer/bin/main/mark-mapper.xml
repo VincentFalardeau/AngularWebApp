@@ -73,20 +73,7 @@
 	<update id="update" parameterType = "dataObjects.MarkData">
 		update Mark set idClass = #{idCourse}, idCategory = #{idCategory}, description = #{description}, mark = #{mark}, weight = #{weight} where idMark = #{id}
 	</update>
-	
-	<!-- <update id="updateBatch" parameterType = "java.util.List">
-		<foreach collection="marks" item="mark" index="index" open="" close="" separator=";">
-			update Mark
-			<set>
-				idClass = ${mark.idCourse},
-				idCategory = ${mark.idCategory},
-				description = ${mark.description},
-				mark = ${mark.mark},
-				weight = ${mark.weight}
-			</set>
-			where idMark = ${mark.id}
-		</foreach>	
-	</update> -->
+
 	
 	<delete id="delete" parameterType = "int">
 		delete from Mark where idMark = #{id}

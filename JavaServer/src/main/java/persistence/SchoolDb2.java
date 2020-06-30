@@ -253,14 +253,30 @@ public class SchoolDb2 {
 	}
 
 	// Deletes a mark.
-	public void deleteMark(int idMark) {
+	public void deleteMark(int id) {
 
 		Logger log = LogManager.getLogger(SchoolDb2.class);
-		log.debug("deleteMark(" + idMark + ")");
+		log.debug("deleteMark(" + id + ")");
 
 		try (SqlSession session = mSqlSessionFactory.openSession()) {
 
-			session.delete("dataObjects.Mark.delete", idMark);
+			session.delete("dataObjects.Mark.delete", id);
+			session.commit();
+		}
+	}
+	
+	// Deletes an array of mark.
+	public void deleteMark(ArrayList<Integer> ids) {
+
+		Logger log = LogManager.getLogger(SchoolDb2.class);
+		log.debug("deleteMark(" + ids.toString() + ")");
+
+		try (SqlSession session = mSqlSessionFactory.openSession(ExecutorType.BATCH)) {
+
+			for(Integer id : ids) {
+				session.delete("dataObjects.Mark.delete", id);
+			}
+			
 			session.commit();
 		}
 	}

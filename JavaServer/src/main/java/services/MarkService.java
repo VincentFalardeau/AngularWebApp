@@ -77,7 +77,7 @@ public class MarkService {
 		}catch(PersistenceException pe) {
 			
 			if(mSchoolDb2.getMark(markDataPrimitive.getId()) == null) {
-				throw new ParameterException("idCourse not referring to an existing course", pe);
+				throw new ParameterException("id not referring to an existing mark", pe);
 			}
 			
 			if(mSchoolDb2.getCourse(markDataPrimitive.getIdCourse()) == null) {
@@ -114,7 +114,7 @@ public class MarkService {
 			for(MarkDataPrimitive mark : marks) {
 				
 				if(mSchoolDb2.getMark(mark.getId()) == null) {
-					throw new ParameterException("idCourse not referring to an existing course", pe);
+					throw new ParameterException("id not referring to an existing mark", pe);
 				}
 				
 				if(mSchoolDb2.getCourse(mark.getIdCourse()) == null) {
@@ -138,5 +138,17 @@ public class MarkService {
 	public void deleteMark(int idMark) throws SQLException, ClassNotFoundException {
 		
 		mSchoolDb2.deleteMark(idMark);
+	}
+	
+	//Deletes an array of mark.
+	public void deleteMark(int[] ids) throws SQLException, ClassNotFoundException {
+		
+		ArrayList<Integer> list = new ArrayList<Integer>();
+		
+		for(int id : ids) {
+			list.add(id);
+		}
+		
+		mSchoolDb2.deleteMark(list);
 	}
 }
