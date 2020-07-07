@@ -20,10 +20,18 @@ export class GradeService {
     private http: HttpClient,
     private messageService: MessageService) { }
 
-  getGrades(): Observable<Grade[]> {
+  // getGrades(): Observable<Grade[]> {
+  //   //this.log('fetched marks');
+  //   return this.http.get<Grade[]>(this.gradeURL).pipe( 
+  //     tap(_ => this.log('fetched grades for semester ' + '1')),
+  //     catchError(this.handleError<Grade[]>('getGrades', []))
+  //   );    
+  // }
+
+  getGrades(semester: number): Observable<Grade[]> {
     //this.log('fetched marks');
-    return this.http.get<Grade[]>(this.gradeURL).pipe( 
-      tap(_ => this.log('fetched grades for semester ' + '1')),
+    return this.http.get<Grade[]>('http://127.0.0.1:8080/semesters/'+semester+'/grades').pipe( 
+      tap(_ => this.log('fetched grades for semester ' + semester)),
       catchError(this.handleError<Grade[]>('getGrades', []))
     );    
   }

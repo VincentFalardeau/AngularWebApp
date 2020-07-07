@@ -1,6 +1,6 @@
 <h2>My grades</h2>
 
-<select (change)="onChange(semester)">
+<select [(ngModel)]="selectedSemester" (change)="onChange(selectedSemester)">
     <option *ngFor="let semester of semesters" [value]="semester">{{semester}}</option>
 </select>
     

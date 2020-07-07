@@ -14,6 +14,7 @@ export class GradesComponent implements OnInit {
 
   grades: Grade[];
   semesters: number[] = SEMESTERS;
+  selectedSemester: number = 1;
 
   constructor(private gradeService: GradeService, private messageService: MessageService) {}
 
