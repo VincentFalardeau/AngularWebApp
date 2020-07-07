@@ -1,0 +1,9 @@
+<h2>My marks</h2>
+<ul class="marks">
+    <li *ngFor="let mark of marks"  [class.selected]="mark === selectedMark" (click)="onSelect(mark)">
+        <span class="badge">{{mark.id}}</span> {{mark.description}}
+    </li>
+</ul>
+
+<app-mark-detail [mark]="selectedMark"></app-mark-detail>
+
