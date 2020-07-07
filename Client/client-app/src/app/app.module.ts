@@ -9,6 +9,7 @@ import { MarksComponent } from './marks/marks.component';
 import { MarkDetailsComponent } from './mark-detail/mark-detail.component';
 import { MessagesComponent } from './messages/messages.component';
 import { GlobalGradeComponent } from './global-grade/global-grade.component';
+import { GradesComponent } from './grades/grades.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { GlobalGradeComponent } from './global-grade/global-grade.component';
     MarksComponent,
     MarkDetailsComponent,
     MessagesComponent,
-    GlobalGradeComponent
+    GlobalGradeComponent,
+    GradesComponent
   ],
   imports: [
     HttpClientModule,

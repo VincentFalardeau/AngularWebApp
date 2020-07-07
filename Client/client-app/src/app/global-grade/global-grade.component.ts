@@ -23,4 +23,6 @@ export class GlobalGradeComponent implements OnInit {
     this.globalGradeService.getGlobalGrade().subscribe(globalGrade => this.globalGrade = globalGrade);
   }
 
+  
+
 }
