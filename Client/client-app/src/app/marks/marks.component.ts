@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { Mark } from '../mark'
 import { MarkService } from '../mark.service';
 import { MessageService } from '../message.service';
+import { Course } from '../course'
+import { CourseService } from '../course.service';
 
 @Component({
   selector: 'app-marks',
@@ -13,20 +15,30 @@ export class MarksComponent implements OnInit {
 
   marks: Mark[];
   selectedMark: Mark;
+  courses: Course[];
+  selectedCourseId: number;
 
   onSelect(mark: Mark): void {
     this.selectedMark = mark;
     this.messageService.add(`MarksComponent: Selected mark id=${mark.id}`);
   }
 
-  constructor(private markService: MarkService, private messageService: MessageService) {}
+  constructor(private markService: MarkService, private messageService: MessageService, private courseService: CourseService) {}
 
   ngOnInit(): void {
-    this.getMarks();
+    this.courseService.getCourses().subscribe(courses => {
+      this.courses = courses;
+      this.selectedCourseId = this.courses[0].id;
+      this.getMarks(this.selectedCourseId);
+    }); 
   }
 
-  getMarks(): void {
-    this.markService.getMarks().subscribe(marks => this.marks = marks);
+  onChange(courseId: number): void{
+    this.getMarks(courseId);
+  }
+
+  getMarks(courseId: number): void {
+    this.markService.getMarks(courseId).subscribe(marks => this.marks = marks);
   }
 
   

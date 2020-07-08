@@ -4,26 +4,27 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
-import { Mark } from './mark'
+import { Course } from './course'
 import { MessageService } from './message.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class MarkService {
+export class CourseService {
 
-  private marksURL = 'http://127.0.0.1:8080/courses/1/marks';
+  private courseURL = 'http://127.0.0.1:8080/courses';
+
+  courses: Course[];
 
   constructor(
     private http: HttpClient,
     private messageService: MessageService) { }
 
-  getMarks(courseId: number): Observable<Mark[]> {
-    //this.log('fetched marks');
-    return this.http.get<Mark[]>('http://127.0.0.1:8080/courses/'+courseId+'/marks').pipe( 
-      tap(_ => this.log('fetched marks for course having id = ' + courseId)),
-      catchError(this.handleError<Mark[]>('getMarks', []))
-    );
+  getCourses(): Observable<Course[]> {
+    return this.http.get<Course[]>(this.courseURL).pipe( 
+      tap(_ => this.log('fetched courses')),
+      catchError(this.handleError<Course[]>('getCourses', []))
+    );    
   }
 
   /**
@@ -47,8 +48,6 @@ export class MarkService {
   }
 
   private log(message: string) {
-    this.messageService.add(`MarkService: ${message}`);
+    this.messageService.add(`GlobalCourseService: ${message}`);
   }
 }
-
-
