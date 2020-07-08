@@ -13,6 +13,7 @@ import { SEMESTERS } from '../mock-semesters';
 export class GradesComponent implements OnInit {
 
   grades: Grade[];
+  selectedGrade: Grade;
   semesters: number[] = SEMESTERS;
   selectedSemester: number = 1;
 
@@ -32,6 +33,11 @@ export class GradesComponent implements OnInit {
 
   onChange(semester: number): void{
     this.getGrades(semester);
+  }
+
+  onSelect(grade: Grade): void{
+    this.selectedGrade = grade;
+    this.messageService.add(`MarksComponent: Selected grade course's id =${grade.course.id}`);
   }
 
 }
