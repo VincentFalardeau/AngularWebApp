@@ -21,7 +21,6 @@ export class MarkDetailsComponent implements OnInit {
   courses: Course[];
   categories: Category[];
 
-  selectedCategoryId: number;
   selectedCourseId: number;
 
   constructor(
@@ -42,7 +41,7 @@ export class MarkDetailsComponent implements OnInit {
     // }); 
     this.categoryService.getCategories().subscribe(categories => {
       this.categories = categories;
-      this.selectedCategoryId = this.mark.category.id;
+      //TODO: Set selected category to the mark's category.
     });
 
   }

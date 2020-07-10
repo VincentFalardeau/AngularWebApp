@@ -22,8 +22,8 @@
         </select>
     </div> -->
     <div>Category:
-        <select [(ngModel)]="selectedCategoryId" (change)="" [value]="selectedCategoryId">
-            <option *ngFor="let category of categories" [value]="category.id">{{category.description}}</option>
+        <select [(ngModel)]="mark.category">
+            <option *ngFor="let category of categories" [ngValue]="category">{{category.description}}</option>
         </select>
     </div>
 </div>
