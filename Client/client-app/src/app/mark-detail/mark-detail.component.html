@@ -2,8 +2,28 @@
     <h3>{{mark.description | uppercase}} Details</h3>
     <div><span>id: </span>{{mark.id}}</div>
     <div>
-        <label>description:
+        <label>Description:
             <input [(ngModel)]="mark.description" placeholder="description"/>
         </label>
+    </div>
+    <div>
+        <label>Mark:
+            <input [(ngModel)]="mark.mark" placeholder="85"/>
+        </label>
+    </div>
+    <div>
+        <label>Weight:
+            <input [(ngModel)]="mark.weight" placeholder="0"/>
+        </label>
+    </div>
+    <!-- <div>Course:
+        <select [(ngModel)]="selectedCourseId" [value]="selectedCourseId">
+            <option *ngFor="let course of courses" [value]="course.id">{{course.code}}</option>
+        </select>
+    </div> -->
+    <div>Category:
+        <select [(ngModel)]="selectedCategoryId" (change)="" [value]="selectedCategoryId">
+            <option *ngFor="let category of categories" [value]="category.id">{{category.description}}</option>
+        </select>
     </div>
 </div>

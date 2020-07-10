@@ -1,6 +1,12 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 import { Mark } from '../mark';
+import { Course } from '../course'
+import { Category } from '../category'
+import { MarkService } from '../mark.service';
+import { MessageService } from '../message.service';
+import { CourseService } from '../course.service';
+import { CategoryService } from '../category.service';
 
 
 @Component({
@@ -11,10 +17,34 @@ import { Mark } from '../mark';
 export class MarkDetailsComponent implements OnInit {
 
   @Input() mark: Mark;
+  
+  courses: Course[];
+  categories: Category[];
 
-  constructor() { }
+  selectedCategoryId: number;
+  selectedCourseId: number;
 
+  constructor(
+    private markService: MarkService, 
+    private messageService: MessageService, 
+    private courseService: CourseService, 
+    private categoryService: CategoryService) {}
+
+  
   ngOnInit(): void {
+    // this.courseService.getCourses().subscribe(courses => {
+    //   this.courses = courses;
+    //   this.selectedCourseId = this.mark.course.id;
+    //   this.categoryService.getCategories().subscribe(categories => {
+    //     this.categories = categories;
+    //     this.selectedCategoryId = this.mark.category.id;
+    //   });
+    // }); 
+    this.categoryService.getCategories().subscribe(categories => {
+      this.categories = categories;
+      this.selectedCategoryId = this.mark.category.id;
+    });
+
   }
 
 }

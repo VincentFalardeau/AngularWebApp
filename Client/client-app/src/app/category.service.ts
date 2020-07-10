@@ -4,36 +4,28 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
-import { Grade } from './grade'
+import { Category } from './category'
 import { MessageService } from './message.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class GradeService {
+export class CategoryService {
 
-  private gradeURL = 'http://127.0.0.1:8080/semesters/1/grades';
+  private categoryURL = 'http://127.0.0.1:8080/categories';
 
-  grades: Grade[]
+  categories: Category[]
+
+  getCategories(): Observable<Category[]> {
+    return this.http.get<Category[]>(this.categoryURL).pipe( 
+      tap(_ => this.log('fetched categories')),
+      catchError(this.handleError<Category[]>('getCategories', []))
+    );    
+  }
 
   constructor(
     private http: HttpClient,
     private messageService: MessageService) { }
-
-  // getGrades(): Observable<Grade[]> {
-  //   //this.log('fetched marks');
-  //   return this.http.get<Grade[]>(this.gradeURL).pipe( 
-  //     tap(_ => this.log('fetched grades for semester ' + '1')),
-  //     catchError(this.handleError<Grade[]>('getGrades', []))
-  //   );    
-  // }
-
-  getGrades(semester: number): Observable<Grade[]> {
-    return this.http.get<Grade[]>('http://127.0.0.1:8080/semesters/'+semester+'/grades').pipe( 
-      tap(_ => this.log('fetched grades for semester ' + semester)),
-      catchError(this.handleError<Grade[]>('getGrades', []))
-    );    
-  }
 
   /**
   * Handle Http operation that failed.
@@ -56,6 +48,6 @@ export class GradeService {
   }
 
   private log(message: string) {
-    this.messageService.add(`GlobalGradeService: ${message}`);
+    this.messageService.add(`CategoryService: ${message}`);
   }
 }
