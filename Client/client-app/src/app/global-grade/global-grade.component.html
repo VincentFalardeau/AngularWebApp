@@ -1,0 +1,6 @@
+<div *ngIf="globalGrade">
+    <span>GPA: {{ globalGrade.gpa }}</span>
+    <span>Average: {{ globalGrade.average | number : '1.2-2' }}</span>
+    <span>Letter: {{ globalGrade.letter }}</span>
+    <span><button (click)="getGlobalGrade()">Refresh</button></span>
+</div>

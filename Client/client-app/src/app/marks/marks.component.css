@@ -1,0 +1,43 @@
+/* MarksComponent's private CSS styles */
+
+
+
+.table{
+    display: table;
+    margin: auto;
+}
+
+.table-header{
+    display: table-header-group;
+    font-weight: bold;
+}
+
+.table .row.selected{
+    background-color: #CFD8DC;
+    color: white;
+}
+
+.table .row:hover {
+    color: #607D8B;
+    background-color: #DDD;
+    left: .1em;
+}
+.table .row.selected {
+    background-color: #CFD8DC;
+    color: white;
+}
+.table .row.selected:hover {
+    background-color: #BBD8DC;
+    color: white;
+}
+
+.row{
+    cursor: pointer;
+    background-color: #EEE;
+    display: table-row;   
+}
+
+.cell{
+    display: table-cell;
+    padding: 1em;
+}

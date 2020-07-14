@@ -1,0 +1,11 @@
+.container{
+    max-width: 1000px;
+}
+
+label, input, select{
+    width: 92%;
+}
+
+fieldset div{
+    padding: 0.5em;
+}

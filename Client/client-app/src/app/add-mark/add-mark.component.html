@@ -1,0 +1,37 @@
+<!-- <app-mark-detail [mark]="mark"></app-mark-detail> -->
+
+<fieldset *ngIf="mark">
+
+    <div>
+        <div>Description:</div>
+        <input [(ngModel)]="mark.description" placeholder="description"/>
+    </div>
+   
+    <div>
+        <div>Mark:</div>
+        <input [(ngModel)]="mark.mark" placeholder="85"/>
+    </div>
+    <div>
+        <div>Weight:</div>
+        <input [(ngModel)]="mark.weight" placeholder="0"/>
+    </div>
+    <div>
+        Category:
+        <select [(ngModel)]="mark.category">
+            <option *ngFor="let category of categories" [ngValue]="category">{{category.description}}</option>
+        </select>
+    </div>
+    <div>
+        Course:
+        <select [(ngModel)]="mark.course">
+            <option *ngFor="let course of courses" [ngValue]="course">{{course.description}}</option>
+        </select>
+    </div>
+    <div>
+        <app-course-detail [course]="mark.course"></app-course-detail>
+    </div>
+    <div>
+        <button (click)="add(mark)">Add mark</button>
+    </div>
+    
+</fieldset>

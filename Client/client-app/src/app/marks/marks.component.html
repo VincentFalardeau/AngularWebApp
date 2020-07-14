@@ -1,10 +1,29 @@
-<div class="header">
-    <h2>Scroll Down</h2>
-    <p>Scroll down to see the sticky effect.</p>
+
+<h2>My marks</h2>
+
+Course
+<select [(ngModel)]="selectedCourseId" (change)="onChange(selectedCourseId)" [value]="selectedCourseId">
+    <option *ngFor="let course of courses" [value]="course.id">{{course.code}}</option>
+</select>
+<button (click)="save(marks)">Save changes</button>
+    
+<div class="table">
+    <div class="table-header">
+        <div class="cell">Category</div>
+        <div class="cell">Course</div>
+        <div class="cell">Description</div>
+        <div class="cell">Mark</div>
+        <div class="cell">Weight</div>
+    </div>
+    <div class="row" *ngFor="let mark of marks"  [class.selected]="mark === selectedMark" (click)="onSelect(mark)">
+        <div class="cell">{{ mark.category.description }}</div>
+        <div class="cell">{{ mark.course.code }}</div>
+        <div class="cell">{{ mark.description }}</div>
+        <div class="cell">{{ mark.mark | number : '1.2-2' }}%</div>
+        <div class="cell">{{ mark.weight | number : '1.2-2' }}%</div>
+    </div>
 </div>
-  
-<div id="navbar">
-    <a class="active" href="javascript:void(0)">Home</a>
-    <a href="javascript:void(0)">News</a>
-    <a href="javascript:void(0)">Contact</a>
-</div>
+
+
+<app-mark-detail [mark]="selectedMark"></app-mark-detail>
+

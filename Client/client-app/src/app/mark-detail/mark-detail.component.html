@@ -1,0 +1,72 @@
+<div *ngIf="mark" class="container">
+    <h3>{{mark.description | uppercase}} Details</h3>
+    <button (click)="delete(mark.id)">Delete</button>
+
+    <!-- <fieldset>
+
+         <ul>
+            <li>Id:</li>
+            <li>Description:</li>
+            <li>Mark:</li>
+            <li>Weight:</li>
+            <li>Category:</li>
+        </ul>
+        <ul>
+            <li>{{mark.id}}</li>
+            <li><input [(ngModel)]="mark.description" placeholder="description"/></li>
+            <li><input [(ngModel)]="mark.mark" placeholder="85"/></li>
+            <li><input [(ngModel)]="mark.weight" placeholder="0"/></li>
+            <li>
+                <select [(ngModel)]="mark.category">
+                    <option *ngFor="let category of categories" [ngValue]="category">{{category.description}}</option>
+                </select>
+            </li>
+        </ul>
+        
+        <div><span>id: </span>{{mark.id}}</div>
+        <div>
+            <label>Description:
+                <input [(ngModel)]="mark.description" placeholder="description"/>
+            </label>
+        </div>
+        <div>
+            <label>Mark:
+                <input [(ngModel)]="mark.mark" placeholder="85"/>
+            </label>
+        </div>
+        <div>
+            <label>Weight:
+                <input [(ngModel)]="mark.weight" placeholder="0"/>
+            </label>
+        </div>
+        <div>Category:
+            <select [(ngModel)]="mark.category">
+                <option *ngFor="let category of categories" [ngValue]="category">{{category.description}}</option>
+            </select>
+        </div>
+    </fieldset> -->
+
+    <fieldset>
+        <div>
+            <div>Description:</div>
+            <input [(ngModel)]="mark.description" placeholder="description"/>
+        </div>
+       
+        <div>
+            <div>Mark:</div>
+            <input [(ngModel)]="mark.mark" placeholder="85"/>
+        </div>
+        <div>
+            <div>Weight:</div>
+            <input [(ngModel)]="mark.weight" placeholder="0"/>
+        </div>
+        <div>
+            Category:
+            <select [(ngModel)]="mark.category">
+                <option *ngFor="let category of categories" [ngValue]="category">{{category.description}}</option>
+            </select>
+        </div>
+    </fieldset>
+
+
+</div>

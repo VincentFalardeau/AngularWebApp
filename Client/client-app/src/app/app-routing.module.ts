@@ -2,11 +2,13 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { MarksComponent } from './marks/marks.component';
 import { GradesComponent } from './grades/grades.component';
+import { AddMarkComponent } from './add-mark/add-mark.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'marks', pathMatch: 'full' },
   { path: 'marks', component: MarksComponent },
-  { path: 'grades', component: GradesComponent }
+  { path: 'grades', component: GradesComponent },
+  { path: 'add-mark', component: AddMarkComponent }
 ];
 
 @NgModule({
