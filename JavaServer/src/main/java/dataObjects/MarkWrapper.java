@@ -1,7 +1,5 @@
 package dataObjects;
 
-import java.math.BigDecimal;
-
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class MarkWrapper {
