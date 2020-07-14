@@ -6,15 +6,24 @@
     <a routerLink="/add-mark" routerLinkActive="active">New mark</a>
 </nav>
 
-<main class="container">
+
+<div class="top-container">
     <app-global-grade></app-global-grade>
-    <router-outlet></router-outlet>
-</main>
+</div>
 
-<footer class="container">
+<div class="flex-container container">
+    <main>
+        <router-outlet></router-outlet>
+    </main>
+    <aside>
+        <app-messages></app-messages>
+    </aside>
+    
+    
+</div>
+
+
+<!-- <footer class="container">
     <app-messages></app-messages>
-</footer>
-
-
-<!-- <app-global-grade></app-global-grade> -->
+</footer> -->
 

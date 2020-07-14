@@ -1,7 +1,26 @@
 /* AppComponent's private CSS styles */
 
-main{
+.top-container{
   margin-top: 70px;
+}
+
+app-global-grade{
+  margin-top: 70px;
+}
+
+.flex-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-evenly;
+  align-items: flex-start;
+}
+
+aside{
+  width: 25%;
+}
+
+main{
+  width: 70%;
 }
 
 nav{
