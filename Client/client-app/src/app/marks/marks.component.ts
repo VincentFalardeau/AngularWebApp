@@ -41,8 +41,8 @@ export class MarksComponent implements OnInit {
     this.markService.getMarks(courseId).subscribe(marks => this.marks = marks);
   }
 
-  save(): void{
-    this.markService.updateMarks(this.marks).subscribe();
+  save(marks: Mark[]): void{
+    this.markService.updateMarks(marks).subscribe();
   }
   
 

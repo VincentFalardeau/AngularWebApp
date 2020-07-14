@@ -13,7 +13,7 @@
 		cl.code as classCode, cl.semester as semester, cl.description as classDescription, cl.credits as classCredits
 		from Mark m 
 		inner join Category ca on ca.idCategory = m.idCategory
-		inner join Class cl on cl.idClass = m.idClass
+		inner join Class cl on cl.idClass = m.idClass order by idMark desc
 	</sql>
 	
 	<sql id="queryForSemester">

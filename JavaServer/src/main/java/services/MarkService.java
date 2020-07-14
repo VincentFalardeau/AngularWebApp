@@ -133,6 +133,42 @@ public class MarkService {
 //		
 //	}
 	
+	//Adds a mark.
+	public void addMark(MarkWrapper mark) throws Exception {
+		
+		mLogger.debug("addMark("+mark.toString()+")");
+		
+		try {
+			mSchoolDb2.addMark(new MarkData(mark));
+			
+		}catch(PersistenceException pe) {
+			
+			this.persistenceExceptionDiagnosis(pe, mark);
+			
+			throw pe;
+		
+		}
+		
+	}
+	
+	//Updates a mark.
+	public void updateMark(MarkWrapper mark) throws Exception {
+		
+		mLogger.debug("updateMark("+mark.toString()+")");
+		
+		try {
+			mSchoolDb2.updateMark(new MarkData(mark));
+			
+		}catch(PersistenceException pe) {
+			
+			this.persistenceExceptionDiagnosis(pe, mark);
+			
+			throw pe;
+		}
+		
+		
+	}
+	
 	//Updates an array of mark.
 	public void updateMark(MarkWrapper[] marks) throws Exception {
 		
@@ -176,16 +212,16 @@ public class MarkService {
 	//Function that verifies if a PersistenceException is caused by a ParameterException.
 	private void persistenceExceptionDiagnosis(PersistenceException pe, MarkWrapper mark) throws ParameterException {
 		
-		if(mSchoolDb2.getMark(mark.getId()) == null) {
-			throw new ParameterException("id not referring to an existing mark", pe);
-		}
-		
 		if(mSchoolDb2.getCourse(mark.getCourse().getId()) == null) {
 			throw new ParameterException("idCourse not referring to an existing course", pe);
 		}
 		
 		if(mSchoolDb2.getCategory(mark.getCourse().getId()) == null) {
 			throw new ParameterException("idCategory not referring to an existing category", pe);
+		}
+		
+		if(mSchoolDb2.getMark(mark.getId()) == null) {
+			throw new ParameterException("id not referring to an existing mark", pe);
 		}
 	}
 }
