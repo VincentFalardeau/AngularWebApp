@@ -4,14 +4,14 @@ import java.math.BigDecimal;
 
 public class Mark {
 	
-	private Integer id;
+	private int id;
 	private String description;
 	private float mark;
 	private float weight;
 	private Course course;
 	private Category category;
 	
-	public Mark(Integer id, String description, float mark, float weight, Course course, Category category) {
+	public Mark(int id, String description, float mark, float weight, Course course, Category category) {
 		this.setDescription(description);
 		this.setId(id);
 		this.setMark(mark);
@@ -20,6 +20,7 @@ public class Mark {
 		this.setCourse(course);
 	}
 	
+	//Constructor that takes the database's types to build a Mark object.
 	public Mark(
 			Integer idMark, 
 			Integer idCourse, 
@@ -41,12 +42,7 @@ public class Mark {
 		this.setCourse(new Course(idCourse, courseCode, semester, courseDescription, courseCredits));
 	}
 	
-//	public Mark(float mark, float weight) {
-//		this.setMark(mark);
-//		this.setWeight(weight);
-//	}
-	
-	public Integer getId() {
+	public int getId() {
 		return id;
 	}
 	

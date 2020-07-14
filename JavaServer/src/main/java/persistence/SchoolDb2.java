@@ -20,7 +20,6 @@ import dataObjects.Category;
 import dataObjects.Course;
 import dataObjects.Mark;
 import dataObjects.MarkData;
-import dataObjects.MarkDataPrimitive;
 
 public class SchoolDb2 {
 

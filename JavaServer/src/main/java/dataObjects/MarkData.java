@@ -20,15 +20,16 @@ public class MarkData {
 		this.setIdCategory(idCategory);
 	}
 	
-	public MarkData(MarkDataPrimitive markDataPrimitive) throws Exception{
-		this.setId(markDataPrimitive.getId());
-		this.setDescription(markDataPrimitive.getDescription());
-		this.setMark(BigDecimal.valueOf(markDataPrimitive.getMark()));
-		this.setWeight(BigDecimal.valueOf(markDataPrimitive.getWeight()));
-		this.setIdCourse(markDataPrimitive.getIdCourse());
-		this.setIdCategory(markDataPrimitive.getIdCategory());
+	//Constructor for when preparing a mark
+	public MarkData(MarkWrapper mark) {
+		this.setId(mark.getId());
+		this.setDescription(mark.getDescription());
+		this.setMark(BigDecimal.valueOf(mark.getMark()));
+		this.setWeight(BigDecimal.valueOf(mark.getWeight()));
+		this.setIdCourse(mark.getCourse().getId());
+		this.setIdCategory(mark.getCategory().getId());
 	}
-	
+
 	public String getDescription() {
 		return description;
 	}

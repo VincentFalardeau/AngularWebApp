@@ -4,9 +4,9 @@ import java.math.BigDecimal;
 
 public class Course {
 	
-	private Integer id;
+	private int id;
 	private String code;
-	private Integer semester;
+	private int semester;
 	private String description;
 	private float credits;
 	
@@ -14,11 +14,11 @@ public class Course {
 		return new Course (-1, "GLOBAL", -1, "Global", 0.0f);
 	}
 	
-	public static Course globalCourse(Integer semester) {
+	public static Course globalCourse(int semester) {
 		return new Course (-1, "GLOBAL", semester, "Global", 0.0f);
 	}
 	
-	public Course(Integer id, String code, Integer semester, String description, float credits) {
+	public Course(int id, String code, int semester, String description, float credits) {
 		this.setId(id);
 		this.setCode(code);
 		this.setSemester(semester);
@@ -54,7 +54,7 @@ public class Course {
 		this.setCredits(courseCredits.floatValue());
 	}
 	
-	public Integer getId() {
+	public int getId() {
 		return id;
 	}
 	
@@ -70,7 +70,7 @@ public class Course {
 		this.code = code;
 	}
 
-	public Integer getSemester() {
+	public int getSemester() {
 		return semester;
 	}
 

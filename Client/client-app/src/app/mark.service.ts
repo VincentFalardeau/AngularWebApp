@@ -5,6 +5,7 @@ import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
 import { Mark } from './mark'
+import { MarkData } from './mark-data'
 import { MessageService } from './message.service';
 
 @Injectable({
@@ -12,7 +13,8 @@ import { MessageService } from './message.service';
 })
 export class MarkService {
 
-  private marksURL = 'http://127.0.0.1:8080/courses/1/marks';
+  //private marksURL = 'http://127.0.0.1:8080/courses/1/marks';
+  private marksURL = "http://127.0.0.1:8080/marks"
 
   constructor(
     private http: HttpClient,
@@ -24,6 +26,14 @@ export class MarkService {
       tap(_ => this.log('fetched marks for course having id = ' + courseId)),
       catchError(this.handleError<Mark[]>('getMarks', []))
     );
+  }
+
+  updateMarks(marks: Mark[]): Observable<any> {
+    return this.http.put(this.marksURL, marks).pipe(
+      tap(_ => this.log('updated marks')),
+      catchError(this.handleError<any>('updateMarks'))
+    );
+  
   }
 
   /**

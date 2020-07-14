@@ -4,10 +4,10 @@ import java.math.BigDecimal;
 
 public class Category {
 	
-	private Integer id;
+	private int id;
 	private String description;
 	
-	public Category(Integer id, String description) {
+	public Category(int id, String description) {
 		this.setId(id);
 		this.setDescription(description);
 	}
@@ -29,7 +29,7 @@ public class Category {
 		this.setId(idCategory);
 	}
 
-	public Integer getId() {
+	public int getId() {
 		return id;
 	}
 

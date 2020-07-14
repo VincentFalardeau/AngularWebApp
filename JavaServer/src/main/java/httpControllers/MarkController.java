@@ -90,83 +90,83 @@ public class MarkController {
 		return responseEntity;
 	}
 
-	// Adds a mark in the database.
-	@PostMapping(URL)
-	public ResponseEntity<?> addMark(@RequestBody MarkDataPrimitive markDataPrimitive) {
+//	// Adds a mark in the database.
+//	@PostMapping(URL)
+//	public ResponseEntity<?> addMark(@RequestBody MarkDataPrimitive markDataPrimitive) {
+//
+//		Logger log = LogManager.getLogger(MarkController.class);
+//
+//		ResponseEntityGenerator responseEntityGenerator = new ResponseEntityGenerator();
+//		ResponseEntity<?> responseEntity;
+//
+//		try {
+//
+//			// Add the mark.
+//			MarkService markService = new MarkService();
+//			markService.addMark(markDataPrimitive);
+//
+//			// Generate OK response.
+//			responseEntity = responseEntityGenerator.generateOK();
+//
+//		} catch (ParameterException pe) {
+//
+//			log.error(Throwables.getStackTraceAsString(pe));
+//
+//			// Generate bad request
+//			responseEntity = responseEntityGenerator.generateBadRequest(pe.getGenericErrorMessage());
+//
+//		} catch (Exception e) {
+//
+//			log.error(Throwables.getStackTraceAsString(e));
+//
+//			// Generate internal server error
+//			responseEntity = responseEntityGenerator.generateInternalServerError();
+//		}
+//
+//		return responseEntity;
+//	}
 
-		Logger log = LogManager.getLogger(MarkController.class);
-
-		ResponseEntityGenerator responseEntityGenerator = new ResponseEntityGenerator();
-		ResponseEntity<?> responseEntity;
-
-		try {
-
-			// Add the mark.
-			MarkService markService = new MarkService();
-			markService.addMark(markDataPrimitive);
-
-			// Generate OK response.
-			responseEntity = responseEntityGenerator.generateOK();
-
-		} catch (ParameterException pe) {
-
-			log.error(Throwables.getStackTraceAsString(pe));
-
-			// Generate bad request
-			responseEntity = responseEntityGenerator.generateBadRequest(pe.getGenericErrorMessage());
-
-		} catch (Exception e) {
-
-			log.error(Throwables.getStackTraceAsString(e));
-
-			// Generate internal server error
-			responseEntity = responseEntityGenerator.generateInternalServerError();
-		}
-
-		return responseEntity;
-	}
-
-	// Updates a mark.
-	@PutMapping(URL + "/{id}")
-	public ResponseEntity<?> updateMark(@PathVariable int id, @RequestBody MarkDataPrimitive markDataPrimitive) {
-
-		Logger log = LogManager.getLogger(MarkController.class);
-
-		ResponseEntityGenerator responseEntityGenerator = new ResponseEntityGenerator();
-		ResponseEntity<?> responseEntity;
-
-		try {
-
-			markDataPrimitive.setId(id);
-
-			// Update the mark.
-			MarkService markService = new MarkService();
-			markService.updateMark(markDataPrimitive);
-
-			// Generate OK response.
-			responseEntity = responseEntityGenerator.generateOK();
-
-		} catch (ParameterException pe) {
-
-			log.error(Throwables.getStackTraceAsString(pe));
-
-			// Generate bad request
-			responseEntity = responseEntityGenerator.generateBadRequest(pe.getGenericErrorMessage());
-
-		} catch (Exception e) {
-
-			log.error(Throwables.getStackTraceAsString(e));
-
-			// Generate internal server error
-			responseEntity = responseEntityGenerator.generateInternalServerError();
-		}
-
-		return responseEntity;
-	}
+//	// Updates a mark.
+//	@PutMapping(URL + "/{id}")
+//	public ResponseEntity<?> updateMark(@PathVariable int id, @RequestBody MarkDataPrimitive markDataPrimitive) {
+//
+//		Logger log = LogManager.getLogger(MarkController.class);
+//
+//		ResponseEntityGenerator responseEntityGenerator = new ResponseEntityGenerator();
+//		ResponseEntity<?> responseEntity;
+//
+//		try {
+//
+//			markDataPrimitive.setId(id);
+//
+//			// Update the mark.
+//			MarkService markService = new MarkService();
+//			markService.updateMark(markDataPrimitive);
+//
+//			// Generate OK response.
+//			responseEntity = responseEntityGenerator.generateOK();
+//
+//		} catch (ParameterException pe) {
+//
+//			log.error(Throwables.getStackTraceAsString(pe));
+//
+//			// Generate bad request
+//			responseEntity = responseEntityGenerator.generateBadRequest(pe.getGenericErrorMessage());
+//
+//		} catch (Exception e) {
+//
+//			log.error(Throwables.getStackTraceAsString(e));
+//
+//			// Generate internal server error
+//			responseEntity = responseEntityGenerator.generateInternalServerError();
+//		}
+//
+//		return responseEntity;
+//	}
 	
 	// Updates a batch of mark.
 	@PutMapping(URL)
-	public ResponseEntity<?> updateMark(@RequestBody MarkDataPrimitive[] markDataPrimitive) {
+	public ResponseEntity<?> updateMark(@RequestBody MarkWrapper[] marks) {
 
 		Logger log = LogManager.getLogger(MarkController.class);
 
@@ -175,9 +175,9 @@ public class MarkController {
 
 		try {
 
-			// Update the mark.
+			// Update the marks.
 			MarkService markService = new MarkService();
-			markService.updateMark(markDataPrimitive);
+			markService.updateMark(marks);
 
 			// Generate OK response.
 			responseEntity = responseEntityGenerator.generateOK();
