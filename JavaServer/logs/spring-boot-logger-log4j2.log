@@ -1,45 +1,45 @@
-2020-07-15 12:42:43,322 INFO o.s.b.StartupInfoLogger [main] Starting Main on VinceLaptop with PID 33860 (/home/vince/workspace/summer/JavaServer/bin/main started by vince in /home/vince/workspace/summer/JavaServer)
-2020-07-15 12:42:43,331 INFO o.s.b.SpringApplication [main] No active profile set, falling back to default profiles: default
-2020-07-15 12:42:43,402 INFO o.s.c.s.AbstractApplicationContext [main] Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@74589991: startup date [Wed Jul 15 12:42:43 EDT 2020]; root of context hierarchy
-2020-07-15 12:42:44,605 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
-2020-07-15 12:42:44,634 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
-2020-07-15 12:42:44,644 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
-2020-07-15 12:42:44,645 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet Engine: Apache Tomcat/8.5.31
-2020-07-15 12:42:44,654 INFO o.a.j.l.DirectJDKLog [localhost-startStop-1] The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
-2020-07-15 12:42:44,742 INFO o.a.j.l.DirectJDKLog [localhost-startStop-1] Initializing Spring embedded WebApplicationContext
-2020-07-15 12:42:44,742 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [localhost-startStop-1] Root WebApplicationContext: initialization completed in 1351 ms
-2020-07-15 12:42:44,845 INFO o.s.b.w.s.ServletRegistrationBean [localhost-startStop-1] Servlet dispatcherServlet mapped to [/]
-2020-07-15 12:42:44,849 INFO o.s.b.w.s.AbstractFilterRegistrationBean [localhost-startStop-1] Mapping filter: 'characterEncodingFilter' to: [/*]
-2020-07-15 12:42:44,850 INFO o.s.b.w.s.AbstractFilterRegistrationBean [localhost-startStop-1] Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
-2020-07-15 12:42:44,850 INFO o.s.b.w.s.AbstractFilterRegistrationBean [localhost-startStop-1] Mapping filter: 'httpPutFormContentFilter' to: [/*]
-2020-07-15 12:42:44,850 INFO o.s.b.w.s.AbstractFilterRegistrationBean [localhost-startStop-1] Mapping filter: 'requestContextFilter' to: [/*]
-2020-07-15 12:42:44,998 INFO o.s.w.s.h.AbstractUrlHandlerMapping [main] Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-2020-07-15 12:42:45,188 INFO o.s.w.s.m.m.a.RequestMappingHandlerAdapter [main] Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@74589991: startup date [Wed Jul 15 12:42:43 EDT 2020]; root of context hierarchy
-2020-07-15 12:42:45,241 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/categories],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> httpControllers.CategoryController.getCategories()
-2020-07-15 12:42:45,244 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/courses],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> httpControllers.CourseController.getCourses()
-2020-07-15 12:42:45,245 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/courses/{id}/marks],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> httpControllers.CourseController.getCourseMarks(int)
-2020-07-15 12:42:45,245 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/courses/{id}/grade],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> httpControllers.CourseController.getCourseGrade(int)
-2020-07-15 12:42:45,246 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/global-grade],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> httpControllers.GlobalGradeController.globalGrade()
-2020-07-15 12:42:45,247 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/grades],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> httpControllers.GradeController.getGrades()
-2020-07-15 12:42:45,253 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/marks/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> httpControllers.MarkController.getMark(int)
-2020-07-15 12:42:45,253 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/marks],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> httpControllers.MarkController.addMark(dataObjects.MarkWrapper)
-2020-07-15 12:42:45,254 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/marks],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<?> httpControllers.MarkController.updateMark(dataObjects.MarkWrapper[])
-2020-07-15 12:42:45,255 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/marks/{id}],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<?> httpControllers.MarkController.updateMark(int,dataObjects.MarkWrapper)
-2020-07-15 12:42:45,256 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/marks/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<?> httpControllers.MarkController.deleteMark(int)
-2020-07-15 12:42:45,256 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/marks],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<?> httpControllers.MarkController.deleteMark(int[])
-2020-07-15 12:42:45,257 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/marks],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> httpControllers.MarkController.getMarks(int,int)
-2020-07-15 12:42:45,258 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/semesters/{semester}/grades],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> httpControllers.SemesterController.grades(int)
-2020-07-15 12:42:45,259 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/semesters/{semester}/global-grade],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> httpControllers.SemesterController.globalGrade(int)
-2020-07-15 12:42:45,260 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/semesters/{semester}/marks],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> httpControllers.SemesterController.getMarksCourses(int)
-2020-07-15 12:42:45,264 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
-2020-07-15 12:42:45,265 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
-2020-07-15 12:42:45,286 INFO o.s.w.s.h.AbstractUrlHandlerMapping [main] Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-2020-07-15 12:42:45,287 INFO o.s.w.s.h.AbstractUrlHandlerMapping [main] Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-2020-07-15 12:42:45,391 INFO o.s.j.e.MBeanExporter [main] Registering beans for JMX exposure on startup
-2020-07-15 12:42:45,405 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
-2020-07-15 12:42:45,423 INFO o.a.j.l.DirectJDKLog [main] Using a shared selector for servlet write/read
-2020-07-15 12:42:45,442 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
-2020-07-15 12:42:45,447 INFO o.s.b.StartupInfoLogger [main] Started Main in 3.043 seconds (JVM running for 3.851)
-2020-07-15 12:48:07,451 INFO o.a.j.l.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring FrameworkServlet 'dispatcherServlet'
-2020-07-15 12:48:07,452 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-1] FrameworkServlet 'dispatcherServlet': initialization started
-2020-07-15 12:48:07,470 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-1] FrameworkServlet 'dispatcherServlet': initialization completed in 17 ms
+2020-07-15 16:08:59,061 INFO o.s.b.StartupInfoLogger [main] Starting Main on VinceLaptop with PID 35871 (/home/vince/workspace/summer/JavaServer/bin/main started by vince in /home/vince/workspace/summer/JavaServer)
+2020-07-15 16:08:59,082 INFO o.s.b.SpringApplication [main] No active profile set, falling back to default profiles: default
+2020-07-15 16:08:59,526 INFO o.s.c.s.AbstractApplicationContext [main] Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@78641d23: startup date [Wed Jul 15 16:08:59 EDT 2020]; root of context hierarchy
+2020-07-15 16:09:04,429 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2020-07-15 16:09:04,671 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2020-07-15 16:09:04,868 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2020-07-15 16:09:04,877 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet Engine: Apache Tomcat/8.5.31
+2020-07-15 16:09:05,006 INFO o.a.j.l.DirectJDKLog [localhost-startStop-1] The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+2020-07-15 16:09:05,716 INFO o.a.j.l.DirectJDKLog [localhost-startStop-1] Initializing Spring embedded WebApplicationContext
+2020-07-15 16:09:05,716 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [localhost-startStop-1] Root WebApplicationContext: initialization completed in 6299 ms
+2020-07-15 16:09:06,512 INFO o.s.b.w.s.ServletRegistrationBean [localhost-startStop-1] Servlet dispatcherServlet mapped to [/]
+2020-07-15 16:09:06,541 INFO o.s.b.w.s.AbstractFilterRegistrationBean [localhost-startStop-1] Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-07-15 16:09:06,542 INFO o.s.b.w.s.AbstractFilterRegistrationBean [localhost-startStop-1] Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-07-15 16:09:06,545 INFO o.s.b.w.s.AbstractFilterRegistrationBean [localhost-startStop-1] Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2020-07-15 16:09:06,548 INFO o.s.b.w.s.AbstractFilterRegistrationBean [localhost-startStop-1] Mapping filter: 'requestContextFilter' to: [/*]
+2020-07-15 16:09:07,679 INFO o.s.w.s.h.AbstractUrlHandlerMapping [main] Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-07-15 16:09:08,962 INFO o.s.w.s.m.m.a.RequestMappingHandlerAdapter [main] Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@78641d23: startup date [Wed Jul 15 16:08:59 EDT 2020]; root of context hierarchy
+2020-07-15 16:09:09,533 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/categories],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> httpControllers.CategoryController.getCategories()
+2020-07-15 16:09:09,564 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/courses],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> httpControllers.CourseController.getCourses()
+2020-07-15 16:09:09,572 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/courses/{id}/marks],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> httpControllers.CourseController.getCourseMarks(int)
+2020-07-15 16:09:09,574 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/courses/{id}/grade],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> httpControllers.CourseController.getCourseGrade(int)
+2020-07-15 16:09:09,585 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/global-grade],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> httpControllers.GlobalGradeController.globalGrade()
+2020-07-15 16:09:09,597 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/grades],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> httpControllers.GradeController.getGrades()
+2020-07-15 16:09:09,664 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/marks/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> httpControllers.MarkController.getMark(int)
+2020-07-15 16:09:09,666 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/marks],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> httpControllers.MarkController.addMark(dataObjects.MarkWrapper)
+2020-07-15 16:09:09,673 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/marks],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<?> httpControllers.MarkController.updateMark(dataObjects.MarkWrapper[])
+2020-07-15 16:09:09,685 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/marks/{id}],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<?> httpControllers.MarkController.updateMark(int,dataObjects.MarkWrapper)
+2020-07-15 16:09:09,687 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/marks/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<?> httpControllers.MarkController.deleteMark(int)
+2020-07-15 16:09:09,695 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/marks],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<?> httpControllers.MarkController.deleteMark(int[])
+2020-07-15 16:09:09,704 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/marks],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> httpControllers.MarkController.getMarks(int,int)
+2020-07-15 16:09:09,718 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/semesters/{semester}/grades],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> httpControllers.SemesterController.grades(int)
+2020-07-15 16:09:09,727 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/semesters/{semester}/global-grade],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> httpControllers.SemesterController.globalGrade(int)
+2020-07-15 16:09:09,735 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/semesters/{semester}/marks],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> httpControllers.SemesterController.getMarksCourses(int)
+2020-07-15 16:09:09,775 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2020-07-15 16:09:09,780 INFO o.s.w.s.h.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-07-15 16:09:10,017 INFO o.s.w.s.h.AbstractUrlHandlerMapping [main] Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-07-15 16:09:10,025 INFO o.s.w.s.h.AbstractUrlHandlerMapping [main] Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-07-15 16:09:10,748 INFO o.s.j.e.MBeanExporter [main] Registering beans for JMX exposure on startup
+2020-07-15 16:09:10,804 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2020-07-15 16:09:10,840 INFO o.a.j.l.DirectJDKLog [main] Using a shared selector for servlet write/read
+2020-07-15 16:09:11,002 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2020-07-15 16:09:11,022 INFO o.s.b.StartupInfoLogger [main] Started Main in 13.855 seconds (JVM running for 16.089)
+2020-07-15 16:09:40,910 INFO o.a.j.l.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-07-15 16:09:40,912 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-1] FrameworkServlet 'dispatcherServlet': initialization started
+2020-07-15 16:09:40,984 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-1] FrameworkServlet 'dispatcherServlet': initialization completed in 72 ms
