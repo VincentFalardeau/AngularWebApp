@@ -38,9 +38,4 @@ export class MarkDetailsComponent implements OnInit {
     });
 
   }
-
-  delete(id: number): void{
-    this.markService.deleteMark(id).subscribe(this.mark = null);
-  }
-
 }

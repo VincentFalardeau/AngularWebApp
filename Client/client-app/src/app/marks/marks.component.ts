@@ -45,6 +45,16 @@ export class MarksComponent implements OnInit {
   save(marks: Mark[]): void{
     this.markService.updateMarks(marks).subscribe();
   }
+
+  delete(id: number): void{
+    this.markService.deleteMark(id).subscribe(() => {
+      const index: number = this.marks.indexOf(this.selectedMark);
+      if (index !== -1) {
+        this.marks.splice(index, 1);
+        delete this.selectedMark;
+      }  
+    });
+  }
   
 
 }

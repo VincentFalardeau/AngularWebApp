@@ -5,7 +5,7 @@ import { GradesComponent } from './grades/grades.component';
 import { AddMarkComponent } from './add-mark/add-mark.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'marks', pathMatch: 'full' },
+  { path: '', redirectTo: 'grades', pathMatch: 'full' },
   { path: 'marks', component: MarksComponent },
   { path: 'grades', component: GradesComponent },
   { path: 'add-mark', component: AddMarkComponent }
