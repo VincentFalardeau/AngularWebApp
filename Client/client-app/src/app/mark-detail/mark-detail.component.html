@@ -2,25 +2,23 @@
     <h3>{{mark.description | uppercase}} Details</h3>
     <!-- <button (click)="delete(mark.id)">Delete</button> -->
 
-    <fieldset>
-        <div>
-            <div>Description:</div>
-            <input [(ngModel)]="mark.description" placeholder="description"/>
-        </div>
-       
-        <div>
-            <div>Mark:</div>
-            <input [(ngModel)]="mark.mark" placeholder="85"/>
-        </div>
-        <div>
-            <div>Weight:</div>
-            <input [(ngModel)]="mark.weight" placeholder="0"/>
-        </div>
-        <div>
-            Category:
-            <select [(ngModel)]="mark.category">
-                <option *ngFor="let category of categories" [ngValue]="category">{{category.description}}</option>
-            </select>
-        </div>
-    </fieldset>
+    <div>
+        <div>Description:</div>
+        <input [(ngModel)]="mark.description" placeholder="description"/>
+    </div>
+   
+    <div>
+        <div>Mark:</div>
+        <input [(ngModel)]="mark.mark" placeholder="85"/>
+    </div>
+    <div>
+        <div>Weight:</div>
+        <input [(ngModel)]="mark.weight" placeholder="0"/>
+    </div>
+    <div>
+        <div>Category:</div>
+        <select [(ngModel)]="mark.category">
+            <option *ngFor="let category of categories" [ngValue]="category">{{category.description}}</option>
+        </select>
+    </div>
 </div>

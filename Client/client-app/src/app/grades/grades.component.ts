@@ -32,6 +32,7 @@ export class GradesComponent implements OnInit {
   }
 
   onChange(semester: number): void{
+    this.selectedGrade = null;
     this.getGrades(semester);
   }
 

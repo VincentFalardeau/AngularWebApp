@@ -1,31 +1,45 @@
-
-<h2>My marks</h2>
-
-Course
-<select [(ngModel)]="selectedCourseId" (change)="onChange(selectedCourseId)" [value]="selectedCourseId">
-    <option *ngFor="let course of courses" [value]="course.id">{{course.code}}</option>
-</select>
-<button (click)="save(marks)">Save changes</button>
+<div class="flex-container vertical padded">
+    <h2>My marks</h2>
+    <label>
+        Course
+        <select [(ngModel)]="selectedCourseId" (change)="onChange(selectedCourseId)" [value]="selectedCourseId">
+            <option *ngFor="let course of courses" [value]="course.id">{{course.code}}</option>
+        </select>
+        <button (click)="save(marks)">Save changes</button>
+    </label>
     
-<div class="table">
-    <div class="table-header">
-        <div class="cell">Category</div>
-        <div class="cell">Course</div>
-        <div class="cell">Description</div>
-        <div class="cell">Mark</div>
-        <div class="cell">Weight</div>
-        <div class="cell"></div>
+</div>
+
+<div class="flex-container flex-start">
+    <div class="main">
+        <h4 *ngIf="!marks.length">No marks for that course</h4>
+        <div class="table" *ngIf="marks.length">
+            <div class="table-header">
+                <div class="cell">Category</div>
+                <div class="cell">Course</div>
+                <div class="cell">Description</div>
+                <div class="cell">Mark</div>
+                <div class="cell">Weight</div>
+                <div class="cell"></div>
+            </div>
+            <div class="row" *ngFor="let mark of marks"  [class.selected]="mark === selectedMark" (click)="onSelect(mark)">
+                <div class="cell">{{ mark.category.description }}</div>
+                <div class="cell">{{ mark.course.code }}</div>
+                <div class="cell">{{ mark.description }}</div>
+                <div class="cell">{{ mark.mark | number : '1.2-2' }}%</div>
+                <div class="cell">{{ mark.weight | number : '1.2-2' }}%</div>
+                <div *ngIf="selectedMark === mark" class="cell"><button (click)="delete(mark.id)">Delete</button></div>
+            </div>
+        </div>
     </div>
-    <div class="row" *ngFor="let mark of marks"  [class.selected]="mark === selectedMark" (click)="onSelect(mark)">
-        <div class="cell">{{ mark.category.description }}</div>
-        <div class="cell">{{ mark.course.code }}</div>
-        <div class="cell">{{ mark.description }}</div>
-        <div class="cell">{{ mark.mark | number : '1.2-2' }}%</div>
-        <div class="cell">{{ mark.weight | number : '1.2-2' }}%</div>
-        <div *ngIf="selectedMark === mark" class="cell"><button (click)="delete(mark.id)">Delete</button></div>
+    <div class="aside">
+        <app-mark-detail [mark]="selectedMark"></app-mark-detail>
     </div>
 </div>
 
 
-<app-mark-detail [mark]="selectedMark"></app-mark-detail>
+
+
+
+
 

@@ -1,13 +1,7 @@
-/* You can add global styles to this file, and also import other style files */
 body {
   margin: 0;
-  font-size: 1.1em;
+  font-size: 1em;
   font-family: Arial, Helvetica, sans-serif;
-}
-
-.container{
-  margin:auto;
-  padding: 1em;
 }
 
 button {
@@ -19,11 +13,74 @@ button {
   text-decoration: none;
   display: inline-block;
   margin: 4px 2px;
-  transition-duration: 0.4s;
+  transition-duration: 0.2s;
   cursor: pointer;
 }
-
 button:hover {
   background-color: #4CAF50;
   color: white;
 }
+
+.flex-container{
+  display: flex;
+  align-items: flex-start;
+}
+.vertical{
+  flex-direction: column;
+}
+.padded{
+  padding: 1em;
+}
+
+.table{
+  display: table;
+  width: 100%;
+}
+
+.table-header{
+  display: table-header-group;
+  font-weight: bold;
+}
+
+.table .row.selected{
+  background-color: #CFD8DC;
+  color: white;
+}
+
+.table .row:hover {
+  color: #607D8B;
+  background-color: #DDD;
+  left: .1em;
+}
+.table .row.selected {
+  background-color: #CFD8DC;
+  color: white;
+}
+.table .row.selected:hover {
+  background-color: #BBD8DC;
+  color: white;
+}
+
+.row{
+  cursor: pointer;
+  background-color: #EEE;
+  display: table-row;   
+}
+
+.cell{
+  display: table-cell;
+  padding: 1em;
+}
+
+.aside{
+  width: 25%;
+}
+
+.main{
+  width: 70%;
+}
+
+.main, .aside{
+  padding: 1em;
+}
+

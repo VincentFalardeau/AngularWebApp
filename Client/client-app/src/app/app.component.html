@@ -1,26 +1,25 @@
 <nav>
-    <!-- <a routerLink="/grades" routerLinkActive="active">Grades</a> -->
-    <a routerLink="/grades"><b>{{title}}</b></a>
+    <a routerLink="/grades" class="title">{{ title }}</a>
     <a routerLink="/grades" routerLinkActive="active">Grades</a>
     <a routerLink="/marks" routerLinkActive="active">Marks</a>
     <a routerLink="/add-mark" routerLinkActive="active">New mark</a>
 </nav>
 
-
-<div class="top-container">
+<main>
     <app-global-grade></app-global-grade>
-</div>
+    <router-outlet></router-outlet>
+</main>
 
-<div class="flex-container container">
+
+
+<!-- <div class="flex-container">
     <main>
         <router-outlet></router-outlet>
     </main>
     <aside>
         <app-messages></app-messages>
     </aside>
-    
-    
-</div>
+</div> -->
 
 
 <!-- <footer class="container">
