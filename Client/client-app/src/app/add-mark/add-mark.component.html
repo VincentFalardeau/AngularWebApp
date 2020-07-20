@@ -1,37 +1,34 @@
 <!-- <app-mark-detail [mark]="mark"></app-mark-detail> -->
 
-<div *ngIf="mark" class="fieldset">
-
-    <div>
+<div *ngIf="mark" class="flex-container vertical padded">
+    <div class="padded">
         <div>Description:</div>
         <input [(ngModel)]="mark.description" placeholder="description"/>
     </div>
-   
-    <div>
+    <div class="padded">
         <div>Mark:</div>
         <input [(ngModel)]="mark.mark" placeholder="85"/>
     </div>
-    <div>
+    <div class="padded">
         <div>Weight:</div>
         <input [(ngModel)]="mark.weight" placeholder="0"/>
     </div>
-    <div>
+    <div class="padded">
         <div>Category:</div>
         <select [(ngModel)]="mark.category">
             <option *ngFor="let category of categories" [ngValue]="category">{{category.description}}</option>
         </select>
     </div>
-    <div>
+    <div class="padded">
         <div>Course:</div>
         <select [(ngModel)]="mark.course">
             <option *ngFor="let course of courses" [ngValue]="course">{{course.description}}</option>
         </select>
     </div>
-    <div>
+    <div class="padded">
         <app-course-detail [course]="mark.course"></app-course-detail>
     </div>
-    <div>
+    <div class="padded">
         <button (click)="add(mark)">Add mark</button>
     </div>
-    
 </div>

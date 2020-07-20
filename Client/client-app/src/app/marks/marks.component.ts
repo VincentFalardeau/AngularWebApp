@@ -5,6 +5,8 @@ import { MarkService } from '../mark.service';
 import { MessageService } from '../message.service';
 import { Course } from '../course'
 import { CourseService } from '../course.service';
+import { GlobalGradeComponent } from '../global-grade/global-grade.component';
+
 
 @Component({
   selector: 'app-marks',
@@ -26,6 +28,7 @@ export class MarksComponent implements OnInit {
   constructor(private markService: MarkService, private messageService: MessageService, private courseService: CourseService) {}
 
   ngOnInit(): void {
+    this.marks = [];
     this.courseService.getCourses().subscribe(courses => {
       this.courses = courses;
       this.selectedCourseId = this.courses[0].id;
