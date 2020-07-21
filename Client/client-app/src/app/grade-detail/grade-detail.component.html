@@ -1,14 +1,32 @@
 <div *ngIf="grade">
+
+    <!--Close button-->
+    <button class="button-icon" (click)="closeComponent()">
+        <i class="fa fa-caret-right"></i>
+    </button>
+
+    <!--Usage of the pipe operator-->
     <h3>{{grade.course.code | uppercase}} Details</h3>
 
-    <div><span>Id: </span>{{grade.course.id}}</div>
-    <div><span>Code: </span>{{grade.course.code}}</div>
-    <div><span>Description: </span>{{grade.course.description}}</div>
-    <div><span>Semester: </span>{{grade.course.semester}}</div>
-    <div><span>Credits: </span>{{grade.course.credits}}</div>
+    <!--Grade's course detail-->
+    <app-course-detail [course]="grade.course"></app-course-detail>
 
-    <div><span>Letter: </span>{{grade.letter}}</div>
-    <div><span>Average: </span>{{grade.average}}</div>
-    <div><span>GPA: </span>{{grade.gpa}}</div>
+    <hr>
+
+    <!--Grade's details-->
+    <div class="table">
+        <div class="row">
+            <div class="header-cell">Letter:</div>
+            <div class="cell">{{grade.letter}}</div>
+        </div>
+        <div class="row">
+            <div class="header-cell">Average:</div>
+            <div class="cell">{{grade.average}}</div>
+        </div>
+        <div class="row">
+            <div class="header-cell">GPA:</div>
+            <div class="cell">{{grade.gpa}}</div>
+        </div>
+    </div>
 
 </div>

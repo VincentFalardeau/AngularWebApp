@@ -48,6 +48,6 @@ export class CategoryService {
   }
 
   private log(message: string) {
-    this.messageService.add(`CategoryService: ${message}`);
+    //this.messageService.add(`CategoryService: ${message}`);
   }
 }

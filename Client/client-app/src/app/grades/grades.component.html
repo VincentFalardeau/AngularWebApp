@@ -1,3 +1,4 @@
+<!--Semester selector-->
 <div class="flex-container vertical padded">
     <h2>My grades</h2>
     <label>
@@ -8,8 +9,10 @@
     </label>
 </div>
 
-<div class="flex-container flex-start">
-    <div class="main">
+<div *ngIf="grades" class="flex-container flex-start">
+
+    <!--Grade table-->
+    <div class="main" [class.side-main]="selectedGrade">
         <h4 *ngIf="!grades.length">No grades for semester {{ selectedSemester }}</h4>
         <div class="table" *ngIf="grades.length">
             <div class="table-header">
@@ -26,9 +29,9 @@
             </div>        
         </div>
     </div>
-    <div class="aside">
-        <app-grade-detail [grade]="selectedGrade"></app-grade-detail>
-    </div>
+
+    <!--Grade detail-->
+    <app-grade-detail [class.aside]="selectedGrade" [grade]="selectedGrade" (close)="unselectGrade()"></app-grade-detail>
 </div>
 
 

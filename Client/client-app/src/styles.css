@@ -4,7 +4,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-button {
+.button {
   background-color: white; 
   color: black; 
   border: 2px solid #4CAF50;
@@ -17,7 +17,7 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+.button:hover {
   background-color: #4CAF50;
   color: white;
 }
@@ -29,6 +29,10 @@ button:hover {
 
 .vertical{
   flex-direction: column;
+}
+
+.line-height{
+  align-items: center;
 }
 
 .padded{
@@ -69,6 +73,7 @@ button:hover {
   cursor: pointer;
   background-color: #EEE;
   display: table-row;   
+  /* position: relative; */
 }
 
 .cell{
@@ -81,13 +86,31 @@ button:hover {
 }
 
 .main{
+  width: 100%;
+}
+
+.side-main{
   width: 70%;
 }
 
-.main, .aside{
+.side-main, .main, .aside{
   padding: 1em;
 }
 
 .invisible{
   visibility: hidden;
+}
+
+.button-icon:hover{
+  color: #4CAF50;
+  background-color: transparent;
+}
+
+.button-icon{
+  cursor: pointer;
+  padding: 0;
+  font-size: 2em;
+  border: none;
+  background-color: transparent; 
+  text-align: center;
 }

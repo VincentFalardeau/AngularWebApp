@@ -5,6 +5,8 @@ import { MarkService } from '../mark.service';
 import { MessageService } from '../message.service';
 import { Course } from '../course'
 import { CourseService } from '../course.service';
+import { Category } from '../category';
+import { CategoryService } from '../category.service';
 import { GlobalGradeComponent } from '../global-grade/global-grade.component';
 
 
@@ -19,26 +21,48 @@ export class MarksComponent implements OnInit {
   selectedMark: Mark;
   courses: Course[];
   selectedCourseId: number;
+  categories: Category[];
+  //Indicates whether the changes were saved or not.
+  saved: boolean;
 
-  onSelect(mark: Mark): void {
-    this.selectedMark = mark;
-    this.messageService.add(`MarksComponent: Selected mark id=${mark.id}`);
-  }
-
-  constructor(private markService: MarkService, private messageService: MessageService, private courseService: CourseService) {}
+  constructor(
+    private markService: MarkService, 
+    private messageService: MessageService, 
+    private courseService: CourseService, 
+    private categoryService: CategoryService) {}
 
   ngOnInit(): void {
+    this.saved = true;
     this.marks = [];
     this.courseService.getCourses().subscribe(courses => {
       this.courses = courses;
       this.selectedCourseId = this.courses[0].id;
-      this.getMarks(this.selectedCourseId);
+      this.categoryService.getCategories().subscribe(categories => {
+        this.categories = categories;
+        this.selectedCourseId = this.courses[0].id;
+        this.getMarks(this.selectedCourseId);
+      }); 
     }); 
   }
 
+  onSelect(mark: Mark): void {
+    this.selectedMark = mark;
+    this.saved = false;
+    //this.messageService.add(`MarksComponent: Selected mark id=${mark.id}`);
+  }
+
   onChange(courseId: number): void{
+    this.saved = true;
     this.selectedMark = null;
     this.getMarks(courseId);
+  }
+
+  onCategoryChange(categoryId: number): void{
+    this.selectedMark.category = this.categories.find(category => category.id === categoryId);
+  }
+
+  unselectMark(): void{
+    this.selectedMark = null;
   }
 
   getMarks(courseId: number): void {
@@ -46,7 +70,10 @@ export class MarksComponent implements OnInit {
   }
 
   save(marks: Mark[]): void{
-    this.markService.updateMarks(marks).subscribe();
+    this.markService.updateMarks(marks).subscribe(() => {
+      this.saved = true;
+      this.messageService.add('Changes successfully saved.');
+    });
   }
 
   delete(id: number): void{
@@ -54,6 +81,7 @@ export class MarksComponent implements OnInit {
       const index: number = this.marks.indexOf(this.selectedMark);
       if (index !== -1) {
         this.marks.splice(index, 1);
+        this.messageService.add('Deleted mark ' + this.selectedMark.description);
         delete this.selectedMark;
       }  
     });

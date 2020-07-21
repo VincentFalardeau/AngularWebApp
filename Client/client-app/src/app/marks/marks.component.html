@@ -1,66 +1,68 @@
+<!--Course selector-->
 <div class="flex-container vertical padded">
     <h2>My marks</h2>
-    <label>
-        Course
-        <select [(ngModel)]="selectedCourseId" (change)="onChange(selectedCourseId)" [value]="selectedCourseId">
-            <option *ngFor="let course of courses" [value]="course.id">{{course.code}}</option>
-        </select>
-        <button (click)="save(marks)">Save changes</button>
-    </label>
+
+    <div class="flex-container line-height">
+        <div>
+            <label>
+                Course
+                <select [(ngModel)]="selectedCourseId" (change)="onChange(selectedCourseId)" [value]="selectedCourseId">
+                    <option *ngFor="let course of courses" [value]="course.id">{{course.code}}</option>
+                </select>
+            </label>
+        </div>
+        <div *ngIf="!saved">
+            <button class="button" (click)="save(marks)">Save changes</button>
+        </div>
+        <!--Placeholder for when Save changes button is not displayed-->
+        <div *ngIf="saved">
+            <button class="button invisible">Save changes</button>
+        </div> 
+    </div>
 </div>
 
 <div class="flex-container flex-start padded">
-    <!-- <div class="main">
-        <h4 *ngIf="!marks.length">No marks for that course</h4>
-        <div class="table" *ngIf="marks.length">
-            <div class="table-header">
-                <div class="cell">Category</div>
-                <div class="cell">Course</div>
-                <div class="cell">Description</div>
-                <div class="cell">Mark</div>
-                <div class="cell">Weight</div>
-                <div class="cell"><button class="invisible">Delete</button></div>
-            </div>
-            <div class="row" *ngFor="let mark of marks"  [class.selected]="mark === selectedMark" (click)="onSelect(mark)">
-                <div class="cell">{{ mark.category.description }}</div>
-                <div class="cell">{{ mark.course.code }}</div>
-                <div class="cell">
-                    <div *ngIf="!(selectedMark === mark)">{{ mark.description }}</div>
-                    <input *ngIf="selectedMark === mark" [(ngModel)]="mark.description" placeholder="description"/>
-                </div>
-                <div class="cell">{{ mark.mark | number : '1.2-2' }}%</div>
-                <div class="cell">{{ mark.weight | number : '1.2-2' }}%</div>
-                <div *ngIf="selectedMark === mark" class="cell"><button (click)="delete(mark.id)">Delete</button></div>
-            </div>
-        </div>
-    </div> -->
+
     <h4 *ngIf="!marks.length">No marks for that course</h4>
+
     <div class="table" *ngIf="marks.length">
         <div class="table-header">
             <div class="cell">Category</div>
-            <div class="cell">Course</div>
             <div class="cell">Description</div>
             <div class="cell">Mark</div>
             <div class="cell">Weight</div>
-            <!-- <div class="cell invisible"><button>Delete</button></div> -->
         </div>
-        <div class="row" *ngFor="let mark of marks"  [class.selected]="mark === selectedMark" (click)="onSelect(mark)">
-            <div class="cell">{{ mark.category.description }}</div>
-            <div class="cell">{{ mark.course.code }}</div>
-            <div class="cell">
-                <div *ngIf="!(selectedMark === mark)">{{ mark.description }}</div>
-                <input *ngIf="selectedMark === mark" [(ngModel)]="selectedMark.description" placeholder="description"/>
+        <div class="row" *ngFor="let mark of marks"  [class.selected]="mark === selectedMark">
+            <div class="cell" (click)="onSelect(mark)">
+                <div *ngIf="!(selectedMark === mark)">{{ mark.category.description }}</div>
+                <select *ngIf="selectedMark === mark" [(ngModel)]="mark.category.id" (change)="onCategoryChange(mark.category.id)">
+                    <option *ngFor="let category of categories" [ngValue]="category.id">{{category.description}}</option>
+                </select>
             </div>
-            <div class="cell">{{ mark.mark | number : '1.2-2' }}%</div>
-            <div class="cell">{{ mark.weight | number : '1.2-2' }}%</div>
-            <div *ngIf="selectedMark === mark" class="cell"><button (click)="delete(mark.id)">Delete</button></div>
+            <div class="cell" (click)="onSelect(mark)">
+                <div *ngIf="!(selectedMark === mark)">{{ mark.description }}</div>
+                <input *ngIf="selectedMark === mark" [(ngModel)]="mark.description" placeholder="description"/>
+            </div>
+            <div class="cell" (click)="onSelect(mark)">
+                <div *ngIf="!(selectedMark === mark)">{{ mark.mark | number : '1.2-2' }}%</div>
+                <input *ngIf="selectedMark === mark" [(ngModel)]="mark.mark" placeholder="mark"/>
+            </div>
+            <div class="cell" (click)="onSelect(mark)">
+                <div *ngIf="!(selectedMark === mark)">{{ mark.weight | number : '1.2-2' }}%</div>
+                <input *ngIf="selectedMark === mark" [(ngModel)]="mark.weight" placeholder="weight"/>
+            </div>
+            <div class="cell" (click)="onSelect(mark)">
+                <button *ngIf="selectedMark === mark" class="button-icon" (click)="delete(mark.id)">
+                    <i class="fa fa-trash"></i>
+                </button>
+            </div>
+            <div class="cell" >
+                <button *ngIf="selectedMark === mark" class="button-icon" (click)="unselectMark()">
+                    <i class="fa fa-check"></i>
+                </button>
+            </div>
         </div>
-        <!-- <app-mark-detail [mark]="selectedMark"></app-mark-detail> -->
     </div>
-        
-    <!-- <div class="aside">
-        <app-mark-detail [mark]="selectedMark"></app-mark-detail>
-    </div> -->
 </div>
 
 

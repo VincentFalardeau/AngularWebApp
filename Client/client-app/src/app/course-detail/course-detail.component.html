@@ -1,9 +1,27 @@
 <div *ngIf="course">
 
-    <div><span>Id: </span>{{course.id}}</div>
-    <div><span>Code: </span>{{course.code}}</div>
-    <div><span>Description: </span>{{course.description}}</div>
-    <div><span>Semester: </span>{{course.semester}}</div>
-    <div><span>Credits: </span>{{course.credits}}</div>
+    <!--Course's details-->
+    <div class="table">
+        <div class="row">
+            <div class="header-cell">Id:</div>
+            <div class="cell">{{course.id}}</div>
+        </div>
+        <div class="row">
+            <div class="header-cell">Code:</div>
+            <div class="cell">{{course.code}}</div>
+        </div>
+        <div class="row">
+            <div class="header-cell">Description:</div>
+            <div class="cell">{{course.description}}</div>
+        </div>
+        <div class="row">
+            <div class="header-cell">Semester:</div>
+            <div class="cell">{{course.semester}}</div>
+        </div>
+        <div class="row">
+            <div class="header-cell">Credits:</div>
+            <div class="cell">{{course.credits}}</div>
+        </div>
+    </div>
 
 </div>

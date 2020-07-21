@@ -1,0 +1,44 @@
+.table{
+    display: table;
+    width: 100%;
+    text-align: left;
+}
+
+.table-header{
+    display: table-header-group;
+    font-weight: bold;
+}
+
+.table .row.selected{
+    background-color: #CFD8DC;
+    color: white;
+}
+
+.table .row:hover {
+    background-color: white;
+    color: black;
+    cursor: auto;
+}
+
+.table .row.selected {
+    background-color: white;
+}
+
+.table .row.selected:hover {
+    background-color: white;
+}
+
+.row{
+    background-color: white;
+    display: table-row;   
+}
+
+.header-cell, .cell{
+    display: table-cell;
+    padding: 0.3em;
+}
+
+.header-cell{ 
+    font-weight: bold;
+
+}

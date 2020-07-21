@@ -8,10 +8,10 @@ export class MessageService {
 
   add(message: string) {
     this.messages.push(message);
-  }
 
-  //Clears the messages
-  clear() {
-    this.messages = [];
+    //Removes the new message 10 seconds after adding it.
+    setTimeout(function (messages:string[]) {
+      messages.pop();
+    }, 5000, this.messages);
   }
 }

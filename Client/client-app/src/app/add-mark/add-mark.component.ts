@@ -50,7 +50,9 @@ export class AddMarkComponent implements OnInit {
   }
 
   add(mark: Mark): void{
-    this.markService.addMark(mark).subscribe();
+    this.markService.addMark(mark).subscribe(()=>{
+      this.messageService.add('Added mark ' + mark.description + ' in course ' + mark.course.description);
+    });
   }
 
 }

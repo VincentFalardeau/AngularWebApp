@@ -56,6 +56,6 @@ export class GradeService {
   }
 
   private log(message: string) {
-    this.messageService.add(`GlobalGradeService: ${message}`);
+    //this.messageService.add(`GlobalGradeService: ${message}`);
   }
 }

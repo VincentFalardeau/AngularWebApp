@@ -13,6 +13,7 @@ import { GradesComponent } from './grades/grades.component';
 import { GradeDetailComponent } from './grade-detail/grade-detail.component';
 import { AddMarkComponent } from './add-mark/add-mark.component';
 import { CourseDetailComponent } from './course-detail/course-detail.component';
+import { PopupComponent } from './popup/popup.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { CourseDetailComponent } from './course-detail/course-detail.component';
     GradesComponent,
     GradeDetailComponent,
     AddMarkComponent,
-    CourseDetailComponent
+    CourseDetailComponent,
+    PopupComponent
   ],
   imports: [
     HttpClientModule,

@@ -48,6 +48,6 @@ export class CourseService {
   }
 
   private log(message: string) {
-    this.messageService.add(`GlobalCourseService: ${message}`);
+    //this.messageService.add(`GlobalCourseService: ${message}`);
   }
 }

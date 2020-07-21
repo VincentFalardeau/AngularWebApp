@@ -72,7 +72,7 @@ export class MarkService {
   }
 
   private log(message: string) {
-    this.messageService.add(`MarkService: ${message}`);
+    //this.messageService.add(`MarkService: ${message}`);
   }
 }
 
