@@ -11,13 +11,9 @@
                 </select>
             </label>
         </div>
-        <div *ngIf="!saved">
-            <button class="button" (click)="save(marks)">Save changes</button>
+        <div>
+            <button class="button save-button" [disabled]="saved" [class.disabled]="saved"   (click)="save(marks)">Save changes</button>
         </div>
-        <!--Placeholder for when Save changes button is not displayed-->
-        <div *ngIf="saved">
-            <button class="button invisible">Save changes</button>
-        </div> 
     </div>
 </div>
 

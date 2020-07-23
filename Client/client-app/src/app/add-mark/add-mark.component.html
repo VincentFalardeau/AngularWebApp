@@ -3,15 +3,30 @@
 <div *ngIf="mark" class="flex-container vertical padded">
     <div class="padded">
         <div>Description:</div>
-        <input [(ngModel)]="mark.description" placeholder="description"/>
+        <input [class.input-error]="!mark.description.length" maxlength="30" [(ngModel)]="mark.description" placeholder="description"/>
+        <div *ngIf="!mark.description.length" class="error">
+            Description is required
+        </div>
     </div>
     <div class="padded">
         <div>Mark:</div>
-        <input [(ngModel)]="mark.mark" placeholder="85"/>
+        <input [class.input-error]="!mark.mark || !markService.isNumber(mark.mark)" maxlength="30" [(ngModel)]="mark.mark" placeholder="mark"/>
+        <div *ngIf="!markService.isNumber(mark.mark)" class="error">
+            Mark must be a valid number between 0 and 100.
+        </div>
+        <div *ngIf="!mark.mark" class="error">
+            Mark is required
+        </div>
     </div>
     <div class="padded">
         <div>Weight:</div>
-        <input [(ngModel)]="mark.weight" placeholder="0"/>
+        <input [class.input-error]="!mark.weight  || !markService.isNumber(mark.weight)" maxlength="30" [(ngModel)]="mark.weight" placeholder="weight"/>
+        <div *ngIf="!markService.isNumber(mark.weight)" class="error">
+            Weight must be a valid number between 0 and 100.
+        </div>
+        <div *ngIf="!mark.weight" class="error">
+            Weight is required
+        </div>
     </div>
     <div class="padded">
         <div>Category:</div>
@@ -29,6 +44,10 @@
         <app-course-detail [course]="mark.course"></app-course-detail>
     </div>
     <div class="padded">
-        <button class="button" (click)="add(mark)">Add mark</button>
+        <!-- [class.disabled]="valid"-->
+        <button class="button" 
+            [disabled]="!mark.description.length || !mark.mark || !mark.weight || !markService.isNumber(mark.mark) || !markService.isNumber(mark.weight)"
+            [class.disabled]="!mark.description.length || !mark.mark || !mark.weight || !markService.isNumber(mark.mark) || !markService.isNumber(mark.weight)"
+            (click)="add(mark)">Add mark</button>
     </div>
 </div>

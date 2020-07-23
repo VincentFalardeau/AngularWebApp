@@ -8,6 +8,8 @@ import { MarkService } from '../mark.service';
 import { MessageService } from '../message.service';
 import { CourseService } from '../course.service';
 import { CategoryService } from '../category.service';
+import { MessageObject } from '../message-object';
+import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 
 @Component({
   selector: 'app-add-mark',
@@ -51,7 +53,7 @@ export class AddMarkComponent implements OnInit {
 
   add(mark: Mark): void{
     this.markService.addMark(mark).subscribe(()=>{
-      this.messageService.add('Added mark ' + mark.description + ' in course ' + mark.course.description);
+      this.messageService.add(new MessageObject('Added mark ' + mark.description + ' in course ' + mark.course.description, true));
     });
   }
 

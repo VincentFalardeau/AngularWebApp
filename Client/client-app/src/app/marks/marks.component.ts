@@ -8,6 +8,7 @@ import { CourseService } from '../course.service';
 import { Category } from '../category';
 import { CategoryService } from '../category.service';
 import { GlobalGradeComponent } from '../global-grade/global-grade.component';
+import { MessageObject } from '../message-object';
 
 
 @Component({
@@ -72,7 +73,7 @@ export class MarksComponent implements OnInit {
   save(marks: Mark[]): void{
     this.markService.updateMarks(marks).subscribe(() => {
       this.saved = true;
-      this.messageService.add('Changes successfully saved.');
+      this.messageService.add(new MessageObject('Changes successfully saved', true));
     });
   }
 
@@ -81,7 +82,7 @@ export class MarksComponent implements OnInit {
       const index: number = this.marks.indexOf(this.selectedMark);
       if (index !== -1) {
         this.marks.splice(index, 1);
-        this.messageService.add('Deleted mark ' + this.selectedMark.description);
+        this.messageService.add(new MessageObject('Deleted mark ' + this.selectedMark.description, true));
         delete this.selectedMark;
       }  
     });

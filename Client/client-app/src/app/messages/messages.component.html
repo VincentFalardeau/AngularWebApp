@@ -1,3 +1,3 @@
 <div *ngIf="messageService.messages.length" class="flex-container vertical">
-    <div class="message" *ngFor='let message of messageService.messages'> {{message}} </div>
+    <div class="message" *ngFor='let message of messageService.messages' [class.failed]="!message.success"> {{message.message}} </div>
 </div>
