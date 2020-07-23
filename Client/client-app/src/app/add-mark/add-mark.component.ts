@@ -10,6 +10,7 @@ import { CourseService } from '../course.service';
 import { CategoryService } from '../category.service';
 import { MessageObject } from '../message-object';
 import { Message } from '@angular/compiler/src/i18n/i18n_ast';
+import { EventEmitterService } from '../event-emitter.service';   
 
 @Component({
   selector: 'app-add-mark',
@@ -27,23 +28,27 @@ export class AddMarkComponent implements OnInit {
     private markService: MarkService, 
     private messageService: MessageService, 
     private courseService: CourseService, 
-    private categoryService: CategoryService) {}
+    private categoryService: CategoryService,
+    private eventEmitterService: EventEmitterService) {}
 
   
   ngOnInit(): void {
 
-    this.mark = new MarkObject();
-    this.mark.id = 0;
-    this.mark.description = "description";
-    this.mark.mark = 85;
-    this.mark.weight = 10;
+    //Default mark object
+    this.mark = new MarkObject(0, "description", 85, 10);
 
+    //Get the categories
     this.categoryService.getCategories().subscribe(categories => {
       this.categories = categories;
+
+      //Select the first category
       this.mark.category = categories[0];
 
+      //Get the courses
       this.courseService.getCourses().subscribe(courses => {
         this.courses = courses;
+
+        //Select the first course
         this.mark.course = courses[0];
         
       });
@@ -51,10 +56,21 @@ export class AddMarkComponent implements OnInit {
 
   }
 
+  getGlobalGrade(){    
+    this.eventEmitterService.onFirstComponentButtonClick();    
+  } 
+
+  //Add the mark
   add(mark: Mark): void{
     this.markService.addMark(mark).subscribe(()=>{
+
+      //Log the success
       this.messageService.add(new MessageObject('Added mark ' + mark.description + ' in course ' + mark.course.description, true));
-    });
+
+      this.getGlobalGrade();
+
+    //Log the error
+    }, error=> this.messageService.add(new MessageObject(error, false)));
   }
 
 }

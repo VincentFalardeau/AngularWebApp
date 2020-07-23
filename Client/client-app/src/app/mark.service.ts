@@ -23,30 +23,32 @@ export class MarkService {
 
   getMarks(courseId: number): Observable<Mark[]> {
     return this.http.get<Mark[]>('http://127.0.0.1:8080/courses/'+courseId+'/marks').pipe( 
-      tap(_ => /*this.log('fetched marks for course having id = ' + courseId, true)*/_),
+      // tap(_ => /*this.log('fetched marks for course having id = ' + courseId, true)*/_),
       catchError(this.handleError<Mark[]>('getMarks', []))
     );
   }
 
   updateMarks(marks: Mark[]): Observable<any> {
     return this.http.put(this.marksURL, marks).pipe(
-      tap(_ => /*this.log('updated marks', true)*/_),
+      // tap(_ => /*this.log('updated marks', true)*/_),
       catchError(this.handleError<any>('updateMarks'))
     );
   
   }
 
   addMark(mark: Mark): Observable<any> {
+    //mark.course.id = 66;
     return this.http.post(this.marksURL, mark).pipe(
       tap(_ => /*this.log('added marks', true)*/_),
       catchError(this.handleError<any>('addMark'))
     );
+    
   
   }
 
   deleteMark(id: number): Observable<any> {
     return this.http.delete(this.marksURL + '/' + id).pipe(
-      tap(_ => this.log('deleted marks having id = ' + id, true)),
+      // tap(_ => this.log('deleted marks having id = ' + id, true)),
       catchError(this.handleError<any>('deleteMark'))
     );
   
@@ -68,10 +70,10 @@ export class MarkService {
     return (error: any): Observable<T> => {
 
       // TODO: send the error to remote logging infrastructure
-      console.error(error); // log to console instead
+      console.error(error.error.message); // log to console instead
 
       // TODO: better job of transforming error for user consumption
-      //this.log(`${operation} failed: ${error.message}`, false);
+      this.log(`${operation} failed: ${error.error.message}`, false);
 
       // Let the app keep running by returning an empty result.
       return of(result as T);

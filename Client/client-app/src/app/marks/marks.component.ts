@@ -9,6 +9,7 @@ import { Category } from '../category';
 import { CategoryService } from '../category.service';
 import { GlobalGradeComponent } from '../global-grade/global-grade.component';
 import { MessageObject } from '../message-object';
+import { EventEmitterService } from '../event-emitter.service';   
 
 
 @Component({
@@ -30,7 +31,8 @@ export class MarksComponent implements OnInit {
     private markService: MarkService, 
     private messageService: MessageService, 
     private courseService: CourseService, 
-    private categoryService: CategoryService) {}
+    private categoryService: CategoryService,
+    private eventEmitterService: EventEmitterService) {}
 
   ngOnInit(): void {
     this.saved = true;
@@ -45,6 +47,10 @@ export class MarksComponent implements OnInit {
       }); 
     }); 
   }
+
+  getGlobalGrade(){    
+    this.eventEmitterService.onFirstComponentButtonClick();    
+  } 
 
   onSelect(mark: Mark): void {
     this.selectedMark = mark;
@@ -74,6 +80,7 @@ export class MarksComponent implements OnInit {
     this.markService.updateMarks(marks).subscribe(() => {
       this.saved = true;
       this.messageService.add(new MessageObject('Changes successfully saved', true));
+      this.getGlobalGrade();
     });
   }
 

@@ -16,4 +16,11 @@ export class MarkObject implements Mark {
         id: number;
         description: string;
     }
+
+    constructor(id: number, description: string, mark: number, weight:number) {
+        this.id = id;
+        this.description = description;
+        this.mark = mark;
+        this.weight = weight;
+    }
 }

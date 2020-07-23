@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, EventEmitter } from '@angular/core';
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 import { HttpClientModule }    from '@angular/common/http';
 
@@ -13,7 +13,8 @@ import { GradesComponent } from './grades/grades.component';
 import { GradeDetailComponent } from './grade-detail/grade-detail.component';
 import { AddMarkComponent } from './add-mark/add-mark.component';
 import { CourseDetailComponent } from './course-detail/course-detail.component';
-import { PopupComponent } from './popup/popup.component';
+
+import { EventEmitterService } from './event-emitter.service';   
 
 @NgModule({
   declarations: [
@@ -25,8 +26,7 @@ import { PopupComponent } from './popup/popup.component';
     GradesComponent,
     GradeDetailComponent,
     AddMarkComponent,
-    CourseDetailComponent,
-    PopupComponent
+    CourseDetailComponent
   ],
   imports: [
     HttpClientModule,
@@ -34,7 +34,7 @@ import { PopupComponent } from './popup/popup.component';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [EventEmitterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

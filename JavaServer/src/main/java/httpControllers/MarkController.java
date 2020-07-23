@@ -115,6 +115,7 @@ public class MarkController {
 			// Generate bad request
 			responseEntity = responseEntityGenerator.generateBadRequest(pe.getGenericErrorMessage());
 
+
 		} catch (Exception e) {
 
 			log.error(Throwables.getStackTraceAsString(e));
