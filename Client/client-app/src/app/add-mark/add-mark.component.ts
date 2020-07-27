@@ -11,6 +11,7 @@ import { CategoryService } from '../category.service';
 import { MessageObject } from '../message-object';
 import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 import { EventEmitterService } from '../event-emitter.service';   
+import { MarkValidationService } from '../mark-validation.service';  
 
 @Component({
   selector: 'app-add-mark',
@@ -23,16 +24,20 @@ export class AddMarkComponent implements OnInit {
   
   courses: Course[];
   categories: Category[];
+  error: boolean;
 
   constructor(
     private markService: MarkService, 
     private messageService: MessageService, 
     private courseService: CourseService, 
     private categoryService: CategoryService,
-    private eventEmitterService: EventEmitterService) {}
+    private eventEmitterService: EventEmitterService,
+    private markValidationService: MarkValidationService) {}
 
   
   ngOnInit(): void {
+
+    this.error = false;
 
     //Default mark object
     this.mark = new MarkObject(0, "description", 85, 10);
@@ -40,6 +45,8 @@ export class AddMarkComponent implements OnInit {
     //Get the categories
     this.categoryService.getCategories().subscribe(categories => {
       this.categories = categories;
+
+      //this.error = !categories.length;
 
       //Select the first category
       this.mark.category = categories[0];

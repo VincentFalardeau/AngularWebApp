@@ -54,12 +54,6 @@ export class MarkService {
   
   }
 
-  //True if markStr is a valid number
-  isNumber(markStr: string): boolean{
-    let mark = Number(markStr);
-    return !isNaN(mark) && mark >= 0 && mark <= 100;
-  }
-
   /**
   * Handle Http operation that failed.
   * Let the app continue.

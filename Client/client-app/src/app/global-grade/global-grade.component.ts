@@ -21,7 +21,8 @@ export class GlobalGradeComponent implements OnInit {
 
   ngOnInit(): void {
     this.getGlobalGrade();
-    if (this.eventEmitterService.subsVar==undefined) {    
+    if (this.eventEmitterService.subsVar == undefined) {    
+      
       this.eventEmitterService.subsVar = this.eventEmitterService.    
       invokeFirstComponentFunction.subscribe((name:string) => {    
         this.getGlobalGrade();    

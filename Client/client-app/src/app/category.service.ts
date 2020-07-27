@@ -6,48 +6,44 @@ import { catchError, map, tap } from 'rxjs/operators';
 
 import { Category } from './category'
 import { MessageService } from './message.service';
+import { MessageObject } from './message-object';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CategoryService {
 
-  private categoryURL = 'http://127.0.0.1:8080/categories';
-
-  categories: Category[]
-
-  getCategories(): Observable<Category[]> {
-    return this.http.get<Category[]>(this.categoryURL).pipe( 
-      tap(_ => this.log('fetched categories')),
-      catchError(this.handleError<Category[]>('getCategories', []))
-    );    
-  }
+  categories: Category[];
 
   constructor(
     private http: HttpClient,
     private messageService: MessageService) { }
 
-  /**
-  * Handle Http operation that failed.
-  * Let the app continue.
-  * @param operation - name of the operation that failed
-  * @param result - optional value to return as the observable result
-  */
-  private handleError<T>(operation = 'operation', result?: T) {
+  getCategories(): Observable<Category[]> {
+    return this.http.get<Category[]>('http://127.0.0.1:8080/categories').pipe(
+      catchError(this.handleError<Category[]>([]))
+    );    
+  }
+
+  //Handle the http operation that failed
+
+  /*T is a template type, can be anything*/
+  private handleError<T>(result?: T /*? means the result parameter is optional*/) {
+
+    //Convert error's type to any, and then to an Observable of type T (template)
     return (error: any): Observable<T> => {
 
-      // TODO: send the error to remote logging infrastructure
-      console.error(error); // log to console instead
+      // Log to console (for the developers)
+      console.error(error); 
 
-      // TODO: better job of transforming error for user consumption
-      this.log(`${operation} failed: ${error.message}`);
+      this.log('Application error, please contact the administrator.', false);
 
       // Let the app keep running by returning an empty result.
-      return of(result as T);
+      return of(result as T); //of: Returns an Observable instance that synchronously delivers the values provided as arguments.
     };
   }
 
-  private log(message: string) {
-    //this.messageService.add(`CategoryService: ${message}`);
+  private log(message: string, success = true) {
+    this.messageService.add(new MessageObject(message, success));
   }
 }

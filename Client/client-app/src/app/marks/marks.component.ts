@@ -21,9 +21,14 @@ export class MarksComponent implements OnInit {
 
   marks: Mark[];
   selectedMark: Mark;
+  //The copy that is edited.
+  selectedMarkCopy: Mark;
+
   courses: Course[];
   selectedCourseId: number;
+
   categories: Category[];
+
   //Indicates whether the changes were saved or not.
   saved: boolean;
 
@@ -35,27 +40,36 @@ export class MarksComponent implements OnInit {
     private eventEmitterService: EventEmitterService) {}
 
   ngOnInit(): void {
+
     this.saved = true;
     this.marks = [];
+
+    //Get the courses
     this.courseService.getCourses().subscribe(courses => {
       this.courses = courses;
-      this.selectedCourseId = this.courses[0].id;
+
+      //Get the categories
       this.categoryService.getCategories().subscribe(categories => {
         this.categories = categories;
+
+        //Select the initial course
         this.selectedCourseId = this.courses[0].id;
+
+        //Get the marks for the initial course
         this.getMarks(this.selectedCourseId);
       }); 
     }); 
   }
 
+  //Refreshes the global grade displayed in the global grade component.
   getGlobalGrade(){    
     this.eventEmitterService.onFirstComponentButtonClick();    
   } 
 
   onSelect(mark: Mark): void {
     this.selectedMark = mark;
+    this.selectedMarkCopy = Object.assign({}, this.selectedMark);
     this.saved = false;
-    //this.messageService.add(`MarksComponent: Selected mark id=${mark.id}`);
   }
 
   onChange(courseId: number): void{
@@ -65,10 +79,20 @@ export class MarksComponent implements OnInit {
   }
 
   onCategoryChange(categoryId: number): void{
-    this.selectedMark.category = this.categories.find(category => category.id === categoryId);
+    this.selectedMarkCopy.category = this.categories.find(category => category.id === categoryId);
   }
 
-  unselectMark(): void{
+  confirmEdit(mark: Mark): void{
+    mark.description = this.selectedMarkCopy.description;
+    mark.mark = this.selectedMarkCopy.mark;
+    mark.weight = this.selectedMarkCopy.weight;
+    mark.category = this.categories.find(category => category.id === this.selectedMarkCopy.category.id);
+    //mark = Object.assign({}, this.markCopy);
+    //this.selectedMark = mark;
+    this.selectedMark = null;
+  }
+
+  cancelChange(): void{
     this.selectedMark = null;
   }
 

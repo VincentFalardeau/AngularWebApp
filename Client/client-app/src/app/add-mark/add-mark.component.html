@@ -10,8 +10,8 @@
     </div>
     <div class="padded">
         <div>Mark:</div>
-        <input [class.input-error]="!mark.mark || !markService.isNumber(mark.mark)" maxlength="30" [(ngModel)]="mark.mark" placeholder="mark"/>
-        <div *ngIf="!markService.isNumber(mark.mark)" class="error">
+        <input [class.input-error]="!mark.mark || !markValidationService.isValid(mark.mark)" maxlength="30" [(ngModel)]="mark.mark" placeholder="mark"/>
+        <div *ngIf="!markValidationService.isValid(mark.mark)" class="error">
             Mark must be a valid number between 0 and 100.
         </div>
         <div *ngIf="!mark.mark" class="error">
@@ -20,8 +20,8 @@
     </div>
     <div class="padded">
         <div>Weight:</div>
-        <input [class.input-error]="!mark.weight  || !markService.isNumber(mark.weight)" maxlength="30" [(ngModel)]="mark.weight" placeholder="weight"/>
-        <div *ngIf="!markService.isNumber(mark.weight)" class="error">
+        <input [class.input-error]="!mark.weight  || !markValidationService.isValid(mark.weight)" maxlength="30" [(ngModel)]="mark.weight" placeholder="weight"/>
+        <div *ngIf="!markValidationService.isValid(mark.weight)" class="error">
             Weight must be a valid number between 0 and 100.
         </div>
         <div *ngIf="!mark.weight" class="error">
@@ -46,8 +46,8 @@
     <div class="padded">
         <!-- [class.disabled]="valid"-->
         <button class="button" 
-            [disabled]="!mark.description.length || !mark.mark || !mark.weight || !markService.isNumber(mark.mark) || !markService.isNumber(mark.weight)"
-            [class.disabled]="!mark.description.length || !mark.mark || !mark.weight || !markService.isNumber(mark.mark) || !markService.isNumber(mark.weight)"
+            [disabled]="!mark.description.length || !mark.mark || !mark.weight || !markValidationService.isValid(mark.mark) || !markValidationService.isValid(mark.weight) || error"
+            [class.disabled]="!mark.description.length || !mark.mark || !mark.weight || !markValidationService.isValid(mark.mark) || !markValidationService.isValid(mark.weight) || error"
             (click)="add(mark)">Add mark</button>
     </div>
 </div>

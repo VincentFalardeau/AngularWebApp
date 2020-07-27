@@ -29,32 +29,73 @@
             <div class="cell">Weight</div>
         </div>
         <div class="row" *ngFor="let mark of marks"  [class.selected]="mark === selectedMark">
-            <div class="cell" (click)="onSelect(mark)">
+            <!-- <div class="cell" (click)="!(selectedMark === mark) && onSelect(mark)">
                 <div *ngIf="!(selectedMark === mark)">{{ mark.category.description }}</div>
-                <select *ngIf="selectedMark === mark" [(ngModel)]="mark.category.id" (change)="onCategoryChange(mark.category.id)">
+                <select *ngIf="selectedMark === mark" [(ngModel)]="selectedMarkCopy.category.id" (change)="onCategoryChange(selectedMarkCopy.category.id)">
                     <option *ngFor="let category of categories" [ngValue]="category.id">{{category.description}}</option>
                 </select>
             </div>
-            <div class="cell" (click)="onSelect(mark)">
+            <div class="cell" (click)="!(selectedMark === mark) && onSelect(mark)">
                 <div *ngIf="!(selectedMark === mark)">{{ mark.description }}</div>
-                <input *ngIf="selectedMark === mark" [(ngModel)]="mark.description" placeholder="description"/>
+                <input *ngIf="selectedMark === mark" [(ngModel)]="selectedMarkCopy.description" placeholder="description"/>
             </div>
-            <div class="cell" (click)="onSelect(mark)">
+            <div class="cell" (click)="!(selectedMark === mark) && onSelect(mark)">
                 <div *ngIf="!(selectedMark === mark)">{{ mark.mark | number : '1.2-2' }}%</div>
-                <input *ngIf="selectedMark === mark" [(ngModel)]="mark.mark" placeholder="mark"/>
+                <input *ngIf="selectedMark === mark" [(ngModel)]="selectedMarkCopy.mark" placeholder="mark"/>
             </div>
-            <div class="cell" (click)="onSelect(mark)">
+            <div class="cell" (click)="!(selectedMark === mark) && onSelect(mark)">
                 <div *ngIf="!(selectedMark === mark)">{{ mark.weight | number : '1.2-2' }}%</div>
-                <input *ngIf="selectedMark === mark" [(ngModel)]="mark.weight" placeholder="weight"/>
+                <input *ngIf="selectedMark === mark" [(ngModel)]="selectedMarkCopy.weight" placeholder="weight"/>
             </div>
-            <div class="cell" (click)="onSelect(mark)">
-                <button *ngIf="selectedMark === mark" class="button-icon" (click)="delete(mark.id)">
+            <div class="cell" (click)="!(selectedMark === mark) && onSelect(mark)">
+                <button *ngIf="selectedMark === mark" class="button-icon" (click)="delete(selectedMarkCopy.id)">
                     <i class="fa fa-trash"></i>
                 </button>
             </div>
             <div class="cell" >
-                <button *ngIf="selectedMark === mark" class="button-icon" (click)="unselectMark()">
+                <button *ngIf="selectedMark === mark" class="button-icon" (click)="confirmEdit(mark)">
                     <i class="fa fa-check"></i>
+                </button>
+            </div>
+            <div class="cell">
+                <button *ngIf="selectedMark === mark" class="button-icon" (click)="cancelChange()">
+                    <i class="fa fa-times"></i>
+                </button>
+            </div> -->
+
+            <div class="cell" *ngIf="!(selectedMark === mark)" (click)="onSelect(mark)">{{ mark.category.description }}</div>
+            <div class="cell" *ngIf="!(selectedMark === mark)" (click)="onSelect(mark)">{{ mark.description }}</div>
+            <div class="cell" *ngIf="!(selectedMark === mark)" (click)="onSelect(mark)">{{ mark.mark | number : '1.2-2' }}%</div>
+            <div class="cell" *ngIf="!(selectedMark === mark)" (click)="onSelect(mark)">{{ mark.weight | number : '1.2-2' }}%</div>
+            
+            <div class="cell" *ngIf="selectedMark === mark">
+                <select [(ngModel)]="selectedMarkCopy.category.id" (change)="onCategoryChange(selectedMarkCopy.category.id)">
+                    <option *ngFor="let category of categories" [ngValue]="category.id">{{category.description}}</option>
+                </select>
+            </div>
+            <div class="cell" *ngIf="selectedMark === mark">
+                <input [(ngModel)]="selectedMarkCopy.description" placeholder="description"/>
+            </div>
+            <div class="cell" *ngIf="selectedMark === mark">
+                <input  [(ngModel)]="selectedMarkCopy.mark" placeholder="mark"/>
+            </div>
+            <div class="cell" *ngIf="selectedMark === mark">
+                <input [(ngModel)]="selectedMarkCopy.weight" placeholder="weight"/>
+            </div>
+
+            <div class="cell">
+                <button *ngIf="selectedMark === mark" class="button-icon" (click)="delete(selectedMarkCopy.id)">
+                    <i class="fa fa-trash"></i>
+                </button>
+            </div>
+            <div class="cell">
+                <button *ngIf="selectedMark === mark" class="button-icon" (click)="confirmEdit(mark)">
+                    <i class="fa fa-check"></i>
+                </button>
+            </div>
+            <div class="cell">
+                <button *ngIf="selectedMark === mark" class="button-icon" (click)="cancelChange()">
+                    <i class="fa fa-times"></i>
                 </button>
             </div>
         </div>
