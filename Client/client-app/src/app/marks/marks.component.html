@@ -11,8 +11,11 @@
                 </select>
             </label>
         </div>
+        <!-- <div>
+            <button class="button" [disabled]="saved" [class.disabled]="saved"   (click)="save(marks)">Save changes</button>
+        </div> -->
         <div>
-            <button class="button save-button" [disabled]="saved" [class.disabled]="saved"   (click)="save(marks)">Save changes</button>
+            <button class="button-icon add-button" (click)="addMark()"><i class="fa fa-plus"></i></button>
         </div>
     </div>
 </div>
@@ -41,7 +44,7 @@
                 </select>
             </div>
             <div class="cell" *ngIf="selectedMarkId === mark.id">
-                <input [class.input-error]="!selectedMark.description.length" maxlength="30" [(ngModel)]="selectedMark.description" placeholder="description"/>
+                <input [class.input-error]="!selectedMark.description.length" maxlength="50" [(ngModel)]="selectedMark.description" placeholder="description"/>
                 <div *ngIf="!selectedMark.description.length" class="error">
                     Description is required
                 </div>

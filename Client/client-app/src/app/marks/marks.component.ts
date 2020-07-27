@@ -10,6 +10,7 @@ import { CategoryService } from '../category.service';
 import { MessageObject } from '../message-object';
 import { EventEmitterService } from '../event-emitter.service';   
 import { MarkValidationService } from '../mark-validation.service'; 
+import { MarkObject } from '../mark-object';
 
 
 @Component({
@@ -63,6 +64,27 @@ export class MarksComponent implements OnInit {
     }); 
   }
 
+  addMark(): void{
+    let mark = new MarkObject(0, "description", 85, 10);
+    mark.category = this.categories[0];
+    mark.course = this.courses.find(course => course.id == this.selectedCourseId);
+    
+    this.markService.addMark(mark).subscribe(()=>{
+
+      this.getMarks(this.selectedCourseId);
+
+      //this.marks.push(mark);
+
+      //Log the success
+      this.messageService.add(new MessageObject('Added mark ' + mark.description + ' in course ' + mark.course.description, true));
+
+      this.getGlobalGrade();
+
+    //Log the error
+    }, error=> this.messageService.add(new MessageObject(error, false)));
+
+  }
+
   //Refreshes the global grade displayed in the global grade component.
   getGlobalGrade(){    
     this.eventEmitterService.onFirstComponentButtonClick();    
@@ -90,7 +112,12 @@ export class MarksComponent implements OnInit {
     mark.mark = this.selectedMark.mark;
     mark.weight = this.selectedMark.weight;
     mark.category = this.categories.find(category => category.id === this.selectedMark.category.id);
-    this.selectedMarkId = null;
+
+    this.markService.updateMarks([mark]).subscribe(()=>{
+      this.messageService.add(new MessageObject('Mark ' + mark.description + ' successfully updated', true));
+      this.getGlobalGrade();
+      this.selectedMarkId = null;
+    });
   }
 
   cancelChange(): void{
@@ -124,6 +151,7 @@ export class MarksComponent implements OnInit {
         this.marks.splice(index, 1);
         this.messageService.add(new MessageObject('Deleted mark ' + this.selectedMark.description, true));
         this.selectedMarkId = null;
+        this.getGlobalGrade();
       }  
     });
   }

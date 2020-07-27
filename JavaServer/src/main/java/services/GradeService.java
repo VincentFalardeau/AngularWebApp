@@ -39,7 +39,12 @@ public class GradeService {
 		CourseService courseService = new CourseService();
 
 		for (Course course : courses) {
-			grades.add(courseService.getGrade(course));
+			Grade grade = courseService.getGrade(course);
+			//To avoid classes with no marks to be counted.
+			if(grade.getAverage() > 0.0f) {
+				grades.add(grade);
+			}
+			
 		}
 
 		return grades;

@@ -3,7 +3,7 @@
 <div *ngIf="mark" class="flex-container vertical padded">
     <div class="padded">
         <div>Description:</div>
-        <input [class.input-error]="!mark.description.length" maxlength="30" [(ngModel)]="mark.description" placeholder="description"/>
+        <input [class.input-error]="!mark.description.length" maxlength="50" [(ngModel)]="mark.description" placeholder="description"/>
         <div *ngIf="!mark.description.length" class="error">
             Description is required
         </div>
