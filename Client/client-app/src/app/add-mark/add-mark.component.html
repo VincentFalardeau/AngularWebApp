@@ -46,8 +46,8 @@
     <div class="padded">
         <!-- [class.disabled]="valid"-->
         <button class="button" 
-            [disabled]="!mark.description.length || !mark.mark || !mark.weight || !markValidationService.isValid(mark.mark) || !markValidationService.isValid(mark.weight) || error"
-            [class.disabled]="!mark.description.length || !mark.mark || !mark.weight || !markValidationService.isValid(mark.mark) || !markValidationService.isValid(mark.weight) || error"
+            [disabled]="!mark.description.length || !mark.mark || !mark.weight || !markValidationService.isValid(mark.mark) || !markValidationService.isValid(mark.weight)"
+            [class.disabled]="!mark.description.length || !mark.mark || !mark.weight || !markValidationService.isValid(mark.mark) || !markValidationService.isValid(mark.weight)"
             (click)="add(mark)">Add mark</button>
     </div>
 </div>

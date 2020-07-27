@@ -14,7 +14,8 @@ import { GradeDetailComponent } from './grade-detail/grade-detail.component';
 import { AddMarkComponent } from './add-mark/add-mark.component';
 import { CourseDetailComponent } from './course-detail/course-detail.component';
 
-import { EventEmitterService } from './event-emitter.service';   
+import { EventEmitterService } from './event-emitter.service';
+import { EditMarkComponent } from './edit-mark/edit-mark.component';   
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { EventEmitterService } from './event-emitter.service';
     GradesComponent,
     GradeDetailComponent,
     AddMarkComponent,
-    CourseDetailComponent
+    CourseDetailComponent,
+    EditMarkComponent
   ],
   imports: [
     HttpClientModule,

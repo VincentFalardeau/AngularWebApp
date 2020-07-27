@@ -7,9 +7,9 @@ import { Course } from '../course'
 import { CourseService } from '../course.service';
 import { Category } from '../category';
 import { CategoryService } from '../category.service';
-import { GlobalGradeComponent } from '../global-grade/global-grade.component';
 import { MessageObject } from '../message-object';
 import { EventEmitterService } from '../event-emitter.service';   
+import { MarkValidationService } from '../mark-validation.service'; 
 
 
 @Component({
@@ -20,9 +20,9 @@ import { EventEmitterService } from '../event-emitter.service';
 export class MarksComponent implements OnInit {
 
   marks: Mark[];
-  selectedMark: Mark;
+  selectedMarkId: number;
   //The copy that is edited.
-  selectedMarkCopy: Mark;
+  selectedMark: Mark;
 
   courses: Course[];
   selectedCourseId: number;
@@ -37,10 +37,12 @@ export class MarksComponent implements OnInit {
     private messageService: MessageService, 
     private courseService: CourseService, 
     private categoryService: CategoryService,
-    private eventEmitterService: EventEmitterService) {}
+    private eventEmitterService: EventEmitterService,
+    private markValidationService: MarkValidationService) {}
 
   ngOnInit(): void {
 
+    this.selectedMarkId = null;
     this.saved = true;
     this.marks = [];
 
@@ -67,33 +69,32 @@ export class MarksComponent implements OnInit {
   } 
 
   onSelect(mark: Mark): void {
-    this.selectedMark = mark;
-    this.selectedMarkCopy = Object.assign({}, this.selectedMark);
+    this.selectedMarkId = mark.id;
+    this.selectedMark = Object.assign({}, mark);
     this.saved = false;
   }
 
   onChange(courseId: number): void{
     this.saved = true;
-    this.selectedMark = null;
+    this.selectedMarkId = null;
     this.getMarks(courseId);
   }
 
   onCategoryChange(categoryId: number): void{
-    this.selectedMarkCopy.category = this.categories.find(category => category.id === categoryId);
+    this.selectedMark.category = this.categories.find(category => category.id === categoryId);
   }
 
   confirmEdit(mark: Mark): void{
-    mark.description = this.selectedMarkCopy.description;
-    mark.mark = this.selectedMarkCopy.mark;
-    mark.weight = this.selectedMarkCopy.weight;
-    mark.category = this.categories.find(category => category.id === this.selectedMarkCopy.category.id);
-    //mark = Object.assign({}, this.markCopy);
-    //this.selectedMark = mark;
-    this.selectedMark = null;
+    
+    mark.description = this.selectedMark.description;
+    mark.mark = this.selectedMark.mark;
+    mark.weight = this.selectedMark.weight;
+    mark.category = this.categories.find(category => category.id === this.selectedMark.category.id);
+    this.selectedMarkId = null;
   }
 
   cancelChange(): void{
-    this.selectedMark = null;
+    this.selectedMarkId = null;
   }
 
   getMarks(courseId: number): void {
@@ -110,11 +111,19 @@ export class MarksComponent implements OnInit {
 
   delete(id: number): void{
     this.markService.deleteMark(id).subscribe(() => {
-      const index: number = this.marks.indexOf(this.selectedMark);
+      let index: number = -1;
+
+      for(let i = 0; i < this.marks.length; i++){
+        if(this.marks[i].id == id){
+          index = i;
+          break;
+        }
+      }
+
       if (index !== -1) {
         this.marks.splice(index, 1);
         this.messageService.add(new MessageObject('Deleted mark ' + this.selectedMark.description, true));
-        delete this.selectedMark;
+        this.selectedMarkId = null;
       }  
     });
   }

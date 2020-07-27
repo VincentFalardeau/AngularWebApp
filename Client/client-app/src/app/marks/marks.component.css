@@ -1,3 +1,7 @@
 .save-button{
     margin-left: 3em;
 }
+
+.fa-disabled {
+    opacity: 0.6;
+}
