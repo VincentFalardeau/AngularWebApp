@@ -1,7 +1,8 @@
 .add-button{
-    margin-left: 3em;
+    margin-left: 1em;
 }
 
 .fa-disabled {
     opacity: 0.6;
+    cursor: not-allowed;
 }

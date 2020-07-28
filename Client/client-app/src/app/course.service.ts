@@ -6,6 +6,7 @@ import { catchError, map, tap } from 'rxjs/operators';
 
 import { Course } from './course'
 import { MessageService } from './message.service';
+import { MessageObject } from './message-object';
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +23,6 @@ export class CourseService {
 
   getCourses(): Observable<Course[]> {
     return this.http.get<Course[]>(this.courseURL).pipe( 
-      tap(_ => this.log('fetched courses')),
       catchError(this.handleError<Course[]>('getCourses', []))
     );    
   }
@@ -40,14 +40,14 @@ export class CourseService {
       console.error(error); // log to console instead
 
       // TODO: better job of transforming error for user consumption
-      this.log(`${operation} failed: ${error.message}`);
+      this.log('Application error, please contact your administrator.', false);
 
       // Let the app keep running by returning an empty result.
       return of(result as T);
     };
   }
 
-  private log(message: string) {
-    //this.messageService.add(`GlobalCourseService: ${message}`);
+  private log(message: string, success: boolean) {
+    this.messageService.add(new MessageObject(message, success));
   }
 }

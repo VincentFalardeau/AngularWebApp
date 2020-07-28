@@ -21,29 +21,31 @@ export class CategoryService {
 
   getCategories(): Observable<Category[]> {
     return this.http.get<Category[]>('http://127.0.0.1:8080/categories').pipe(
-      catchError(this.handleError<Category[]>([]))
+      catchError(this.handleError<Category[]>('getCategories', []))
     );    
   }
 
-  //Handle the http operation that failed
-
-  /*T is a template type, can be anything*/
-  private handleError<T>(result?: T /*? means the result parameter is optional*/) {
-
-    //Convert error's type to any, and then to an Observable of type T (template)
+  /**
+  * Handle Http operation that failed.
+  * Let the app continue.
+  * @param operation - name of the operation that failed
+  * @param result - optional value to return as the observable result
+  */
+  private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
 
-      // Log to console (for the developers)
-      console.error(error); 
+      // TODO: send the error to remote logging infrastructure
+      console.error(error); // log to console instead
 
-      this.log('Application error, please contact the administrator.', false);
+      // TODO: better job of transforming error for user consumption
+      this.log('Application error, please contact your administrator.', false);
 
       // Let the app keep running by returning an empty result.
-      return of(result as T); //of: Returns an Observable instance that synchronously delivers the values provided as arguments.
+      return of(result as T);
     };
   }
 
-  private log(message: string, success = true) {
+  private log(message: string, success: boolean) {
     this.messageService.add(new MessageObject(message, success));
   }
 }

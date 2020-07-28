@@ -22,16 +22,10 @@ export class MarksComponent implements OnInit {
 
   marks: Mark[];
   selectedMarkId: number;
-  //The copy that is edited.
   selectedMark: Mark;
-
   courses: Course[];
   selectedCourseId: number;
-
   categories: Category[];
-
-  //Indicates whether the changes were saved or not.
-  saved: boolean;
 
   constructor(
     private markService: MarkService, 
@@ -44,7 +38,6 @@ export class MarksComponent implements OnInit {
   ngOnInit(): void {
 
     this.selectedMarkId = null;
-    this.saved = true;
     this.marks = [];
 
     //Get the courses
@@ -64,95 +57,94 @@ export class MarksComponent implements OnInit {
     }); 
   }
 
+  //Adds a mark
   addMark(): void{
+
+    //Basic mark
     let mark = new MarkObject(0, "description", 85, 10);
     mark.category = this.categories[0];
+    //Its course is the selected course
     mark.course = this.courses.find(course => course.id == this.selectedCourseId);
     
+    //Add the mark in the database
     this.markService.addMark(mark).subscribe(()=>{
-
-      this.getMarks(this.selectedCourseId);
-
-      //this.marks.push(mark);
-
-      //Log the success
-      this.messageService.add(new MessageObject('Added mark ' + mark.description + ' in course ' + mark.course.description, true));
-
-      this.getGlobalGrade();
-
-    //Log the error
-    }, error=> this.messageService.add(new MessageObject(error, false)));
+      this.getMarks(this.selectedCourseId);           
+      this.refreshGlobalGrade();
+    });
 
   }
 
   //Refreshes the global grade displayed in the global grade component.
-  getGlobalGrade(){    
-    this.eventEmitterService.onFirstComponentButtonClick();    
+  refreshGlobalGrade(){    
+    this.eventEmitterService.onGetGlobalGrade();    
   } 
 
+  //On mark select, takes the selected mark as parameter.
   onSelect(mark: Mark): void {
     this.selectedMarkId = mark.id;
+    //selectedMark is a copy of the mark object, so that changes are not immediately commited
     this.selectedMark = Object.assign({}, mark);
-    this.saved = false;
   }
 
+  //On course change, takes the selected course's id as a number.
   onChange(courseId: number): void{
-    this.saved = true;
     this.selectedMarkId = null;
     this.getMarks(courseId);
   }
 
+  //Associates the category id to the corresponding category object
   onCategoryChange(categoryId: number): void{
     this.selectedMark.category = this.categories.find(category => category.id === categoryId);
   }
 
-  confirmEdit(mark: Mark): void{
+  //Changes the values of the original copy of the selected mark.
+  commitChanges(mark: Mark): void{
     
+    //Assign new values to the mark so that the mark variable's reference remain the original
     mark.description = this.selectedMark.description;
     mark.mark = this.selectedMark.mark;
     mark.weight = this.selectedMark.weight;
     mark.category = this.categories.find(category => category.id === this.selectedMark.category.id);
 
-    this.markService.updateMarks([mark]).subscribe(()=>{
-      this.messageService.add(new MessageObject('Mark ' + mark.description + ' successfully updated', true));
-      this.getGlobalGrade();
-      this.selectedMarkId = null;
-    });
+    //Update the mark in the database.
+    this.markService.updateMark(mark).subscribe(()=> this.selectedMarkId = null);
   }
 
-  cancelChange(): void{
+  //Cancel the selected mark's editing. 
+  cancelEdit(): void{
     this.selectedMarkId = null;
   }
 
+  //Fetches the marks of the specified course from the database.
   getMarks(courseId: number): void {
     this.markService.getMarks(courseId).subscribe(marks => this.marks = marks);
   }
 
-  save(marks: Mark[]): void{
-    this.markService.updateMarks(marks).subscribe(() => {
-      this.saved = true;
-      this.messageService.add(new MessageObject('Changes successfully saved', true));
-      this.getGlobalGrade();
-    });
-  }
-
+  //Deletes the mark having the specified id in the database
   delete(id: number): void{
-    this.markService.deleteMark(id).subscribe(() => {
-      let index: number = -1;
 
-      for(let i = 0; i < this.marks.length; i++){
-        if(this.marks[i].id == id){
-          index = i;
-          break;
-        }
+    //Get the index of the specified mark.
+    let index: number = -1;
+    for(let i = 0; i < this.marks.length; i++){
+      if(this.marks[i].id == id){
+        index = i;
+        break;
       }
+    }
+    //Get the specified mark.
+    let mark = this.marks[index];
 
+    this.markService.deleteMark(mark).subscribe(() => {
+
+      //If the mark is found in the array, delete it
       if (index !== -1) {
+
         this.marks.splice(index, 1);
-        this.messageService.add(new MessageObject('Deleted mark ' + this.selectedMark.description, true));
+
         this.selectedMarkId = null;
-        this.getGlobalGrade();
+        this.refreshGlobalGrade();
       }  
+
     });
   }
   

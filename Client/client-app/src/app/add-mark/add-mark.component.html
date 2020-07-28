@@ -44,7 +44,6 @@
         <app-course-detail [course]="mark.course"></app-course-detail>
     </div>
     <div class="padded">
-        <!-- [class.disabled]="valid"-->
         <button class="button" 
             [disabled]="!mark.description.length || !mark.mark || !mark.weight || !markValidationService.isValid(mark.mark) || !markValidationService.isValid(mark.weight)"
             [class.disabled]="!mark.description.length || !mark.mark || !mark.weight || !markValidationService.isValid(mark.mark) || !markValidationService.isValid(mark.weight)"

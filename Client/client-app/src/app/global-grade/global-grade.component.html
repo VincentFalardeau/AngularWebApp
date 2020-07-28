@@ -2,5 +2,7 @@
     <span>GPA: {{ globalGrade.gpa }}</span>
     <span>Average: {{ globalGrade.average | number : '1.2-2' }}</span>
     <span>Letter: {{ globalGrade.letter }}</span>
-    <button (click)="getGlobalGrade()" class="button-icon"><i class="fa fa-refresh"></i></button>
+    <span>
+        <button (click)="getGlobalGrade()" class="button-icon"><i class="fa fa-refresh"></i></button>
+    </span>
 </div>

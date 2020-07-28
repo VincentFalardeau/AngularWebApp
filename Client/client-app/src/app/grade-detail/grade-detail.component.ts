@@ -2,8 +2,6 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 
 import { Grade } from '../grade';
 
-//Component that displays details for a specified grade.
-
 @Component({
   selector: 'app-grade-detail',
   templateUrl: './grade-detail.component.html',
@@ -27,7 +25,6 @@ export class GradeDetailComponent implements OnInit {
   closeComponent(): void{
     this.grade = null;
 
-    //Emit the close event.
     this.close.emit();
   }
 

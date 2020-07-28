@@ -5,7 +5,6 @@ import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
 import { Mark } from './mark'
-import { MarkData } from './mark-data'
 import { MessageService } from './message.service';
 import { MessageObject } from './message-object';
 
@@ -14,7 +13,6 @@ import { MessageObject } from './message-object';
 })
 export class MarkService {
 
-  //private marksURL = 'http://127.0.0.1:8080/courses/1/marks';
   private marksURL = "http://127.0.0.1:8080/marks"
 
   constructor(
@@ -23,32 +21,28 @@ export class MarkService {
 
   getMarks(courseId: number): Observable<Mark[]> {
     return this.http.get<Mark[]>('http://127.0.0.1:8080/courses/'+courseId+'/marks').pipe( 
-      // tap(_ => /*this.log('fetched marks for course having id = ' + courseId, true)*/_),
       catchError(this.handleError<Mark[]>('getMarks', []))
     );
   }
 
-  updateMarks(marks: Mark[]): Observable<any> {
-    return this.http.put(this.marksURL, marks).pipe(
-      // tap(_ => /*this.log('updated marks', true)*/_),
-      catchError(this.handleError<any>('updateMarks'))
+  updateMark(mark: Mark): Observable<any> {
+    return this.http.put(this.marksURL + '/' + mark.id, mark).pipe(
+      tap(_ => this.log('Successfully updated mark ' + mark.description, true)),
+      catchError(this.handleError<any>('updateMark'))
     );
   
   }
 
   addMark(mark: Mark): Observable<any> {
-    //mark.course.id = 66;
     return this.http.post(this.marksURL, mark).pipe(
-      tap(_ => /*this.log('added marks', true)*/_),
+      tap(_ => this.log('Added mark '+mark.description+' in course ' + mark.course.code, true)),
       catchError(this.handleError<any>('addMark'))
     );
-    
-  
   }
 
-  deleteMark(id: number): Observable<any> {
-    return this.http.delete(this.marksURL + '/' + id).pipe(
-      // tap(_ => this.log('deleted marks having id = ' + id, true)),
+  deleteMark(mark: Mark): Observable<any> {
+    return this.http.delete(this.marksURL + '/' + mark.id).pipe(
+      tap(_ => this.log('Deleted mark ' + mark.description, true)),
       catchError(this.handleError<any>('deleteMark'))
     );
   
@@ -64,10 +58,10 @@ export class MarkService {
     return (error: any): Observable<T> => {
 
       // TODO: send the error to remote logging infrastructure
-      console.error(error.error.message); // log to console instead
+      console.error(error); // log to console instead
 
       // TODO: better job of transforming error for user consumption
-      this.log(`${operation} failed: ${error.error.message}`, false);
+      this.log('Application error, please contact your administrator.', false);
 
       // Let the app keep running by returning an empty result.
       return of(result as T);
@@ -75,7 +69,7 @@ export class MarkService {
   }
 
   private log(message: string, success: boolean) {
-    //this.messageService.add(new MessageObject(`MarkService: ${message}`, success));
+    this.messageService.add(new MessageObject(message, success));
   }
 }
 

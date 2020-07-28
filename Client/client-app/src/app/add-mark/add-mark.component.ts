@@ -24,7 +24,6 @@ export class AddMarkComponent implements OnInit {
   
   courses: Course[];
   categories: Category[];
-  error: boolean;
 
   constructor(
     private markService: MarkService, 
@@ -37,16 +36,11 @@ export class AddMarkComponent implements OnInit {
   
   ngOnInit(): void {
 
-    this.error = false;
-
-    //Default mark object
     this.mark = new MarkObject(0, "description", 85, 10);
 
     //Get the categories
     this.categoryService.getCategories().subscribe(categories => {
       this.categories = categories;
-
-      //this.error = !categories.length;
 
       //Select the first category
       this.mark.category = categories[0];
@@ -63,21 +57,14 @@ export class AddMarkComponent implements OnInit {
 
   }
 
-  getGlobalGrade(){    
-    this.eventEmitterService.onFirstComponentButtonClick();    
+  //Refreshes the global grade displayed in the global grade component.
+  refreshGlobalGrade(){    
+    this.eventEmitterService.onGetGlobalGrade();    
   } 
 
-  //Add the mark
+  //Adds the mark in the database
   add(mark: Mark): void{
-    this.markService.addMark(mark).subscribe(()=>{
-
-      //Log the success
-      this.messageService.add(new MessageObject('Added mark ' + mark.description + ' in course ' + mark.course.description, true));
-
-      this.getGlobalGrade();
-
-    //Log the error
-    }, error=> this.messageService.add(new MessageObject(error, false)));
+    this.markService.addMark(mark).subscribe(()=>this.refreshGlobalGrade());
   }
 
 }

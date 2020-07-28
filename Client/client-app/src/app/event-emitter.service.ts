@@ -11,7 +11,7 @@ export class EventEmitterService {
     
   constructor() { }    
     
-  onFirstComponentButtonClick() {    
+  onGetGlobalGrade() {    
     this.invokeFirstComponentFunction.emit();    
   }    
 }   

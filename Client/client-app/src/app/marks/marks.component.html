@@ -11,9 +11,6 @@
                 </select>
             </label>
         </div>
-        <!-- <div>
-            <button class="button" [disabled]="saved" [class.disabled]="saved"   (click)="save(marks)">Save changes</button>
-        </div> -->
         <div>
             <button class="button-icon add-button" (click)="addMark()"><i class="fa fa-plus"></i></button>
         </div>
@@ -33,11 +30,13 @@
         </div>
         <div class="row" *ngFor="let mark of marks"  [class.selected]="mark.id === selectedMarkId">
 
+            <!--Normal cells-->
             <div class="cell" *ngIf="!(selectedMarkId === mark.id)" (click)="onSelect(mark)">{{ mark.category.description }}</div>
             <div class="cell" *ngIf="!(selectedMarkId === mark.id)" (click)="onSelect(mark)">{{ mark.description }}</div>
             <div class="cell" *ngIf="!(selectedMarkId === mark.id)" (click)="onSelect(mark)">{{ mark.mark | number : '1.2-2' }}%</div>
             <div class="cell" *ngIf="!(selectedMarkId === mark.id)" (click)="onSelect(mark)">{{ mark.weight | number : '1.2-2' }}%</div>
             
+            <!--Edit cells-->
             <div class="cell" *ngIf="selectedMarkId === mark.id">
                 <select [(ngModel)]="selectedMark.category.id" (change)="onCategoryChange(selectedMark.category.id)">
                     <option *ngFor="let category of categories" [ngValue]="category.id">{{category.description}}</option>
@@ -68,19 +67,20 @@
                 </div>
             </div>
 
+            <!--Button cells-->
             <div class="cell">
-                <button *ngIf="selectedMarkId === mark.id" class="button-icon" (click)="delete(selectedMarkId)">
-                    <i class="fa fa-trash"></i>
-                </button>
-            </div>
-            <div class="cell">
-                <button *ngIf="selectedMarkId === mark.id" class="button-icon" (click)="selectedMark.description.length && selectedMark.mark && selectedMark.weight && markValidationService.isValid(selectedMark.mark) && markValidationService.isValid(selectedMark.weight) && confirmEdit(mark)">
+                <button *ngIf="selectedMarkId === mark.id" class="button-icon" (click)="selectedMark.description.length && selectedMark.mark && selectedMark.weight && markValidationService.isValid(selectedMark.mark) && markValidationService.isValid(selectedMark.weight) && commitChanges(mark)">
                     <i class="fa fa-check" [class.fa-disabled]="!selectedMark.description.length || !selectedMark.mark || !selectedMark.weight || !markValidationService.isValid(selectedMark.mark) || !markValidationService.isValid(selectedMark.weight)"></i>
                 </button>
             </div>
             <div class="cell">
-                <button *ngIf="selectedMarkId === mark.id" class="button-icon" (click)="cancelChange()">
+                <button *ngIf="selectedMarkId === mark.id" class="button-icon" (click)="cancelEdit()">
                     <i class="fa fa-times"></i>
+                </button>
+            </div>
+            <div class="cell">
+                <button *ngIf="selectedMarkId === mark.id" class="button-icon" (click)="delete(selectedMarkId)">
+                    <i class="fa fa-trash"></i>
                 </button>
             </div>
         </div>

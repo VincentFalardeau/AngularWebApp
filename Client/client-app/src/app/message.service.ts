@@ -12,7 +12,7 @@ export class MessageService {
   add(message: MessageObject) {
     this.messages.push(message);
 
-    //Removes the new message 5 seconds after adding it.
+    //Removes a message 5 seconds after adding it.
     setTimeout(function (messages:Message[]) {
       messages.pop();
     }, 5000, this.messages);
