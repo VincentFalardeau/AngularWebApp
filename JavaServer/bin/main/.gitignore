@@ -1,0 +1,12 @@
+/Tools/
+/category-mapper.xml
+/course-mapper.xml
+/dataObjects/
+/exceptions/
+/httpControllers/
+/log4j2-spring.xml
+/mark-mapper.xml
+/mybatis-config.xml
+/persistence/
+/services/
+/category-mapper.out.xml
